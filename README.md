@@ -2,6 +2,8 @@
 
 NEO Compressor is a local desktop app for image compression, conversion, and batch processing. Drop images into **Zen** for a quick run, or open **Architect** to build a reusable recipe with effects, encoders, and multiple outputs. Image processing runs on your device.
 
+![Architect showing the ImageOptim-inspired lossy recipe with PNG, JPEG, GIF, and SVG branches, an encoded PNG preview, and metadata details](docs/architect-preview.png)
+
 ## Download
 
 Open [Releases](https://github.com/alfatreze/neo-encoder-releases/releases) for published installers and release notes. Version 0.1 targets **Windows x64** with an EXE or MSI and **Linux x64** with an AppImage or Debian package built on Ubuntu 22.04. These builds are unsigned.
