@@ -6,7 +6,15 @@ NEO Compressor is a local desktop app for image compression, conversion, and bat
 
 ## Download
 
-Open [Releases](https://github.com/alfatreze/neo-encoder-releases/releases) for published installers and release notes. Version 0.1 targets **Windows x64** with an EXE or MSI and **Linux x64** with an AppImage or Debian package built on Ubuntu 22.04. These builds are unsigned.
+Download installers from [NEO Compressor v0.1](https://github.com/alfatreze/neo-encoder-releases/releases/tag/v0.1).
+
+| Platform | Installer |
+| --- | --- |
+| macOS 14 Sonoma or later | Universal DMG for Apple silicon and Intel |
+| Windows x64 | Setup EXE or MSI |
+| Linux x64 | AppImage or Debian package, built on Ubuntu 22.04 |
+
+The macOS app uses an ad hoc signature and has no Apple notarization. The Windows and Linux installers are unsigned.
 
 ## Features
 
