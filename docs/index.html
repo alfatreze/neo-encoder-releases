@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEO Compressor Results</title>
+<meta name="description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<section class="hero"><div class="wrap">
+<div>
+<h1>How small can images get <em>without looking worse?</em></h1>
+<p class="lede">We test thousands of ways of compressing the same images, measure size and quality for each, and publish what actually works, including what does not.</p>
+<p style="margin-top:20px"><a class="btn" href="rankings.html">See the rankings</a> &nbsp; <a class="btn ghost" href="explore.html">Explore the data</a> &nbsp; <a class="btn ghost" href="methodology.html">How we measured</a></p>
+</div>
+<div class="heronum" id="hero"></div>
+</div></section>
+
+<main><div class="wrap">
+<div class="cards" id="cards"></div>
+
+<h2>Pick a quality level, see the gain</h2>
+<p class="sub">Average size reduction when every image gets its own best recipe that still meets the chosen quality. Effort is how long encoding is allowed to take.</p>
+<div class="controls" style="align-items:end">
+<div><div class="note" style="margin-bottom:4px">FORMAT</div><div class="seg" id="seg-fmt"></div></div>
+<div><div class="note" style="margin-bottom:4px">QUALITY</div><div class="seg" id="seg-q"></div></div>
+</div>
+<div class="panel"><div id="effort"></div><p class="note" style="margin:10px 0 0" id="effort-note"></p></div>
+
+<h2>What we have learned</h2>
+<p class="sub">Plain-language takeaways from the current results.</p>
+<div class="findings" id="findings"></div>
+
+<h2>Gain by type of image</h2>
+<p class="sub">Typical best-case saving at high quality. Flat graphics shrink a lot; photographs much less.</p>
+<div class="panel"><div id="bytype"></div><p class="note" style="margin:10px 0 0">Based on the images tested so far; types with few images are marked and should be read as indications, not rules.</p></div>
+
+<h2>Compared with ImageOptim</h2>
+<p class="sub">ImageOptim is the well-known reference. We run it, and NEO's equivalent recipes, on the same files.</p>
+<div class="findings" id="north"></div>
+
+<h2>How to read these results</h2>
+<dl class="gloss panel">
+<dt>Saving</dt><dd>How much smaller the file gets compared with the original. 65% saving means the new file is 35% of the original size.</dd>
+<dt>Quality levels</dt><dd><b>Visually lossless</b>: differences are essentially invisible. <b>High quality</b>: very hard to spot at normal size. <b>Good for web</b>: fine for most pages, small differences on close inspection.</dd>
+<dt>Effort</dt><dd><b>Fast</b>, <b>Balanced</b> and <b>Thorough</b> limit how long encoding may take, compared with the quickest recipes on the same image.</dd>
+<dt>Recipe and chain</dt><dd>A recipe is an ordered chain of steps such as palette reduction, OxiPNG repacking and Zopfli squeezing. Order and settings both matter.</dd>
+</dl>
+<p class="note"><b>Technical note.</b> Quality is judged today with NEO's own SSIM score (8×8 luma blocks, transparent images checked over black and white). The levels above are SSIM ≥ 0.995, ≥ 0.98 and ≥ 0.95. SSIM is a general similarity score but it saturates near the top, so finalists are being re-scored with SSIMULACRA2, a perceptual metric, and the pages will switch to it when that is finished.</p>
+
+<h2>How the results are produced</h2>
+<ol class="steps">
+<li><b>A fixed set of images.</b> Public-licence photos, UI screenshots, icons and pixel art.</li>
+<li><b>Thousands of recipes.</b> Each image goes through every recipe; size, time and quality are recorded.</li>
+<li><b>Best that meets the bar.</b> For each quality level, the smallest result that still passes wins.</li>
+<li><b>Tested on unseen images.</b> Recipes picked on some images are checked on others, to avoid flattering results.</li>
+<li><b>Cross-checked.</b> Finalists are re-scored with a second metric and compared with ImageOptim.</li>
+</ol>
+</div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script src="assets/common.js"></script>
+<script>
+chrome('index.html');
+(async()=>{
+const [meta,head,ns,chains,src]=await Promise.all([data('meta'),data('headline'),data('northstar'),data('chains'),data('sources')]);
+if(!meta){$('#cards').innerHTML='<div class="card">No data found. Run build_site_data.py.</div>';return}
+const cx=meta.complete||{};const srcDone=Object.values(cx).reduce((a,b)=>a+b,0);
+const find=(f,q,e)=>head?.[f]?.find(r=>r.quality===q&&r.effort===e);
+const hi=find('PNG','ssim>=0.98','balanced');
+const dup=head?.PNG_redundancy?.identical_output_share;
+// hero
+if(hi){const s=hi.saving;$('#hero').innerHTML=`<div class="big">${pct(s,0)}</div><div class="cap"><b>smaller PNG files</b> on average when each image gets its best-suited recipe, at high quality and balanced effort (${srcDone} test images).</div><div class="sizebar"><div class="row"><span class="t">Before</span><span class="b" style="width:100%;background:var(--muted);opacity:.55"></span></div><div class="row"><span class="t">After</span><span class="b" style="width:${(1-s)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></span><span>${pct(1-s,0)} of original</span></div></div>`}
+else $('#hero').innerHTML='<div class="cap">Results will appear here when the first images finish.</div>';
+$('#cards').innerHTML=[
+ [num(meta.rows),`test runs finished of ${num(meta.total)} planned`],
+ [num(srcDone),`images fully tested so far (of ${meta.sources_planned})`],
+ [dup!=null?pct(dup,0):'–','of PNG recipes give exactly the same file as another recipe'],
+ [num(meta.recipes_per_format?.PNG),'different PNG recipes compared on every image']
+].map(([n,l])=>`<div class="card"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+// effort chooser
+const fmts=['PNG','JPEG'].filter(f=>head?.[f]);let curF=fmts[0],curQ='ssim>=0.98';
+const seg=(host,items,get,set)=>{host.innerHTML=items.map(([k,t])=>`<button aria-pressed="${get()===k}" data-k="${esc(k)}">${esc(t)}</button>`).join('');$$('button',host).forEach(b=>b.onclick=()=>{set(b.dataset.k);drawE()})};
+function drawE(){
+ if(!fmts.length){$('#effort').innerHTML='<span class="muted">No finished images yet.</span>';return}
+ seg($('#seg-fmt'),fmts.map(f=>[f,f]),()=>curF,v=>curF=v);
+ seg($('#seg-q'),Object.entries(QLABEL),()=>curQ,v=>curQ=v);
+ const rows=head[curF].filter(r=>r.quality===curQ);
+ bars($('#effort'),rows.map((r,i)=>({label:ELABEL[r.effort],sub:EHINT[r.effort],v:r.saving,color:`linear-gradient(90deg,${col(0)},${col(3)})`})),{label:210,h:20});
+ const mx=rows.find(r=>r.effort==='max'),fa=rows.find(r=>r.effort==='fast');
+ $('#effort-note').innerHTML=`<b>${QUALITY[curQ].name}</b> means ${QUALITY[curQ].tech.replace('NEO SSIM','similarity score')}.`+(mx&&fa?` Going from Fast to Thorough adds ${num((mx.saving-fa.saving)*100,0)} percentage points.`:'');
+}
+drawE();
+// findings
+const F=[],hiM=find('PNG','ssim>=0.98','max'),hiF=find('PNG','ssim>=0.98','fast');
+if(hi&&hiM&&hiF)F.push(['Effort','Most of the gain comes quickly',`At high quality, PNG files shrink ${pct(hiF.saving,0)} on Fast, ${pct(hi.saving,0)} on Balanced and ${pct(hiM.saving,0)} on Thorough. The last step buys little.`]);
+const al=(chains?.alerts?.PNG||[]).find(a=>a.added==='zopfli'&&a.from.includes('pngquant'));
+if(al)F.push(['Wasted effort','Zopfli rarely pays off',`Adding the Zopfli squeeze after palette reduction and OxiPNG gains a median ${pct(al.median_gain)}, helps noticeably on only ${pct(al.share_ge_1pct,0)} of images, and takes about ${num(al.time_ratio,1)}× as long. Keep it for Thorough mode.`]);
+if(dup!=null)F.push(['Pruning','Many recipes are duplicates',`About ${pct(dup,0)} of PNG recipes produce exactly the same file as another recipe on the same image, so they can be dropped from future tests.`]);
+const tr=head?.PNG_transfer;
+if(tr)F.push(['Smart mode','One fixed recipe is not enough',`A recipe set tuned on other images falls ${pct(tr.unseen_regret,0)} short of the best-per-image result, against ${pct(tr.in_sample_regret,0)} on the images it was tuned on. Choosing per image is where the remaining gain is.`]);
+$('#findings').innerHTML=F.map(([k,h,t])=>`<div class="finding"><div class="k">${esc(k)}</div><h3>${esc(h)}</h3><p>${t}</p></div>`).join('');
+// by type
+if(src){const g={};src.filter(s=>s.best_98!=null).forEach(s=>{(g[s.type]??=[]).push(s.best_98)});
+ const rows=Object.entries(g).map(([t,a])=>({t,n:a.length,v:a.reduce((x,y)=>x+y,0)/a.length})).sort((a,b)=>b.v-a.v);
+ bars($('#bytype'),rows.map((r,i)=>({label:r.t,sub:`${r.n} image${r.n>1?'s':''}${r.n<3?' · few, indicative only':''}`,v:r.v,color:`linear-gradient(90deg,${col(i)},${col(i+1)})`})),{label:200,h:18})}
+// north
+if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
+ ['PNG','JPEG'].forEach(f=>{const s=ns.filter(r=>r.format===f&&r.app&&r['neo-lossy']);if(!s.length)return;
+  const a=mean(s.map(r=>r.app.saving)),n=mean(s.map(r=>r['neo-lossy'].saving));
+  const verdict=Math.abs(a-n)<0.01?'On par':n>a?'NEO ahead':'ImageOptim ahead';
+  const why=f==='JPEG'?'Both leave these JPEGs almost untouched because they are already compressed. A test set with higher-quality JPEGs is needed.':'Close, but the two produce slightly different pictures because they use different builds of the same palette tool.';
+  out.push(`<div class="finding"><div class="k">${f} · ${s.length} files</div><h3>${verdict}</h3><p>ImageOptim saves ${pct(a)}, NEO's matching recipe ${pct(n)}. ${why}</p></div>`)});
+ $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">Details</div><h3>Per-file numbers</h3><p>See the file-by-file comparison on the <a href="explore.html#north">Explore page</a>.</p></div>`}
+})();
+</script></body></html>

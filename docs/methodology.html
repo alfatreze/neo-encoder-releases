@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · NEO Compressor Results</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body><main><div class="wrap">
+<h1 class="page">Methodology</h1>
+<p class="sub">How the numbers are produced, which outside work we consulted, and how each source changed what we measured. We say plainly what was verified and what was not.</p>
+
+<h2>Approach</h2>
+<ol class="steps" id="steps"></ol>
+
+<h2>Known limits</h2>
+<div class="callout warn"><ul id="limits" style="margin:0;padding-left:18px"></ul></div>
+
+<h2>Studies and tools consulted</h2>
+<p class="note" style="margin:0 0 8px">Status: <b>read</b> means we read the primary page; <b>exists</b> means we confirmed it exists but did not read it in full; <b>summary only</b> means we saw only a search summary; <b>checked</b> means we verified its claims independently.</p>
+<div class="controls"><label class="f">Filter<select id="m-f"><option value="">All</option><option>read</option><option>exists</option><option>summary only</option><option>checked</option></select></label></div>
+<div class="panel scroll" id="srcs"></div>
+
+<h2>Cited but not found or not usable</h2>
+<div class="panel" id="nf"></div>
+
+<h2>Reproduce it</h2>
+<p>The sweep runner, analysis scripts and the site data builder live in the project repository under <code>benchmarks/</code>. The site reads only the JSON files in <code>data/</code>, which the builder regenerates after each run, so every page here updates when new results are published.</p>
+</div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script src="assets/common.js"></script>
+<script>
+chrome('methodology.html');
+(async()=>{const m=await data('methodology');if(!m)return;
+$('#steps').innerHTML=m.steps.map(s=>`<li><b>${esc(s.title)}.</b> ${esc(s.text)}</li>`).join('');
+$('#limits').innerHTML=m.limits.map(x=>`<li>${esc(x)}</li>`).join('');
+const P={read:'good',checked:'good',exists:'warn','summary only':'warn'};
+const draw=()=>{const f=$('#m-f').value;$('#srcs').innerHTML=`<table><thead><tr><th>Source</th><th>What we took</th><th>How it was folded in</th><th>Caveats</th></tr></thead><tbody>${m.sources.filter(s=>!f||s.status===f).map(s=>`<tr><td>${s.url?`<a href="${esc(s.url)}" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}<div class="muted small">${esc(s.kind)}</div><span class="pill ${P[s.status]||''}">${esc(s.status)}</span></td><td>${esc(s.took)}</td><td>${esc(s.folded)}</td><td class="muted">${esc(s.caveat)}</td></tr>`).join('')}</tbody></table>`};
+$('#m-f').onchange=draw;draw();
+$('#nf').innerHTML=m.notfound.map(n=>`<p style="margin:8px 0"><b>${esc(n.name)}.</b> ${esc(n.note)}</p>`).join('');
+})();
+</script></body></html>

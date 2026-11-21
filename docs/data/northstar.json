@@ -1,0 +1,258 @@
+[
+ {
+  "file": "001_gb82_baby-lossless.png",
+  "format": "PNG",
+  "orig_bytes": 308431,
+  "app": {
+   "bytes": 125782,
+   "ssimulacra2": 81.86309866,
+   "dssim": 0.00061501,
+   "pixel_exact": false,
+   "saving": 0.5921875557255918,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 124629,
+   "ssimulacra2": 81.9663539,
+   "dssim": 0.00062623,
+   "pixel_exact": false,
+   "saving": 0.5959258310610801,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  },
+  "neo-lossless": {
+   "bytes": 308431,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.0,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  }
+ },
+ {
+  "file": "009_gb82_haze-lossless.png",
+  "format": "PNG",
+  "orig_bytes": 255485,
+  "app": {
+   "bytes": 123890,
+   "ssimulacra2": 86.31581759,
+   "dssim": 0.00038586,
+   "pixel_exact": false,
+   "saving": 0.5150791631602638,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 119361,
+   "ssimulacra2": 86.10938844,
+   "dssim": 0.00038843,
+   "pixel_exact": false,
+   "saving": 0.5328062312855941,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  },
+  "neo-lossless": {
+   "bytes": 255485,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.0,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  }
+ },
+ {
+  "file": "breakfast_plate.jpg",
+  "format": "JPEG",
+  "orig_bytes": 234577,
+  "app": {
+   "bytes": 229377,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.022167561184600393,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 229367,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.02221019110995537,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossless": {
+   "bytes": 229367,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.02221019110995537,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  }
+ },
+ {
+  "file": "dog_garden.jpg",
+  "format": "JPEG",
+  "orig_bytes": 309213,
+  "app": {
+   "bytes": 297604,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03754369965040283,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 297544,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03773774065126623,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossless": {
+   "bytes": 297544,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03773774065126623,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  }
+ },
+ {
+  "file": "family_beach.jpg",
+  "format": "JPEG",
+  "orig_bytes": 198480,
+  "app": {
+   "bytes": 190848,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.038452237001209144,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 190843,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03847742845626767,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossless": {
+   "bytes": 190843,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03847742845626767,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  }
+ },
+ {
+  "file": "fdroid_ui_01.png",
+  "format": "PNG",
+  "orig_bytes": 194624,
+  "app": {
+   "bytes": 89614,
+   "ssimulacra2": 89.51990775,
+   "dssim": 1.494e-05,
+   "pixel_exact": false,
+   "saving": 0.539553189740217,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 90408,
+   "ssimulacra2": 88.94508525,
+   "dssim": 1.541e-05,
+   "pixel_exact": false,
+   "saving": 0.5354735284445906,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  },
+  "neo-lossless": {
+   "bytes": 194503,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.0006217116080237117,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  }
+ },
+ {
+  "file": "openmoji_cat.png",
+  "format": "PNG",
+  "orig_bytes": 15548,
+  "app": {
+   "bytes": 13877,
+   "ssimulacra2": 97.62808038,
+   "dssim": 3.1e-07,
+   "pixel_exact": false,
+   "saving": 0.10747363004888089,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 13883,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.10708772832518654,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  },
+  "neo-lossless": {
+   "bytes": 13883,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.10708772832518654,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": false
+  }
+ },
+ {
+  "file": "woman_cafe_cake.jpg",
+  "format": "JPEG",
+  "orig_bytes": 289307,
+  "app": {
+   "bytes": 279909,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.032484523360997164,
+   "identical_bytes_to_baseline": true,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossy": {
+   "bytes": 279030,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03552281832102233,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  },
+  "neo-lossless": {
+   "bytes": 279030,
+   "ssimulacra2": 100.0,
+   "dssim": 0.0,
+   "pixel_exact": true,
+   "saving": 0.03552281832102233,
+   "identical_bytes_to_baseline": false,
+   "identical_pixels_to_baseline": true
+  }
+ }
+]

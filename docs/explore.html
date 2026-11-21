@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore · NEO Compressor Results</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body><main><div class="wrap">
+<h1 class="page">Explore the results</h1>
+<p class="sub">Start with the recommendation, then dig into chains, individual images and the ImageOptim comparison.</p>
+<div class="tabs" role="tablist" id="tabs">
+<button role="tab" data-t="best" aria-selected="true">Recommended recipes</button>
+<button role="tab" data-t="chains" aria-selected="false">Compare chains</button>
+<button role="tab" data-t="frontier" aria-selected="false">Image explorer</button>
+<button role="tab" data-t="sources" aria-selected="false">Test images</button>
+<button role="tab" data-t="north" aria-selected="false">vs ImageOptim</button>
+</div>
+
+<section id="best" class="pane">
+<div class="controls">
+<label class="f">Format<select id="b-fmt"></select></label>
+<label class="f">Quality<select id="b-q"></select></label>
+<label class="f">Effort<select id="b-e"></select></label>
+</div>
+<div class="panel" id="b-hero"></div>
+<h3>Other strong recipes</h3>
+<div class="panel scroll" id="b-table"></div>
+<p class="note">Ranked by how close each recipe gets, on average, to the best possible result for each image. "Extra size" is the average amount larger than that per-image best. These recipes were chosen and measured on the same images, so real-world gains on unseen images are likely a little lower.</p>
+</section>
+
+<section id="chains" class="pane" hidden>
+<div class="controls"><label class="f">Format<select id="c-fmt"></select></label></div>
+<p class="sub">Compared at <b>High quality</b>. A chain is the ordered list of steps. <b>Wins</b> is the share of images where it gives the smallest passing result.</p>
+<div class="panel scroll" id="c-table"></div>
+<h3>Does adding another step pay off?</h3>
+<p class="sub">These checks are what the Architect editor can use to warn you about steps that add time but little benefit.</p>
+<div class="panel scroll" id="c-alerts"></div>
+</section>
+
+<section id="frontier" class="pane" hidden>
+<div class="controls">
+<label class="f">Format<select id="f-fmt"></select></label>
+<label class="f">Image<select id="f-src"></select></label>
+<label class="f">Quality measure<select id="f-y"><option value="ssim">Quality score (0–100)</option><option value="s2">Perceptual score (re-scored only)</option></select></label>
+</div>
+<div class="panel"><div id="f-chart"></div><div class="legend" id="f-legend"></div>
+<p class="note" style="margin:8px 0 0"><b>How to read it.</b> Every dot is one recipe on this image. Left means a smaller file, up means better quality, so the best recipes sit up and to the left. Large dots joined by the dashed line are the best trade-offs. Hover a dot for details. Technical note: the quality score is NEO's SSIM × 100; the perceptual option is SSIMULACRA2 and is only available for finalists that have been re-scored.</p></div>
+</section>
+
+<section id="sources" class="pane" hidden>
+<div class="controls"><label class="f">Type<select id="s-type"></select></label><label class="f">Search<input type="search" id="s-q" placeholder="file name"></label></div>
+<div class="panel scroll" id="s-table"></div>
+</section>
+
+<section id="north" class="pane" hidden><div class="panel scroll" id="n-table"></div>
+<p class="note"><b>Reading the table.</b> Each cell shows the new file size, the saving versus the original, and a perceptual score where 100 means identical (about 90 is visually lossless, 70 is still high quality). "exact" means every pixel is unchanged. <code>app</code> is the real ImageOptim app run with the author's settings; <code>neo-lossy</code> and <code>neo-lossless</code> are NEO's matching recipes.</p></section>
+</div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script src="assets/common.js"></script>
+<script>
+chrome('explore.html');
+$$('#tabs button').forEach(b=>b.onclick=()=>{$$('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));$$('.pane').forEach(p=>p.hidden=p.id!==b.dataset.t);history.replaceState(null,'','#'+b.dataset.t)});
+if(location.hash){const b=$(`#tabs button[data-t="${location.hash.slice(1)}"]`);b&&b.click()}
+const opt=(sel,items,v)=>{sel.innerHTML=items.map(([k,t])=>`<option value="${esc(k)}">${esc(t)}</option>`).join('');if(v)sel.value=v};
+(async()=>{
+const [fr,ch,champ,src,ns,head]=await Promise.all([data('frontiers'),data('chains'),data('champions'),data('sources'),data('northstar'),data('headline')]);
+// Recommended recipes
+if(champ){opt($('#b-fmt'),Object.keys(champ).map(f=>[f,f]));opt($('#b-q'),Object.entries(QLABEL),'ssim>=0.98');opt($('#b-e'),Object.entries(ELABEL),'balanced');
+ const drawB=()=>{const f=$('#b-fmt').value,q=$('#b-q').value,e=$('#b-e').value;const rows=champ[f]?.[q+'|'+e]||[];
+  if(!rows.length){$('#b-hero').innerHTML='<span class="muted">No data for this combination yet.</span>';$('#b-table').innerHTML='';return}
+  const t=rows[0];const best=head?.[f]?.find(r=>r.quality===q&&r.effort===e);
+  $('#b-hero').innerHTML=`<div class="rec"><div class="v">${pct(t.saving,0)}</div><div><b>average saving</b> using one fixed ${f} recipe for every image, at <b>${QUALITY[q].name}</b> and <b>${ELABEL[e]}</b> effort${best?`. Picking the best recipe separately for each image reaches <b>${pct(best.saving,0)}</b>`:''}</div></div>
+   <p style="margin:12px 0 4px"><b>${esc(chainName(t.chain))}</b></p><p style="margin:0"><code>${esc(t.text)}</code></p>
+   <p class="note" style="margin:10px 0 0">Takes about ${num(t.time,1)}× as long as the quickest recipe. Only ${pct(t.regret)} larger than the best result for each image on average. Technical note: quality floor ${QUALITY[q].tech}.</p>`;
+  $('#b-table').innerHTML=`<table><thead><tr><th class="num">#</th><th>Recipe</th><th class="num">Saving</th><th class="num">Extra size</th><th class="num">Relative time</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(chainName(r.chain))}</b><div><code>${esc(r.text)}</code></div></td><td class="num">${pct(r.saving)}</td><td class="num">+${pct(r.regret)}</td><td class="num">${num(r.time,1)}×</td></tr>`).join('')}</tbody></table>`};
+ ['#b-fmt','#b-q','#b-e'].forEach(s=>$(s).onchange=drawB);drawB()}
+// Chains
+if(ch){opt($('#c-fmt'),Object.keys(ch.chains).map(f=>[f,f]));
+ const drawC=()=>{const f=$('#c-fmt').value;const rows=[...ch.chains[f]].sort((a,b)=>a.regret-b.regret);
+  $('#c-table').innerHTML=`<table><thead><tr><th>Chain</th><th class="num">Recipes tried</th><th class="num">Time</th><th class="num">Wins</th><th class="num">Average saving</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(chainName(r.chain))}</b></td><td class="num">${r.recipes}</td><td class="num">${num(r.time,1)}×</td><td class="num">${pct(r.win,0)}</td><td class="num">${pct(r.saving)}</td></tr>`).join('')}</tbody></table>`;
+  const al=ch.alerts[f]||[];const V={none:['bad','Little or no gain'],some:['warn','Only some images'],keep:['good','Worth it']};
+  $('#c-alerts').innerHTML=al.length?`<table><thead><tr><th>Step added</th><th>Chain</th><th class="num">Typical gain</th><th class="num">Images helped</th><th class="num">Extra time</th><th>Verdict</th></tr></thead><tbody>${al.map(a=>`<tr><td><b>${esc(STAGE[a.added]||a.added)}</b></td><td>${esc(chainName(a.from))} → ${esc(chainName(a.to))}</td><td class="num">${pct(a.median_gain)}</td><td class="num">${pct(a.share_ge_1pct,0)}</td><td class="num">${num(a.time_ratio,1)}×</td><td><span class="pill ${V[a.verdict][0]}">${V[a.verdict][1]}</span></td></tr>`).join('')}</tbody></table><p class="note" style="margin:10px 0 0">"Images helped" counts images where the extra step made the file at least 1% smaller.</p>`:'<span class="muted">No multi-step chains yet.</span>'};
+ $('#c-fmt').onchange=drawC;drawC()}
+// Image explorer
+if(fr){const fmts=[...new Set(fr.map(x=>x.format))];opt($('#f-fmt'),fmts.map(f=>[f,f]));
+ const drawF=()=>{const f=$('#f-fmt').value;const list=fr.filter(x=>x.format===f);
+  if($('#f-src').dataset.f!==f){opt($('#f-src'),list.map(x=>[x.file,x.file]));$('#f-src').dataset.f=f}
+  const item=list.find(x=>x.file===$('#f-src').value)||list[0];const meta=src?.find(s=>s.file===item.file);
+  const y=$('#f-y').value;const chains=[...new Set(item.points.map(p=>p[2]))];
+  const pts=item.points.map(p=>({x:p[0]*100,y:y==='s2'?p[5]:p[1]*100,f:p[4],c:col(chains.indexOf(p[2])),id:p[3],chain:p[2],q:p[1]*100,s2:p[5],t:p[6]})).filter(p=>p.y!=null);
+  if(!pts.length){$('#f-chart').innerHTML='<p class="muted">No perceptual scores for this image yet.</p>';return}
+  const xs=pts.map(p=>p.x),ys=pts.map(p=>p.y);const xmax=Math.min(Math.max(...xs)*1.02,120);
+  const ylo=y==='s2'?Math.floor(Math.min(...ys)/5)*5:Math.max(50,Math.floor(Math.min(...ys)/5)*5);
+  scatter($('#f-chart'),pts,{xl:'File size, % of original (smaller is better)',yl:y==='s2'?'Perceptual score (higher is better)':'Quality score (higher is better)',xmin:0,xmax:Math.ceil(xmax/10)*10,ymin:ylo,ymax:100,xd:0,yd:0,
+   onhover:p=>`<b>${esc(chainName(p.chain))}</b><br>File size ${p.x.toFixed(1)}% of original<br>Quality score ${p.q.toFixed(1)}${p.s2!=null?' · perceptual '+p.s2:''}<br>Time ${p.t}× the quickest<br><span style="opacity:.7">${esc(p.id)}</span>`});
+  $('#f-legend').innerHTML=chains.map(c=>`<span><i style="background:${col(chains.indexOf(c))}"></i>${esc(chainName(c))}</span>`).join('')+(meta?`<span class="muted">· ${esc(meta.type)} · ${meta.width}×${meta.height} · ${num(meta.bytes/1024)} KB original</span>`:'')};
+ $('#f-fmt').onchange=()=>{$('#f-src').dataset.f='';drawF()};$('#f-src').onchange=drawF;$('#f-y').onchange=drawF;drawF()}
+// Sources
+if(src){opt($('#s-type'),[['','All types'],...[...new Set(src.map(s=>s.type))].sort().map(t=>[t,t])]);
+ const drawS=()=>{const t=$('#s-type').value,q=$('#s-q').value.toLowerCase();const rows=src.filter(s=>(!t||s.type===t)&&s.file.toLowerCase().includes(q));
+  $('#s-table').innerHTML=`<table><thead><tr><th>Image</th><th>Type</th><th class="num">Original</th><th class="num">Colours</th><th class="num">Best saving at high quality</th></tr></thead><tbody>${rows.map(s=>`<tr><td><b>${esc(s.file)}</b><div class="note">${esc(s.origin||'')}</div></td><td>${esc(s.type)}<div class="note">${s.format}</div></td><td class="num">${num(s.bytes/1024)} KB<div class="note">${s.width}×${s.height}</div></td><td class="num">${num(s.unique_colours)}</td><td class="num"><b>${pct(s.best_98,0)}</b></td></tr>`).join('')}</tbody></table>`};
+ $('#s-type').onchange=drawS;$('#s-q').oninput=drawS;drawS()}
+// North star
+if(ns){const keys=Object.keys(ns[0]).filter(k=>ns[0][k]&&typeof ns[0][k]==='object');
+ $('#n-table').innerHTML=`<table><thead><tr><th>File</th><th class="num">Original</th>${keys.map(k=>`<th class="num">${esc(k)}</th>`).join('')}</tr></thead><tbody>${ns.map(r=>`<tr><td><b>${esc(r.file)}</b></td><td class="num">${num(r.orig_bytes)}</td>${keys.map(k=>r[k]?`<td class="num">${num(r[k].bytes)}<div class="note">−${pct(r[k].saving)} · score ${num(r[k].ssimulacra2,1)}${r[k].pixel_exact?' · exact':''}</div></td>`:'<td class="num">–</td>').join('')}</tr>`).join('')}</tbody></table>`}
+else $('#n-table').innerHTML='<span class="muted">No comparison data yet.</span>';
+})();
+</script></body></html>

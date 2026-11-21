@@ -1,0 +1,99 @@
+{
+ "PNG": [
+  {
+   "quality": "ssim>=0.995",
+   "effort": "fast",
+   "saving": 0.2363617556055581,
+   "winners": {
+    "pngquant": 0.6666666666666666,
+    "oxipng": 0.16666666666666666,
+    "pngquant+oxipng": 0.16666666666666666
+   }
+  },
+  {
+   "quality": "ssim>=0.995",
+   "effort": "balanced",
+   "saving": 0.38066743069891057,
+   "winners": {
+    "pngquant+oxipng": 0.6111111111111112,
+    "oxipng": 0.3333333333333333,
+    "pngquant+oxipng+zopfli": 0.05555555555555555
+   }
+  },
+  {
+   "quality": "ssim>=0.995",
+   "effort": "max",
+   "saving": 0.39604793895849794,
+   "winners": {
+    "pngquant+oxipng+zopfli": 0.5555555555555556,
+    "oxipng": 0.3333333333333333,
+    "pngquant+oxipng": 0.1111111111111111
+   }
+  },
+  {
+   "quality": "ssim>=0.98",
+   "effort": "fast",
+   "saving": 0.4949686673564637,
+   "winners": {
+    "pngquant+oxipng": 0.5555555555555556,
+    "pngquant": 0.4444444444444444
+   }
+  },
+  {
+   "quality": "ssim>=0.98",
+   "effort": "balanced",
+   "saving": 0.6516083402330428,
+   "winners": {
+    "pngquant+oxipng": 0.8333333333333334,
+    "pngquant+oxipng+zopfli": 0.16666666666666666
+   }
+  },
+  {
+   "quality": "ssim>=0.98",
+   "effort": "max",
+   "saving": 0.666145047017944,
+   "winners": {
+    "pngquant+oxipng+zopfli": 0.8333333333333334,
+    "pngquant+oxipng": 0.16666666666666666
+   }
+  },
+  {
+   "quality": "ssim>=0.95",
+   "effort": "fast",
+   "saving": 0.5372835053594494,
+   "winners": {
+    "pngquant+oxipng": 0.5555555555555556,
+    "pngquant": 0.4444444444444444
+   }
+  },
+  {
+   "quality": "ssim>=0.95",
+   "effort": "balanced",
+   "saving": 0.683067651046612,
+   "winners": {
+    "pngquant+oxipng": 0.7777777777777778,
+    "pngquant+oxipng+zopfli": 0.2222222222222222
+   }
+  },
+  {
+   "quality": "ssim>=0.95",
+   "effort": "max",
+   "saving": 0.698983582132256,
+   "winners": {
+    "pngquant+oxipng+zopfli": 0.6666666666666666,
+    "pngquant+oxipng": 0.3333333333333333
+   }
+  }
+ ],
+ "PNG_transfer": {
+  "k": 5,
+  "floor": "ssim>=0.98",
+  "sources": 18,
+  "in_sample_regret": 0.017336310108576836,
+  "unseen_regret": 0.27790377259059107
+ },
+ "PNG_redundancy": {
+  "identical_output_share": 0.7301666666666667,
+  "recipes": 2000
+ }
+}
