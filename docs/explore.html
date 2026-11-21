@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Explore · NEO Compressor Results</title>
+<meta name="description" content="Drill into individual images, chains and recipes, and compare NEO with ImageOptim.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEO Compressor Results">
+<meta property="og:title" content="Explore · NEO Compressor Results">
+<meta property="og:description" content="Drill into individual images, chains and recipes, and compare NEO with ImageOptim.">
+<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/explore.html">
+<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Explore · NEO Compressor Results">
+<meta name="twitter:description" content="Drill into individual images, chains and recipes, and compare NEO with ImageOptim.">
+<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta name="theme-color" content="#3b5bdb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css"></head>
 <body><main><div class="wrap">
 <h1 class="page">Explore the results</h1>
@@ -68,13 +85,13 @@ if(champ){opt($('#b-fmt'),Object.keys(champ).map(f=>[f,f]));opt($('#b-q'),Object
   const t=rows[0];const best=head?.[f]?.find(r=>r.quality===q&&r.effort===e);
   $('#b-hero').innerHTML=`<div class="rec"><div class="v">${pct(t.saving,0)}</div><div><b>average saving</b> using one fixed ${f} recipe for every image, at <b>${QUALITY[q].name}</b> and <b>${ELABEL[e]}</b> effort${best?`. Picking the best recipe separately for each image reaches <b>${pct(best.saving,0)}</b>`:''}</div></div>
    <p style="margin:12px 0 4px"><b>${esc(chainName(t.chain))}</b></p><p style="margin:0"><code>${esc(t.text)}</code></p>
-   <p class="note" style="margin:10px 0 0">Takes about ${num(t.time,1)}× as long as the quickest recipe. Only ${pct(t.regret)} larger than the best result for each image on average. Technical note: quality floor ${QUALITY[q].tech}.</p>`;
-  $('#b-table').innerHTML=`<table><thead><tr><th class="num">#</th><th>Recipe</th><th class="num">Saving</th><th class="num">Extra size</th><th class="num">Relative time</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(chainName(r.chain))}</b><div><code>${esc(r.text)}</code></div></td><td class="num">${pct(r.saving)}</td><td class="num">+${pct(r.regret)}</td><td class="num">${num(r.time,1)}×</td></tr>`).join('')}</tbody></table>`};
+   <p class="note" style="margin:10px 0 0">Takes ${relSec(t.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)} (per megapixel, a 1000×1000 picture). Only ${pct(t.regret)} larger than the best result for each image on average. Technical note: quality floor ${QUALITY[q].tech}.</p>`;
+  $('#b-table').innerHTML=`<table><thead><tr><th class="num">#</th><th>Recipe</th><th class="num">Saving</th><th class="num">Extra size</th><th class="num">Time</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(chainName(r.chain))}</b><div><code>${esc(r.text)}</code></div></td><td class="num">${pct(r.saving)}</td><td class="num">+${pct(r.regret)}</td><td class="num">${relSec(r.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)}</td></tr>`).join('')}</tbody></table>`};
  ['#b-fmt','#b-q','#b-e'].forEach(s=>$(s).onchange=drawB);drawB()}
 // Chains
 if(ch){opt($('#c-fmt'),Object.keys(ch.chains).map(f=>[f,f]));
  const drawC=()=>{const f=$('#c-fmt').value;const rows=[...ch.chains[f]].sort((a,b)=>a.regret-b.regret);
-  $('#c-table').innerHTML=`<table><thead><tr><th>Chain</th><th class="num">Recipes tried</th><th class="num">Time</th><th class="num">Wins</th><th class="num">Average saving</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(chainName(r.chain))}</b></td><td class="num">${r.recipes}</td><td class="num">${num(r.time,1)}×</td><td class="num">${pct(r.win,0)}</td><td class="num">${pct(r.saving)}</td></tr>`).join('')}</tbody></table>`;
+  $('#c-table').innerHTML=`<table><thead><tr><th>Chain</th><th class="num">Recipes tried</th><th class="num">Time</th><th class="num">Wins</th><th class="num">Average saving</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${esc(chainName(r.chain))}</b></td><td class="num">${r.recipes}</td><td class="num">${relSec(r.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)}</td><td class="num">${pct(r.win,0)}</td><td class="num">${pct(r.saving)}</td></tr>`).join('')}</tbody></table>`;
   const al=ch.alerts[f]||[];const V={none:['bad','Little or no gain'],some:['warn','Only some images'],keep:['good','Worth it']};
   $('#c-alerts').innerHTML=al.length?`<table><thead><tr><th>Step added</th><th>Chain</th><th class="num">Typical gain</th><th class="num">Images helped</th><th class="num">Extra time</th><th>Verdict</th></tr></thead><tbody>${al.map(a=>`<tr><td><b>${esc(STAGE[a.added]||a.added)}</b></td><td>${esc(chainName(a.from))} → ${esc(chainName(a.to))}</td><td class="num">${pct(a.median_gain)}</td><td class="num">${pct(a.share_ge_1pct,0)}</td><td class="num">${num(a.time_ratio,1)}×</td><td><span class="pill ${V[a.verdict][0]}">${V[a.verdict][1]}</span></td></tr>`).join('')}</tbody></table><p class="note" style="margin:10px 0 0">"Images helped" counts images where the extra step made the file at least 1% smaller.</p>`:'<span class="muted">No multi-step chains yet.</span>'};
  $('#c-fmt').onchange=drawC;drawC()}
@@ -89,7 +106,7 @@ if(fr){const fmts=[...new Set(fr.map(x=>x.format))];opt($('#f-fmt'),fmts.map(f=>
   const xs=pts.map(p=>p.x),ys=pts.map(p=>p.y);const xmax=Math.min(Math.max(...xs)*1.02,120);
   const ylo=y==='s2'?Math.floor(Math.min(...ys)/5)*5:Math.max(50,Math.floor(Math.min(...ys)/5)*5);
   scatter($('#f-chart'),pts,{xl:'File size, % of original (smaller is better)',yl:y==='s2'?'Perceptual score (higher is better)':'Quality score (higher is better)',xmin:0,xmax:Math.ceil(xmax/10)*10,ymin:ylo,ymax:100,xd:0,yd:0,
-   onhover:p=>`<b>${esc(chainName(p.chain))}</b><br>File size ${p.x.toFixed(1)}% of original<br>Quality score ${p.q.toFixed(1)}${p.s2!=null?' · perceptual '+p.s2:''}<br>Time ${p.t}× the quickest<br><span style="opacity:.7">${esc(p.id)}</span>`});
+   onhover:p=>`<b>${esc(chainName(p.chain))}</b><br>File size ${p.x.toFixed(1)}% of original<br>Quality score ${p.q.toFixed(1)}${p.s2!=null?' · perceptual '+p.s2:''}<br>Time ≈ ${fmtSec(p.t*(head?.[f+'_timing']?.fastest_sec_per_mp_median||0)*((meta?.width*meta?.height||1e6)/1e6))} for this image<br><span style="opacity:.7">${esc(p.id)}</span>`});
   $('#f-legend').innerHTML=chains.map(c=>`<span><i style="background:${col(chains.indexOf(c))}"></i>${esc(chainName(c))}</span>`).join('')+(meta?`<span class="muted">· ${esc(meta.type)} · ${meta.width}×${meta.height} · ${num(meta.bytes/1024)} KB original</span>`:'')};
  $('#f-fmt').onchange=()=>{$('#f-src').dataset.f='';drawF()};$('#f-src').onchange=drawF;$('#f-y').onchange=drawF;drawF()}
 // Sources

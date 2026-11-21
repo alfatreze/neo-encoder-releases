@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-21T12:00+00:00",
+ "generated": "2026-11-21T12:07+00:00",
  "run": "sweep-100k.d7q5Sh",
- "rows": 40856,
+ "rows": 41928,
  "total": 100000,
  "complete": {
   "JPEG": 1,
-  "PNG": 18
+  "PNG": 19
  },
  "sources_planned": 50,
  "recipes_per_format": {

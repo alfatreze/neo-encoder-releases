@@ -1,7 +1,23 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Chain rankings · NEO Compressor Results</title>
-<meta name="description" content="Which encoding chains rank best at each effort level, for all images or a specific kind of image.">
+<meta name="description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEO Compressor Results">
+<meta property="og:title" content="Chain rankings · NEO Compressor Results">
+<meta property="og:description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
+<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/rankings.html">
+<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chain rankings · NEO Compressor Results">
+<meta name="twitter:description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
+<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta name="theme-color" content="#3b5bdb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
 <style>
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;align-items:start}
@@ -39,8 +55,8 @@ details code{display:block;margin-top:6px;white-space:normal;word-break:break-wo
 <div class="tiers" id="tiers"></div>
 
 <div class="callout">
-<b>How to read the ranking.</b> The big number is the average size saving. <b>One recipe for all images</b> is what you get with a single default recipe from that chain (its best-performing setting). <b>Best recipe per image</b> shows the ceiling if every image got its own best settings from that chain; the paler part of the bar marks that ceiling. <b>Wins</b> is the share of images where this chain gave the smallest result. <b>Time</b> compares with the quickest recipe.
-<div class="note" style="margin-top:6px"><b>Technical note.</b> Results are judged by NEO's SSIM similarity score at 0.995, 0.98 and 0.95 for the three quality levels, and effort is time relative to the fastest recipe on each image (Fast ≤ 3×, Balanced ≤ 15×, Thorough unlimited). A chain whose recipes all exceed an effort limit cannot qualify at that effort and shows 0%.</div>
+<b>How to read the ranking.</b> The big number is the average size saving. <b>One recipe for all images</b> is what you get with a single default recipe from that chain (its best-performing setting). <b>Best recipe per image</b> shows the ceiling if every image got its own best settings from that chain; the paler part of the bar marks that ceiling. <b>Wins</b> is the share of images where this chain gave the smallest result. <b>Time</b> is an estimate in seconds per megapixel (a 1000×1000 picture).
+<div class="note" style="margin-top:6px"><b>Technical note.</b> Results are judged by NEO's SSIM similarity score at 0.995, 0.98 and 0.95 for the three quality levels, and effort is a time limit set relative to the quickest recipe on each image (Fast ≤ 3×, Balanced ≤ 15×, Thorough unlimited); the seconds shown are measured medians on one Mac. A chain whose recipes all exceed an effort limit cannot qualify at that effort and shows 0%.</div>
 </div>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
@@ -49,7 +65,7 @@ details code{display:block;margin-top:6px;white-space:normal;word-break:break-wo
 chrome('rankings.html');
 const opt=(sel,items,v)=>{sel.innerHTML=items.map(([k,t])=>`<option value="${esc(k)}">${esc(t)}</option>`).join('');if(v!=null)sel.value=v};
 (async()=>{
-const R=await data('rankings');
+const [R,H]=await Promise.all([data('rankings'),data('headline')]);
 if(!R||!Object.keys(R).length){$('#tiers').innerHTML='<div class="panel muted">No ranking data yet.</div>';return}
 opt($('#fmt'),Object.keys(R).map(f=>[f,f]));opt($('#q'),Object.entries(QLABEL),'ssim>=0.98');
 const params=new URLSearchParams(location.hash.slice(1));
@@ -67,9 +83,9 @@ function draw(){
   const mx=Math.max(0.01,...rows.map(r=>Math.max(r.fixed,r.potential)));
   const items=rows.map((r,i)=>`<div class="item"><div class="top"><span class="rank${i?'':' r1'}">${i+1}</span><span class="nm">${esc(chainName(r.chain))}</span><span class="val">${pct(r[by],0)}</span></div>
    <div class="meter"><u style="width:${Math.max(r.potential,r.fixed)/mx*100}%"></u><i style="width:${r[by]/mx*100}%"></i></div>
-   <div class="meta">${by==='fixed'?`ceiling ${pct(r.potential,0)}`:`one recipe ${pct(r.fixed,0)}`} · wins ${pct(r.win,0)} · ${num(r.time,1)}× time · ${r.recipes} recipes tried</div>
+   <div class="meta">${by==='fixed'?`ceiling ${pct(r.potential,0)}`:`one recipe ${pct(r.fixed,0)}`} · wins ${pct(r.win,0)} · ${relSec(r.time,H?.[f+'_timing']?.fastest_sec_per_mp_median)} · ${r.recipes} recipes tried</div>
    <details><summary>Best settings</summary><code>${esc(r.text)}</code></details></div>`).join('');
-  return `<div class="panel tier"><h3>${ELABEL[e]}</h3><p class="note hint">${esc(EHINT[e])}</p>${items||'<span class="muted">No chain qualifies at this effort.</span>'}</div>`}).join('');
+  return `<div class="panel tier"><h3>${ELABEL[e]}</h3><p class="note hint">${esc(effortSub((H?.[f]||[]).find(r=>r.quality===q&&r.effort===e))||EHINT[e])}</p>${items||'<span class="muted">No chain qualifies at this effort.</span>'}</div>`}).join('');
 }
 $('#fmt').onchange=()=>{fillTypes();draw()};['#type','#q','#by'].forEach(s=>$(s).onchange=draw);
 fillTypes();draw();

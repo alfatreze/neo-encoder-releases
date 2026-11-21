@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Methodology · NEO Compressor Results</title>
+<meta name="description" content="How the numbers are produced, the quality metrics used, and every study and tool consulted.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEO Compressor Results">
+<meta property="og:title" content="Methodology · NEO Compressor Results">
+<meta property="og:description" content="How the numbers are produced, the quality metrics used, and every study and tool consulted.">
+<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/methodology.html">
+<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology · NEO Compressor Results">
+<meta name="twitter:description" content="How the numbers are produced, the quality metrics used, and every study and tool consulted.">
+<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta name="theme-color" content="#3b5bdb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css"></head>
 <body><main><div class="wrap">
 <h1 class="page">Methodology</h1>
@@ -11,6 +28,10 @@
 
 <h2>Known limits</h2>
 <div class="callout warn"><ul id="limits" style="margin:0;padding-left:18px"></ul></div>
+
+<h2>Quality metrics: in use and kept for later</h2>
+<p class="sub">No single score matches human vision everywhere. We use several and keep the others on file for later tests.</p>
+<div class="panel scroll" id="mets"></div>
 
 <h2>Studies and tools consulted</h2>
 <p class="note" style="margin:0 0 8px">Status: <b>read</b> means we read the primary page; <b>exists</b> means we confirmed it exists but did not read it in full; <b>summary only</b> means we saw only a search summary; <b>checked</b> means we verified its claims independently.</p>
@@ -33,6 +54,8 @@ $('#limits').innerHTML=m.limits.map(x=>`<li>${esc(x)}</li>`).join('');
 const P={read:'good',checked:'good',exists:'warn','summary only':'warn'};
 const draw=()=>{const f=$('#m-f').value;$('#srcs').innerHTML=`<table><thead><tr><th>Source</th><th>What we took</th><th>How it was folded in</th><th>Caveats</th></tr></thead><tbody>${m.sources.filter(s=>!f||s.status===f).map(s=>`<tr><td>${s.url?`<a href="${esc(s.url)}" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}<div class="muted small">${esc(s.kind)}</div><span class="pill ${P[s.status]||''}">${esc(s.status)}</span></td><td>${esc(s.took)}</td><td>${esc(s.folded)}</td><td class="muted">${esc(s.caveat)}</td></tr>`).join('')}</tbody></table>`};
 $('#m-f').onchange=draw;draw();
+const MP={'in use':'good',candidate:'warn',parked:''};
+$('#mets').innerHTML=`<table><thead><tr><th>Metric</th><th>Status</th><th>Notes</th></tr></thead><tbody>${(m.metrics||[]).map(x=>`<tr><td><b>${esc(x.name)}</b></td><td><span class="pill ${MP[x.status]||''}">${esc(x.status)}</span></td><td>${esc(x.note)}</td></tr>`).join('')}</tbody></table>`;
 $('#nf').innerHTML=m.notfound.map(n=>`<p style="margin:8px 0"><b>${esc(n.name)}.</b> ${esc(n.note)}</p>`).join('');
 })();
 </script></body></html>

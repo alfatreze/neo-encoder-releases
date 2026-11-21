@@ -135,6 +135,21 @@
   "best_98": 0.6415092862594673
  },
  {
+  "file": "014_gb82_mies-lossless.png",
+  "format": "PNG",
+  "category": "architecture",
+  "origin": "GB82 Image Dataset by Gianni Rosato",
+  "width": 576,
+  "height": 576,
+  "bytes": 699121,
+  "alpha": false,
+  "type": "photo-like",
+  "unique_colours": 177148,
+  "noise": 5.189028910303929,
+  "flat_blocks": 0.0,
+  "best_98": 0.8077442960517565
+ },
+ {
   "file": "fdroid_ui_01.png",
   "format": "PNG",
   "category": "Android app UI screenshot",

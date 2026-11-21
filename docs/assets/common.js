@@ -10,7 +10,11 @@ const QUALITY={'ssim>=0.995':{name:'Visually lossless',short:'Visually lossless'
   'ssim>=0.95':{name:'Good for web',short:'Good for web',tech:'NEO SSIM ≥ 0.95',score:95}};
 const QLABEL=Object.fromEntries(Object.entries(QUALITY).map(([k,v])=>[k,v.name]));
 const ELABEL={fast:'Fast',balanced:'Balanced',max:'Thorough'};
-const EHINT={fast:'quick settings: up to about 3× the time of the fastest',balanced:'a sensible middle: up to about 15× the fastest',max:'no time limit: tries everything'};
+const EHINT={fast:'quick settings only',balanced:'moderate time limit',max:'no time limit'};
+const fmtSec=x=>x==null||isNaN(x)?'–':x<1?Math.round(x*1000)+' ms':x<10?x.toFixed(1)+' s':Math.round(x)+' s';
+// Real times: seconds for a 1-megapixel image (about 1000×1000). Measured on one Mac running two jobs at once.
+const effortSub=r=>{const t=r?.time;return t&&t.sec_per_mp_median!=null?`typically ${fmtSec(t.sec_per_mp_median)} per megapixel, slowest tenth ${fmtSec(t.sec_per_mp_p90)} or more`:EHINT[r?.effort]||''};
+const relSec=(rel,fastest)=>rel==null||fastest==null?'–':'≈ '+fmtSec(rel*fastest)+'/MP';
 const STAGE={pngquant:'Palette reduction',oxipng:'OxiPNG repack',zopfli:'Zopfli squeeze',mozjpeg:'MozJPEG','jpeg-lossless':'Lossless JPEG repack'};
 const chainName=c=>String(c).split('+').map(s=>STAGE[s]||s).join(' → ');
 const cache={};

@@ -180,5 +180,57 @@
       "name": "oxipng and friends comparison (2025)",
       "note": "The page exists but its numbers could not be retrieved, so it is not used until read in full."
     }
+  ],
+  "metrics": [
+    {
+      "name": "SSIMULACRA2",
+      "status": "in use",
+      "note": "Perceptual score fitted to human ratings; 90 is about visually lossless, 80 very high, 70 high. Becomes the headline score once finalists are re-scored."
+    },
+    {
+      "name": "Butteraugli",
+      "status": "in use",
+      "note": "Models the human visual system (cone responses, colour opponency). Used as a cross-check for banding, ringing and blocking. The two metrics can disagree on the same pair, so differences are reviewed on finalists."
+    },
+    {
+      "name": "DSSIM",
+      "status": "in use",
+      "note": "Multi-scale SSIM in a perceptual colour space; a second opinion."
+    },
+    {
+      "name": "NEO SSIM and PSNR",
+      "status": "in use",
+      "note": "Fast similarity pre-filter used during the sweep. Saturates near the top, so it is not the final judge."
+    },
+    {
+      "name": "CVVDP (ColorVideoVDP)",
+      "status": "candidate",
+      "note": "Models display and viewing distance; the most eye-like option, but needs a Python ML stack."
+    },
+    {
+      "name": "zensim and iqa (Rust crates)",
+      "status": "candidate",
+      "note": "Possible faster or consolidated scoring for large re-scoring runs; to be checked against SSIMULACRA2 first."
+    },
+    {
+      "name": "LPIPS and DISTS",
+      "status": "candidate",
+      "note": "Learned perceptual metrics. Track human judgement well but are not calibrated quality scores and can be gamed."
+    },
+    {
+      "name": "VMAF (images)",
+      "status": "candidate",
+      "note": "Recognised and easy to run, but trained on video; weak evidence for stills, text and graphics."
+    },
+    {
+      "name": "PSNR-HVS-M",
+      "status": "candidate",
+      "note": "Contrast-sensitivity-weighted PSNR; handy for comparing with published codec papers."
+    },
+    {
+      "name": "HDR-VDP-3, FLIP, MS-SSIM, PSNR",
+      "status": "parked",
+      "note": "HDR-VDP and FLIP matter only for HDR or rendering targets; MS-SSIM and PSNR correlate worse with human ratings."
+    }
   ]
 }

@@ -2,6 +2,22 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NEO Compressor Results</title>
 <meta name="description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEO Compressor Results">
+<meta property="og:title" content="NEO Compressor Results">
+<meta property="og:description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/index.html">
+<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEO Compressor Results">
+<meta name="twitter:description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
+<meta name="theme-color" content="#3b5bdb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css"></head>
 <body>
 <section class="hero"><div class="wrap">
@@ -22,7 +38,8 @@
 <div><div class="note" style="margin-bottom:4px">FORMAT</div><div class="seg" id="seg-fmt"></div></div>
 <div><div class="note" style="margin-bottom:4px">QUALITY</div><div class="seg" id="seg-q"></div></div>
 </div>
-<div class="panel"><div id="effort"></div><p class="note" style="margin:10px 0 0" id="effort-note"></p></div>
+<div class="panel"><div id="effort"></div><p class="note" style="margin:10px 0 0" id="effort-note"></p>
+<p class="note" style="margin:6px 0 0"><b>About the times.</b> A megapixel is a 1000×1000 picture; most phone photos are 8–12 megapixels, so scale up accordingly. Times were measured on one Mac with two encodes running at once and will differ on your machine. <b>Fast</b> only allows the quickest recipes, up to about 3× the time of the very quickest. <b>Balanced</b> allows recipes up to about 15× that. <b>Thorough</b> has no limit, so it takes as long as the most patient recipes need.</p></div>
 
 <h2>What we have learned</h2>
 <p class="sub">Plain-language takeaways from the current results.</p>
@@ -40,7 +57,7 @@
 <dl class="gloss panel">
 <dt>Saving</dt><dd>How much smaller the file gets compared with the original. 65% saving means the new file is 35% of the original size.</dd>
 <dt>Quality levels</dt><dd><b>Visually lossless</b>: differences are essentially invisible. <b>High quality</b>: very hard to spot at normal size. <b>Good for web</b>: fine for most pages, small differences on close inspection.</dd>
-<dt>Effort</dt><dd><b>Fast</b>, <b>Balanced</b> and <b>Thorough</b> limit how long encoding may take, compared with the quickest recipes on the same image.</dd>
+<dt>Effort</dt><dd>How long each image may take to compress. <b>Fast</b> uses only quick settings, <b>Balanced</b> allows moderately slow ones, <b>Thorough</b> tries everything and can take many times longer for a small extra gain. Real times per megapixel are shown beside each level.</dd>
 <dt>Recipe and chain</dt><dd>A recipe is an ordered chain of steps such as palette reduction, OxiPNG repacking and Zopfli squeezing. Order and settings both matter.</dd>
 </dl>
 <p class="note"><b>Technical note.</b> Quality is judged today with NEO's own SSIM score (8×8 luma blocks, transparent images checked over black and white). The levels above are SSIM ≥ 0.995, ≥ 0.98 and ≥ 0.95. SSIM is a general similarity score but it saturates near the top, so finalists are being re-scored with SSIMULACRA2, a perceptual metric, and the pages will switch to it when that is finished.</p>
@@ -82,9 +99,9 @@ function drawE(){
  seg($('#seg-fmt'),fmts.map(f=>[f,f]),()=>curF,v=>curF=v);
  seg($('#seg-q'),Object.entries(QLABEL),()=>curQ,v=>curQ=v);
  const rows=head[curF].filter(r=>r.quality===curQ);
- bars($('#effort'),rows.map((r,i)=>({label:ELABEL[r.effort],sub:EHINT[r.effort],v:r.saving,color:`linear-gradient(90deg,${col(0)},${col(3)})`})),{label:210,h:20});
+ bars($('#effort'),rows.map((r,i)=>({label:ELABEL[r.effort],sub:effortSub(r),v:r.saving,color:`linear-gradient(90deg,${col(0)},${col(3)})`})),{label:250,h:20});
  const mx=rows.find(r=>r.effort==='max'),fa=rows.find(r=>r.effort==='fast');
- $('#effort-note').innerHTML=`<b>${QUALITY[curQ].name}</b> means ${QUALITY[curQ].tech.replace('NEO SSIM','similarity score')}.`+(mx&&fa?` Going from Fast to Thorough adds ${num((mx.saving-fa.saving)*100,0)} percentage points.`:'');
+ $('#effort-note').innerHTML=`<b>${QUALITY[curQ].name}</b> means ${QUALITY[curQ].tech.replace('NEO SSIM','similarity score')}.`+(mx&&fa?` Going from Fast to Thorough adds ${num((mx.saving-fa.saving)*100,0)} percentage points of saving`+(mx.time&&fa.time&&fa.time.sec_per_mp_median?` but takes about ${num(mx.time.sec_per_mp_median/fa.time.sec_per_mp_median,0)}× longer.`:'.'):'');
 }
 drawE();
 // findings
