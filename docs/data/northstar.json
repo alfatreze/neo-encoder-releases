@@ -38,6 +38,28 @@
    "saving": 0.0,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": false
+  },
+  "neo-smart-same": {
+   "bytes": 114443,
+   "format": "png",
+   "ssimulacra2": 81.04551607,
+   "dssim": 0.00077289,
+   "butteraugli": 3.427316904067993,
+   "butteraugli_3norm": 1.1288262762159673,
+   "cvvdp_jod": 9.920464515686035,
+   "pixel_exact": false,
+   "saving": 0.6289510457768512
+  },
+  "neo-smart-auto": {
+   "bytes": 15112,
+   "format": "avif",
+   "ssimulacra2": 81.0742404,
+   "dssim": 0.00121878,
+   "butteraugli": 2.559177875518799,
+   "butteraugli_3norm": 1.0106850419376945,
+   "cvvdp_jod": 9.684652328491211,
+   "pixel_exact": false,
+   "saving": 0.9510036280399831
   }
  },
  {
@@ -79,6 +101,28 @@
    "saving": 0.0,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": false
+  },
+  "neo-smart-same": {
+   "bytes": 113312,
+   "format": "png",
+   "ssimulacra2": 83.2616335,
+   "dssim": 0.00055005,
+   "butteraugli": 3.2892091274261475,
+   "butteraugli_3norm": 1.031825951082402,
+   "cvvdp_jod": 9.854551315307617,
+   "pixel_exact": false,
+   "saving": 0.5564827680685754
+  },
+  "neo-smart-auto": {
+   "bytes": 10992,
+   "format": "avif",
+   "ssimulacra2": 80.43591034,
+   "dssim": 0.00093886,
+   "butteraugli": 2.0333852767944336,
+   "butteraugli_3norm": 0.9443440721284994,
+   "cvvdp_jod": 9.591154098510742,
+   "pixel_exact": false,
+   "saving": 0.9569759477073018
   }
  },
  {
@@ -120,6 +164,28 @@
    "saving": 0.02221019110995537,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": true
+  },
+  "neo-smart-same": {
+   "bytes": 170383,
+   "format": "jpg",
+   "ssimulacra2": 80.86551096,
+   "dssim": 0.00125949,
+   "butteraugli": 2.4295761585235596,
+   "butteraugli_3norm": 0.9463589693469386,
+   "cvvdp_jod": 9.649836540222168,
+   "pixel_exact": false,
+   "saving": 0.27365854282389157
+  },
+  "neo-smart-auto": {
+   "bytes": 138327,
+   "format": "avif",
+   "ssimulacra2": 80.76778871,
+   "dssim": 0.00103675,
+   "butteraugli": 2.342968702316284,
+   "butteraugli_3norm": 0.8771350006772353,
+   "cvvdp_jod": 9.743478775024414,
+   "pixel_exact": false,
+   "saving": 0.4103130315418818
   }
  },
  {
@@ -161,6 +227,28 @@
    "saving": 0.03773774065126623,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": true
+  },
+  "neo-smart-same": {
+   "bytes": 217282,
+   "format": "jpg",
+   "ssimulacra2": 80.14599175,
+   "dssim": 0.00160056,
+   "butteraugli": 2.338146924972534,
+   "butteraugli_3norm": 1.017809583811425,
+   "cvvdp_jod": 9.609613418579102,
+   "pixel_exact": false,
+   "saving": 0.29730638750634675
+  },
+  "neo-smart-auto": {
+   "bytes": 187376,
+   "format": "jxl",
+   "ssimulacra2": 80.41750498,
+   "dssim": 0.00135698,
+   "butteraugli": 2.22995662689209,
+   "butteraugli_3norm": 0.9094530158867444,
+   "cvvdp_jod": 9.736563682556152,
+   "pixel_exact": false,
+   "saving": 0.39402289037006855
   }
  },
  {
@@ -202,6 +290,28 @@
    "saving": 0.03847742845626767,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": true
+  },
+  "neo-smart-same": {
+   "bytes": 147214,
+   "format": "jpg",
+   "ssimulacra2": 81.47268998,
+   "dssim": 0.00106759,
+   "butteraugli": 2.1486072540283203,
+   "butteraugli_3norm": 0.904786132757272,
+   "cvvdp_jod": 9.763498306274414,
+   "pixel_exact": false,
+   "saving": 0.2582930270052398
+  },
+  "neo-smart-auto": {
+   "bytes": 118567,
+   "format": "avif",
+   "ssimulacra2": 81.83889917,
+   "dssim": 0.00088009,
+   "butteraugli": 2.5034196376800537,
+   "butteraugli_3norm": 0.8687963866943358,
+   "cvvdp_jod": 9.815430641174316,
+   "pixel_exact": false,
+   "saving": 0.40262494961708983
   }
  },
  {
@@ -243,6 +353,28 @@
    "saving": 0.0006217116080237117,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": false
+  },
+  "neo-smart-same": {
+   "bytes": 86553,
+   "format": "png",
+   "ssimulacra2": 86.87166068,
+   "dssim": 7.764e-05,
+   "butteraugli": 3.120145797729492,
+   "butteraugli_3norm": 0.8388063686324125,
+   "cvvdp_jod": 9.985136985778809,
+   "pixel_exact": false,
+   "saving": 0.5552809519894771
+  },
+  "neo-smart-auto": {
+   "bytes": 43523,
+   "format": "avif",
+   "ssimulacra2": 82.45733686,
+   "dssim": 0.00019972,
+   "butteraugli": 4.233013153076172,
+   "butteraugli_3norm": 1.0140506907189757,
+   "cvvdp_jod": 9.93786907196045,
+   "pixel_exact": false,
+   "saving": 0.7763739312726077
   }
  },
  {
@@ -284,6 +416,28 @@
    "saving": 0.10708772832518654,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": false
+  },
+  "neo-smart-same": {
+   "bytes": 5900,
+   "format": "png",
+   "ssimulacra2": 81.12237216,
+   "dssim": 0.0002761,
+   "butteraugli": 6.45907735824585,
+   "butteraugli_3norm": 2.320086496793145,
+   "cvvdp_jod": 9.857987403869629,
+   "pixel_exact": false,
+   "saving": 0.6205299717005403
+  },
+  "neo-smart-auto": {
+   "bytes": 5900,
+   "format": "png",
+   "ssimulacra2": 81.12237216,
+   "dssim": 0.0002761,
+   "butteraugli": 6.45907735824585,
+   "butteraugli_3norm": 2.320086496793145,
+   "cvvdp_jod": 9.857987403869629,
+   "pixel_exact": false,
+   "saving": 0.6205299717005403
   }
  },
  {
@@ -325,6 +479,28 @@
    "saving": 0.03552281832102233,
    "identical_bytes_to_baseline": false,
    "identical_pixels_to_baseline": true
+  },
+  "neo-smart-same": {
+   "bytes": 186522,
+   "format": "jpg",
+   "ssimulacra2": 80.60317496,
+   "dssim": 0.0011567,
+   "butteraugli": 2.52315616607666,
+   "butteraugli_3norm": 0.9005124792304846,
+   "cvvdp_jod": 9.644331932067871,
+   "pixel_exact": false,
+   "saving": 0.3552800312470835
+  },
+  "neo-smart-auto": {
+   "bytes": 138708,
+   "format": "avif",
+   "ssimulacra2": 80.39990175,
+   "dssim": 0.00103039,
+   "butteraugli": 2.9440500736236572,
+   "butteraugli_3norm": 0.8948798786111251,
+   "cvvdp_jod": 9.691021919250488,
+   "pixel_exact": false,
+   "saving": 0.520550833543606
   }
  }
 ]
