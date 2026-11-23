@@ -104,7 +104,7 @@
   ],
   [
    "Format choice can matter more than any setting",
-   "On lossless originals, flat art, UI and icons are larger as JPEG than as PNG or lossless WebP at floors 90 and 80. Textures and gradients are 80 to 90 per cent smaller as JPEG. Opt-in format choice is planned."
+   "On lossless originals, flat art, UI and icons are smaller as PNG or lossless WebP than as JPEG, while photos and gradients shrink 80–95% as AVIF or JPEG XL. Opt-in automatic format choice (--output auto) is now shipped and races PNG, JPEG, WebP, JXL and AVIF."
   ],
   [
    "Synthetic images overstate savings",

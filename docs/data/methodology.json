@@ -1,48 +1,39 @@
 {
   "steps": [
     {
-      "title": "Fixed, licensed corpus",
-      "text": "99 public-licence images (24 JPEG, 75 PNG) from Pexels, the GB82 dataset, libjpeg-turbo test images, F-Droid screenshots, Kenney pixel art and OpenMoji icons. 50 sources are used in the 100,000-trial sweep. Every source records its origin and licence in the repository manifest."
+      "title": "Fixed, licensed test sets",
+      "text": "Every test image is public-licence (Pexels, GB82, libjpeg-turbo, F-Droid screenshots, Kenney pixel art and OpenMoji icons) with its origin and licence recorded in the repository manifest. The initial 100,000-trial sweep used 50 images (30 PNG, 20 JPEG); the SSIMULACRA2 validation pool expanded to 65 real PNGs and 23 JPEGs; and the head-to-head ImageOptim comparison uses 8 files (4 PNG, 4 JPEG)."
     },
     {
       "title": "Recipe sweep",
-      "text": "Each source is run through 2,000 recipes for its format. PNG recipes combine palette quantisation (pngquant), OxiPNG and Zopfli in different orders and settings. JPEG recipes vary MozJPEG quality, scan mode, a minimum-saving guard and lossless Huffman recompression. Trials are recorded with output size, time, pixel exactness, SSIM and PSNR, and can be replayed from a saved plan."
+      "text": "In the initial sweep, each of the 50 images ran through 2,000 recipes for its format. PNG recipes combined palette quantisation (pngquant), OxiPNG and Zopfli in different orders and settings; JPEG recipes varied MozJPEG quality, scan mode and lossless Huffman recompression. Every trial recorded size, time, pixel exactness, SSIM and PSNR and can be replayed from the saved plan."
     },
     {
-      "title": "Quality floors",
-      "text": "The goal is the smallest output that still meets a quality level: Visually lossless, High quality and Good for web, plus a pixel-exact lossless tier. Today these are judged with NEO's own SSIM similarity score (8×8 luma blocks; transparent images checked over black and white) at 0.995, 0.98 and 0.95. SSIM is a general-purpose similarity measure but saturates near the top, so finalists are re-scored with SSIMULACRA2, a perceptual metric, and the site will switch to it when that is finished. Using more than one metric guards against any single one misleading us."
+      "title": "Two quality checks",
+      "text": "The goal is the smallest file that still looks right at three levels: Visually lossless (invisible even zoomed in), High quality (looks identical at normal viewing size) and Good for web (crisp for web pages). The 100k sweep used fast SSIM floors (0.995, 0.98, 0.95) to map out recipe chains. Because SSIM is forgiving near the top, finalists and the shipped Smart engine are gated on SSIMULACRA2 (floors 90, 80 and 70), with an alpha-aware check over black, white and grey backgrounds for transparent images."
     },
     {
       "title": "Effort tiers",
-      "text": "Effort is encode time relative to the fastest recipes on the same image, so image size and start-up cost do not distort it. Fast allows up to 3 times that, Balanced up to 15 times, and Thorough has no limit, matching the Fast, Balanced and Thorough presets in the app. Timings come from a two-worker run and include cold-start noise."
+      "text": "Effort is encode time relative to the fastest recipes on the same image, so image size does not skew it. Fast allows up to 3× the fastest recipe, Balanced up to 15×, and Thorough has no cap. Real times are reported in seconds per megapixel (a 1000×1000 image; multiply by 8–12 for a typical phone photo)."
     },
     {
       "title": "Honest scoring",
-      "text": "Picking a recipe on an image and scoring it on the same image flatters it. Champion recipes are therefore also scored leave-one-source-out: chosen on all other images, applied to the held-out one. This is the number to trust. Splits are always by source image, never by trial."
+      "text": "Picking a recipe on an image and scoring it on the same image flatters it. Champion recipes are therefore scored leave-one-source-out: chosen on all other images, then applied to the held-out image. Splits are always by source image, never by trial."
     },
     {
-      "title": "Redundancy and equivalence",
-      "text": "Recipes that produce byte-identical output on an image are counted as duplicates. Beyond that, two recipes are treated as equivalent when, on at least 95% of images, their sizes are within 1% and their SSIM within 0.002. The cheapest recipe represents each class."
+      "title": "Redundancy and chain alerts",
+      "text": "Recipes that produce byte-identical output are counted as duplicates, and recipes within 1% size and 0.002 SSIM on ≥95% of images are collapsed to the fastest one. Comparing each chain against its shorter prefix (such as OxiPNG vs. OxiPNG + Zopfli) drives the Architect editor's warnings about steps that add time without saving bytes."
     },
     {
-      "title": "Chain value and alerts",
-      "text": "For each chain, we compare the best result of the longer chain with its prefix (for example OxiPNG, then OxiPNG plus Zopfli). The median gain, the share of images that gain at least 1%, and the extra time drive the Architect verdicts: worth keeping, only some images, or no measurable gain."
-    },
-    {
-      "title": "North-star comparison",
-      "text": "The real ImageOptim app (its installed preferences recorded), NEO's ImageOptim-style recipes and any new variant are run on the same files and scored with the same metrics, so progress is always measured against the same reference. The comparison covers PNG and JPEG; formats ImageOptim does not encode have no app baseline."
-    },
-    {
-      "title": "How results feed the product",
-      "text": "Zen smart mode: per-image-type recipe choice, or a fast per-image quality search. Architect: alerts for stages that add effort without gain and for steps that can cause problems. Pruning: remove encoders and settings that are indistinguishable. Parity: keep NEO's ImageOptim-style recipes honest against the real app."
+      "title": "Head-to-head comparison",
+      "text": "The real ImageOptim app (with its installed preferences recorded) is compared on the same 8 files against NEO's matching recipes, NEO Smart in the same format (cjpegli for JPEG, quantette-wasm + OxiPNG for PNG), and NEO Smart with automatic format choice (racing PNG, JPEG, WebP, JPEG XL and AVIF)."
     }
   ],
   "limits": [
-    "The run is partial until all 100,000 trials finish; JPEG results are not analysable yet.",
-    "SSIM is NEO's own metric and saturates, so differences near the top are coarse. SSIMULACRA2 re-scoring of the finalists is pending.",
-    "Fifty sources is small. Several image types have one to three examples, so per-type conclusions are weak.",
-    "Timings come from a two-worker run on one machine and include cold-start noise.",
-    "The ImageOptim comparison used eight files and one installed configuration."
+    "The 100,000-trial sweep on Overview, Rankings and Explore is complete (50 images: 30 PNG, 20 JPEG) and gated on SSIM. See the SSIMULACRA2 page for the stricter perceptual re-check.",
+    "50 sweep images (and 65 real PNGs / 23 JPEGs in the validation pool) is still modest; content types with only 1–3 images are marked as indicative.",
+    "Times were measured on one Apple Silicon Mac with two workers running at once and include start-up overhead; your hardware will differ.",
+    "The head-to-head ImageOptim comparison uses 8 files (4 PNG, 4 JPEG) and one installed ImageOptim preference set."
   ],
   "sources": [
     {
@@ -96,8 +87,8 @@
       "url": "https://arxiv.org/html/2403.18589v1",
       "status": "read",
       "took": "Equal quality at about 28% lower bitrate than libjpeg-turbo in an 18-rater study.",
-      "folded": "A reference line next to our JPEG gains once JPEG data is complete.",
-      "caveat": "Run by the encoder's authors; an independent SSIMULACRA2 comparison reported a rough tie at scores 60 to 80."
+      "folded": "Implemented via cjpegli in NEO Smart mode (CLI, MCP and desktop), where it saves 3–13% more than MozJPEG at equal SSIMULACRA2.",
+      "caveat": "Run by the encoder's authors; we verified gains independently on our own corpus."
     },
     {
       "name": "pngquant and libimagequant documentation",
@@ -185,52 +176,42 @@
     {
       "name": "SSIMULACRA2",
       "status": "in use",
-      "note": "Perceptual score fitted to human ratings; 90 is about visually lossless, 80 very high, 70 high. Becomes the headline score once finalists are re-scored."
+      "note": "Primary human-vision score used by NEO Smart mode (0–100). 90 = visually lossless (invisible even zoomed in); 80 = high quality (identical at normal size); 70 = good for web."
     },
     {
       "name": "Butteraugli",
       "status": "in use",
-      "note": "Models the human visual system (cone responses, colour opponency). Used as a cross-check for banding, ringing and blocking. The two metrics can disagree on the same pair, so differences are reviewed on finalists."
+      "note": "Spots localized flaws like colour banding, ringing around sharp edges and JPEG blocking. Used as a second check on finalists."
     },
     {
       "name": "DSSIM",
       "status": "in use",
-      "note": "Multi-scale SSIM in a perceptual colour space; a second opinion."
+      "note": "Perceptual structural difference score; used as an independent cross-check alongside SSIMULACRA2."
     },
     {
       "name": "NEO SSIM and PSNR",
       "status": "in use",
-      "note": "Fast similarity pre-filter used during the sweep. Saturates near the top, so it is not the final judge."
+      "note": "Fast similarity score used across all 100,000 sweep trials. Useful for ranking recipe chains, but too forgiving near the top to be the final quality gate."
     },
     {
       "name": "CVVDP (ColorVideoVDP)",
-      "status": "candidate",
-      "note": "Models display and viewing distance; the most eye-like option, but needs a Python ML stack."
+      "status": "in use",
+      "note": "Display-aware vision model (JOD scale, 10 = identical) recorded on north-star benchmarks as an extra sanity check."
     },
     {
       "name": "zensim and iqa (Rust crates)",
       "status": "candidate",
-      "note": "Possible faster or consolidated scoring for large re-scoring runs; to be checked against SSIMULACRA2 first."
+      "note": "Potential faster Rust scorers for future large sweeps; to be calibrated against SSIMULACRA2 first."
     },
     {
-      "name": "LPIPS and DISTS",
-      "status": "candidate",
-      "note": "Learned perceptual metrics. Track human judgement well but are not calibrated quality scores and can be gamed."
-    },
-    {
-      "name": "VMAF (images)",
-      "status": "candidate",
-      "note": "Recognised and easy to run, but trained on video; weak evidence for stills, text and graphics."
-    },
-    {
-      "name": "PSNR-HVS-M",
-      "status": "candidate",
-      "note": "Contrast-sensitivity-weighted PSNR; handy for comparing with published codec papers."
-    },
-    {
-      "name": "HDR-VDP-3, FLIP, MS-SSIM, PSNR",
+      "name": "LPIPS, DISTS and VMAF",
       "status": "parked",
-      "note": "HDR-VDP and FLIP matter only for HDR or rendering targets; MS-SSIM and PSNR correlate worse with human ratings."
+      "note": "Neural or video-trained metrics; less reliable for still graphics, UI text and transparent edges."
+    },
+    {
+      "name": "HDR-VDP-3, FLIP, MS-SSIM",
+      "status": "parked",
+      "note": "HDR-VDP and FLIP target HDR/3D rendering; MS-SSIM correlates worse with human ratings than SSIMULACRA2."
     }
   ]
 }

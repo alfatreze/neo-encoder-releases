@@ -49,7 +49,10 @@ table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-weight:650;color:var(--muted);white-space:nowrap;font-size:13px}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
-.scroll{overflow-x:auto}
+.scroll{overflow-x:auto;container-type:inline-size}
+.scroll:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.scroll thead th{position:sticky;top:0;background:var(--panel);z-index:1}
+.fmt-badge{display:inline-block;padding:1px 6px;border-radius:5px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--soft);color:var(--accent);margin-left:5px;vertical-align:1px}
 .controls{display:flex;flex-wrap:wrap;gap:10px 16px;margin:12px 0}
 label.f{display:flex;flex-direction:column;font-size:12px;color:var(--muted);gap:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 select,input[type=search]{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;font-weight:400;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);min-width:160px}

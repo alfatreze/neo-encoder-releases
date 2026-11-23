@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
 <meta name="theme-color" content="#3b5bdb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=20261123b">
 <style>
 .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;align-items:start}
 .tier h3{margin:0;font-size:18px}.tier .hint{margin:0 0 10px}
@@ -55,8 +55,7 @@ details code{display:block;margin-top:6px;white-space:normal;word-break:break-wo
 <div class="tiers" id="tiers"></div>
 
 <div class="callout">
-<b>How to read the ranking.</b> The big number is the average size saving. <b>One recipe for all images</b> is what you get with a single default recipe from that chain (its best-performing setting). <b>Best recipe per image</b> shows the ceiling if every image got its own best settings from that chain; the paler part of the bar marks that ceiling. <b>Wins</b> is the share of images where this chain gave the smallest result. <b>Time</b> is an estimate in seconds per megapixel (a 1000×1000 picture).
-<div class="note" style="margin-top:6px"><b>Technical note.</b> Results are judged by NEO's SSIM similarity score at 0.995, 0.98 and 0.95 for the three quality levels, and effort is a time limit set relative to the quickest recipe on each image (Fast ≤ 3×, Balanced ≤ 15×, Thorough unlimited); the seconds shown are measured medians on one Mac. A chain whose recipes all exceed an effort limit cannot qualify at that effort and shows 0%.</div>
+<b>How to read the bars.</b> The bold percentage is the average file-size saving. The solid bar shows what you get with <b>one fixed recipe</b>; the paler extension shows the ceiling if every image gets its own best settings. <b>Wins</b> is how often this chain produced the smallest file. Times are per megapixel (a 1000×1000 image). See <a href="methodology.html">Methodology</a> for quality floors and effort limits.
 </div>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>

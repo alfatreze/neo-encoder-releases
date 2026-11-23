@@ -3,7 +3,10 @@ const PAL=['--c1','--c2','--c3','--c4','--c5','--c6','--c7','--c8'];
 const col=i=>`var(${PAL[i%PAL.length]})`;
 const pct=(x,d=1)=>x==null||isNaN(x)?'–':(x*100).toFixed(d)+'%';
 const num=(x,d=0)=>x==null||isNaN(x)?'–':Number(x).toLocaleString('en',{maximumFractionDigits:d,minimumFractionDigits:d});
+const kb=n=>n==null||isNaN(n)?'–':n>=1048576?(n/1048576).toFixed(2)+' MB':(n/1024).toFixed(n>=102400?0:1)+' KB';
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const s2Label=s=>s==null||isNaN(s)?'':s>=99.9?'pixel-identical':s>=90?'visually lossless':s>=80?'high quality':s>=70?'good for web':'below web bar';
+const NORTH_LABELS={app:'ImageOptim', 'neo-lossy':'NEO (matching)', 'neo-lossless':'NEO (lossless)', 'neo-smart-same':'NEO Smart (same format)', 'neo-smart-auto':'NEO Smart (best format)'};
 // Plain-language names. Technical identifiers stay in small notes.
 const QUALITY={'ssim>=0.995':{name:'Visually lossless',short:'Visually lossless',tech:'NEO SSIM ≥ 0.995',score:99.5},
   'ssim>=0.98':{name:'High quality',short:'High quality',tech:'NEO SSIM ≥ 0.98',score:98},

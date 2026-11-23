@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
 <meta name="theme-color" content="#3b5bdb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css"></head>
+<link rel="stylesheet" href="assets/style.css?v=20261123b"></head>
 <body><main><div class="wrap">
 <h1 class="page">Explore the results</h1>
 <p class="sub">Start with the recommendation, then dig into chains, individual images and the ImageOptim comparison.</p>
@@ -38,36 +38,36 @@
 </div>
 <div class="panel" id="b-hero"></div>
 <h3>Other strong recipes</h3>
-<div class="panel scroll" id="b-table"></div>
-<p class="note">Ranked by how close each recipe gets, on average, to the best possible result for each image. "Extra size" is the average amount larger than that per-image best. These recipes were chosen and measured on the same images, so real-world gains on unseen images are likely a little lower.</p>
+<div class="panel scroll" tabindex="0" role="region" aria-label="Strong recipes table" id="b-table"></div>
+<p class="note">Ranked by how close one fixed recipe gets to the best possible result for each image. "Gap vs. best" is how much larger that single recipe is on average. Because these were measured on the same test set, real-world gains on unseen images are slightly lower.</p>
 </section>
 
 <section id="chains" class="pane" hidden>
 <div class="controls"><label class="f">Format<select id="c-fmt"></select></label></div>
 <p class="sub">Compared at <b>High quality</b>. A chain is the ordered list of steps. <b>Wins</b> is the share of images where it gives the smallest passing result.</p>
-<div class="panel scroll" id="c-table"></div>
+<div class="panel scroll" tabindex="0" role="region" aria-label="Chain comparison table" id="c-table"></div>
 <h3>Does adding another step pay off?</h3>
 <p class="sub">These checks are what the Architect editor can use to warn you about steps that add time but little benefit.</p>
-<div class="panel scroll" id="c-alerts"></div>
+<div class="panel scroll" tabindex="0" role="region" aria-label="Step value alerts" id="c-alerts"></div>
 </section>
 
 <section id="frontier" class="pane" hidden>
 <div class="controls">
 <label class="f">Format<select id="f-fmt"></select></label>
 <label class="f">Image<select id="f-src"></select></label>
-<label class="f">Quality measure<select id="f-y"><option value="ssim">Quality score (0–100)</option><option value="s2">Perceptual score (re-scored only)</option></select></label>
+<label class="f">Quality measure<select id="f-y"><option value="ssim">SSIM score (0–100, all trials)</option><option value="s2">SSIMULACRA2 perceptual score (finalists)</option></select></label>
 </div>
 <div class="panel"><div id="f-chart"></div><div class="legend" id="f-legend"></div>
-<p class="note" style="margin:8px 0 0"><b>How to read it.</b> Every dot is one recipe on this image. Left means a smaller file, up means better quality, so the best recipes sit up and to the left. Large dots joined by the dashed line are the best trade-offs. Hover a dot for details. Technical note: the quality score is NEO's SSIM × 100; the perceptual option is SSIMULACRA2 and is only available for finalists that have been re-scored.</p></div>
+<p class="note" style="margin:8px 0 0"><b>How to read it.</b> Each dot is one recipe on this image. Further left = smaller file; higher up = better visual quality. Large dots joined by the dashed line are the best trade-offs. Hover any dot for exact size, score and speed.</p></div>
 </section>
 
 <section id="sources" class="pane" hidden>
 <div class="controls"><label class="f">Type<select id="s-type"></select></label><label class="f">Search<input type="search" id="s-q" placeholder="file name"></label></div>
-<div class="panel scroll" id="s-table"></div>
+<div class="panel scroll" tabindex="0" role="region" aria-label="Test images table" id="s-table"></div>
 </section>
 
-<section id="north" class="pane" hidden><div class="panel scroll" id="n-table"></div>
-<p class="note"><b>Reading the table.</b> Each cell shows the new file size, the saving versus the original, and a perceptual score where 100 means identical (about 90 is visually lossless, 70 is still high quality). "exact" means every pixel is unchanged. <code>app</code> is the real ImageOptim app run with the author's settings; <code>neo-lossy</code> and <code>neo-lossless</code> are NEO's matching recipes.</p></section>
+<section id="north" class="pane" hidden><div class="panel scroll" tabindex="0" role="region" aria-label="Comparison with ImageOptim" id="n-table"></div>
+<p class="note"><b>Reading the table.</b> Each cell shows the compressed size (hover for exact bytes), percentage saved, output format badge when changed, and human-vision score (<b>SSIMULACRA2</b>: 100 = pixel-identical, 90+ = visually lossless, 80+ = looks identical at normal size, 70+ = good for web). <b>ImageOptim</b> is the real Mac app; <b>NEO (matching)</b> and <b>NEO (lossless)</b> match its recipes; <b>NEO Smart (same format)</b> uses <code>cjpegli</code> / <code>quantette</code> at High quality; <b>NEO Smart (best format)</b> races PNG, JPEG, WebP, JXL and AVIF.</p></section>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
 <script src="assets/common.js"></script>
@@ -86,7 +86,7 @@ if(champ){opt($('#b-fmt'),Object.keys(champ).map(f=>[f,f]));opt($('#b-q'),Object
   $('#b-hero').innerHTML=`<div class="rec"><div class="v">${pct(t.saving,0)}</div><div><b>average saving</b> using one fixed ${f} recipe for every image, at <b>${QUALITY[q].name}</b> and <b>${ELABEL[e]}</b> effort${best?`. Picking the best recipe separately for each image reaches <b>${pct(best.saving,0)}</b>`:''}</div></div>
    <p style="margin:12px 0 4px"><b>${esc(chainName(t.chain))}</b></p><p style="margin:0"><code>${esc(t.text)}</code></p>
    <p class="note" style="margin:10px 0 0">Takes ${relSec(t.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)} (per megapixel, a 1000×1000 picture). Only ${pct(t.regret)} larger than the best result for each image on average. Technical note: quality floor ${QUALITY[q].tech}.</p>`;
-  $('#b-table').innerHTML=`<table><thead><tr><th class="num">#</th><th>Recipe</th><th class="num">Saving</th><th class="num">Extra size</th><th class="num">Time</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(chainName(r.chain))}</b><div><code>${esc(r.text)}</code></div></td><td class="num">${pct(r.saving)}</td><td class="num">+${pct(r.regret)}</td><td class="num">${relSec(r.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)}</td></tr>`).join('')}</tbody></table>`};
+  $('#b-table').innerHTML=`<table><thead><tr><th class="num">#</th><th>Recipe</th><th class="num">Saving</th><th class="num">Gap vs. best</th><th class="num">Time</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(chainName(r.chain))}</b><div><code>${esc(r.text)}</code></div></td><td class="num">${pct(r.saving)}</td><td class="num">+${pct(r.regret)}</td><td class="num">${relSec(r.time,head?.[f+'_timing']?.fastest_sec_per_mp_median)}</td></tr>`).join('')}</tbody></table>`};
  ['#b-fmt','#b-q','#b-e'].forEach(s=>$(s).onchange=drawB);drawB()}
 // Chains
 if(ch){opt($('#c-fmt'),Object.keys(ch.chains).map(f=>[f,f]));
@@ -116,7 +116,11 @@ if(src){opt($('#s-type'),[['','All types'],...[...new Set(src.map(s=>s.type))].s
  $('#s-type').onchange=drawS;$('#s-q').oninput=drawS;drawS()}
 // North star
 if(ns){const keys=Object.keys(ns[0]).filter(k=>ns[0][k]&&typeof ns[0][k]==='object');
- $('#n-table').innerHTML=`<table><thead><tr><th>File</th><th class="num">Original</th>${keys.map(k=>`<th class="num">${esc(k)}</th>`).join('')}</tr></thead><tbody>${ns.map(r=>`<tr><td><b>${esc(r.file)}</b></td><td class="num">${num(r.orig_bytes)}</td>${keys.map(k=>r[k]?`<td class="num">${num(r[k].bytes)}<div class="note">−${pct(r[k].saving)} · score ${num(r[k].ssimulacra2,1)}${r[k].pixel_exact?' · exact':''}</div></td>`:'<td class="num">–</td>').join('')}</tr>`).join('')}</tbody></table>`}
+ const cell=(v)=>{if(!v)return '<td class="num">–</td>';
+  const badge=v.format?`<span class="fmt-badge">${esc(v.format)}</span>`:'';
+  const qual=v.pixel_exact?'pixel-identical':`S2 ${num(v.ssimulacra2,0)} · ${s2Label(v.ssimulacra2)}`;
+  return `<td class="num" title="${num(v.bytes)} bytes"><b>${kb(v.bytes)}</b>${badge}<div class="note">−${pct(v.saving)} · ${qual}</div></td>`};
+ $('#n-table').innerHTML=`<table><thead><tr><th>File</th><th class="num">Original</th>${keys.map(k=>`<th class="num">${esc(NORTH_LABELS[k]||k)}</th>`).join('')}</tr></thead><tbody>${ns.map(r=>`<tr><th>${esc(r.file)}<div class="note">${esc(r.format)}</div></th><td class="num" title="${num(r.orig_bytes)} bytes">${kb(r.orig_bytes)}</td>${keys.map(k=>cell(r[k])).join('')}</tr>`).join('')}</tbody></table>`}
 else $('#n-table').innerHTML='<span class="muted">No comparison data yet.</span>';
 })();
 </script></body></html>

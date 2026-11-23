@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
 <meta name="theme-color" content="#3b5bdb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261123"></head>
+<link rel="stylesheet" href="assets/style.css?v=20261123b"></head>
 <body>
 <section class="hero"><div class="wrap">
 <div>
@@ -68,26 +68,15 @@
 <div class="panel"><div id="bytype"></div><p class="note" style="margin:10px 0 0">Based on the images tested so far; types with few images are marked and should be read as indications, not rules.</p></div>
 
 <h2>Compared with ImageOptim</h2>
-<p class="sub">ImageOptim is the well-known reference. We run it, and NEO's equivalent recipes, on the same files.</p>
+<p class="sub">ImageOptim is the well-known Mac reference. We run it and NEO on the same 8 files (4 PNG, 4 JPEG) and score every output on human-perceived quality (SSIMULACRA2).</p>
 <div class="findings" id="north"></div>
 
-<h2>How to read these results</h2>
+<h2>How to read these numbers</h2>
 <dl class="gloss panel">
-<dt>Saving</dt><dd>How much smaller the file gets compared with the original. 65% saving means the new file is 35% of the original size.</dd>
-<dt>Quality levels</dt><dd><b>Visually lossless</b>: differences are essentially invisible. <b>High quality</b>: very hard to spot at normal size. <b>Good for web</b>: fine for most pages, small differences on close inspection.</dd>
-<dt>Effort</dt><dd>How long each image may take to compress. <b>Fast</b> uses only quick settings, <b>Balanced</b> allows moderately slow ones, <b>Thorough</b> tries everything and can take many times longer for a small extra gain. Real times per megapixel are shown beside each level.</dd>
-<dt>Recipe and chain</dt><dd>A recipe is an ordered chain of steps such as palette reduction, OxiPNG repacking and Zopfli squeezing. Order and settings both matter.</dd>
+<dt>File size saving</dt><dd>How much smaller the file gets. A <b>50% saving</b> cuts a 1 MB image to 500 KB (half the download); a <b>90% saving</b> cuts it to 100 KB.</dd>
+<dt>Quality levels</dt><dd><b>Visually lossless</b> (S2 ≥ 90): invisible even zoomed in. <b>High quality</b> (S2 ≥ 80): looks identical at normal viewing size. <b>Good for web</b> (S2 ≥ 70): crisp for web pages, with minor softening only on close inspection.</dd>
+<dt>Two datasets on this site</dt><dd>The 100,000-trial sweep below used fast SSIM to compare recipe chains; the stricter human-vision results (SSIMULACRA2) and newer encoders (<code>cjpegli</code>, <code>quantette</code>, AVIF) are on the <a href="gated.html">SSIMULACRA2</a> and <a href="explore.html#north">Explore</a> pages. Full method on <a href="methodology.html">Methodology</a>.</dd>
 </dl>
-<p class="note"><b>Technical note.</b> Quality is judged today with NEO's own SSIM score (8×8 luma blocks, transparent images checked over black and white). The levels above are SSIM ≥ 0.995, ≥ 0.98 and ≥ 0.95. SSIM is a general similarity score but it saturates near the top, so finalists are being re-scored with SSIMULACRA2, a perceptual metric, and the pages will switch to it when that is finished.</p>
-
-<h2>How the results are produced</h2>
-<ol class="steps">
-<li><b>A fixed set of images.</b> Public-licence photos, UI screenshots, icons and pixel art.</li>
-<li><b>Thousands of recipes.</b> Each image goes through every recipe; size, time and quality are recorded.</li>
-<li><b>Best that meets the bar.</b> For each quality level, the smallest result that still passes wins.</li>
-<li><b>Tested on unseen images.</b> Recipes picked on some images are checked on others, to avoid flattering results.</li>
-<li><b>Cross-checked.</b> Finalists are re-scored with a second metric and compared with ImageOptim.</li>
-</ol>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
 <script src="assets/common.js"></script>
@@ -137,12 +126,15 @@ if(src){const g={};src.filter(s=>s.best_98!=null).forEach(s=>{(g[s.type]??=[]).p
  bars($('#bytype'),rows.map((r,i)=>({label:r.t,sub:`${r.n} image${r.n>1?'s':''}${r.n<3?' · few, indicative only':''}`,v:r.v,color:`linear-gradient(90deg,${col(i)},${col(i+1)})`})),{label:200,h:18})}
 // north
 if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
- ['PNG','JPEG'].forEach(f=>{const s=ns.filter(r=>r.format===f&&r.app&&r['neo-lossy']);if(!s.length)return;
-  const a=mean(s.map(r=>r.app.saving)),n=mean(s.map(r=>r['neo-lossy'].saving));
-  const verdict=Math.abs(a-n)<0.01?'On par':n>a?'NEO ahead':'ImageOptim ahead';
-  const why=f==='JPEG'?'Both leave these JPEGs almost untouched because they are already compressed. A test set with higher-quality JPEGs is needed.':'Close, but the two produce slightly different pictures because they use different builds of the same palette tool.';
-  out.push(`<div class="finding"><div class="k">${f} · ${s.length} files</div><h3>${verdict}</h3><p>ImageOptim saves ${pct(a)}, NEO's matching recipe ${pct(n)}. ${why}</p></div>`)});
- $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">Details</div><h3>Per-file numbers</h3><p>See the file-by-file comparison on the <a href="explore.html#north">Explore page</a>.</p></div>`}
+ ['PNG','JPEG'].forEach(f=>{const s=ns.filter(r=>r.format===f&&r.app);if(!s.length)return;
+  const a=mean(s.map(r=>r.app.saving));
+  const same=s.every(r=>r['neo-smart-same'])?mean(s.map(r=>r['neo-smart-same'].saving)):null;
+  const auto=s.every(r=>r['neo-smart-auto'])?mean(s.map(r=>r['neo-smart-auto'].saving)):null;
+  const body=f==='PNG'
+   ?`ImageOptim saves <b>${pct(a)}</b>. NEO Smart in the same format saves <b>${pct(same)}</b> at high quality, and allowing modern formats (AVIF/PNG) reaches <b>${pct(auto)}</b>.`
+   :`ImageOptim saves <b>${pct(a)}</b> (lossless). NEO Smart in the same format (<code>cjpegli</code>) saves <b>${pct(same)}</b> at high quality (S2 ≥ 80), and modern formats (AVIF/JXL) reach <b>${pct(auto)}</b>.`;
+  out.push(`<div class="finding"><div class="k">${f} · ${s.length} files</div><h3>${same!=null&&same>a+0.02?'NEO Smart ahead':'On par'}</h3><p>${body}</p></div>`)});
+ $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">File by file</div><h3>Full comparison table</h3><p>Inspect every file's size, format badge and perceptual score on the <a href="explore.html#north">Explore page</a>.</p></div>`}
 })();
 
 // Real worked example: actual files, actual sizes, drag to compare.
@@ -150,7 +142,6 @@ if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
 const ex=await data('examples');if(!ex||!ex.examples.length){$('#ex').hidden=true;return}
 const Q=[['visually-lossless','Visually lossless'],['high','High quality'],['good','Good for web']],E=[['fast','Fast'],['balanced','Balanced'],['max','Thorough']];
 const st={fmt:ex.examples[0].format,q:'high',e:'balanced',zoom:false,pos:50};
-const kb=n=>n>=1048576?(n/1048576).toFixed(2)+' MB':(n/1024).toFixed(n>=102400?0:1)+' KB';
 const full=n=>Number(n).toLocaleString('en')+' bytes';
 const seg=(id,items,key)=>{$(id).innerHTML=items.map(([v,l])=>`<button aria-pressed="${st[key]===v}" data-v="${v}">${l}</button>`).join('');
   $$(id+' button').forEach(b=>b.onclick=()=>{st[key]=b.dataset.v;draw()})};
@@ -167,9 +158,9 @@ function draw(){
   $('#ex-rl').textContent=c.kept?'Kept the original':'Compressed';
   $('#ex-stats').innerHTML=[
     ['Original',kb(x.originalBytes),full(x.originalBytes)+` · ${x.width}×${x.height} px`],
-    ['Compressed',kb(c.kept?x.originalBytes:c.bytes),c.kept?'No recipe met this level at this effort, so the file is left as it is.':full(c.bytes)],
-    ['Saved',c.kept?'0%':pct(saved,0),c.kept?'':`${kb(x.originalBytes-c.bytes)} less`],
-    ['Scores',c.kept?'–':`SSIM ${c.ssim.toFixed(3)}`,c.kept?'':`SSIMULACRA2 ${c.s2.toFixed(0)} (the stricter score; the three levels map to 90, 80 and 70)`]
+    ['Compressed',kb(c.kept?x.originalBytes:c.bytes),c.kept?'Safely kept original: no fast recipe met this quality bar.':full(c.bytes)],
+    ['Saved',c.kept?'0%':pct(saved,0),c.kept?'No quality trade-off taken':`${kb(x.originalBytes-c.bytes)} smaller`],
+    ['Visual quality',c.kept?'Identical':`S2 ${c.s2.toFixed(0)} · ${s2Label(c.s2)}`,c.kept?'Exact original pixels':`SSIM ${c.ssim.toFixed(3)} · SSIMULACRA2 scale: 90 lossless, 80 high, 70 web`]
   ].map(r=>`<div class="st"><div class="l">${r[0]}</div><div class="v">${esc(r[1])}</div><div class="l">${esc(r[2])}</div></div>`).join('');
   $('#ex-note').textContent=`This is one image (${x.title}), not an average. Savings differ a lot between images, which is why the averages below are the real result. File sizes are real; the levels are scored on SSIM like the rest of this page, and the stricter SSIMULACRA2 score is shown so you can see the difference.`;
   $('#ex-credit').innerHTML=`Image: ${esc(x.credit||x.title)} · ${x.license_url?`<a href="${esc(x.license_url)}" rel="noopener">${esc(x.license)}</a>`:esc(x.license)}${x.source_url?` · <a href="${esc(x.source_url)}" rel="noopener">source</a>`:''}`;
