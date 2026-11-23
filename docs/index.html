@@ -83,7 +83,7 @@ const find=(f,q,e)=>head?.[f]?.find(r=>r.quality===q&&r.effort===e);
 const hi=find('PNG','ssim>=0.98','balanced');
 const dup=head?.PNG_redundancy?.identical_output_share;
 // hero
-if(hi){const s=hi.saving;$('#hero').innerHTML=`<div class="big">${pct(s,0)}</div><div class="cap"><b>smaller PNG files</b> on average when each image gets its best-suited recipe, at high quality and balanced effort (${srcDone} test images).</div><div class="sizebar"><div class="row"><span class="t">Before</span><span class="b" style="width:100%;background:var(--muted);opacity:.55"></span></div><div class="row"><span class="t">After</span><span class="b" style="width:${(1-s)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></span><span>${pct(1-s,0)} of original</span></div></div>`}
+if(hi){const s=hi.saving;$('#hero').innerHTML=`<div class="big">${pct(s,0)}</div><div class="cap"><b>smaller PNG files</b> on average when each image gets its best-suited recipe, at high quality and balanced effort (${cx.PNG??srcDone} test images). Scored on SSIM; the stricter SSIMULACRA2 gate saves less, see the <a href="gated.html">SSIMULACRA2 update</a>.</div><div class="sizebar"><div class="row"><span class="t">Before</span><span class="b" style="width:100%;background:var(--muted);opacity:.55"></span></div><div class="row"><span class="t">After</span><span class="b" style="width:${(1-s)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></span><span>${pct(1-s,0)} of original</span></div></div>`}
 else $('#hero').innerHTML='<div class="cap">Results will appear here when the first images finish.</div>';
 $('#cards').innerHTML=[
  [num(meta.rows),`test runs finished of ${num(meta.total)} planned`],
