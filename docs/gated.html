@@ -34,7 +34,13 @@
 <h2>4. The shipped engine against the research</h2>
 <p class="note" id="en-n" style="margin:0 0 8px"></p>
 <div class="panel scroll" tabindex="0" role="region" aria-label="Shipped engine vs research ceiling" id="en"></div>
-<h2>5. What we keep and what changes</h2>
+<h2>5. Data v4 rule table &amp; 178-image real holdout</h2>
+<p class="note" id="v4-n" style="margin:0 0 8px"></p>
+<p class="note" id="v4-hn" style="margin:0 0 8px"></p>
+<div class="panel scroll" tabindex="0" role="region" aria-label="178-image new real PNG holdout results" id="v4-hold"></div>
+<p class="note" id="v4-ln" style="margin:12px 0 8px"></p>
+<div class="panel scroll" tabindex="0" role="region" aria-label="Data v4 358-source leave-one-source-out results" id="v4-loso"></div>
+<h2>6. What we keep and what changes</h2>
 <div class="grid2"><div class="panel"><h3>Keep</h3><ul id="keep"></ul></div><div class="panel"><h3>Change</h3><ul id="chg"></ul></div></div>
 <h2>Known limits</h2>
 <div class="callout warn"><ul id="lim" style="margin:0;padding-left:18px"></ul></div>
@@ -52,6 +58,13 @@ $('#gj').innerHTML=tb(['JPEG: SSIMULACRA2 floor','Mean saving (best MozJPEG sett
 $('#fd').innerHTML=g.findings.map((f,i)=>`<div class="finding"><div class="k">Finding ${i+1}</div><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></div>`).join('');
 $('#en-n').textContent=g.engine.note;
 $('#en').innerHTML=tb(['Quality level','Engine saving','Best possible (research)','Engine kept original','Best possible kept original'],g.engine.rows);
+if(g.v4){
+ $('#v4-n').textContent=g.v4.note;
+ $('#v4-hn').textContent=g.v4.holdoutNote;
+ $('#v4-hold').innerHTML=tb(['Quality level (Balanced)','Data v3 (blind holdout)','Data v4 (rebuilt)','Best of 41 (oracle)','v3 kept original','Oracle kept original'],g.v4.holdout);
+ $('#v4-ln').textContent=g.v4.losoNote;
+ $('#v4-loso').innerHTML=tb(['Quality level','Effort','Candidates','LOSO race gap','Race saved (bw)','Oracle saved (bw)'],g.v4.loso);
+}
 $('#keep').innerHTML=g.keep.map(x=>`<li>${esc(x)}</li>`).join('');$('#chg').innerHTML=g.change.map(x=>`<li>${esc(x)}</li>`).join('');
 $('#lim').innerHTML=g.limits.map(x=>`<li>${esc(x)}</li>`).join('');
 })();

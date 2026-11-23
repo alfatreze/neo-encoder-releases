@@ -16,77 +16,143 @@
    "source_url": "https://www.pexels.com/photo/7348528/",
    "original_url": "https://images.pexels.com/photos/7348528/pexels-photo-7348528.jpeg?auto=compress&cs=tinysrgb&w=1600",
    "cells": {
-    "visually-lossless|fast": {
-     "file": "dog-garden-1.jpg",
-     "bytes": 297544,
-     "ssim": 1,
-     "s2": 100,
-     "recipe": "jpeg-imageoptim-lossless",
-     "drifted": false
+    "same|visually-lossless|fast": {
+     "kept": true,
+     "bytes": 309213,
+     "format": "jpeg",
+     "chosen": null
     },
-    "visually-lossless|balanced": {
-     "file": "dog-garden-1.jpg",
-     "bytes": 297544,
-     "ssim": 1,
-     "s2": 100,
-     "recipe": "jpeg-imageoptim-lossless",
-     "drifted": false
+    "same|visually-lossless|balanced": {
+     "kept": true,
+     "bytes": 309213,
+     "format": "jpeg",
+     "chosen": null
     },
-    "visually-lossless|max": {
-     "file": "dog-garden-1.jpg",
-     "bytes": 297544,
-     "ssim": 1,
-     "s2": 100,
-     "recipe": "jpeg-imageoptim-lossless",
-     "drifted": false
+    "same|visually-lossless|max": {
+     "kept": true,
+     "bytes": 309213,
+     "format": "jpeg",
+     "chosen": null
     },
-    "high|fast": {
+    "same|high|fast": {
+     "file": "dog-garden-1.jpg",
+     "bytes": 223129,
+     "format": "jpeg",
+     "s2": 80.76,
+     "chosen": "jpegli-d2.32-420",
+     "kept": false
+    },
+    "same|high|balanced": {
      "file": "dog-garden-2.jpg",
-     "bytes": 234216,
-     "ssim": 0.9811914248471595,
-     "s2": 79.39066831021228,
-     "recipe": "sweep-jpeg-q74-b-s0-plain",
-     "drifted": false
+     "bytes": 217282,
+     "format": "jpeg",
+     "s2": 80.15,
+     "chosen": "jpegli-d2.47-420",
+     "kept": false
     },
-    "high|balanced": {
+    "same|high|max": {
+     "file": "dog-garden-2.jpg",
+     "bytes": 217282,
+     "format": "jpeg",
+     "s2": 80.15,
+     "chosen": "jpegli-d2.47-420",
+     "kept": false
+    },
+    "same|good|fast": {
      "file": "dog-garden-3.jpg",
-     "bytes": 228653,
-     "ssim": 0.9811669963692586,
-     "s2": 79.37182963190742,
-     "recipe": "sweep-jpeg-q74-p-s0-plain",
-     "drifted": false
+     "bytes": 163069,
+     "format": "jpeg",
+     "s2": 70.28,
+     "chosen": "jpegli-d3.99-420",
+     "kept": false
     },
-    "high|max": {
+    "same|good|balanced": {
      "file": "dog-garden-3.jpg",
-     "bytes": 228653,
-     "ssim": 0.9811669963692586,
-     "s2": 79.37182963190742,
-     "recipe": "sweep-jpeg-q74-p-s0-plain",
-     "drifted": false
+     "bytes": 163069,
+     "format": "jpeg",
+     "s2": 70.28,
+     "chosen": "jpegli-d3.99-420",
+     "kept": false
     },
-    "good|fast": {
-     "file": "dog-garden-4.jpg",
-     "bytes": 134020,
-     "ssim": 0.9506100063056709,
-     "s2": 60.59065429672298,
-     "recipe": "sweep-jpeg-q45-p-s0-plain",
-     "drifted": false
+    "same|good|max": {
+     "file": "dog-garden-3.jpg",
+     "bytes": 163069,
+     "format": "jpeg",
+     "s2": 70.28,
+     "chosen": "jpegli-d3.99-420",
+     "kept": false
     },
-    "good|balanced": {
-     "file": "dog-garden-4.jpg",
-     "bytes": 134020,
-     "ssim": 0.9506100063056709,
-     "s2": 60.59065429672298,
-     "recipe": "sweep-jpeg-q45-p-s0-plain",
-     "drifted": false
+    "auto|visually-lossless|fast": {
+     "file": "dog-garden-4.avif",
+     "bytes": 293826,
+     "format": "avif",
+     "s2": 90.31,
+     "chosen": "avif-q85",
+     "kept": false
     },
-    "good|max": {
-     "file": "dog-garden-4.jpg",
-     "bytes": 134020,
-     "ssim": 0.9506100063056709,
-     "s2": 60.59065429672298,
-     "recipe": "sweep-jpeg-q45-p-s0-plain",
-     "drifted": false
+    "auto|visually-lossless|balanced": {
+     "file": "dog-garden-5.avif",
+     "bytes": 283585,
+     "format": "avif",
+     "s2": 90.57,
+     "chosen": "avif-q82",
+     "kept": false
+    },
+    "auto|visually-lossless|max": {
+     "file": "dog-garden-6.avif",
+     "bytes": 282881,
+     "format": "avif",
+     "s2": 90.64,
+     "chosen": "avif-q82",
+     "kept": false
+    },
+    "auto|high|fast": {
+     "file": "dog-garden-7.avif",
+     "bytes": 204968,
+     "format": "avif",
+     "s2": 82.24,
+     "chosen": "avif-q65",
+     "kept": false
+    },
+    "auto|high|balanced": {
+     "file": "dog-garden-8.avif",
+     "bytes": 189634,
+     "format": "avif",
+     "s2": 80.83,
+     "chosen": "avif-q62",
+     "kept": false
+    },
+    "auto|high|max": {
+     "file": "dog-garden-9.avif",
+     "bytes": 180519,
+     "format": "avif",
+     "s2": 80.22,
+     "chosen": "avif-q60",
+     "kept": false
+    },
+    "auto|good|fast": {
+     "file": "dog-garden-10.avif",
+     "bytes": 137064,
+     "format": "avif",
+     "s2": 70.94,
+     "chosen": "avif-q52",
+     "kept": false
+    },
+    "auto|good|balanced": {
+     "file": "dog-garden-11.avif",
+     "bytes": 135455,
+     "format": "avif",
+     "s2": 71.48,
+     "chosen": "avif-q52",
+     "kept": false
+    },
+    "auto|good|max": {
+     "file": "dog-garden-12.avif",
+     "bytes": 125420,
+     "format": "avif",
+     "s2": 70.07,
+     "chosen": "avif-q50",
+     "kept": false
     }
    }
   },
@@ -105,65 +171,143 @@
    "source_url": "https://github.com/gianni-rosato/gb82-image-set/tree/main/png",
    "original_url": "https://raw.githubusercontent.com/gianni-rosato/gb82-image-set/main/png/mies-lossless.png",
    "cells": {
-    "visually-lossless|fast": {
+    "same|visually-lossless|fast": {
      "kept": true,
-     "bytes": 699121
+     "bytes": 699121,
+     "format": "png",
+     "chosen": null
     },
-    "visually-lossless|balanced": {
+    "same|visually-lossless|balanced": {
+     "kept": true,
+     "bytes": 699121,
+     "format": "png",
+     "chosen": null
+    },
+    "same|visually-lossless|max": {
+     "kept": true,
+     "bytes": 699121,
+     "format": "png",
+     "chosen": null
+    },
+    "same|high|fast": {
      "file": "014-gb82-mies-lossless-1.png",
-     "bytes": 277314,
-     "ssim": 0.9958522565710187,
-     "s2": 84.50490081901685,
-     "recipe": "sweep-png-1515",
-     "drifted": false
+     "bytes": 205648,
+     "format": "png",
+     "s2": 83.39,
+     "chosen": "dense-png-c239-q53-s1-o4-d6-p2",
+     "kept": false
     },
-    "visually-lossless|max": {
+    "same|high|balanced": {
      "file": "014-gb82-mies-lossless-2.png",
-     "bytes": 213790,
-     "ssim": 0.9959097286667254,
-     "s2": 84.65753493160156,
-     "recipe": "sweep-png-1971",
-     "drifted": false
+     "bytes": 222668,
+     "format": "png",
+     "s2": 85.96,
+     "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
+     "kept": false
     },
-    "high|fast": {
-     "kept": true,
-     "bytes": 699121
-    },
-    "high|balanced": {
+    "same|high|max": {
      "file": "014-gb82-mies-lossless-3.png",
-     "bytes": 136860,
-     "ssim": 0.9862144711658,
-     "s2": 72.28978007996089,
-     "recipe": "sweep-png-0894",
-     "drifted": false
+     "bytes": 221757,
+     "format": "png",
+     "s2": 85.96,
+     "chosen": "dense-png-c222-q59-s1-o6-d92-p0+zopfli",
+     "kept": false
     },
-    "high|max": {
+    "same|good|fast": {
      "file": "014-gb82-mies-lossless-4.png",
-     "bytes": 134410,
-     "ssim": 0.9862499119632714,
-     "s2": 72.43708537423353,
-     "recipe": "sweep-png-1667",
-     "drifted": false
+     "bytes": 196629,
+     "format": "png",
+     "s2": 83.43,
+     "chosen": "png-quantette-128",
+     "kept": false
     },
-    "good|fast": {
-     "kept": true,
-     "bytes": 699121
-    },
-    "good|balanced": {
+    "same|good|balanced": {
      "file": "014-gb82-mies-lossless-5.png",
-     "bytes": 114557,
-     "ssim": 0.9745602338948531,
-     "s2": 66.08103953128818,
-     "recipe": "sweep-png-0704",
-     "drifted": false
+     "bytes": 197190,
+     "format": "png",
+     "s2": 83.43,
+     "chosen": "png-quantette-128",
+     "kept": false
     },
-    "good|max": {
+    "same|good|max": {
      "file": "014-gb82-mies-lossless-6.png",
-     "bytes": 114266,
-     "ssim": 0.9757232099892695,
-     "s2": 66.99010263604896,
-     "recipe": "sweep-png-1034",
-     "drifted": false
+     "bytes": 195244,
+     "format": "png",
+     "s2": 83.43,
+     "chosen": "png-quantette-128+zopfli",
+     "kept": false
+    },
+    "auto|visually-lossless|fast": {
+     "file": "014-gb82-mies-lossless-7.avif",
+     "bytes": 156556,
+     "format": "avif",
+     "s2": 90.55,
+     "chosen": "avif-q90",
+     "kept": false
+    },
+    "auto|visually-lossless|balanced": {
+     "file": "014-gb82-mies-lossless-8.avif",
+     "bytes": 147063,
+     "format": "avif",
+     "s2": 90.42,
+     "chosen": "avif-q88",
+     "kept": false
+    },
+    "auto|visually-lossless|max": {
+     "file": "014-gb82-mies-lossless-9.avif",
+     "bytes": 144017,
+     "format": "avif",
+     "s2": 90.39,
+     "chosen": "avif-q87",
+     "kept": false
+    },
+    "auto|high|fast": {
+     "file": "014-gb82-mies-lossless-10.avif",
+     "bytes": 81190,
+     "format": "avif",
+     "s2": 81.65,
+     "chosen": "avif-q70",
+     "kept": false
+    },
+    "auto|high|balanced": {
+     "file": "014-gb82-mies-lossless-11.avif",
+     "bytes": 75757,
+     "format": "avif",
+     "s2": 81.33,
+     "chosen": "avif-q67",
+     "kept": false
+    },
+    "auto|high|max": {
+     "file": "014-gb82-mies-lossless-12.avif",
+     "bytes": 71302,
+     "format": "avif",
+     "s2": 81.0,
+     "chosen": "avif-q66",
+     "kept": false
+    },
+    "auto|good|fast": {
+     "file": "014-gb82-mies-lossless-13.avif",
+     "bytes": 48102,
+     "format": "avif",
+     "s2": 70.68,
+     "chosen": "avif-q57",
+     "kept": false
+    },
+    "auto|good|balanced": {
+     "file": "014-gb82-mies-lossless-14.avif",
+     "bytes": 46895,
+     "format": "avif",
+     "s2": 71.35,
+     "chosen": "avif-q55",
+     "kept": false
+    },
+    "auto|good|max": {
+     "file": "014-gb82-mies-lossless-15.avif",
+     "bytes": 44840,
+     "format": "avif",
+     "s2": 70.9,
+     "chosen": "avif-q54",
+     "kept": false
     }
    }
   }

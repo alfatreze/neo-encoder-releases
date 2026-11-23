@@ -137,6 +137,111 @@
    ]
   ]
  },
+ "v4": {
+  "note": "Data v4 rebuilds the PNG rule table across 358 PNG sources (65 old real, 115 synthetic, and 178 new real PNGs) and 41 candidates, shipping a 16-recipe shortlist library (5 per quality × effort cell) with alpha features and regret-weighted depth-3 trees.",
+  "holdoutNote": "Before rebuilding, the v3 Balanced shortlist was tested blind on the 178 new real PNGs it had never seen. Rebuilding on all 358 sources (v4) closes most of that gap on the holdout set.",
+  "holdout": [
+   [
+    "Visually lossless (90)",
+    "32.3%",
+    "34.1%",
+    "34.8%",
+    "8 of 178",
+    "7 of 178"
+   ],
+   [
+    "High (80)",
+    "46.5%",
+    "48.6%",
+    "53.4%",
+    "3 of 178",
+    "2 of 178"
+   ],
+   [
+    "Good for web (70)",
+    "63.1%",
+    "70.0%",
+    "73.6%",
+    "2 of 178",
+    "2 of 178"
+   ]
+  ],
+  "losoNote": "Leave-one-source-out (LOSO) evaluation across all 358 PNG sources. Race gap = mean percentage points of input size lost vs. the tier oracle (Fast: 0.87–2.09 pp, Balanced: 2.08–3.09 pp, Max: 1.91–3.17 pp).",
+  "loso": [
+   [
+    "Visually lossless (90)",
+    "Fast",
+    "12",
+    "0.87 pp",
+    "28.0%",
+    "28.2%"
+   ],
+   [
+    "Visually lossless (90)",
+    "Balanced",
+    "37",
+    "2.08 pp",
+    "34.2%",
+    "34.9%"
+   ],
+   [
+    "Visually lossless (90)",
+    "Max",
+    "41",
+    "1.91 pp",
+    "34.2%",
+    "35.0%"
+   ],
+   [
+    "High (80)",
+    "Fast",
+    "12",
+    "1.10 pp",
+    "47.3%",
+    "48.1%"
+   ],
+   [
+    "High (80)",
+    "Balanced",
+    "37",
+    "3.09 pp",
+    "49.1%",
+    "54.3%"
+   ],
+   [
+    "High (80)",
+    "Max",
+    "41",
+    "3.17 pp",
+    "49.1%",
+    "54.4%"
+   ],
+   [
+    "Good for web (70)",
+    "Fast",
+    "12",
+    "2.09 pp",
+    "60.2%",
+    "65.7%"
+   ],
+   [
+    "Good for web (70)",
+    "Balanced",
+    "37",
+    "3.06 pp",
+    "68.9%",
+    "73.9%"
+   ],
+   [
+    "Good for web (70)",
+    "Max",
+    "41",
+    "3.09 pp",
+    "68.9%",
+    "73.9%"
+   ]
+  ]
+ },
  "keep": [
   "The recipe search space: palette reduction then OxiPNG for PNG, MozJPEG for JPEG.",
   "The order of the chains from the first comparison (the new gated runs reproduce it).",
@@ -150,7 +255,7 @@
   "Grow the real pool (illustrations, textures, banners, large pieces, soft alpha) before final shortlists."
  ],
  "limits": [
-  "Real pool: 65 PNG files, 23 JPEG files; some categories are thin.",
+  "Real PNG pool is now 243 files (358 PNG sources total with synthetic), and 23 JPEG files; banners, large pieces and gradients are still thin.",
   "The synthetic pool is generated; its numbers are context, not real-world results.",
   "SSIMULACRA2 can disagree with human judgement across codecs; a visual spot-check set is still needed.",
   "One seed per search; results at a floor can move by a few points."
