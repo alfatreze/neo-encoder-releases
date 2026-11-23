@@ -1,597 +1,1193 @@
 {
+ "JPEG": {
+  "ssim>=0.995|fast": [
+   {
+    "id": "jpeg-imageoptim-lossless",
+    "regret": 0.003569979926327127,
+    "saving": 0.03488887868095027,
+    "time": 0.7373079890040916,
+    "chain": "group+metadata+oxipng+zopfli+group+metadata+jpeg-lossless+group+gifsicle+group+svgo",
+    "text": "group \u2192 metadata \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=15, refilter=True) \u2192 group \u2192 metadata \u2192 jpeg-lossless(compareBaseline=True) \u2192 group \u2192 gifsicle(gifEffort=3, gifLoss=0) \u2192 group \u2192 svgo(roundGeometry=False, precision=3)"
+   },
+   {
+    "id": "jpeg-lossless-baseline-compare",
+    "regret": 0.0053882001942295865,
+    "saving": 0.03313715993002393,
+    "time": 0.7333831978980212,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "jpeg-lossless-default",
+    "regret": 0.0053882001942295865,
+    "saving": 0.03313715993002393,
+    "time": 0.5586558895723441,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=False)"
+   },
+   {
+    "id": "sweep-jpeg-q80-b-s12-after-c1",
+    "regret": 0.0053882001942295865,
+    "saving": 0.03313715993002393,
+    "time": 2.3824394682947876,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=80, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q80-b-s8-after-c1",
+    "regret": 0.008048123291319431,
+    "saving": 0.030613059173311995,
+    "time": 2.3438109256636093,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=80, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q83-b-s12-before-c0",
+    "regret": 0.008304561162681523,
+    "saving": 0.03038152734770157,
+    "time": 2.375971038124793,
+    "chain": "jpeg-lossless+mozjpeg",
+    "text": "jpeg-lossless(compareBaseline=False) \u2192 mozjpeg(quality=83, progressive=False, minSavings=12)"
+   },
+   {
+    "id": "sweep-jpeg-q83-b-s6-before-c0",
+    "regret": 0.008304561162681523,
+    "saving": 0.03038152734770157,
+    "time": 2.363449613935709,
+    "chain": "jpeg-lossless+mozjpeg",
+    "text": "jpeg-lossless(compareBaseline=False) \u2192 mozjpeg(quality=83, progressive=False, minSavings=6)"
+   },
+   {
+    "id": "sweep-jpeg-q83-b-s8-before-c0",
+    "regret": 0.008304561162681523,
+    "saving": 0.03038152734770157,
+    "time": 2.3615633385212913,
+    "chain": "jpeg-lossless+mozjpeg",
+    "text": "jpeg-lossless(compareBaseline=False) \u2192 mozjpeg(quality=83, progressive=False, minSavings=8)"
+   }
+  ],
+  "ssim>=0.995|balanced": [
+   {
+    "id": "jpeg-imageoptim-lossless",
+    "regret": 0.004874490372914986,
+    "saving": 0.03488887868095027,
+    "time": 0.7373079890040916,
+    "chain": "group+metadata+oxipng+zopfli+group+metadata+jpeg-lossless+group+gifsicle+group+svgo",
+    "text": "group \u2192 metadata \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=15, refilter=True) \u2192 group \u2192 metadata \u2192 jpeg-lossless(compareBaseline=True) \u2192 group \u2192 gifsicle(gifEffort=3, gifLoss=0) \u2192 group \u2192 svgo(roundGeometry=False, precision=3)"
+   },
+   {
+    "id": "jpeg-lossless-baseline-compare",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 0.7333831978980212,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "jpeg-lossless-default",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 0.5586558895723441,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=False)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s12-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.3926313625464655,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s2-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.458988367737639,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s4-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.402116283812345,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s6-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.481690389266167,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s8-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.407380441510206,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   }
+  ],
+  "ssim>=0.995|max": [
+   {
+    "id": "jpeg-imageoptim-lossless",
+    "regret": 0.004874490372914986,
+    "saving": 0.03488887868095027,
+    "time": 0.7373079890040916,
+    "chain": "group+metadata+oxipng+zopfli+group+metadata+jpeg-lossless+group+gifsicle+group+svgo",
+    "text": "group \u2192 metadata \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=15, refilter=True) \u2192 group \u2192 metadata \u2192 jpeg-lossless(compareBaseline=True) \u2192 group \u2192 gifsicle(gifEffort=3, gifLoss=0) \u2192 group \u2192 svgo(roundGeometry=False, precision=3)"
+   },
+   {
+    "id": "jpeg-lossless-baseline-compare",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 0.7333831978980212,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "jpeg-lossless-default",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 0.5586558895723441,
+    "chain": "jpeg-lossless",
+    "text": "jpeg-lossless(compareBaseline=False)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s12-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.3926313625464655,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s2-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.458988367737639,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s4-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.402116283812345,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s6-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.481690389266167,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q100-b-s8-after-c1",
+    "regret": 0.0066934956112336685,
+    "saving": 0.03313715993002393,
+    "time": 4.407380441510206,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=100, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   }
+  ],
+  "ssim>=0.98|fast": [
+   {
+    "id": "sweep-jpeg-q76-b-s6-after-c1",
+    "regret": 0.17164389678710235,
+    "saving": 0.18325756295938947,
+    "time": 2.0577644488793636,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s8-after-c1",
+    "regret": 0.17164389678710235,
+    "saving": 0.18325756295938947,
+    "time": 2.058112319844752,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s12-after-c1",
+    "regret": 0.17971795463109874,
+    "saving": 0.1768710811569631,
+    "time": 2.0667198925851196,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s2-after-c1",
+    "regret": 0.17971795463109874,
+    "saving": 0.1768710811569631,
+    "time": 2.0612696176962118,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s4-after-c1",
+    "regret": 0.17971795463109874,
+    "saving": 0.1768710811569631,
+    "time": 2.065656870244497,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q74-b-s2-after-c1",
+    "regret": 0.18033973914380796,
+    "saving": 0.17450225068587194,
+    "time": 2.022961780237173,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=74, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q74-b-s4-after-c1",
+    "regret": 0.18033973914380796,
+    "saving": 0.17450225068587194,
+    "time": 2.0181997033832273,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=74, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q74-b-s6-after-c1",
+    "regret": 0.18033973914380796,
+    "saving": 0.17450225068587194,
+    "time": 2.048183321557716,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=74, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   }
+  ],
+  "ssim>=0.98|balanced": [
+   {
+    "id": "sweep-jpeg-q76-b-s12-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0667198925851196,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s2-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0612696176962118,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s4-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.065656870244497,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s6-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0577644488793636,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s8-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.058112319844752,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s12-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.324037534536167,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s2-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.328760236775066,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s4-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.307675743896694,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   }
+  ],
+  "ssim>=0.98|max": [
+   {
+    "id": "sweep-jpeg-q76-b-s12-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0667198925851196,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s2-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0612696176962118,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s4-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.065656870244497,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s6-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.0577644488793636,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-b-s8-after-c1",
+    "regret": 0.173433171872992,
+    "saving": 0.18325756295938947,
+    "time": 2.058112319844752,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s12-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.324037534536167,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s2-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.328760236775066,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q76-p-s4-after-c1",
+    "regret": 0.1747015883109877,
+    "saving": 0.18272331943922948,
+    "time": 3.307675743896694,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=76, progressive=True, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   }
+  ],
+  "ssim>=0.95|fast": [
+   {
+    "id": "sweep-jpeg-q50-b-s12-after-c1",
+    "regret": 0.3459409403903808,
+    "saving": 0.4796309041931666,
+    "time": 1.5417735864301796,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s2-after-c1",
+    "regret": 0.3459409403903808,
+    "saving": 0.4796309041931666,
+    "time": 1.5327027529814292,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s4-after-c1",
+    "regret": 0.3459409403903808,
+    "saving": 0.4796309041931666,
+    "time": 1.5356021814815866,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s6-after-c1",
+    "regret": 0.3459409403903808,
+    "saving": 0.4796309041931666,
+    "time": 1.576022215194837,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s8-after-c1",
+    "regret": 0.3459409403903808,
+    "saving": 0.4796309041931666,
+    "time": 1.5337782563121727,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s0-plain",
+    "regret": 0.348000227497518,
+    "saving": 0.4789352744127012,
+    "time": 1.9042086672327225,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=0)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s1-plain",
+    "regret": 0.348000227497518,
+    "saving": 0.4789352744127012,
+    "time": 1.9385345616300032,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=1)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s10-plain",
+    "regret": 0.348000227497518,
+    "saving": 0.4789352744127012,
+    "time": 1.9083068763579996,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=10)"
+   }
+  ],
+  "ssim>=0.95|balanced": [
+   {
+    "id": "sweep-jpeg-q50-b-s12-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5417735864301796,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s2-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5327027529814292,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s4-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5356021814815866,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s6-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.576022215194837,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s8-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5337782563121727,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s0-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9042086672327225,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=0)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s1-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9385345616300032,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=1)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s10-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9083068763579996,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=10)"
+   }
+  ],
+  "ssim>=0.95|max": [
+   {
+    "id": "sweep-jpeg-q50-b-s12-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5417735864301796,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=12) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s2-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5327027529814292,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=2) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s4-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5356021814815866,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=4) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s6-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.576022215194837,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=6) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q50-b-s8-after-c1",
+    "regret": 0.3483919035500427,
+    "saving": 0.4796309041931666,
+    "time": 1.5337782563121727,
+    "chain": "mozjpeg+jpeg-lossless",
+    "text": "mozjpeg(quality=50, progressive=False, minSavings=8) \u2192 jpeg-lossless(compareBaseline=True)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s0-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9042086672327225,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=0)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s1-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9385345616300032,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=1)"
+   },
+   {
+    "id": "sweep-jpeg-q49-p-s10-plain",
+    "regret": 0.35047200643253973,
+    "saving": 0.4789352744127012,
+    "time": 1.9083068763579996,
+    "chain": "mozjpeg",
+    "text": "mozjpeg(quality=49, progressive=True, minSavings=10)"
+   }
+  ]
+ },
  "PNG": {
   "ssim>=0.995|fast": [
    {
     "id": "sweep-png-1528",
-    "regret": 0.16914520726095383,
-    "saving": 0.16569463697650302,
-    "time": 1.2437862829955637,
+    "regret": 0.1442047548108243,
+    "saving": 0.11926212416773603,
+    "time": 1.4763322899255662,
     "chain": "pngquant",
     "text": "pngquant(colors=192, minQuality=75, speed=4)"
    },
    {
     "id": "sweep-png-1529",
-    "regret": 0.17168183999848674,
-    "saving": 0.16422783589625134,
-    "time": 1.1911851482597773,
+    "regret": 0.1462469973136371,
+    "saving": 0.11815780037358352,
+    "time": 1.411327444059725,
     "chain": "pngquant",
     "text": "pngquant(colors=192, minQuality=75, speed=5)"
    },
    {
     "id": "sweep-png-1585",
-    "regret": 0.18078265083332634,
-    "saving": 0.16093379024583324,
-    "time": 1.2398801541393907,
+    "regret": 0.1521200988849567,
+    "saving": 0.11602760217554978,
+    "time": 1.498667062972558,
     "chain": "pngquant",
     "text": "pngquant(colors=256, minQuality=75, speed=4)"
    },
    {
     "id": "sweep-png-1586",
-    "regret": 0.1829962438019077,
-    "saving": 0.15958822617137025,
-    "time": 1.1855296131481965,
+    "regret": 0.15356839654474674,
+    "saving": 0.1151567559609232,
+    "time": 1.347653856943984,
     "chain": "pngquant",
     "text": "pngquant(colors=256, minQuality=75, speed=5)"
    },
    {
-    "id": "sweep-png-1522",
-    "regret": 0.22414708072398248,
-    "saving": 0.1496221889905659,
-    "time": 1.24805492551218,
+    "id": "sweep-png-1591",
+    "regret": 0.183106071468649,
+    "saving": 0.09842214313952624,
+    "time": 1.7466060650102102,
     "chain": "pngquant",
-    "text": "pngquant(colors=192, minQuality=65, speed=4)"
+    "text": "pngquant(colors=256, minQuality=80, speed=3)"
    },
    {
     "id": "sweep-png-1587",
-    "regret": 0.22908021950364654,
-    "saving": 0.13398688158548663,
-    "time": 1.003016944631358,
+    "regret": 0.1837005328347998,
+    "saving": 0.09856200930440365,
+    "time": 1.0414694811739729,
     "chain": "pngquant",
     "text": "pngquant(colors=256, minQuality=75, speed=7)"
    },
    {
-    "id": "sweep-png-1579",
-    "regret": 0.23285568124107958,
-    "saving": 0.1452468052187397,
-    "time": 1.2497261254559282,
+    "id": "sweep-png-1592",
+    "regret": 0.1839255090279195,
+    "saving": 0.09810445448086685,
+    "time": 1.4977697380952377,
     "chain": "pngquant",
-    "text": "pngquant(colors=256, minQuality=65, speed=4)"
+    "text": "pngquant(colors=256, minQuality=80, speed=5)"
    },
    {
-    "id": "sweep-png-1580",
-    "regret": 0.23339056231569266,
-    "saving": 0.14491198255350457,
-    "time": 1.18238603339166,
+    "id": "sweep-png-1526",
+    "regret": 0.1862555854588135,
+    "saving": 0.1011974734906289,
+    "time": 1.6709308039422035,
     "chain": "pngquant",
-    "text": "pngquant(colors=256, minQuality=65, speed=5)"
+    "text": "pngquant(colors=192, minQuality=75, speed=2)"
    }
   ],
   "ssim>=0.995|balanced": [
    {
     "id": "sweep-png-1156",
-    "regret": 0.2467777128574724,
-    "saving": 0.2887711053502079,
-    "time": 4.755322116191942,
+    "regret": 0.2005880258214856,
+    "saving": 0.20871477419227466,
+    "time": 4.359274693275192,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-0958",
-    "regret": 0.255322322182272,
-    "saving": 0.29960165742611905,
-    "time": 5.427650879364318,
+    "regret": 0.25543810434965875,
+    "saving": 0.1958384826116142,
+    "time": 5.268342146142862,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-0966",
-    "regret": 0.2581558025424786,
-    "saving": 0.29846698453532416,
-    "time": 4.919549309774117,
+    "regret": 0.25723264191112283,
+    "saving": 0.1951198564474441,
+    "time": 4.912710093534066,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=65, speed=4) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-1129",
-    "regret": 0.30602097168415976,
-    "saving": 0.27798038802855685,
-    "time": 4.111750252677045,
+    "regret": 0.28821591545088543,
+    "saving": 0.18154182128342253,
+    "time": 4.094697130420656,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=65, speed=2) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False)"
    },
    {
     "id": "sweep-png-1164",
-    "regret": 0.46086253726811677,
-    "saving": 0.20182301524542012,
-    "time": 6.048718686514032,
+    "regret": 0.3110074758264383,
+    "saving": 0.16475890735425408,
+    "time": 5.650330679549576,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=80, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-1154",
-    "regret": 0.48510135813934374,
-    "saving": 0.18853571377821154,
-    "time": 12.128336807089935,
+    "regret": 0.358028232633842,
+    "saving": 0.13937471945594523,
+    "time": 12.338805157596111,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=4) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False)"
    },
    {
-    "id": "pngquant-256-q60-oxi2",
-    "regret": 0.4940103638366111,
-    "saving": 0.20804797041137102,
-    "time": 5.197998971869742,
+    "id": "sweep-png-1001",
+    "regret": 0.3678632065296208,
+    "saving": 0.14866840447391935,
+    "time": 4.68408697026358,
     "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=256, minQuality=60, speed=3) \u2192 oxipng(level=2)"
+    "text": "pngquant(colors=192, minQuality=80, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
    },
    {
-    "id": "sweep-png-0795",
-    "regret": 0.5159135956220253,
-    "saving": 0.20874647712264374,
-    "time": 4.929126806209307,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=128, minQuality=65, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
+    "id": "sweep-png-0985",
+    "regret": 0.3846378780363766,
+    "saving": 0.13580180423375182,
+    "time": 6.1559758384716545,
+    "chain": "oxipng+pngquant",
+    "text": "oxipng(level=2, optimiseAlpha=True, interlace=False) \u2192 pngquant(colors=192, minQuality=75, speed=4)"
    }
   ],
   "ssim>=0.995|max": [
    {
     "id": "sweep-png-1928",
-    "regret": 0.21451128414521592,
-    "saving": 0.3213899466146983,
-    "time": 58.4012111441104,
+    "regret": 0.18692831320950276,
+    "saving": 0.2304720434205488,
+    "time": 54.2007280905373,
     "chain": "pngquant+oxipng+zopfli",
     "text": "pngquant(colors=192, minQuality=75, speed=4) \u2192 oxipng(level=4, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=3, refilter=True)"
    },
    {
     "id": "sweep-png-0989",
-    "regret": 0.23855533473620327,
-    "saving": 0.31143230613996564,
-    "time": 21.644343847688003,
+    "regret": 0.20209930127968767,
+    "saving": 0.22411461519176343,
+    "time": 21.382287239895465,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=75, speed=5) \u2192 oxipng(level=5, optimiseAlpha=True, interlace=False)"
    },
    {
-    "id": "sweep-png-1919",
-    "regret": 0.2418500516437847,
-    "saving": 0.3218830323237007,
-    "time": 50.73901730393856,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=2, refilter=True)"
-   },
-   {
     "id": "sweep-png-1984",
-    "regret": 0.24612323628305277,
-    "saving": 0.30948700755548647,
-    "time": 21.030719355906303,
+    "regret": 0.2087594206841752,
+    "saving": 0.22205275863635363,
+    "time": 20.334369764242453,
     "chain": "pngquant+oxipng+zopfli",
     "text": "pngquant(colors=256, minQuality=75, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=2, refilter=False)"
    },
    {
-    "id": "sweep-png-1976",
-    "regret": 0.24687285236198986,
-    "saving": 0.32038628065318503,
-    "time": 40.40477883059794,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=256, minQuality=65, speed=1) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=5, refilter=False)"
-   },
-   {
     "id": "sweep-png-1152",
-    "regret": 0.2513116724631823,
-    "saving": 0.30715100065429446,
-    "time": 27.087721129682667,
+    "regret": 0.21186803024175083,
+    "saving": 0.2207361992774799,
+    "time": 21.676134626563368,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=3) \u2192 oxipng(level=5, optimiseAlpha=False, interlace=False)"
    },
    {
-    "id": "sweep-png-1980",
-    "regret": 0.252012711756469,
-    "saving": 0.31833007868450974,
-    "time": 59.89257228398919,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=256, minQuality=65, speed=5) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=3, refilter=False)"
-   },
-   {
     "id": "sweep-png-1158",
-    "regret": 0.2521558102825703,
-    "saving": 0.30673630948569375,
-    "time": 30.409664533671634,
+    "regret": 0.21215179072107015,
+    "saving": 0.2205725748323071,
+    "time": 23.95481685001426,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=6, optimiseAlpha=True, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1154",
+    "regret": 0.23164266055106797,
+    "saving": 0.2122838142845511,
+    "time": 12.338805157596111,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=75, speed=4) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1156",
+    "regret": 0.24037756083970052,
+    "saving": 0.20871477419227466,
+    "time": 4.359274693275192,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1919",
+    "regret": 0.25539097794762156,
+    "saving": 0.21035341964716706,
+    "time": 50.447794866988986,
+    "chain": "pngquant+oxipng+zopfli",
+    "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=2, refilter=True)"
    }
   ],
   "ssim>=0.98|fast": [
    {
+    "id": "sweep-png-1586",
+    "regret": 0.4412212469030361,
+    "saving": 0.2918172051815999,
+    "time": 1.347653856943984,
+    "chain": "pngquant",
+    "text": "pngquant(colors=256, minQuality=75, speed=5)"
+   },
+   {
+    "id": "sweep-png-1529",
+    "regret": 0.44530889737547197,
+    "saving": 0.2846718393630973,
+    "time": 1.411327444059725,
+    "chain": "pngquant",
+    "text": "pngquant(colors=192, minQuality=75, speed=5)"
+   },
+   {
+    "id": "sweep-png-1528",
+    "regret": 0.4669648401759554,
+    "saving": 0.2718514479792392,
+    "time": 1.4763322899255662,
+    "chain": "pngquant",
+    "text": "pngquant(colors=192, minQuality=75, speed=4)"
+   },
+   {
+    "id": "sweep-png-1585",
+    "regret": 0.46821368934250596,
+    "saving": 0.27853131019127697,
+    "time": 1.498667062972558,
+    "chain": "pngquant",
+    "text": "pngquant(colors=256, minQuality=75, speed=4)"
+   },
+   {
+    "id": "sweep-png-1592",
+    "regret": 0.5377008866897084,
+    "saving": 0.2466842074681006,
+    "time": 1.4977697380952377,
+    "chain": "pngquant",
+    "text": "pngquant(colors=256, minQuality=80, speed=5)"
+   },
+   {
+    "id": "sweep-png-0805",
+    "regret": 0.5387858748667276,
+    "saving": 0.2165065057479156,
+    "time": 2.974375822471435,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=128, minQuality=65, speed=10) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
+   },
+   {
     "id": "sweep-png-1406",
-    "regret": 0.4771052303488523,
-    "saving": 0.3049328875525181,
-    "time": 1.2826895506094353,
+    "regret": 0.5420907834990332,
+    "saving": 0.23178215370540833,
+    "time": 1.5417694156486585,
     "chain": "pngquant",
     "text": "pngquant(colors=96, minQuality=65, speed=3)"
    },
    {
     "id": "sweep-png-1407",
-    "regret": 0.477386690570085,
-    "saving": 0.30532053025100564,
-    "time": 1.2473027820946192,
+    "regret": 0.5421419840459683,
+    "saving": 0.23206336183197393,
+    "time": 1.3891701795895668,
     "chain": "pngquant",
     "text": "pngquant(colors=96, minQuality=65, speed=4)"
-   },
-   {
-    "id": "sweep-png-1408",
-    "regret": 0.47865977062087395,
-    "saving": 0.3048151970573226,
-    "time": 1.1825034090714166,
-    "chain": "pngquant",
-    "text": "pngquant(colors=96, minQuality=65, speed=5)"
-   },
-   {
-    "id": "sweep-png-1464",
-    "regret": 0.49582700501548227,
-    "saving": 0.3015233683163907,
-    "time": 1.2805480430340275,
-    "chain": "pngquant",
-    "text": "pngquant(colors=128, minQuality=65, speed=3)"
-   },
-   {
-    "id": "sweep-png-1579",
-    "regret": 0.4960689123474986,
-    "saving": 0.3136313967965915,
-    "time": 1.2497261254559282,
-    "chain": "pngquant",
-    "text": "pngquant(colors=256, minQuality=65, speed=4)"
-   },
-   {
-    "id": "sweep-png-1465",
-    "regret": 0.4974125671397329,
-    "saving": 0.30166499686259524,
-    "time": 1.1793550193283187,
-    "chain": "pngquant",
-    "text": "pngquant(colors=128, minQuality=65, speed=5)"
-   },
-   {
-    "id": "sweep-png-1580",
-    "regret": 0.4979690683691005,
-    "saving": 0.3129178106645196,
-    "time": 1.18238603339166,
-    "chain": "pngquant",
-    "text": "pngquant(colors=256, minQuality=65, speed=5)"
-   },
-   {
-    "id": "sweep-png-0805",
-    "regret": 0.5142596870749347,
-    "saving": 0.26839367040804385,
-    "time": 2.8466131832677037,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=128, minQuality=65, speed=10) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
    }
   ],
   "ssim>=0.98|balanced": [
    {
     "id": "sweep-png-1156",
-    "regret": 0.5341439733296838,
-    "saving": 0.4844509413866525,
-    "time": 4.755322116191942,
+    "regret": 0.4217590097404882,
+    "saving": 0.4581276859831679,
+    "time": 4.359274693275192,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
+    "id": "sweep-png-1164",
+    "regret": 0.6837743951549391,
+    "saving": 0.3700402751448941,
+    "time": 5.650330679549576,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=80, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1154",
+    "regret": 0.6973853490758548,
+    "saving": 0.3533458837505961,
+    "time": 12.338805157596111,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=75, speed=4) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False)"
+   },
+   {
+    "id": "sweep-png-0993",
+    "regret": 0.7448823156547799,
+    "saving": 0.36407376510442285,
+    "time": 3.6384283017052703,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=192, minQuality=75, speed=10) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
+   },
+   {
     "id": "sweep-png-1129",
-    "regret": 0.5550814301734188,
-    "saving": 0.4852745447336606,
-    "time": 4.111750252677045,
+    "regret": 0.74751181354618,
+    "saving": 0.3585783292127489,
+    "time": 4.094697130420656,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=65, speed=2) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False)"
    },
    {
     "id": "sweep-png-0958",
-    "regret": 0.5808732583217335,
-    "saving": 0.4762284685280565,
-    "time": 5.427650879364318,
+    "regret": 0.7602602065116251,
+    "saving": 0.35423510718898066,
+    "time": 5.268342146142862,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-0966",
-    "regret": 0.5859787296911927,
-    "saving": 0.4746429788294181,
-    "time": 4.919549309774117,
+    "regret": 0.7637664936805353,
+    "saving": 0.3531555878852883,
+    "time": 4.912710093534066,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=65, speed=4) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-0795",
-    "regret": 0.5989156297765581,
-    "saving": 0.46272092851449953,
-    "time": 4.929126806209307,
+    "regret": 0.7675078764058243,
+    "saving": 0.3468155776790259,
+    "time": 4.8733225100947415,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
-   },
-   {
-    "id": "sweep-png-0797",
-    "regret": 0.6060933509474686,
-    "saving": 0.4613911655898497,
-    "time": 3.7957223142412952,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=128, minQuality=65, speed=4) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
-   },
-   {
-    "id": "sweep-png-0803",
-    "regret": 0.685123723317079,
-    "saving": 0.42815802265891567,
-    "time": 3.9259047321148293,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=128, minQuality=65, speed=7) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
-   },
-   {
-    "id": "sweep-png-1100",
-    "regret": 0.6959106957700474,
-    "saving": 0.43853380528206065,
-    "time": 4.9181118104269945,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=256, minQuality=45, speed=5) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
    }
   ],
   "ssim>=0.98|max": [
    {
-    "id": "sweep-png-1976",
-    "regret": 0.4640185195444304,
-    "saving": 0.534546015008242,
-    "time": 40.40477883059794,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=256, minQuality=65, speed=1) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=5, refilter=False)"
-   },
-   {
-    "id": "sweep-png-1980",
-    "regret": 0.46978568614895466,
-    "saving": 0.5326222754393437,
-    "time": 59.89257228398919,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=256, minQuality=65, speed=5) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=3, refilter=False)"
-   },
-   {
-    "id": "sweep-png-1131",
-    "regret": 0.48849408955791573,
-    "saving": 0.525242047159486,
-    "time": 34.285013979863514,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=256, minQuality=65, speed=2) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False)"
-   },
-   {
-    "id": "sweep-png-1863",
-    "regret": 0.517184781186872,
-    "saving": 0.5108772441538778,
-    "time": 62.536799165829166,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=128, minQuality=65, speed=2) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=5, refilter=False)"
-   },
-   {
     "id": "sweep-png-1152",
-    "regret": 0.5191698537905434,
-    "saving": 0.5069229987780471,
-    "time": 27.087721129682667,
+    "regret": 0.4171004338117479,
+    "saving": 0.4744035457668446,
+    "time": 21.676134626563368,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=3) \u2192 oxipng(level=5, optimiseAlpha=False, interlace=False)"
    },
    {
-    "id": "sweep-png-1807",
-    "regret": 0.5201791388988499,
-    "saving": 0.5082953241848248,
-    "time": 50.41727103960591,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=96, minQuality=65, speed=4) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=8, refilter=True)"
-   },
-   {
     "id": "sweep-png-1158",
-    "regret": 0.5221767329467246,
-    "saving": 0.5060815481195006,
-    "time": 30.409664533671634,
+    "regret": 0.41957919494079743,
+    "saving": 0.47364699943820765,
+    "time": 23.95481685001426,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=6, optimiseAlpha=True, interlace=False)"
    },
    {
-    "id": "sweep-png-0630",
-    "regret": 0.5249178584819088,
-    "saving": 0.5044977491841607,
-    "time": 16.477029214632278,
+    "id": "sweep-png-1928",
+    "regret": 0.4300741539813415,
+    "saving": 0.46842847723814535,
+    "time": 54.2007280905373,
+    "chain": "pngquant+oxipng+zopfli",
+    "text": "pngquant(colors=192, minQuality=75, speed=4) \u2192 oxipng(level=4, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=3, refilter=True)"
+   },
+   {
+    "id": "sweep-png-1984",
+    "regret": 0.43240944798107117,
+    "saving": 0.47180579548229024,
+    "time": 20.334369764242453,
+    "chain": "pngquant+oxipng+zopfli",
+    "text": "pngquant(colors=256, minQuality=75, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=2, refilter=False)"
+   },
+   {
+    "id": "sweep-png-1154",
+    "regret": 0.44338099960685895,
+    "saving": 0.46497476489861606,
+    "time": 12.338805157596111,
     "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=96, minQuality=65, speed=4) \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False)"
+    "text": "pngquant(colors=256, minQuality=75, speed=4) \u2192 oxipng(level=3, optimiseAlpha=True, interlace=False)"
+   },
+   {
+    "id": "sweep-png-0989",
+    "regret": 0.4472143040221177,
+    "saving": 0.4618838070956725,
+    "time": 21.382287239895465,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=192, minQuality=75, speed=5) \u2192 oxipng(level=5, optimiseAlpha=True, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1156",
+    "regret": 0.4686378178587627,
+    "saving": 0.4581276859831679,
+    "time": 4.359274693275192,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=75, speed=5) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
+   },
+   {
+    "id": "sweep-png-1160",
+    "regret": 0.6181278178301219,
+    "saving": 0.40742933719750934,
+    "time": 19.39513021243523,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=256, minQuality=75, speed=7) \u2192 oxipng(level=5, optimiseAlpha=False, interlace=False)"
    }
   ],
   "ssim>=0.95|fast": [
    {
     "id": "sweep-png-0805",
-    "regret": 0.4239949783317114,
-    "saving": 0.373334213700051,
-    "time": 2.8466131832677037,
+    "regret": 0.42644025299232435,
+    "saving": 0.35163303205749674,
+    "time": 2.974375822471435,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=10) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-1406",
-    "regret": 0.5510415482553643,
-    "saving": 0.3607338385535152,
-    "time": 1.2826895506094353,
+    "regret": 0.5155352661679953,
+    "saving": 0.3495205608125843,
+    "time": 1.5417694156486585,
     "chain": "pngquant",
     "text": "pngquant(colors=96, minQuality=65, speed=3)"
    },
    {
     "id": "sweep-png-1407",
-    "regret": 0.5515953780065426,
-    "saving": 0.3610722811990227,
-    "time": 1.2473027820946192,
+    "regret": 0.5158515424672079,
+    "saving": 0.3497263089372004,
+    "time": 1.3891701795895668,
     "chain": "pngquant",
     "text": "pngquant(colors=96, minQuality=65, speed=4)"
    },
    {
     "id": "sweep-png-1408",
-    "regret": 0.5541079197649692,
-    "saving": 0.3602374992054874,
-    "time": 1.1825034090714166,
+    "regret": 0.5179586367966054,
+    "saving": 0.3491719055204381,
+    "time": 1.2471768175065359,
     "chain": "pngquant",
     "text": "pngquant(colors=96, minQuality=65, speed=5)"
    },
    {
-    "id": "sweep-png-1400",
-    "regret": 0.5713452080745647,
-    "saving": 0.35026761224770153,
-    "time": 1.2251586936491292,
-    "chain": "pngquant",
-    "text": "pngquant(colors=96, minQuality=55, speed=3)"
-   },
-   {
-    "id": "sweep-png-1401",
-    "regret": 0.574335294888388,
-    "saving": 0.3495591631229979,
-    "time": 1.2106871427901438,
-    "chain": "pngquant",
-    "text": "pngquant(colors=96, minQuality=55, speed=4)"
-   },
-   {
-    "id": "sweep-png-1402",
-    "regret": 0.5802069039124111,
-    "saving": 0.3476002475010136,
-    "time": 1.1556243756943574,
-    "chain": "pngquant",
-    "text": "pngquant(colors=96, minQuality=55, speed=5)"
-   },
-   {
     "id": "sweep-png-1465",
-    "regret": 0.5805826725961472,
-    "saving": 0.3567289743497566,
-    "time": 1.1793550193283187,
+    "regret": 0.544922261214779,
+    "saving": 0.3436107497050296,
+    "time": 1.2166670520777305,
     "chain": "pngquant",
     "text": "pngquant(colors=128, minQuality=65, speed=5)"
+   },
+   {
+    "id": "sweep-png-1522",
+    "regret": 0.5817724031881883,
+    "saving": 0.33535073669750787,
+    "time": 1.33623214106009,
+    "chain": "pngquant",
+    "text": "pngquant(colors=192, minQuality=65, speed=4)"
+   },
+   {
+    "id": "sweep-png-1579",
+    "regret": 0.5988703245857652,
+    "saving": 0.3306306538686241,
+    "time": 1.3305216036671945,
+    "chain": "pngquant",
+    "text": "pngquant(colors=256, minQuality=65, speed=4)"
+   },
+   {
+    "id": "sweep-png-1466",
+    "regret": 0.5996603821064366,
+    "saving": 0.3213415472764233,
+    "time": 1.0316592525366048,
+    "chain": "pngquant",
+    "text": "pngquant(colors=128, minQuality=65, speed=7)"
    }
   ],
   "ssim>=0.95|balanced": [
    {
     "id": "pngquant-128-q60-oxi2",
-    "regret": 0.48732825969586635,
-    "saving": 0.5664125392702325,
-    "time": 5.035385870901765,
+    "regret": 0.42892002747528823,
+    "saving": 0.5298713663992499,
+    "time": 4.959349922431668,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=60, speed=3) \u2192 oxipng(level=2)"
    },
    {
-    "id": "sweep-png-0605",
-    "regret": 0.5666298691686433,
-    "saving": 0.539642970147948,
-    "time": 5.214429478528973,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=96, minQuality=55, speed=2) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
-   },
-   {
-    "id": "sweep-png-0958",
-    "regret": 0.5742975211567247,
-    "saving": 0.548648039451652,
-    "time": 5.427650879364318,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
-   },
-   {
     "id": "pngquant-256-q60-oxi2",
-    "regret": 0.5746629256467919,
-    "saving": 0.5474870054373854,
-    "time": 5.197998971869742,
+    "regret": 0.4877433959841724,
+    "saving": 0.5171576210444893,
+    "time": 5.090208991271915,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=256, minQuality=60, speed=3) \u2192 oxipng(level=2)"
    },
    {
     "id": "sweep-png-0795",
-    "regret": 0.576888076402956,
-    "saving": 0.5366873467578198,
-    "time": 4.929126806209307,
+    "regret": 0.505409487470661,
+    "saving": 0.506499369903816,
+    "time": 4.8733225100947415,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=3) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
    },
    {
+    "id": "sweep-png-0958",
+    "regret": 0.5080436869676164,
+    "saving": 0.5132675748668558,
+    "time": 5.268342146142862,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=192, minQuality=65, speed=1) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
+   },
+   {
     "id": "sweep-png-0966",
-    "regret": 0.5807176525181978,
-    "saving": 0.5469443445220713,
-    "time": 4.919549309774117,
+    "regret": 0.5140071900618011,
+    "saving": 0.5117274039766574,
+    "time": 4.912710093534066,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=192, minQuality=65, speed=4) \u2192 oxipng(level=2, optimiseAlpha=False, interlace=False)"
    },
    {
+    "id": "sweep-png-0803",
+    "regret": 0.5156857812928897,
+    "saving": 0.4998488722652087,
+    "time": 3.970299013470735,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=128, minQuality=65, speed=7) \u2192 oxipng(level=2, optimiseAlpha=True, interlace=False)"
+   },
+   {
     "id": "sweep-png-0797",
-    "regret": 0.5867936581527475,
-    "saving": 0.5351784824143551,
-    "time": 3.7957223142412952,
+    "regret": 0.5157865129220471,
+    "saving": 0.5040417296860614,
+    "time": 3.79972830171992,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=4) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
    },
    {
-    "id": "sweep-png-0607",
-    "regret": 0.6102420217518403,
-    "saving": 0.5226097102764842,
-    "time": 4.041190587478232,
+    "id": "sweep-png-1129",
+    "regret": 0.5721823438901497,
+    "saving": 0.49416857967232025,
+    "time": 4.094697130420656,
     "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=96, minQuality=55, speed=3) \u2192 oxipng(level=1, optimiseAlpha=False, interlace=False)"
+    "text": "pngquant(colors=256, minQuality=65, speed=2) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False)"
    }
   ],
   "ssim>=0.95|max": [
    {
     "id": "pngquant-128-q60-oxi2-zopfli3",
-    "regret": 0.4816399668564961,
-    "saving": 0.588931958052183,
-    "time": 23.504083429495118,
+    "regret": 0.4473105949285725,
+    "saving": 0.5439362865593778,
+    "time": 18.99305510976054,
     "chain": "pngquant+oxipng+zopfli",
     "text": "pngquant(colors=128, minQuality=60, speed=1) \u2192 oxipng(level=2) \u2192 zopfli(level=3, refilter=False)"
    },
    {
-    "id": "sweep-png-1807",
-    "regret": 0.49309824787358303,
-    "saving": 0.5828294622337822,
-    "time": 50.41727103960591,
-    "chain": "pngquant+oxipng+zopfli",
-    "text": "pngquant(colors=96, minQuality=65, speed=4) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=8, refilter=True)"
-   },
-   {
     "id": "sweep-png-0630",
-    "regret": 0.4953323118243269,
-    "saving": 0.5789307001890781,
-    "time": 16.477029214632278,
+    "regret": 0.4609133997356176,
+    "saving": 0.5366370083878284,
+    "time": 16.98288960522998,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=96, minQuality=65, speed=4) \u2192 oxipng(level=4, optimiseAlpha=True, interlace=False)"
    },
    {
+    "id": "sweep-png-1807",
+    "regret": 0.4649349881153799,
+    "saving": 0.5375369959717431,
+    "time": 48.20282206020811,
+    "chain": "pngquant+oxipng+zopfli",
+    "text": "pngquant(colors=96, minQuality=65, speed=4) \u2192 oxipng(level=1, optimiseAlpha=True, interlace=False) \u2192 zopfli(level=8, refilter=True)"
+   },
+   {
     "id": "sweep-png-1863",
-    "regret": 0.49579817897931044,
-    "saving": 0.5848293643286094,
-    "time": 62.536799165829166,
+    "regret": 0.4681419458354972,
+    "saving": 0.5390038283140633,
+    "time": 54.537474277493466,
     "chain": "pngquant+oxipng+zopfli",
     "text": "pngquant(colors=128, minQuality=65, speed=2) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False) \u2192 zopfli(level=5, refilter=False)"
    },
    {
+    "id": "pngquant-128-q60-oxi2",
+    "regret": 0.4823369008509748,
+    "saving": 0.5298713663992499,
+    "time": 4.959349922431668,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=128, minQuality=60, speed=3) \u2192 oxipng(level=2)"
+   },
+   {
+    "id": "sweep-png-0628",
+    "regret": 0.4827041833810355,
+    "saving": 0.5259311398695676,
+    "time": 29.530388960039947,
+    "chain": "pngquant+oxipng",
+    "text": "pngquant(colors=96, minQuality=65, speed=3) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False)"
+   },
+   {
     "id": "sweep-png-0793",
-    "regret": 0.5225753288405515,
-    "saving": 0.5751657094722222,
-    "time": 16.27314120089999,
+    "regret": 0.48585771331408334,
+    "saving": 0.5324572863510898,
+    "time": 15.969562768309293,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=2) \u2192 oxipng(level=4, optimiseAlpha=False, interlace=False)"
    },
    {
     "id": "sweep-png-0799",
-    "regret": 0.5241258614688811,
-    "saving": 0.5745439321262783,
-    "time": 27.300400497549152,
+    "regret": 0.4877777137945072,
+    "saving": 0.5318448450853972,
+    "time": 23.628282722755962,
     "chain": "pngquant+oxipng",
     "text": "pngquant(colors=128, minQuality=65, speed=4) \u2192 oxipng(level=5, optimiseAlpha=True, interlace=False)"
-   },
-   {
-    "id": "sweep-png-0801",
-    "regret": 0.5267968941161001,
-    "saving": 0.5739494149162908,
-    "time": 16.34807727476584,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=128, minQuality=65, speed=5) \u2192 oxipng(level=4, optimiseAlpha=False, interlace=False)"
-   },
-   {
-    "id": "sweep-png-0628",
-    "regret": 0.5313672092995056,
-    "saving": 0.5616617749576658,
-    "time": 31.961096876936633,
-    "chain": "pngquant+oxipng",
-    "text": "pngquant(colors=96, minQuality=65, speed=3) \u2192 oxipng(level=6, optimiseAlpha=False, interlace=False)"
    }
   ]
  }

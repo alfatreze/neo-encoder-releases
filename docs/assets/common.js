@@ -20,7 +20,7 @@ const chainName=c=>String(c).split('+').map(s=>STAGE[s]||s).join(' → ');
 const cache={};
 async function data(n){return cache[n]??=await fetch('data/'+n+'.json').then(r=>{if(!r.ok)throw new Error(n);return r.json()}).catch(()=>null)}
 function chrome(page){
-  const pages=[['index.html','Overview'],['rankings.html','Rankings'],['explore.html','Explore'],['methodology.html','Methodology']];
+  const pages=[['index.html','Overview'],['rankings.html','Rankings'],['explore.html','Explore'],['gated.html','SSIMULACRA2'],['methodology.html','Methodology']];
   document.body.insertAdjacentHTML('afterbegin',`<header class="top"><div class="wrap"><a class="brand" href="index.html"><b>N</b>NEO Compressor <span class="muted" style="font-weight:500">Results</span></a><nav>${pages.map(([h,t])=>`<a href="${h}"${h===page?' aria-current="page"':''}>${t}</a>`).join('')}</nav></div></header><div id="banner"></div>`);
   document.body.insertAdjacentHTML('beforeend','<div id="tip"></div>');
   data('meta').then(m=>{if(!m)return;

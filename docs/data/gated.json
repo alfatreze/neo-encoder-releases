@@ -1,0 +1,158 @@
+{
+ "updated": "2026-11-23",
+ "intro": "The first 100,000 test runs gated quality on NEO SSIM. We have since re-checked the results on SSIMULACRA2, a perceptual metric that our quality floors are really set on (floors 90, 80 and 70 stand for the SSIM floors 0.995, 0.98 and 0.95). SSIM-gated savings turned out to be too high. This page shows by how much, what we measured instead, and what changes in the approach. The original SSIM comparison stays on the other pages as the initial comparison.",
+ "rescore": {
+  "note": "The 1,320 best trials per source (the winners plus the size-versus-quality frontier) were re-scored under SSIMULACRA2. The SSIM column is what the other pages show. The SSIMULACRA2 column is a lower bound, because a search run on SSIMULACRA2 might pick trials that were not in the replayed set.",
+  "rows": [
+   [
+    "JPEG",
+    "Visually lossless (90)",
+    "4 of 20",
+    0.039,
+    0.035
+   ],
+   [
+    "JPEG",
+    "High (80)",
+    "13 of 20",
+    0.297,
+    0.132
+   ],
+   [
+    "JPEG",
+    "Good for web (70)",
+    "18 of 20",
+    0.607,
+    0.409
+   ],
+   [
+    "PNG",
+    "Visually lossless (90)",
+    "14 of 30",
+    0.308,
+    0.132
+   ],
+   [
+    "PNG",
+    "High (80)",
+    "20 of 30",
+    0.612,
+    0.505
+   ],
+   [
+    "PNG",
+    "Good for web (70)",
+    "18 of 30",
+    0.653,
+    0.621
+   ]
+  ]
+ },
+ "gated": {
+  "png": [
+   [
+    "90",
+    "30",
+    "11.6%",
+    "17 of 30"
+   ],
+   [
+    "80",
+    "21",
+    "55.6%",
+    "0"
+   ],
+   [
+    "70",
+    "30",
+    "64.8%",
+    "0"
+   ]
+  ],
+  "pngnote": "A search run directly on SSIMULACRA2, mean saving per source. At floor 90 most PNGs cannot be palette-reduced without a visible metric hit, so the gains there come from lossless recipes.",
+  "jpeg": [
+   [
+    "90",
+    "-9.3%",
+    "22 of 23 larger than the input"
+   ],
+   [
+    "80",
+    "28.0%",
+    ""
+   ],
+   [
+    "70",
+    "48.8%",
+    ""
+   ]
+  ],
+  "jpegnote": "Re-encoding an already-lossy JPEG to floor 90 makes it bigger. The right tool there is lossless JPEG recompression. MozJPEG's MS-SSIM-tuned quantisation table was 3 to 5 points better than the default at floors 80 and 70."
+ },
+ "findings": [
+  [
+   "Racing a shortlist beats tuning per image",
+   "On held-out files, running 5 recipes chosen on other images lost under 2 points to the best of 32 candidates and matched or beat a 60-trial search at floors 90 and 70. A single fixed recipe lost 20 to 24 points. Per-image tuned settings did not carry over to unseen images."
+  ],
+  [
+   "Transparency needs its own check",
+   "SSIMULACRA2 flattens alpha over white. WebP winners chosen that way failed the stricter check (white, black and grey backgrounds) 63 to 77 per cent of the time; fixing them cost 4 to 13 per cent more bytes (median). The shipped engine now uses the stricter check for every image with transparency."
+  ],
+  [
+   "Slow settings add little",
+   "Zopfli and the slowest palette settings added at most 0.5 points on real files while multiplying race time by 2.5 to 3.4. The palette step decides the size, not the deflater."
+  ],
+  [
+   "Format choice can matter more than any setting",
+   "On lossless originals, flat art, UI and icons are larger as JPEG than as PNG or lossless WebP at floors 90 and 80. Textures and gradients are 80 to 90 per cent smaller as JPEG. Opt-in format choice is planned."
+  ],
+  [
+   "Synthetic images overstate savings",
+   "On procedurally generated designer-style images (a mix of icons, logos, banners, gradients and alpha work) PNG savings at floor 90 reached 65 per cent. On real files the same gate saved about 5 per cent and 21 of 65 real files could not be reduced at all. A recipe shortlist chosen only on synthetic images lost 28 points on real files at floor 80. Numbers on this page that come from synthetic images are labelled."
+  ]
+ ],
+ "engine": {
+  "note": "The shipped engine (default metric SSIMULACRA2, alpha-aware, 5-recipe race) on the 65 real PNGs at Balanced effort, compared with the best possible from the research candidates:",
+  "rows": [
+   [
+    "Visually lossless (90)",
+    "3.2%",
+    "5.4%",
+    "27 of 65",
+    "21 of 65"
+   ],
+   [
+    "High (80)",
+    "51.6%",
+    "58.7%",
+    "8",
+    "3"
+   ],
+   [
+    "Good for web (70)",
+    "69.6%",
+    "73.8%",
+    "0",
+    "0"
+   ]
+  ]
+ },
+ "keep": [
+  "The recipe search space: palette reduction then OxiPNG for PNG, MozJPEG for JPEG.",
+  "The order of the chains from the first comparison (the new gated runs reproduce it).",
+  "Racing a shortlist per image instead of a single recipe or a decision tree."
+ ],
+ "change": [
+  "Gate every published number on SSIMULACRA2, with the alpha-aware check for transparency.",
+  "Report byte-weighted savings per floor and per content type, with real and synthetic files kept separate.",
+  "Do not ship per-image tuned settings; ship a raced shortlist.",
+  "Treat format choice as a first-class question.",
+  "Grow the real pool (illustrations, textures, banners, large pieces, soft alpha) before final shortlists."
+ ],
+ "limits": [
+  "Real pool: 65 PNG files, 23 JPEG files; some categories are thin.",
+  "The synthetic pool is generated; its numbers are context, not real-world results.",
+  "SSIMULACRA2 can disagree with human judgement across codecs; a visual spot-check set is still needed.",
+  "One seed per search; results at a floor can move by a few points."
+ ]
+}

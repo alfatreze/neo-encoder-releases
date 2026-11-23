@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-21T12:07+00:00",
+ "generated": "2026-11-23T11:25+00:00",
  "run": "sweep-100k.d7q5Sh",
- "rows": 41928,
+ "rows": 100000,
  "total": 100000,
  "complete": {
-  "JPEG": 1,
-  "PNG": 19
+  "JPEG": 20,
+  "PNG": 30
  },
  "sources_planned": 50,
  "recipes_per_format": {
@@ -14,8 +14,8 @@
  },
  "metric": "Full-resolution decoded pixels. NEO 8-by-8 luma SSIM and RGB PSNR. Transparent sources use the lower score across black and white mattes.",
  "timing": "Headless recipe wall time, including codec startup if cold, excluding source read and quality scoring.",
- "rescored": 0,
- "status": "partial",
+ "rescored": 1320,
+ "status": "complete",
  "effort_tiers": {
   "fast": "\u2264 3\u00d7 fastest recipe",
   "balanced": "\u2264 15\u00d7",

@@ -1,81 +1,151 @@
 {
  "chains": {
+  "JPEG": [
+   {
+    "chain": "group+metadata+oxipng+zopfli+group+metadata+jpeg-lossless+group+gifsicle+group+svgo",
+    "recipes": 1,
+    "time": 0.7373079890040916,
+    "win": 0.0,
+    "saving": 0.03488887868095027,
+    "regret": 0.4077126565217317
+   },
+   {
+    "chain": "group+metadata+pngquant+oxipng+zopfli+group+metadata+jpeg-lossless+mozjpeg+group+gifsicle+group+svgo",
+    "recipes": 1,
+    "time": 3.8939626767698217,
+    "win": 0.0,
+    "saving": 0.0437804100897768,
+    "regret": 0.39390253816638743
+   },
+   {
+    "chain": "jpeg-lossless",
+    "recipes": 2,
+    "time": 0.6352648608574696,
+    "win": 0.0,
+    "saving": 0.03313715993002393,
+    "regret": 0.41049110957148516
+   },
+   {
+    "chain": "jpeg-lossless+mozjpeg",
+    "recipes": 500,
+    "time": 2.235489524880605,
+    "win": 0.5,
+    "saving": 0.287202221551598,
+    "regret": 0.013246332235553826
+   },
+   {
+    "chain": "mozjpeg",
+    "recipes": 1000,
+    "time": 1.5884710492953693,
+    "win": 0.7,
+    "saving": 0.29679741859519965,
+    "regret": 0.0004112940815168553
+   },
+   {
+    "chain": "mozjpeg+jpeg-lossless",
+    "recipes": 496,
+    "time": 2.011883396235901,
+    "win": 0.5,
+    "saving": 0.28262441611377576,
+    "regret": 0.019351741629577424
+   }
+  ],
   "PNG": [
    {
     "chain": "oxipng",
     "recipes": 5,
-    "time": 11.555480512422298,
-    "win": 0.0,
-    "saving": 0.03529895252565284,
-    "regret": 2.23904355591201
+    "time": 10.83458570655267,
+    "win": 0.06666666666666667,
+    "saving": 0.029142163162216687,
+    "regret": 2.005375038007516
    },
    {
     "chain": "oxipng+pngquant",
     "recipes": 588,
-    "time": 14.989887766207392,
-    "win": 0.0,
-    "saving": 0.4582281535673238,
-    "regret": 0.6554061542735103
+    "time": 14.577902015781714,
+    "win": 0.06666666666666667,
+    "saving": 0.4228553140033851,
+    "regret": 0.5683652889015711
    },
    {
     "chain": "oxipng+zopfli",
     "recipes": 2,
-    "time": 42.654571043849955,
-    "win": 0.0,
-    "saving": 0.0453525301323884,
-    "regret": 2.2118337813450317
+    "time": 41.60362730540921,
+    "win": 0.03333333333333333,
+    "saving": 0.03545349198296847,
+    "regret": 1.9883309127764934
    },
    {
     "chain": "pngquant",
     "recipes": 404,
-    "time": 1.1409431375129748,
+    "time": 1.137731281608437,
     "win": 0.0,
-    "saving": 0.45578016678876365,
-    "regret": 0.6572986244820236
+    "saving": 0.41514610499397153,
+    "regret": 0.5762026477519613
    },
    {
     "chain": "pngquant+oxipng",
     "recipes": 596,
-    "time": 12.144146687299056,
-    "win": 0.3157894736842105,
-    "saving": 0.6673536640043704,
-    "regret": 0.017505013681930803
+    "time": 12.005017925720493,
+    "win": 0.4666666666666667,
+    "saving": 0.6076220425144505,
+    "regret": 0.01242375936263973
    },
    {
     "chain": "pngquant+oxipng+zopfli",
     "recipes": 210,
-    "time": 47.10844360498796,
-    "win": 0.8947368421052632,
-    "saving": 0.6731814860413805,
-    "regret": 0.0017975770924802958
+    "time": 39.481061996299346,
+    "win": 0.8,
+    "saving": 0.611104539606492,
+    "regret": 0.002775336429333475
    },
    {
     "chain": "zopfli",
     "recipes": 3,
-    "time": 44.03561709045232,
-    "win": 0.0,
-    "saving": 0.04542316849150636,
-    "regret": 2.2115098888543754
+    "time": 42.934820691394,
+    "win": 0.03333333333333333,
+    "saving": 0.03361558374661941,
+    "regret": 1.9900502337442072
    },
    {
     "chain": "zopfli+oxipng+pngquant",
     "recipes": 192,
-    "time": 94.03322259157017,
-    "win": 0.0,
-    "saving": 0.4593550121098887,
-    "regret": 0.6525134433771622
+    "time": 90.2348992604486,
+    "win": 0.1,
+    "saving": 0.4238497103358298,
+    "regret": 0.566637045531436
    }
   ]
  },
  "alerts": {
+  "JPEG": [
+   {
+    "added": "mozjpeg",
+    "from": "jpeg-lossless",
+    "to": "jpeg-lossless+mozjpeg",
+    "median_gain": 0.24383775913307165,
+    "share_ge_1pct": 0.95,
+    "time_ratio": 3.5189881616672136,
+    "verdict": "keep"
+   },
+   {
+    "added": "jpeg-lossless",
+    "from": "mozjpeg",
+    "to": "mozjpeg+jpeg-lossless",
+    "median_gain": -0.001036759607845661,
+    "share_ge_1pct": 0.0,
+    "time_ratio": 1.2665533924136378,
+    "verdict": "none"
+   }
+  ],
   "PNG": [
    {
     "added": "pngquant",
     "from": "oxipng",
     "to": "oxipng+pngquant",
-    "median_gain": 0.4581261424163211,
-    "share_ge_1pct": 0.9473684210526315,
-    "time_ratio": 1.2972102501573224,
+    "median_gain": 0.4559307634198187,
+    "share_ge_1pct": 0.8333333333333334,
+    "time_ratio": 1.3454969493632891,
     "verdict": "keep"
    },
    {
@@ -83,26 +153,26 @@
     "from": "oxipng",
     "to": "oxipng+zopfli",
     "median_gain": 0.0,
-    "share_ge_1pct": 0.3684210526315789,
-    "time_ratio": 3.691284927355095,
+    "share_ge_1pct": 0.23333333333333334,
+    "time_ratio": 3.8398909226633076,
     "verdict": "some"
    },
    {
     "added": "oxipng",
     "from": "pngquant",
     "to": "pngquant+oxipng",
-    "median_gain": 0.36066760898779393,
+    "median_gain": 0.34336366465291324,
     "share_ge_1pct": 1.0,
-    "time_ratio": 10.643954363730026,
+    "time_ratio": 10.551716490337437,
     "verdict": "keep"
    },
    {
     "added": "zopfli",
     "from": "pngquant+oxipng",
     "to": "pngquant+oxipng+zopfli",
-    "median_gain": 0.007430757530898613,
-    "share_ge_1pct": 0.42105263157894735,
-    "time_ratio": 3.8791069325814616,
+    "median_gain": 0.0023845395586518103,
+    "share_ge_1pct": 0.3333333333333333,
+    "time_ratio": 3.2887132897746048,
     "verdict": "some"
    }
   ]
