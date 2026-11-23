@@ -1,0 +1,171 @@
+{
+ "generated": "2026-11-23",
+ "examples": [
+  {
+   "source": "dog_garden.jpg",
+   "slug": "dog-garden",
+   "format": "JPEG",
+   "original": "dog-garden-original.jpg",
+   "originalBytes": 309213,
+   "width": 1600,
+   "height": 1067,
+   "title": "animals/outdoors",
+   "credit": "RDNE Stock project",
+   "license": "Pexels License (free to use; attribution not required)",
+   "license_url": "https://www.pexels.com/license/",
+   "source_url": "https://www.pexels.com/photo/7348528/",
+   "original_url": "https://images.pexels.com/photos/7348528/pexels-photo-7348528.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "cells": {
+    "visually-lossless|fast": {
+     "file": "dog-garden-1.jpg",
+     "bytes": 297544,
+     "ssim": 1,
+     "s2": 100,
+     "recipe": "jpeg-imageoptim-lossless",
+     "drifted": false
+    },
+    "visually-lossless|balanced": {
+     "file": "dog-garden-1.jpg",
+     "bytes": 297544,
+     "ssim": 1,
+     "s2": 100,
+     "recipe": "jpeg-imageoptim-lossless",
+     "drifted": false
+    },
+    "visually-lossless|max": {
+     "file": "dog-garden-1.jpg",
+     "bytes": 297544,
+     "ssim": 1,
+     "s2": 100,
+     "recipe": "jpeg-imageoptim-lossless",
+     "drifted": false
+    },
+    "high|fast": {
+     "file": "dog-garden-2.jpg",
+     "bytes": 234216,
+     "ssim": 0.9811914248471595,
+     "s2": 79.39066831021228,
+     "recipe": "sweep-jpeg-q74-b-s0-plain",
+     "drifted": false
+    },
+    "high|balanced": {
+     "file": "dog-garden-3.jpg",
+     "bytes": 228653,
+     "ssim": 0.9811669963692586,
+     "s2": 79.37182963190742,
+     "recipe": "sweep-jpeg-q74-p-s0-plain",
+     "drifted": false
+    },
+    "high|max": {
+     "file": "dog-garden-3.jpg",
+     "bytes": 228653,
+     "ssim": 0.9811669963692586,
+     "s2": 79.37182963190742,
+     "recipe": "sweep-jpeg-q74-p-s0-plain",
+     "drifted": false
+    },
+    "good|fast": {
+     "file": "dog-garden-4.jpg",
+     "bytes": 134020,
+     "ssim": 0.9506100063056709,
+     "s2": 60.59065429672298,
+     "recipe": "sweep-jpeg-q45-p-s0-plain",
+     "drifted": false
+    },
+    "good|balanced": {
+     "file": "dog-garden-4.jpg",
+     "bytes": 134020,
+     "ssim": 0.9506100063056709,
+     "s2": 60.59065429672298,
+     "recipe": "sweep-jpeg-q45-p-s0-plain",
+     "drifted": false
+    },
+    "good|max": {
+     "file": "dog-garden-4.jpg",
+     "bytes": 134020,
+     "ssim": 0.9506100063056709,
+     "s2": 60.59065429672298,
+     "recipe": "sweep-jpeg-q45-p-s0-plain",
+     "drifted": false
+    }
+   }
+  },
+  {
+   "source": "014_gb82_mies-lossless.png",
+   "slug": "014-gb82-mies-lossless",
+   "format": "PNG",
+   "original": "014-gb82-mies-lossless-original.png",
+   "originalBytes": 699121,
+   "width": 576,
+   "height": 576,
+   "title": "architecture",
+   "credit": "Gianni Rosato",
+   "license": "CC0 1.0 Universal",
+   "license_url": "https://raw.githubusercontent.com/gianni-rosato/gb82-image-set/main/LICENSE",
+   "source_url": "https://github.com/gianni-rosato/gb82-image-set/tree/main/png",
+   "original_url": "https://raw.githubusercontent.com/gianni-rosato/gb82-image-set/main/png/mies-lossless.png",
+   "cells": {
+    "visually-lossless|fast": {
+     "kept": true,
+     "bytes": 699121
+    },
+    "visually-lossless|balanced": {
+     "file": "014-gb82-mies-lossless-1.png",
+     "bytes": 277314,
+     "ssim": 0.9958522565710187,
+     "s2": 84.50490081901685,
+     "recipe": "sweep-png-1515",
+     "drifted": false
+    },
+    "visually-lossless|max": {
+     "file": "014-gb82-mies-lossless-2.png",
+     "bytes": 213790,
+     "ssim": 0.9959097286667254,
+     "s2": 84.65753493160156,
+     "recipe": "sweep-png-1971",
+     "drifted": false
+    },
+    "high|fast": {
+     "kept": true,
+     "bytes": 699121
+    },
+    "high|balanced": {
+     "file": "014-gb82-mies-lossless-3.png",
+     "bytes": 136860,
+     "ssim": 0.9862144711658,
+     "s2": 72.28978007996089,
+     "recipe": "sweep-png-0894",
+     "drifted": false
+    },
+    "high|max": {
+     "file": "014-gb82-mies-lossless-4.png",
+     "bytes": 134410,
+     "ssim": 0.9862499119632714,
+     "s2": 72.43708537423353,
+     "recipe": "sweep-png-1667",
+     "drifted": false
+    },
+    "good|fast": {
+     "kept": true,
+     "bytes": 699121
+    },
+    "good|balanced": {
+     "file": "014-gb82-mies-lossless-5.png",
+     "bytes": 114557,
+     "ssim": 0.9745602338948531,
+     "s2": 66.08103953128818,
+     "recipe": "sweep-png-0704",
+     "drifted": false
+    },
+    "good|max": {
+     "file": "014-gb82-mies-lossless-6.png",
+     "bytes": 114266,
+     "ssim": 0.9757232099892695,
+     "s2": 66.99010263604896,
+     "recipe": "sweep-png-1034",
+     "drifted": false
+    }
+   }
+  }
+ ]
+}
