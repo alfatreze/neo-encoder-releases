@@ -1,0 +1,207 @@
+{
+  "dataVersion": 6,
+  "corpus": {
+    "total": 336,
+    "evaluated": 321,
+    "skippedOver16Mp": 14,
+    "errors": 1
+  },
+  "tiers": {
+    "s2>=90": {
+      "allAutoBwPct": 43.52,
+      "allSameBwPct": 22.21,
+      "pngAutoBwPct": 43.73,
+      "pngSameBwPct": 22.39,
+      "jpgAutoBwPct": 17.1,
+      "jpgSameBwPct": 0.0,
+      "formatWins": {
+        "avif": 89,
+        "jxl": 65,
+        "webp": 114,
+        "png": 49,
+        "jpeg": 4
+      },
+      "topPngWinners": [
+        [
+          "dense-png-c129-q95-s1-o5-d9-p0",
+          129
+        ],
+        [
+          "kept-original",
+          36
+        ],
+        [
+          "png-lossless",
+          27
+        ],
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0",
+          26
+        ],
+        [
+          "dense-png-c32-q90-s2-o2",
+          24
+        ],
+        [
+          "dense-png-c229-q78-s1-o6-d13-p1",
+          21
+        ],
+        [
+          "dense-png-c255-q77-s2-o5-d95-p2",
+          20
+        ],
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0@t100",
+          8
+        ]
+      ]
+    },
+    "s2>=80": {
+      "allAutoBwPct": 90.72,
+      "allSameBwPct": 44.05,
+      "pngAutoBwPct": 91.13,
+      "pngSameBwPct": 44.2,
+      "jpgAutoBwPct": 39.9,
+      "jpgSameBwPct": 25.2,
+      "formatWins": {
+        "avif": 221,
+        "jxl": 40,
+        "webp": 27,
+        "png": 32,
+        "jpeg": 1
+      },
+      "topPngWinners": [
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0",
+          61
+        ],
+        [
+          "png-quantette-256",
+          44
+        ],
+        [
+          "dense-png-c256-q69-s2-o6-d4-p0",
+          34
+        ],
+        [
+          "dense-png-c255-q1-s1-o4-d33-p2",
+          34
+        ],
+        [
+          "dense-png-c129-q95-s2-o5-d9-p0",
+          33
+        ],
+        [
+          "png-lossless",
+          27
+        ],
+        [
+          "dense-png-c229-q78-s6-o6-d13-p1",
+          26
+        ],
+        [
+          "png-posterize-32",
+          25
+        ]
+      ]
+    },
+    "s2>=70": {
+      "allAutoBwPct": 95.51,
+      "allSameBwPct": 65.0,
+      "pngAutoBwPct": 95.77,
+      "pngSameBwPct": 65.13,
+      "jpgAutoBwPct": 63.32,
+      "jpgSameBwPct": 48.4,
+      "formatWins": {
+        "avif": 228,
+        "jxl": 29,
+        "jpeg": 9,
+        "webp": 22,
+        "png": 33
+      },
+      "topPngWinners": [
+        [
+          "dense-png-c88-q61-s10-o6-d1-p0",
+          66
+        ],
+        [
+          "dense-png-c255-q1-s1-o4-d33-p2",
+          66
+        ],
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0",
+          58
+        ],
+        [
+          "dense-png-c191-q76-s1-o4-d11-p1",
+          44
+        ],
+        [
+          "png-quantette-128",
+          21
+        ],
+        [
+          "png-lossless",
+          13
+        ],
+        [
+          "png-quantette-256",
+          12
+        ],
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0@t88",
+          4
+        ]
+      ]
+    },
+    "s2>=50": {
+      "allAutoBwPct": 97.7,
+      "allSameBwPct": 77.8,
+      "pngAutoBwPct": 97.83,
+      "pngSameBwPct": 77.86,
+      "jpgAutoBwPct": 82.35,
+      "jpgSameBwPct": 69.53,
+      "formatWins": {
+        "avif": 250,
+        "jxl": 22,
+        "jpeg": 8,
+        "webp": 21,
+        "png": 20
+      },
+      "topPngWinners": [
+        [
+          "dense-png-c255-q1-s1-o4-d33-p2",
+          93
+        ],
+        [
+          "dense-png-c88-q61-s10-o6-d1-p0",
+          73
+        ],
+        [
+          "dense-png-c222-q59-s1-o6-d92-p0",
+          43
+        ],
+        [
+          "png-quantette-32",
+          38
+        ],
+        [
+          "dense-png-c191-q76-s1-o4-d11-p1",
+          32
+        ],
+        [
+          "png-quantette-64",
+          10
+        ],
+        [
+          "png-quantette-128",
+          4
+        ],
+        [
+          "png-posterize-24",
+          2
+        ]
+      ]
+    }
+  }
+}

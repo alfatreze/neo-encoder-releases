@@ -68,6 +68,10 @@
 <p class="sub">Typical best-case saving at high quality. Flat graphics shrink a lot; photographs much less.</p>
 <div class="panel"><div id="bytype"></div><p class="note" style="margin:10px 0 0">Based on the images tested so far; types with few images are marked and should be read as indications, not rules.</p></div>
 
+<h2>Modern Benchmark v2 (Data v6 · 321 real images)</h2>
+<p class="sub">Alpha-aware SSIMULACRA2 across 321 real-world PNG &amp; JPEG images (photos, UI screenshots, cutouts, smooth gradients, wide banners, textures) × 4 quality tiers × 5 modern codecs (<code>quantette</code>, <code>pngquant</code>, <code>posterize</code>, <code>cjpegli</code>, MozJPEG, WebP, JXL, AVIF).</p>
+<div class="panel" id="bench-v2"><span class="muted">Loading Benchmark v2…</span></div>
+
 <h2>Compared with ImageOptim</h2>
 <p class="sub">ImageOptim is the well-known Mac reference. We run it and NEO on the same 8 files (4 PNG, 4 JPEG) and score every output on human-perceived quality (SSIMULACRA2).</p>
 <div class="findings" id="north"></div>
@@ -75,7 +79,7 @@
 <h2>How to read these numbers</h2>
 <dl class="gloss panel">
 <dt>File size saving</dt><dd>How much smaller the file gets. A <b>50% saving</b> cuts a 1 MB image to 500 KB (half the download); a <b>90% saving</b> cuts it to 100 KB.</dd>
-<dt>Quality levels</dt><dd><b>Visually lossless</b> (S2 ≥ 90): invisible even zoomed in. <b>High quality</b> (S2 ≥ 80): looks identical at normal viewing size. <b>Good for web</b> (S2 ≥ 70): crisp for web pages, with minor softening only on close inspection.</dd>
+<dt>Quality levels</dt><dd><b>Visually lossless</b> (S2 ≥ 90): invisible even zoomed in. <b>High quality</b> (S2 ≥ 80): looks identical at normal viewing size. <b>Good for web</b> (S2 ≥ 70): crisp for web pages, with minor softening only on close inspection. <b>Aggressive</b> (S2 ≥ 50): strong compression for thumbnails, email, and bandwidth-constrained mobile galleries.</dd>
 <dt>Two datasets on this site</dt><dd>The 100,000-trial sweep below used fast SSIM to compare recipe chains; the stricter human-vision results (SSIMULACRA2) and newer encoders (<code>cjpegli</code>, <code>quantette</code>, AVIF) are on the <a href="gated.html">SSIMULACRA2</a> and <a href="explore.html#north">Explore</a> pages. Full method on <a href="methodology.html">Methodology</a>.</dd>
 </dl>
 </div></main>
@@ -84,7 +88,7 @@
 <script>
 chrome('index.html');
 (async()=>{
-const [meta,head,ns,chains,src]=await Promise.all([data('meta'),data('headline'),data('northstar'),data('chains'),data('sources')]);
+const [meta,head,ns,chains,src,bv2]=await Promise.all([data('meta'),data('headline'),data('northstar'),data('chains'),data('sources'),data('bench-v2')]);
 if(!meta){$('#cards').innerHTML='<div class="card">No data found. Run build_site_data.py.</div>';return}
 const cx=meta.complete||{};const srcDone=Object.values(cx).reduce((a,b)=>a+b,0);
 const find=(f,q,e)=>head?.[f]?.find(r=>r.quality===q&&r.effort===e);
@@ -125,6 +129,16 @@ $('#findings').innerHTML=F.map(([k,h,t])=>`<div class="finding"><div class="k">$
 if(src){const g={};src.filter(s=>s.best_98!=null).forEach(s=>{(g[s.type]??=[]).push(s.best_98)});
  const rows=Object.entries(g).map(([t,a])=>({t,n:a.length,v:a.reduce((x,y)=>x+y,0)/a.length})).sort((a,b)=>b.v-a.v);
  bars($('#bytype'),rows.map((r,i)=>({label:r.t,sub:`${r.n} image${r.n>1?'s':''}${r.n<3?' · few, indicative only':''}`,v:r.v,color:`linear-gradient(90deg,${col(i)},${col(i+1)})`})),{label:200,h:18})}
+// bench-v2 (Data v6)
+if(bv2&&bv2.tiers){
+ const T=[['s2>=90','Visually lossless (S2 ≥ 90)'],['s2>=80','High (S2 ≥ 80)'],['s2>=70','Good for web (S2 ≥ 70)'],['s2>=50','Aggressive (S2 ≥ 50)']];
+ const rows=T.map(([k,lbl])=>{
+  const t=bv2.tiers[k];if(!t)return '';
+  const wins=Object.entries(t.formatWins||{}).sort((a,b)=>b[1]-a[1]).map(([f,n])=>`${f.toUpperCase()} ${n}`).join(' · ');
+  return `<tr><td><b>${esc(lbl)}</b></td><td><b>${t.allSameBwPct.toFixed(1)}%</b> <span class="muted">(${t.pngSameBwPct.toFixed(1)}% PNG / ${t.jpgSameBwPct.toFixed(1)}% JPEG)</span></td><td><b>${t.allAutoBwPct.toFixed(1)}%</b> <span class="muted">(${t.pngAutoBwPct.toFixed(1)}% PNG / ${t.jpgAutoBwPct.toFixed(1)}% JPEG)</span></td><td class="muted">${esc(wins)}</td></tr>`;
+ }).join('');
+ $('#bench-v2').innerHTML=`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr style="text-align:left;border-bottom:1px solid var(--border)"><th style="padding:8px 6px">Quality Tier</th><th style="padding:8px 6px">Same Format (bw)</th><th style="padding:8px 6px">Auto Cross-Format (bw)</th><th style="padding:8px 6px">Format Wins (n = ${num(bv2.corpus?.evaluated||321)})</th></tr></thead><tbody>${rows}</tbody></table></div><p class="note" style="margin:10px 0 0">Data v${bv2.dataVersion||6} · ${num(bv2.corpus?.evaluated||321)} images ≤ 16 MP (${bv2.corpus?.skippedOver16Mp||14} &gt;16 MP stress files skipped). Every output clears the alpha-aware SSIMULACRA2 floor across white, black, and mid-gray backgrounds.</p>`;
+}
 // north
 if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
  ['PNG','JPEG'].forEach(f=>{const s=ns.filter(r=>r.format===f&&r.app);if(!s.length)return;
