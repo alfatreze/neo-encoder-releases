@@ -1,313 +1,445 @@
 {
- "generated": "2026-11-23",
+ "generated": "2026-11-27",
+ "version": 3,
  "examples": [
   {
-   "source": "dog_garden.jpg",
-   "slug": "dog-garden",
+   "slug": "photo-dog",
+   "label": "Photo (JPEG)",
+   "category": "Natural photograph",
    "format": "JPEG",
-   "original": "dog-garden-original.jpg",
+   "hasAlpha": false,
+   "original": "v3-photo-dog-original.jpg",
    "originalBytes": 309213,
    "width": 1600,
    "height": 1067,
-   "title": "animals/outdoors",
    "credit": "RDNE Stock project",
-   "license": "Pexels License (free to use; attribution not required)",
+   "license": "Pexels License",
    "license_url": "https://www.pexels.com/license/",
    "source_url": "https://www.pexels.com/photo/7348528/",
-   "original_url": "https://images.pexels.com/photos/7348528/pexels-photo-7348528.jpeg?auto=compress&cs=tinysrgb&w=1600",
-   "cells": {
-    "same|visually-lossless|fast": {
-     "kept": true,
-     "bytes": 309213,
-     "format": "jpeg",
-     "chosen": null
+   "tiers": {
+    "s2=100": {
+     "jpeg": {
+      "file": "v3-photo-dog-1.jpg",
+      "bytes": 296928,
+      "format": "jpeg",
+      "s2": 100,
+      "chosen": "ect-9-lossless",
+      "kept": false
+     }
     },
-    "same|visually-lossless|balanced": {
-     "kept": true,
-     "bytes": 309213,
-     "format": "jpeg",
-     "chosen": null
+    "s2>=90": {
+     "jpeg": {
+      "file": "v3-photo-dog-original.jpg",
+      "bytes": 309213,
+      "format": "jpeg",
+      "s2": 100,
+      "chosen": "kept-original",
+      "kept": true
+     },
+     "webp": {
+      "file": "v3-photo-dog-original.jpg",
+      "bytes": 309213,
+      "format": "jpeg",
+      "s2": 100,
+      "chosen": "kept-original",
+      "kept": true
+     },
+     "avif": {
+      "file": "v3-photo-dog-2.avif",
+      "bytes": 283585,
+      "format": "avif",
+      "s2": 90.3,
+      "chosen": "avif-q82",
+      "kept": false
+     }
     },
-    "same|visually-lossless|max": {
-     "kept": true,
-     "bytes": 309213,
-     "format": "jpeg",
-     "chosen": null
+    "s2>=80": {
+     "jpeg": {
+      "file": "v3-photo-dog-3.jpg",
+      "bytes": 217282,
+      "format": "jpeg",
+      "s2": 80.1,
+      "chosen": "jpegli-d2.47-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-photo-dog-4.webp",
+      "bytes": 275320,
+      "format": "webp",
+      "s2": 80,
+      "chosen": "webp-q85",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-photo-dog-5.avif",
+      "bytes": 189634,
+      "format": "avif",
+      "s2": 80.7,
+      "chosen": "avif-q62",
+      "kept": false
+     }
     },
-    "same|high|fast": {
-     "file": "dog-garden-1.jpg",
-     "bytes": 223129,
-     "format": "jpeg",
-     "s2": 80.76,
-     "chosen": "jpegli-d2.32-420",
-     "kept": false
+    "s2>=70": {
+     "jpeg": {
+      "file": "v3-photo-dog-6.jpg",
+      "bytes": 163069,
+      "format": "jpeg",
+      "s2": 70.3,
+      "chosen": "jpegli-d3.99-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-photo-dog-7.webp",
+      "bytes": 186706,
+      "format": "webp",
+      "s2": 70.7,
+      "chosen": "webp-q75",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-photo-dog-8.avif",
+      "bytes": 135455,
+      "format": "avif",
+      "s2": 71.5,
+      "chosen": "avif-q52",
+      "kept": false
+     }
     },
-    "same|high|balanced": {
-     "file": "dog-garden-2.jpg",
-     "bytes": 217282,
-     "format": "jpeg",
-     "s2": 80.15,
-     "chosen": "jpegli-d2.47-420",
-     "kept": false
-    },
-    "same|high|max": {
-     "file": "dog-garden-2.jpg",
-     "bytes": 217282,
-     "format": "jpeg",
-     "s2": 80.15,
-     "chosen": "jpegli-d2.47-420",
-     "kept": false
-    },
-    "same|good|fast": {
-     "file": "dog-garden-3.jpg",
-     "bytes": 163069,
-     "format": "jpeg",
-     "s2": 70.28,
-     "chosen": "jpegli-d3.99-420",
-     "kept": false
-    },
-    "same|good|balanced": {
-     "file": "dog-garden-3.jpg",
-     "bytes": 163069,
-     "format": "jpeg",
-     "s2": 70.28,
-     "chosen": "jpegli-d3.99-420",
-     "kept": false
-    },
-    "same|good|max": {
-     "file": "dog-garden-3.jpg",
-     "bytes": 163069,
-     "format": "jpeg",
-     "s2": 70.28,
-     "chosen": "jpegli-d3.99-420",
-     "kept": false
-    },
-    "auto|visually-lossless|fast": {
-     "file": "dog-garden-4.avif",
-     "bytes": 293826,
-     "format": "avif",
-     "s2": 90.31,
-     "chosen": "avif-q85",
-     "kept": false
-    },
-    "auto|visually-lossless|balanced": {
-     "file": "dog-garden-5.avif",
-     "bytes": 283585,
-     "format": "avif",
-     "s2": 90.57,
-     "chosen": "avif-q82",
-     "kept": false
-    },
-    "auto|visually-lossless|max": {
-     "file": "dog-garden-6.avif",
-     "bytes": 282881,
-     "format": "avif",
-     "s2": 90.64,
-     "chosen": "avif-q82",
-     "kept": false
-    },
-    "auto|high|fast": {
-     "file": "dog-garden-7.avif",
-     "bytes": 204968,
-     "format": "avif",
-     "s2": 82.24,
-     "chosen": "avif-q65",
-     "kept": false
-    },
-    "auto|high|balanced": {
-     "file": "dog-garden-8.avif",
-     "bytes": 189634,
-     "format": "avif",
-     "s2": 80.83,
-     "chosen": "avif-q62",
-     "kept": false
-    },
-    "auto|high|max": {
-     "file": "dog-garden-9.avif",
-     "bytes": 180519,
-     "format": "avif",
-     "s2": 80.22,
-     "chosen": "avif-q60",
-     "kept": false
-    },
-    "auto|good|fast": {
-     "file": "dog-garden-10.avif",
-     "bytes": 137064,
-     "format": "avif",
-     "s2": 70.94,
-     "chosen": "avif-q52",
-     "kept": false
-    },
-    "auto|good|balanced": {
-     "file": "dog-garden-11.avif",
-     "bytes": 135455,
-     "format": "avif",
-     "s2": 71.48,
-     "chosen": "avif-q52",
-     "kept": false
-    },
-    "auto|good|max": {
-     "file": "dog-garden-12.avif",
-     "bytes": 125420,
-     "format": "avif",
-     "s2": 70.07,
-     "chosen": "avif-q50",
-     "kept": false
+    "s2>=50": {
+     "jpeg": {
+      "file": "v3-photo-dog-9.jpg",
+      "bytes": 99705,
+      "format": "jpeg",
+      "s2": 50.3,
+      "chosen": "jpegli-d8.93-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-photo-dog-10.webp",
+      "bytes": 108636,
+      "format": "webp",
+      "s2": 50.2,
+      "chosen": "webp-q35",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-photo-dog-11.avif",
+      "bytes": 73231,
+      "format": "avif",
+      "s2": 50.2,
+      "chosen": "avif-q38",
+      "kept": false
+     }
     }
    }
   },
   {
-   "source": "014_gb82_mies-lossless.png",
-   "slug": "014-gb82-mies-lossless",
+   "slug": "illus-xbio",
+   "label": "Illustration (PNG)",
+   "category": "Vector-style illustration",
    "format": "PNG",
-   "original": "014-gb82-mies-lossless-original.png",
-   "originalBytes": 699121,
-   "width": 576,
-   "height": 576,
-   "title": "architecture",
-   "credit": "Gianni Rosato",
-   "license": "CC0 1.0 Universal",
-   "license_url": "https://raw.githubusercontent.com/gianni-rosato/gb82-image-set/main/LICENSE",
-   "source_url": "https://github.com/gianni-rosato/gb82-image-set/tree/main/png",
-   "original_url": "https://raw.githubusercontent.com/gianni-rosato/gb82-image-set/main/png/mies-lossless.png",
-   "cells": {
-    "same|visually-lossless|fast": {
-     "kept": true,
-     "bytes": 699121,
-     "format": "png",
-     "chosen": null
+   "hasAlpha": false,
+   "original": "v3-illus-xbio-original.png",
+   "originalBytes": 451316,
+   "width": 1800,
+   "height": 1200,
+   "credit": "explorebiology (Wikimedia Commons)",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "source_url": "https://commons.wikimedia.org/wiki/File:XBio_illustration_%E2%80%93_Gastrulation.png",
+   "tiers": {
+    "s2=100": {
+     "png": {
+      "file": "v3-illus-xbio-1.png",
+      "bytes": 320725,
+      "format": "png",
+      "s2": 100,
+      "chosen": "ect-9",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-illus-xbio-2.webp",
+      "bytes": 230646,
+      "format": "webp",
+      "s2": 100,
+      "chosen": "cwebp-lossless-z6",
+      "kept": false
+     }
     },
-    "same|visually-lossless|balanced": {
-     "kept": true,
-     "bytes": 699121,
-     "format": "png",
-     "chosen": null
+    "s2>=90": {
+     "png": {
+      "file": "v3-illus-xbio-3.png",
+      "bytes": 353385,
+      "format": "png",
+      "s2": 100,
+      "chosen": "dense-png-c32-q90-s2-o2",
+      "kept": false
+     },
+     "jpeg": {
+      "file": "v3-illus-xbio-original.png",
+      "bytes": 451316,
+      "format": "png",
+      "s2": 100,
+      "chosen": "kept-original",
+      "kept": true
+     },
+     "webp": {
+      "file": "v3-illus-xbio-4.webp",
+      "bytes": 205982,
+      "format": "webp",
+      "s2": 100,
+      "chosen": "webp-lossless",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-illus-xbio-original.png",
+      "bytes": 451316,
+      "format": "png",
+      "s2": 100,
+      "chosen": "kept-original",
+      "kept": true
+     }
     },
-    "same|visually-lossless|max": {
-     "kept": true,
-     "bytes": 699121,
-     "format": "png",
-     "chosen": null
+    "s2>=80": {
+     "png": {
+      "file": "v3-illus-xbio-5.png",
+      "bytes": 83952,
+      "format": "png",
+      "s2": 81.5,
+      "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
+      "kept": false
+     },
+     "jpeg": {
+      "file": "v3-illus-xbio-6.jpg",
+      "bytes": 146838,
+      "format": "jpeg",
+      "s2": 80.1,
+      "chosen": "jpegli-d1.62-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-illus-xbio-7.webp",
+      "bytes": 87518,
+      "format": "webp",
+      "s2": 80.2,
+      "chosen": "webp-q79",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-illus-xbio-8.avif",
+      "bytes": 77278,
+      "format": "avif",
+      "s2": 80.6,
+      "chosen": "avif-q50",
+      "kept": false
+     }
     },
-    "same|high|fast": {
-     "file": "014-gb82-mies-lossless-1.png",
-     "bytes": 205648,
-     "format": "png",
-     "s2": 83.39,
-     "chosen": "dense-png-c239-q53-s1-o4-d6-p2",
-     "kept": false
+    "s2>=70": {
+     "png": {
+      "file": "v3-illus-xbio-5.png",
+      "bytes": 83952,
+      "format": "png",
+      "s2": 81.5,
+      "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
+      "kept": false
+     },
+     "jpeg": {
+      "file": "v3-illus-xbio-9.jpg",
+      "bytes": 79233,
+      "format": "jpeg",
+      "s2": 70,
+      "chosen": "jpegli-d5.56-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-illus-xbio-10.webp",
+      "bytes": 49072,
+      "format": "webp",
+      "s2": 71.5,
+      "chosen": "webp-q35",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-illus-xbio-11.avif",
+      "bytes": 54853,
+      "format": "avif",
+      "s2": 70.3,
+      "chosen": "avif-q28",
+      "kept": false
+     }
     },
-    "same|high|balanced": {
-     "file": "014-gb82-mies-lossless-2.png",
-     "bytes": 222668,
-     "format": "png",
-     "s2": 85.96,
-     "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
-     "kept": false
+    "s2>=50": {
+     "png": {
+      "file": "v3-illus-xbio-12.png",
+      "bytes": 82681,
+      "format": "png",
+      "s2": 77.9,
+      "chosen": "png-quantette-32",
+      "kept": false
+     },
+     "jpeg": {
+      "file": "v3-illus-xbio-13.jpg",
+      "bytes": 59241,
+      "format": "jpeg",
+      "s2": 63.5,
+      "chosen": "jpegli-d9.95-420",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-illus-xbio-14.webp",
+      "bytes": 36992,
+      "format": "webp",
+      "s2": 62.2,
+      "chosen": "webp-q15",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-illus-xbio-15.avif",
+      "bytes": 44962,
+      "format": "avif",
+      "s2": 54.2,
+      "chosen": "avif-q10",
+      "kept": false
+     }
+    }
+   }
+  },
+  {
+   "slug": "cutout-oric",
+   "label": "Alpha Cutout (PNG)",
+   "category": "Transparent product cutout",
+   "format": "PNG",
+   "hasAlpha": true,
+   "original": "v3-cutout-oric-original.png",
+   "originalBytes": 2281775,
+   "width": 1648,
+   "height": 1012,
+   "credit": "DefenceForce / Ubcule (Wikimedia Commons)",
+   "license": "CC0 Public Domain",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Oric_Telestrat_Transparent_BG.png",
+   "tiers": {
+    "s2=100": {
+     "png": {
+      "file": "v3-cutout-oric-1.png",
+      "bytes": 2156488,
+      "format": "png",
+      "s2": 100,
+      "chosen": "ect-9",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-cutout-oric-2.webp",
+      "bytes": 1598008,
+      "format": "webp",
+      "s2": 100,
+      "chosen": "cwebp-lossless-z6",
+      "kept": false
+     }
     },
-    "same|high|max": {
-     "file": "014-gb82-mies-lossless-3.png",
-     "bytes": 221757,
-     "format": "png",
-     "s2": 85.96,
-     "chosen": "dense-png-c222-q59-s1-o6-d92-p0+zopfli",
-     "kept": false
+    "s2>=90": {
+     "png": {
+      "file": "v3-cutout-oric-3.png",
+      "bytes": 2176005,
+      "format": "png",
+      "s2": 100,
+      "chosen": "dense-png-c129-q95-s1-o5-d9-p0",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-cutout-oric-4.webp",
+      "bytes": 1566092,
+      "format": "webp",
+      "s2": 100,
+      "chosen": "webp-lossless",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-cutout-oric-5.avif",
+      "bytes": 1821826,
+      "format": "avif",
+      "s2": 100,
+      "chosen": "avif-lossless",
+      "kept": false
+     }
     },
-    "same|good|fast": {
-     "file": "014-gb82-mies-lossless-4.png",
-     "bytes": 196629,
-     "format": "png",
-     "s2": 83.43,
-     "chosen": "png-quantette-128",
-     "kept": false
+    "s2>=80": {
+     "png": {
+      "file": "v3-cutout-oric-6.png",
+      "bytes": 669751,
+      "format": "png",
+      "s2": 80.3,
+      "chosen": "dense-png-c229-q78-s6-o6-d13-p1",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-cutout-oric-7.webp",
+      "bytes": 245354,
+      "format": "webp",
+      "s2": 80.8,
+      "chosen": "webp-q90",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-cutout-oric-8.avif",
+      "bytes": 160114,
+      "format": "avif",
+      "s2": 80.2,
+      "chosen": "avif-q68",
+      "kept": false
+     }
     },
-    "same|good|balanced": {
-     "file": "014-gb82-mies-lossless-5.png",
-     "bytes": 197190,
-     "format": "png",
-     "s2": 83.43,
-     "chosen": "png-quantette-128",
-     "kept": false
+    "s2>=70": {
+     "png": {
+      "file": "v3-cutout-oric-9.png",
+      "bytes": 539744,
+      "format": "png",
+      "s2": 76.2,
+      "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-cutout-oric-10.webp",
+      "bytes": 131716,
+      "format": "webp",
+      "s2": 70.5,
+      "chosen": "webp-q78",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-cutout-oric-11.avif",
+      "bytes": 101455,
+      "format": "avif",
+      "s2": 71.3,
+      "chosen": "avif-q56",
+      "kept": false
+     }
     },
-    "same|good|max": {
-     "file": "014-gb82-mies-lossless-6.png",
-     "bytes": 195244,
-     "format": "png",
-     "s2": 83.43,
-     "chosen": "png-quantette-128+zopfli",
-     "kept": false
-    },
-    "auto|visually-lossless|fast": {
-     "file": "014-gb82-mies-lossless-7.avif",
-     "bytes": 156556,
-     "format": "avif",
-     "s2": 90.55,
-     "chosen": "avif-q90",
-     "kept": false
-    },
-    "auto|visually-lossless|balanced": {
-     "file": "014-gb82-mies-lossless-8.avif",
-     "bytes": 147063,
-     "format": "avif",
-     "s2": 90.42,
-     "chosen": "avif-q88",
-     "kept": false
-    },
-    "auto|visually-lossless|max": {
-     "file": "014-gb82-mies-lossless-9.avif",
-     "bytes": 144017,
-     "format": "avif",
-     "s2": 90.39,
-     "chosen": "avif-q87",
-     "kept": false
-    },
-    "auto|high|fast": {
-     "file": "014-gb82-mies-lossless-10.avif",
-     "bytes": 81190,
-     "format": "avif",
-     "s2": 81.65,
-     "chosen": "avif-q70",
-     "kept": false
-    },
-    "auto|high|balanced": {
-     "file": "014-gb82-mies-lossless-11.avif",
-     "bytes": 75757,
-     "format": "avif",
-     "s2": 81.33,
-     "chosen": "avif-q67",
-     "kept": false
-    },
-    "auto|high|max": {
-     "file": "014-gb82-mies-lossless-12.avif",
-     "bytes": 71302,
-     "format": "avif",
-     "s2": 81.0,
-     "chosen": "avif-q66",
-     "kept": false
-    },
-    "auto|good|fast": {
-     "file": "014-gb82-mies-lossless-13.avif",
-     "bytes": 48102,
-     "format": "avif",
-     "s2": 70.68,
-     "chosen": "avif-q57",
-     "kept": false
-    },
-    "auto|good|balanced": {
-     "file": "014-gb82-mies-lossless-14.avif",
-     "bytes": 46895,
-     "format": "avif",
-     "s2": 71.35,
-     "chosen": "avif-q55",
-     "kept": false
-    },
-    "auto|good|max": {
-     "file": "014-gb82-mies-lossless-15.avif",
-     "bytes": 44840,
-     "format": "avif",
-     "s2": 70.9,
-     "chosen": "avif-q54",
-     "kept": false
+    "s2>=50": {
+     "png": {
+      "file": "v3-cutout-oric-9.png",
+      "bytes": 539744,
+      "format": "png",
+      "s2": 76.2,
+      "chosen": "dense-png-c222-q59-s1-o6-d92-p0",
+      "kept": false
+     },
+     "webp": {
+      "file": "v3-cutout-oric-12.webp",
+      "bytes": 75060,
+      "format": "webp",
+      "s2": 50.2,
+      "chosen": "webp-q38",
+      "kept": false
+     },
+     "avif": {
+      "file": "v3-cutout-oric-13.avif",
+      "bytes": 51750,
+      "format": "avif",
+      "s2": 50.7,
+      "chosen": "avif-q40",
+      "kept": false
+     }
     }
    }
   }

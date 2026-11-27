@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#3b5bdb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261123b"></head>
+<link rel="stylesheet" href="assets/style.css?v=20261127a"></head>
 <body>
 <section class="hero"><div class="wrap">
 <div>
@@ -28,6 +28,36 @@
 <main><div class="wrap">
 <div class="cards" id="cards"></div>
 
+<h2 style="margin-top:28px">See it on real images</h2>
+<p class="sub">Compare <b>PNG, JPEG, WebP, and AVIF</b> across the full compression range — from <b>Strict Lossless (100)</b> to <b>Extreme (S2 ≥ 50)</b> — on matched-proportion real photos, illustrations, and transparent cutouts. Drag the divider or use arrow keys.</p>
+<div class="panel ex-panel" id="ex">
+<div class="ex-topbar">
+<div class="seg" id="ex-sample"></div>
+<div class="seg" id="ex-z"></div>
+</div>
+<div class="ex-grid">
+<div>
+<div class="cmp" id="ex-cmp" tabindex="0" role="group" aria-label="Before and after comparison. Use the left and right arrow keys to move the handle.">
+<div class="cmp-in" id="ex-in"><img id="ex-a" alt="Original image" draggable="false"><div class="cmp-b" id="ex-bwrap"><img id="ex-b" alt="Compressed image" draggable="false"></div></div>
+<div class="cmp-h" id="ex-h"><span></span></div>
+<span class="cmp-l" id="ex-ll">Original</span><span class="cmp-r" id="ex-rl">Compressed</span>
+</div>
+<p class="note" id="ex-credit" style="margin:8px 0 0"></p>
+</div>
+<div class="ex-rail">
+<div class="ex-gain" id="ex-gain"></div>
+<div>
+<div class="ex-ctrl-lbl">Compression Target (SSIMULACRA2 v2.1)</div>
+<div class="ex-qseg" id="ex-q"></div>
+</div>
+<div>
+<div class="ex-ctrl-lbl">Output Format — live size &amp; saving</div>
+<div class="ex-fmts" id="ex-fmts"></div>
+</div>
+</div>
+</div>
+</div>
+
 <h2>Main Web Formats Head-to-Head (SSIMULACRA2 v2.1)</h2>
 <p class="sub">Byte-weighted savings across all evaluated images (real + synthetic) when every output must clear the exact alpha-aware SSIMULACRA2 v2.1 floor across white, black, and mid-gray backgrounds. Switch between the 5 quality targets — including <b>Strict Lossless</b> and <b>Extreme (S2 ≥ 50)</b>.</p>
 <div class="controls" style="align-items:end">
@@ -38,26 +68,6 @@
 <div id="fmt-bars"></div>
 <div id="fmt-table" class="scroll" style="margin-top:14px"></div>
 <p class="note" id="fmt-note" style="margin:10px 0 0"></p>
-</div>
-
-<h2>First, one real file</h2>
-<p class="sub">Before the averages: a real photo and a real PNG, compressed with the live SSIMULACRA2 Smart engine. Drag the handle to compare original (left) vs compressed (right).</p>
-<div class="panel" id="ex">
-<div class="controls" style="align-items:end">
-<div><div class="note" style="margin-bottom:4px">FORMAT</div><div class="seg" id="ex-fmt"></div></div>
-<div><div class="note" style="margin-bottom:4px">MODE</div><div class="seg" id="ex-m"></div></div>
-<div><div class="note" style="margin-bottom:4px">QUALITY</div><div class="seg" id="ex-q"></div></div>
-<div><div class="note" style="margin-bottom:4px">EFFORT</div><div class="seg" id="ex-e"></div></div>
-<div style="margin-left:auto"><div class="note" style="margin-bottom:4px">VIEW</div><div class="seg" id="ex-z"></div></div>
-</div>
-<div class="cmp" id="ex-cmp" tabindex="0" role="group" aria-label="Before and after comparison. Use the left and right arrow keys to move the handle.">
-<div class="cmp-in" id="ex-in"><img id="ex-a" alt="Original image" draggable="false"><div class="cmp-b" id="ex-bwrap"><img id="ex-b" alt="Compressed image" draggable="false"></div></div>
-<div class="cmp-h" id="ex-h"><span></span></div>
-<span class="cmp-l">Original</span><span class="cmp-r" id="ex-rl">Compressed</span>
-</div>
-<div class="cmp-stats" id="ex-stats"></div>
-<p class="note" id="ex-note" style="margin:8px 0 0"></p>
-<p class="note" id="ex-credit" style="margin:4px 0 0"></p>
 </div>
 
 <h2>Gain across all 12 image categories</h2>
@@ -196,39 +206,96 @@ if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
  $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">File by file</div><h3>Full comparison table</h3><p>Inspect every file's size, format badge and SSIMULACRA2 score on the <a href="explore.html#north">Explore page</a>.</p></div>`}
 })();
 
-// Worked examples slider
+// Interactive real-image studio (side-by-side controls + live gains, 5 tiers x 4 formats)
 (async()=>{
 const ex=await data('examples');if(!ex||!ex.examples.length){$('#ex').hidden=true;return}
-const M=[['same','Same format'],['auto','Best format (AVIF/WebP)']],Q=[['visually-lossless','Visually lossless'],['high','High quality'],['good','Good for web'],['aggressive','Extreme (S2 ≥ 50)']],E=[['fast','Fast'],['balanced','Balanced'],['max','Thorough']];
-const st={fmt:ex.examples[0].format,mode:'same',q:'high',e:'balanced',zoom:false,pos:50};
-const full=n=>Number(n).toLocaleString('en')+' bytes';
-const seg=(id,items,key)=>{$(id).innerHTML=items.map(([v,l])=>`<button aria-pressed="${st[key]===v}" data-v="${v}">${l}</button>`).join('');
-  $$(id+' button').forEach(b=>b.onclick=()=>{st[key]=b.dataset.v;draw()})};
+const TIER_BTNS=[
+ ['s2=100','Lossless','100'],
+ ['s2>=90','Vis. lossless','90+'],
+ ['s2>=80','High','80+'],
+ ['s2>=70','Web','70+'],
+ ['s2>=50','Extreme','50+']
+];
+const FMT_ORDER=[
+ ['auto','Auto (Best Web)'],
+ ['avif','AVIF'],
+ ['webp','WebP'],
+ ['jpeg','JPEG'],
+ ['png','PNG']
+];
+const st={slug:ex.examples[0].slug,q:'s2>=80',fmt:'auto',zoom:false,pos:50};
 function setPos(p){st.pos=Math.max(0,Math.min(100,p));$('#ex-bwrap').style.clipPath=`inset(0 0 0 ${st.pos}%)`;$('#ex-h').style.left=st.pos+'%'}
-function draw(){
-  const x=ex.examples.find(e=>e.format===st.fmt);
-  const availQ=Q.filter(([k])=>x.cells[st.mode+'|'+k+'|'+st.e]||x.cells[k+'|'+st.e]);
-  if(!availQ.some(([k])=>k===st.q))st.q=availQ[0]?.[0]||'high';
-  seg('#ex-fmt',[...new Set(ex.examples.map(e=>e.format))].map(f=>[f,f]),'fmt');seg('#ex-m',M,'mode');seg('#ex-q',availQ,'q');seg('#ex-e',E,'e');
-  $('#ex-z').innerHTML=`<button aria-pressed="${!st.zoom}" data-z="0">Fit</button><button aria-pressed="${st.zoom}" data-z="1">Zoom 3×</button>`;
-  $$('#ex-z button').forEach(b=>b.onclick=()=>{st.zoom=b.dataset.z==='1';$('#ex-in').style.transform=st.zoom?'scale(3)':'';draw()});
-  const c=x.cells[st.mode+'|'+st.q+'|'+st.e]||x.cells[st.q+'|'+st.e];
-  const outFmt=(c.format||x.format).toUpperCase();
-  $('#ex-a').src='examples/'+x.original;$('#ex-b').src='examples/'+(c.kept?x.original:c.file);
-  $('#ex-cmp').style.aspectRatio=x.width+'/'+x.height;
-  setPos(st.pos);
-  const saved=c.kept?0:1-c.bytes/x.originalBytes;
-  $('#ex-rl').textContent=c.kept?'Kept the original':'Compressed · '+outFmt;
-  const badge=`<span class="fmt-badge">${esc(outFmt)}</span>`;
-  $('#ex-stats').innerHTML=[
-    ['Original',esc(kb(x.originalBytes)),esc(full(x.originalBytes)+` · ${x.width}×${x.height} px`)],
-    ['Compressed',esc(kb(c.kept?x.originalBytes:c.bytes))+badge,esc(c.kept?'Safely kept original: no recipe met this quality bar.':full(c.bytes)+(c.chosen?' · '+c.chosen:''))],
-    ['Saved',esc(c.kept?'0%':pct(saved,0)),esc(c.kept?'No quality trade-off taken':`${kb(x.originalBytes-c.bytes)} smaller`)],
-    ['Visual quality',esc(c.kept?'Identical':`S2 ${c.s2.toFixed(0)} · ${s2Label(c.s2)}`),esc(c.kept?'Exact original pixels':'SSIMULACRA2 v2.1: 90 lossless, 80 high, 70 web, 50 extreme')]
-  ].map(r=>`<div class="st"><div class="l">${r[0]}</div><div class="v">${r[1]}</div><div class="l">${r[2]}</div></div>`).join('');
-  $('#ex-note').textContent=`This is one image (${x.title}), not an average. File sizes and SSIMULACRA2 v2.1 scores are measured directly from the live Smart engine.`;
-  $('#ex-credit').innerHTML=`Image: ${esc(x.credit||x.title)} · ${x.license_url?`<a href="${esc(x.license_url)}" rel="noopener">${esc(x.license)}</a>`:esc(x.license)}${x.source_url?` · <a href="${esc(x.source_url)}" rel="noopener">source</a>`:''}`;
+
+function resolveAuto(x,tierMap){
+ let best=null;
+ for(const f of ['avif','webp','jpeg','png']){
+  const c=tierMap?.[f];
+  if(c&&(!best||c.bytes<best.bytes))best=c;
+ }
+ return best||{file:x.original,bytes:x.originalBytes,format:x.format.toLowerCase(),s2:100,chosen:'kept-original',kept:true};
 }
+
+function draw(){
+ const x=ex.examples.find(e=>e.slug===st.slug)||ex.examples[0];
+ const tierMap=x.tiers?.[st.q]||{};
+ const autoCell=resolveAuto(x,tierMap);
+ // If chosen format isn't available in this tier/image, fall back to auto
+ if(st.fmt!=='auto'&&!tierMap[st.fmt])st.fmt='auto';
+ const cell=st.fmt==='auto'?autoCell:tierMap[st.fmt];
+ const outFmt=(cell.format||x.format).toUpperCase();
+ const saved=cell.kept?0:Math.max(0,1-cell.bytes/x.originalBytes);
+ const savedBytes=Math.max(0,x.originalBytes-cell.bytes);
+
+ // Top bar: sample selector + zoom
+ $('#ex-sample').innerHTML=ex.examples.map(e=>`<button aria-pressed="${e.slug===x.slug}" data-s="${esc(e.slug)}">${esc(e.label)}</button>`).join('');
+ $$('#ex-sample button').forEach(b=>b.onclick=()=>{st.slug=b.dataset.s;draw()});
+ $('#ex-z').innerHTML=`<button aria-pressed="${!st.zoom}" data-z="0">Fit</button><button aria-pressed="${st.zoom}" data-z="1">Zoom 3×</button>`;
+ $$('#ex-z button').forEach(b=>b.onclick=()=>{st.zoom=b.dataset.z==='1';$('#ex-in').style.transform=st.zoom?'scale(3)':'';draw()});
+
+ // Image comparison stage (fixed 3:2 proportion across all samples)
+ $('#ex-cmp').dataset.alpha=x.hasAlpha?'1':'0';
+ $('#ex-a').src='examples/'+x.original;
+ $('#ex-b').src='examples/'+(cell.kept?x.original:cell.file);
+ $('#ex-ll').textContent=`Original · ${x.format} (${kb(x.originalBytes)})`;
+ $('#ex-rl').textContent=cell.kept?'Kept original':`${outFmt} · ${kb(cell.bytes)}`;
+ setPos(st.pos);
+
+ // Right rail: Live Gains Hero Card
+ const remainPct=Math.max(2,Math.min(100,(cell.bytes/x.originalBytes)*100));
+ $('#ex-gain').innerHTML=`
+  <div class="ex-gain-top">
+   <div class="ex-gain-pct${cell.kept?' kept':''}">${cell.kept?'0%':'−'+pct(saved,0)}</div>
+   <div class="ex-gain-sizes">${kb(x.originalBytes)} → <b>${kb(cell.bytes)}</b><span class="fmt-badge">${esc(outFmt)}</span><div class="note">${cell.kept?'Kept original (already optimal)':`${kb(savedBytes)} smaller`}</div></div>
+  </div>
+  <div class="ex-gain-bar"><div class="track"><div class="fill" style="width:${remainPct}%"></div></div></div>
+  <div class="ex-gain-meta">
+   <div><span class="muted">Visual quality</span><b>${cell.s2>=99.9?'S2 100 · Lossless':`S2 ${cell.s2.toFixed(1)} · ${s2Label(cell.s2)}`}</b></div>
+   <div><span class="muted">Codec / recipe</span><b><code>${esc(cell.chosen||outFmt.toLowerCase())}</code></b></div>
+  </div>`;
+
+ // Right rail: 5-step Compression Target selector
+ $('#ex-q').innerHTML=TIER_BTNS.map(([k,lbl,sc])=>`<button aria-pressed="${st.q===k}" data-q="${k}">${lbl}<small>${sc}</small></button>`).join('');
+ $$('#ex-q button').forEach(b=>b.onclick=()=>{st.q=b.dataset.q;draw()});
+
+ // Right rail: Comprehensive Format Comparison Selector
+ $('#ex-fmts').innerHTML=FMT_ORDER.map(([fk,lbl])=>{
+  const c=fk==='auto'?autoCell:tierMap[fk];
+  const disabled=!c;
+  const reason=disabled?(fk==='jpeg'&&x.hasAlpha?'No alpha':st.q==='s2=100'?'Lossy only':'N/A'):'';
+  const sv=c&&!c.kept?Math.max(0,1-c.bytes/x.originalBytes):0;
+  const tag=fk==='auto'&&c?`<span class="fmt-badge">${esc((c.format||x.format).toUpperCase())}</span>`:'';
+  return `<button class="ex-fmt-btn" aria-pressed="${st.fmt===fk}" data-f="${fk}"${disabled?' disabled':''}>
+   <span class="fn">${esc(lbl)}${tag}</span>
+   <span class="fs">${disabled?esc(reason):kb(c.bytes)}</span>
+   <span class="fp${!c||c.kept?' kept':''}">${disabled?'–':c.kept?'kept':'−'+pct(sv,0)}</span>
+  </button>`;
+ }).join('');
+ $$('#ex-fmts button').forEach(b=>b.onclick=()=>{if(!b.disabled){st.fmt=b.dataset.f;draw()}});
+
+ // Attribution caption
+ $('#ex-credit').innerHTML=`${esc(x.category)} · ${x.width}×${x.height} px · ${esc(x.credit)} · ${x.license_url?`<a href="${esc(x.license_url)}" rel="noopener">${esc(x.license)}</a>`:esc(x.license)}${x.source_url?` · <a href="${esc(x.source_url)}" rel="noopener">source</a>`:''}`;
+}
+
 const cmp=$('#ex-cmp');let drag=false;
 const move=e=>{const r=cmp.getBoundingClientRect();setPos((e.clientX-r.left)/r.width*100);if(st.zoom){$('#ex-in').style.transformOrigin=`${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`}};
 cmp.addEventListener('pointerdown',e=>{drag=true;cmp.setPointerCapture(e.pointerId);move(e)});
