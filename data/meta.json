@@ -1,0 +1,26 @@
+{
+ "generated": "2026-11-26T20:34+00:00",
+ "run": "bench-v3",
+ "dataVersion": 7,
+ "status": "complete",
+ "rows": 11825,
+ "total": 11825,
+ "sources_planned": 484,
+ "evaluated": 473,
+ "realEvaluated": 325,
+ "synthEvaluated": 148,
+ "skipped": 10,
+ "errors": 1,
+ "categories": 12,
+ "complete": {
+  "PNG": 450,
+  "JPEG": 23
+ },
+ "metric": "Alpha-aware SSIMULACRA2 v2.1 (Wasm-SIMD, worst-case over white/black/mid-gray mattes) across all evaluated images.",
+ "timing": "Headless wall time in seconds per megapixel (1000\u00d71000 px), measured on Apple Silicon.",
+ "effort_tiers": {
+  "fast": "Fast",
+  "balanced": "Balanced",
+  "max": "Thorough (with ECT/Zopfli squeeze)"
+ }
+}

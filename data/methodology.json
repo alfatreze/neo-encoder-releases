@@ -1,0 +1,217 @@
+{
+  "steps": [
+    {
+      "title": "Full-scope licensed & synthetic corpora (~484 images, 12 categories)",
+      "text": "Benchmark v3 evaluates the entire image scope across three corpora: real-world core images (Pexels, GB82, libjpeg-turbo, F-Droid screenshots, Kenney pixel art, OpenMoji icons), expanded real-world assets (Unsplash DSLR photos up to 24 MP, cutouts, UI, textures, banners, gradients, illustrations, tiny micro-assets), and procedural synthetic stress images (smooth gradients, subtle feathered alpha, logos, halftones, pixel art). Every image is normalized into 12 categories."
+    },
+    {
+      "title": "Alpha-aware SSIMULACRA2 v2.1 as the primary metric",
+      "text": "Every lossy output is scored in-process using NEO's 38 KB Wasm-SIMD SSIMULACRA2 v2.1 implementation (matching ssimulacra2_rs 0.5.2 / libjxl v2.1 weights). Transparent images are composited over white, black, and mid-gray backgrounds and gated on the worst (minimum) of the three scores, preventing hidden fringe or matte-halo artifacts. Legacy 8×8 SSIM is no longer used as a pre-filter."
+    },
+    {
+      "title": "Five quality targets + 50% size-budget target",
+      "text": "All 4 main universal web formats (PNG, JPEG, WebP, AVIF) plus JPEG XL (JXL) are measured across five targets: Strict Lossless (pixel-identical, S2 = 100), Visually Lossless (S2 ≥ 90), High Quality (S2 ≥ 80), Good for Web (S2 ≥ 70), and Extreme / Aggressive (S2 ≥ 50). On a stratified 12-category panel, we also invert the problem with a 50% Size-Budget target (maxBytes = 0.5 × original) to measure the highest SSIMULACRA2 score each format achieves at half the original file size."
+    },
+    {
+      "title": "Complex pure-compression-optimization networks",
+      "text": "Beyond single-pass encoders, we benchmark multi-stage compression-only pipelines (no resize, crop, or artistic transforms): edge-preserving pre-denoise before cjpegli, WebP, and AVIF; 2-stage cjpegli → ECT -9 progressive repack; 4-stage posterize → quantette/pngquant → OxiPNG → ECT -9; and head-to-head ECT -9 vs Zopfli deflate squeezes. Every pre-conditioned network is scored strictly against the unfiltered original pixels."
+    },
+    {
+      "title": "Effort tiers & throughput (sec/MP)",
+      "text": "Fast, Balanced, and Thorough effort tiers are timed end-to-end on Apple Silicon and reported in wall-clock seconds per megapixel (1000×1000 px) and KB saved per second."
+    },
+    {
+      "title": "Cross-metric finalist audits",
+      "text": "Because no single perceptual metric is infallible on every distortion, balanced winners from every category are cross-checked with native Butteraugli (max and 3-norm) and DSSIM to expose where metrics agree or diverge."
+    },
+    {
+      "title": "Head-to-head comparison with ImageOptim",
+      "text": "The real ImageOptim Mac app (with recorded preferences) is compared on 8 files (4 PNG, 4 JPEG) against NEO's matching recipes, NEO Smart in the same format (cjpegli / quantette + OxiPNG), and NEO Smart Auto Web (PNG, JPEG, WebP, AVIF, JXL)."
+    }
+  ],
+  "limits": [
+    "Ten artificial 300-dpi print stress files (34–100 MP) exceed the 25 MP memory cap for full-resolution float32 SSIMULACRA2 planes, and one arithmetic-coded libjpeg test file is unsupported by standard decoders; all 473 remaining images across real + synthetic corpora are evaluated.",
+    "SSIMULACRA2 v2.1 operates in sRGB; wide-gamut Display P3 and HDR scoring remain future work.",
+    "Complex network, effort-tier, and 50% size-budget measurements run on a balanced 12-category stratified panel (up to 6 images per category) rather than all 473 images to keep full multi-pass encode times practical.",
+    "Wall-clock times (sec/MP) were measured on an Apple Silicon Mac under multi-worker load and will differ on other CPUs."
+  ],
+  "sources": [
+    {
+      "name": "Google Gemini consultation",
+      "kind": "AI chat",
+      "url": "",
+      "status": "checked",
+      "took": "Group train and test splits by source image; run a Pareto analysis before any modelling; prefer a target-quality search to fixed recipes; avoid testing many recipes on few images.",
+      "folded": "Leave-one-source-out scoring, champion sets, and the second-phase plan. Its cited resources were each checked independently, below.",
+      "caveat": "Two of its citations could not be confirmed (see Not found). Its advice to train LightGBM with 18 to 50 sources was judged premature."
+    },
+    {
+      "name": "SPCP, Still Picture Coding Performance (Fukushima et al., PCS 2025)",
+      "kind": "Dataset and paper",
+      "url": "https://fukushimalab.github.io/spcp",
+      "status": "read",
+      "took": "A large public benchmark of ten photo codecs with many quality metrics, including SSIMULACRA2 and Butteraugli.",
+      "folded": "Used as a sanity reference for JPEG, WebP and AVIF behaviour and for choosing metrics. Planned: compare our MozJPEG curves on shared images to catch harness errors.",
+      "caveat": "No PNG, palette or lossless modes and no licence stated, so it cannot replace our PNG data."
+    },
+    {
+      "name": "Cleanor Storage Lab",
+      "kind": "Dataset",
+      "url": "https://huggingface.co/datasets/cleanorlabs/cleanor-storage-lab",
+      "status": "read",
+      "took": "Small CC BY 4.0 dataset of JPEG, WebP and AVIF size at SSIM and PSNR on Kodak and phone photos.",
+      "folded": "Considered for format-choice heuristics only.",
+      "caveat": "Small, photographic, and unrelated to our PNG recompression chains."
+    },
+    {
+      "name": "SSIMULACRA2 (Cloudinary)",
+      "kind": "Metric and tool",
+      "url": "https://github.com/cloudinary/ssimulacra2",
+      "status": "read",
+      "took": "Score bands (50 medium, 70 high, 80 very high, 90 visually lossless) and published correlation with human ratings (about 0.89 on the independent CID22 validation set).",
+      "folded": "Defines the planned SSIMULACRA2 tiers for re-scoring. We run the Rust port ssimulacra2_rs 0.5.2 and record versions, since score scales differ between releases.",
+      "caveat": "Cloudinary authored both the metric and the CID22 dataset. No source we found validates it for banding, text or alpha."
+    },
+    {
+      "name": "CID22 dataset (Cloudinary)",
+      "kind": "Dataset and paper",
+      "url": "https://cloudinary.com/labs/cid22",
+      "status": "exists",
+      "took": "About 22,000 images with subjective scores across a MozJPEG-like quality range.",
+      "folded": "Planned: calibrate the score thresholds for JPEG without running our own human study.",
+      "caveat": "Not yet used."
+    },
+    {
+      "name": "Jpegli rater study (Google)",
+      "kind": "Paper",
+      "url": "https://arxiv.org/html/2403.18589v1",
+      "status": "read",
+      "took": "Equal quality at about 28% lower bitrate than libjpeg-turbo in an 18-rater study.",
+      "folded": "Implemented via cjpegli in NEO Smart mode (CLI, MCP and desktop), where it saves 3–13% more than MozJPEG at equal SSIMULACRA2.",
+      "caveat": "Run by the encoder's authors; we verified gains independently on our own corpus."
+    },
+    {
+      "name": "pngquant and libimagequant documentation",
+      "kind": "Official docs",
+      "url": "https://pngquant.org/",
+      "status": "read",
+      "took": "Median-cut palettes with refinement, premultiplied alpha, adaptive dithering, the dither, posterize and speed options, and the 5% quality cost of speed 10.",
+      "folded": "Informs the dither, posterize and speed experiments and the explanation of why recipe order and quality limits matter.",
+      "caveat": "Documents what the tool does, not how it compares with other quantisers."
+    },
+    {
+      "name": "OxiPNG README",
+      "kind": "Official docs",
+      "url": "https://github.com/shssoichiro/oxipng",
+      "status": "read",
+      "took": "Levels 0 to 6 with diminishing returns, and the alpha option that changes invisible pixels.",
+      "folded": "Explains why OxiPNG levels barely matter in our sweep and motivates the alpha-handling experiment.",
+      "caveat": ""
+    },
+    {
+      "name": "ImageOptim source and bundled tools",
+      "kind": "Source code",
+      "url": "https://github.com/ImageOptim/ImageOptim",
+      "status": "read",
+      "took": "The exact tool order and flags the app uses: pngquant, OxiPNG, advpng and others for PNG; jpegtran plus jpegoptim with a quality cap for JPEG.",
+      "folded": "Basis of the parity table and the north-star comparison; it exposed that NEO's lossy JPEG recipe re-encodes with MozJPEG while the app caps quality.",
+      "caveat": "The app's behaviour depends on the user's preferences, which are recorded with every comparison."
+    },
+    {
+      "name": "libwebp near-lossless post (2015)",
+      "kind": "Mailing list",
+      "url": "https://groups.google.com/a/webmproject.org/g/webp-discuss/c/0GmxDmlexek",
+      "status": "read",
+      "took": "Estimated extra savings from near-lossless, from 5 to 10% at level 80 to 40 to 50% at 20 or below.",
+      "folded": "Candidate for the later format experiments.",
+      "caveat": "Dated and a developer's estimate; to be re-measured, not quoted."
+    },
+    {
+      "name": "imgmin and target-quality search",
+      "kind": "Open-source tool",
+      "url": "https://github.com/rflynn/imgmin",
+      "status": "read",
+      "took": "Binary search of a quality knob to hit an error target is established practice.",
+      "folded": "Basis of the planned per-image target-quality search as the competitor to a recipe classifier.",
+      "caveat": "Its error metric is simple; we would use SSIM, then SSIMULACRA2."
+    },
+    {
+      "name": "Per-title encoding (Netflix) and Hyperband",
+      "kind": "Articles and paper",
+      "url": "https://arxiv.org/pdf/1603.06560",
+      "status": "summary only",
+      "took": "Keep the convex hull of a bytes versus quality grid; use successive halving to prune search spaces.",
+      "folded": "Our per-image frontier is the image analogue; successive halving is planned for the second sweep.",
+      "caveat": "No published application to image codecs was found."
+    },
+    {
+      "name": "Video pre-filter studies (for example Bilibili RPP)",
+      "kind": "Papers",
+      "url": "https://arxiv.org/pdf/2301.10455",
+      "status": "summary only",
+      "took": "Perceptual pre-filtering saved roughly 13 to 19% bitrate in video.",
+      "folded": "Treated as a reason to test pre-blur and denoise, not as evidence they help still images.",
+      "caveat": "Video, not JPEG or PNG. We found no still-image study of blur before encoding."
+    }
+  ],
+  "notfound": [
+    {
+      "name": "nucliweb/compare-codecs-action",
+      "note": "Cited by the Gemini consultation. We could not find it; treated as unverified. The idea (binary search to a target SSIMULACRA2) is sound and is being built directly."
+    },
+    {
+      "name": "Jake Archibald 2026 codec comparisons",
+      "note": "Cited by the Gemini consultation. Not opened or verified; not used."
+    },
+    {
+      "name": "Wu versus NeuQuant versus libimagequant",
+      "note": "Only forum comments were found, no head-to-head benchmark. This is an experiment to run, not a result."
+    },
+    {
+      "name": "oxipng and friends comparison (2025)",
+      "note": "The page exists but its numbers could not be retrieved, so it is not used until read in full."
+    }
+  ],
+  "metrics": [
+    {
+      "name": "SSIMULACRA2",
+      "status": "in use",
+      "note": "Primary human-vision score used by NEO Smart mode (0–100). 90 = visually lossless (invisible even zoomed in); 80 = high quality (identical at normal size); 70 = good for web."
+    },
+    {
+      "name": "Butteraugli",
+      "status": "in use",
+      "note": "Spots localized flaws like colour banding, ringing around sharp edges and JPEG blocking. Used as a second check on finalists."
+    },
+    {
+      "name": "DSSIM",
+      "status": "in use",
+      "note": "Perceptual structural difference score; used as an independent cross-check alongside SSIMULACRA2."
+    },
+    {
+      "name": "NEO SSIM and PSNR",
+      "status": "in use",
+      "note": "Fast similarity score used across all 100,000 sweep trials. Useful for ranking recipe chains, but too forgiving near the top to be the final quality gate."
+    },
+    {
+      "name": "CVVDP (ColorVideoVDP)",
+      "status": "in use",
+      "note": "Display-aware vision model (JOD scale, 10 = identical) recorded on north-star benchmarks as an extra sanity check."
+    },
+    {
+      "name": "zensim and iqa (Rust crates)",
+      "status": "candidate",
+      "note": "Potential faster Rust scorers for future large sweeps; to be calibrated against SSIMULACRA2 first."
+    },
+    {
+      "name": "LPIPS, DISTS and VMAF",
+      "status": "parked",
+      "note": "Neural or video-trained metrics; less reliable for still graphics, UI text and transparent edges."
+    },
+    {
+      "name": "HDR-VDP-3, FLIP, MS-SSIM",
+      "status": "parked",
+      "note": "HDR-VDP and FLIP target HDR/3D rendering; MS-SSIM correlates worse with human ratings than SSIMULACRA2."
+    }
+  ]
+}

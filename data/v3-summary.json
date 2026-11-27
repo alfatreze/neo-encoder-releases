@@ -1,0 +1,8450 @@
+{
+ "generated": "2026-11-26T20:34+00:00",
+ "dataVersion": 7,
+ "metric": "SSIMULACRA2 v2.1 (alpha-aware)",
+ "corpus": {
+  "total": 484,
+  "evaluated": 473,
+  "real": 325,
+  "synthetic": 148,
+  "png": 450,
+  "jpeg": 23,
+  "withAlpha": 239,
+  "skipped": 10,
+  "errors": 1
+ },
+ "tiers": {
+  "s2=100": {
+   "n": 473,
+   "totalOrigBytes": 838882624,
+   "totalMegapixels": 1014.12,
+   "sameFormat": {
+    "meanSaving": 0.2794,
+    "bwSaving": 0.2011,
+    "png": {
+     "mean": 0.2917,
+     "bw": 0.2022
+    },
+    "jpeg": {
+     "mean": 0.0401,
+     "bw": 0.0419
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.4535,
+    "bwSaving": 0.3922,
+    "medianBpp": 1.2642,
+    "wins": {
+     "webp": 435,
+     "jpeg": 23,
+     "png": 15
+    },
+    "pngInput": {
+     "mean": 0.4746,
+     "bw": 0.3948
+    },
+    "jpegInput": {
+     "mean": 0.0401,
+     "bw": 0.0419
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.4786,
+    "bwSaving": 0.4296,
+    "wins": {
+     "webp": 273,
+     "jxl": 189,
+     "png": 9,
+     "jpeg": 2
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 473,
+     "improved": 431,
+     "meanSaving": 0.2775,
+     "bwSaving": 0.2008,
+     "medianBpp": 1.5494
+    },
+    "jpeg": {
+     "eligible": 234,
+     "improved": 23,
+     "meanSaving": 0.0039,
+     "bwSaving": 0.0004,
+     "medianBpp": 6.1455
+    },
+    "webp": {
+     "eligible": 473,
+     "improved": 448,
+     "meanSaving": 0.4494,
+     "bwSaving": 0.3846,
+     "medianBpp": 1.2642
+    },
+    "avif": {
+     "eligible": 473,
+     "improved": 0,
+     "meanSaving": 0.0,
+     "bwSaving": 0.0,
+     "medianBpp": 2.4766
+    },
+    "jxl": {
+     "eligible": 473,
+     "improved": 441,
+     "meanSaving": 0.3459,
+     "bwSaving": 0.3613,
+     "medianBpp": 1.7076
+    }
+   },
+   "topPngWinners": [
+    [
+     "ect-9",
+     384
+    ],
+    [
+     "oxipng-o4",
+     47
+    ],
+    [
+     "kept-original",
+     19
+    ]
+   ]
+  },
+  "s2>=90": {
+   "n": 473,
+   "totalOrigBytes": 838882624,
+   "totalMegapixels": 1014.12,
+   "sameFormat": {
+    "meanSaving": 0.3745,
+    "bwSaving": 0.238,
+    "png": {
+     "mean": 0.3936,
+     "bw": 0.2397
+    },
+    "jpeg": {
+     "mean": 0.0,
+     "bw": 0.0
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.5805,
+    "bwSaving": 0.4293,
+    "medianBpp": 0.8673,
+    "wins": {
+     "webp": 165,
+     "avif": 153,
+     "png": 128,
+     "jpeg": 27
+    },
+    "pngInput": {
+     "mean": 0.6084,
+     "bw": 0.4322
+    },
+    "jpegInput": {
+     "mean": 0.0354,
+     "bw": 0.0262
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.6031,
+    "bwSaving": 0.4427,
+    "wins": {
+     "webp": 150,
+     "png": 126,
+     "avif": 112,
+     "jxl": 81,
+     "jpeg": 4
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 473,
+     "improved": 414,
+     "meanSaving": 0.3745,
+     "bwSaving": 0.238,
+     "medianBpp": 1.2772
+    },
+    "jpeg": {
+     "eligible": 234,
+     "improved": 94,
+     "meanSaving": 0.2762,
+     "bwSaving": 0.2035,
+     "medianBpp": 2.2083
+    },
+    "webp": {
+     "eligible": 473,
+     "improved": 371,
+     "meanSaving": 0.3804,
+     "bwSaving": 0.2297,
+     "medianBpp": 1.4299
+    },
+    "avif": {
+     "eligible": 473,
+     "improved": 355,
+     "meanSaving": 0.3697,
+     "bwSaving": 0.2749,
+     "medianBpp": 1.2139
+    },
+    "jxl": {
+     "eligible": 473,
+     "improved": 247,
+     "meanSaving": 0.3078,
+     "bwSaving": 0.1917,
+     "medianBpp": 1.2828
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c129-q95-s1-o5-d9-p0",
+     153
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     76
+    ],
+    [
+     "png-lossless",
+     50
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1",
+     37
+    ],
+    [
+     "dense-png-c255-q77-s2-o5-d95-p2",
+     37
+    ],
+    [
+     "kept-original",
+     36
+    ],
+    [
+     "dense-png-c32-q90-s2-o2",
+     26
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t100",
+     16
+    ],
+    [
+     "png-quantette-256",
+     11
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1@t100",
+     4
+    ]
+   ]
+  },
+  "s2>=80": {
+   "n": 473,
+   "totalOrigBytes": 838882624,
+   "totalMegapixels": 1014.12,
+   "sameFormat": {
+    "meanSaving": 0.5998,
+    "bwSaving": 0.439,
+    "png": {
+     "mean": 0.6166,
+     "bw": 0.4404
+    },
+    "jpeg": {
+     "mean": 0.2709,
+     "bw": 0.252
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8139,
+    "bwSaving": 0.8645,
+    "medianBpp": 0.3123,
+    "wins": {
+     "avif": 326,
+     "png": 98,
+     "webp": 41,
+     "jpeg": 8
+    },
+    "pngInput": {
+     "mean": 0.8336,
+     "bw": 0.8678
+    },
+    "jpegInput": {
+     "mean": 0.4294,
+     "bw": 0.3985
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.819,
+    "bwSaving": 0.9012,
+    "wins": {
+     "avif": 290,
+     "png": 94,
+     "jxl": 48,
+     "webp": 40,
+     "jpeg": 1
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 473,
+     "improved": 447,
+     "meanSaving": 0.5866,
+     "bwSaving": 0.4372,
+     "medianBpp": 0.9995
+    },
+    "jpeg": {
+     "eligible": 234,
+     "improved": 207,
+     "meanSaving": 0.6589,
+     "bwSaving": 0.798,
+     "medianBpp": 0.7511
+    },
+    "webp": {
+     "eligible": 473,
+     "improved": 391,
+     "meanSaving": 0.5484,
+     "bwSaving": 0.4732,
+     "medianBpp": 0.7823
+    },
+    "avif": {
+     "eligible": 473,
+     "improved": 446,
+     "meanSaving": 0.749,
+     "bwSaving": 0.8438,
+     "medianBpp": 0.3634
+    },
+    "jxl": {
+     "eligible": 473,
+     "improved": 419,
+     "meanSaving": 0.6508,
+     "bwSaving": 0.8737,
+     "medianBpp": 0.4791
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     149
+    ],
+    [
+     "dense-png-c256-q69-s2-o6-d4-p0",
+     52
+    ],
+    [
+     "png-quantette-256",
+     49
+    ],
+    [
+     "dense-png-c229-q78-s6-o6-d13-p1",
+     40
+    ],
+    [
+     "png-lossless",
+     39
+    ],
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     34
+    ],
+    [
+     "dense-png-c129-q95-s2-o5-d9-p0",
+     33
+    ],
+    [
+     "png-posterize-32",
+     27
+    ],
+    [
+     "png-posterize-24",
+     8
+    ],
+    [
+     "dense-png-c229-q78-s6-o6-d13-p1@t100",
+     6
+    ]
+   ]
+  },
+  "s2>=70": {
+   "n": 473,
+   "totalOrigBytes": 838882624,
+   "totalMegapixels": 1014.12,
+   "sameFormat": {
+    "meanSaving": 0.69,
+    "bwSaving": 0.6477,
+    "png": {
+     "mean": 0.7005,
+     "bw": 0.6488
+    },
+    "jpeg": {
+     "mean": 0.4838,
+     "bw": 0.484
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8538,
+    "bwSaving": 0.9569,
+    "medianBpp": 0.1815,
+    "wins": {
+     "avif": 328,
+     "png": 94,
+     "webp": 36,
+     "jpeg": 15
+    },
+    "pngInput": {
+     "mean": 0.8643,
+     "bw": 0.9593
+    },
+    "jpegInput": {
+     "mean": 0.6493,
+     "bw": 0.6318
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8548,
+    "bwSaving": 0.9577,
+    "wins": {
+     "avif": 305,
+     "png": 91,
+     "jxl": 34,
+     "webp": 34,
+     "jpeg": 9
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 473,
+     "improved": 448,
+     "meanSaving": 0.6664,
+     "bwSaving": 0.6442,
+     "medianBpp": 0.8274
+    },
+    "jpeg": {
+     "eligible": 234,
+     "improved": 216,
+     "meanSaving": 0.7616,
+     "bwSaving": 0.9319,
+     "medianBpp": 0.4327
+    },
+    "webp": {
+     "eligible": 473,
+     "improved": 394,
+     "meanSaving": 0.5989,
+     "bwSaving": 0.5418,
+     "medianBpp": 0.511
+    },
+    "avif": {
+     "eligible": 473,
+     "improved": 448,
+     "meanSaving": 0.798,
+     "bwSaving": 0.9558,
+     "medianBpp": 0.2157
+    },
+    "jxl": {
+     "eligible": 473,
+     "improved": 429,
+     "meanSaving": 0.6931,
+     "bwSaving": 0.9385,
+     "medianBpp": 0.3363
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     142
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     112
+    ],
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     66
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     56
+    ],
+    [
+     "png-quantette-128",
+     24
+    ],
+    [
+     "png-lossless",
+     14
+    ],
+    [
+     "png-quantette-256",
+     14
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t88",
+     4
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t83",
+     3
+    ],
+    [
+     "dense-png-c255-q77-s1-o5-d95-p2",
+     3
+    ]
+   ]
+  },
+  "s2>=50": {
+   "n": 473,
+   "totalOrigBytes": 838882624,
+   "totalMegapixels": 1014.12,
+   "sameFormat": {
+    "meanSaving": 0.7494,
+    "bwSaving": 0.776,
+    "png": {
+     "mean": 0.7529,
+     "bw": 0.7766
+    },
+    "jpeg": {
+     "mean": 0.6809,
+     "bw": 0.6953
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8856,
+    "bwSaving": 0.9782,
+    "medianBpp": 0.1112,
+    "wins": {
+     "avif": 345,
+     "png": 83,
+     "webp": 34,
+     "jpeg": 11
+    },
+    "pngInput": {
+     "mean": 0.8885,
+     "bw": 0.9793
+    },
+    "jpegInput": {
+     "mean": 0.8272,
+     "bw": 0.8235
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8875,
+    "bwSaving": 0.9784,
+    "wins": {
+     "avif": 325,
+     "png": 77,
+     "jxl": 32,
+     "webp": 31,
+     "jpeg": 8
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 473,
+     "improved": 448,
+     "meanSaving": 0.7162,
+     "bwSaving": 0.771,
+     "medianBpp": 0.7321
+    },
+    "jpeg": {
+     "eligible": 234,
+     "improved": 219,
+     "meanSaving": 0.8252,
+     "bwSaving": 0.9619,
+     "medianBpp": 0.2558
+    },
+    "webp": {
+     "eligible": 473,
+     "improved": 394,
+     "meanSaving": 0.6343,
+     "bwSaving": 0.5612,
+     "medianBpp": 0.3452
+    },
+    "avif": {
+     "eligible": 473,
+     "improved": 452,
+     "meanSaving": 0.8345,
+     "bwSaving": 0.9776,
+     "medianBpp": 0.1179
+    },
+    "jxl": {
+     "eligible": 473,
+     "improved": 446,
+     "meanSaving": 0.7739,
+     "bwSaving": 0.9624,
+     "medianBpp": 0.2021
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     181
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     98
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     61
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     40
+    ],
+    [
+     "png-quantette-32",
+     39
+    ],
+    [
+     "png-quantette-64",
+     12
+    ],
+    [
+     "png-quantette-128",
+     6
+    ],
+    [
+     "png-quantette-256",
+     5
+    ],
+    [
+     "png-posterize-24",
+     2
+    ],
+    [
+     "kept-original",
+     2
+    ]
+   ]
+  }
+ },
+ "realOnlyTiers": {
+  "s2=100": {
+   "n": 325,
+   "totalOrigBytes": 811801968,
+   "totalMegapixels": 934.89,
+   "sameFormat": {
+    "meanSaving": 0.2011,
+    "bwSaving": 0.188,
+    "png": {
+     "mean": 0.2133,
+     "bw": 0.1891
+    },
+    "jpeg": {
+     "mean": 0.0401,
+     "bw": 0.0419
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.3798,
+    "bwSaving": 0.3824,
+    "medianBpp": 2.75,
+    "wins": {
+     "webp": 292,
+     "jpeg": 23,
+     "png": 10
+    },
+    "pngInput": {
+     "mean": 0.4057,
+     "bw": 0.385
+    },
+    "jpegInput": {
+     "mean": 0.0401,
+     "bw": 0.0419
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.4143,
+    "bwSaving": 0.4208,
+    "wins": {
+     "jxl": 175,
+     "webp": 143,
+     "png": 5,
+     "jpeg": 2
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 325,
+     "improved": 283,
+     "meanSaving": 0.1982,
+     "bwSaving": 0.1877,
+     "medianBpp": 3.6059
+    },
+    "jpeg": {
+     "eligible": 195,
+     "improved": 23,
+     "meanSaving": 0.0047,
+     "bwSaving": 0.0004,
+     "medianBpp": 7.4371
+    },
+    "webp": {
+     "eligible": 325,
+     "improved": 300,
+     "meanSaving": 0.3747,
+     "bwSaving": 0.3745,
+     "medianBpp": 2.75
+    },
+    "avif": {
+     "eligible": 325,
+     "improved": 0,
+     "meanSaving": 0.0,
+     "bwSaving": 0.0,
+     "medianBpp": 4.8574
+    },
+    "jxl": {
+     "eligible": 325,
+     "improved": 299,
+     "meanSaving": 0.3351,
+     "bwSaving": 0.3663,
+     "medianBpp": 2.5399
+    }
+   },
+   "topPngWinners": [
+    [
+     "ect-9",
+     252
+    ],
+    [
+     "oxipng-o4",
+     31
+    ],
+    [
+     "kept-original",
+     19
+    ]
+   ]
+  },
+  "s2>=90": {
+   "n": 325,
+   "totalOrigBytes": 811801968,
+   "totalMegapixels": 934.89,
+   "sameFormat": {
+    "meanSaving": 0.2426,
+    "bwSaving": 0.224,
+    "png": {
+     "mean": 0.2611,
+     "bw": 0.2257
+    },
+    "jpeg": {
+     "mean": 0.0,
+     "bw": 0.0
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.4994,
+    "bwSaving": 0.4184,
+    "medianBpp": 1.4383,
+    "wins": {
+     "webp": 126,
+     "avif": 123,
+     "png": 49,
+     "jpeg": 27
+    },
+    "pngInput": {
+     "mean": 0.5348,
+     "bw": 0.4213
+    },
+    "jpegInput": {
+     "mean": 0.0354,
+     "bw": 0.0262
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.5262,
+    "bwSaving": 0.4318,
+    "wins": {
+     "webp": 118,
+     "avif": 89,
+     "jxl": 65,
+     "png": 49,
+     "jpeg": 4
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 325,
+     "improved": 266,
+     "meanSaving": 0.2426,
+     "bwSaving": 0.224,
+     "medianBpp": 3.4867
+    },
+    "jpeg": {
+     "eligible": 195,
+     "improved": 83,
+     "meanSaving": 0.3015,
+     "bwSaving": 0.2045,
+     "medianBpp": 2.6104
+    },
+    "webp": {
+     "eligible": 325,
+     "improved": 223,
+     "meanSaving": 0.2939,
+     "bwSaving": 0.225,
+     "medianBpp": 2.8081
+    },
+    "avif": {
+     "eligible": 325,
+     "improved": 241,
+     "meanSaving": 0.3505,
+     "bwSaving": 0.2739,
+     "medianBpp": 1.642
+    },
+    "jxl": {
+     "eligible": 325,
+     "improved": 151,
+     "meanSaving": 0.2863,
+     "bwSaving": 0.1831,
+     "medianBpp": 1.642
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c129-q95-s1-o5-d9-p0",
+     129
+    ],
+    [
+     "kept-original",
+     36
+    ],
+    [
+     "png-lossless",
+     31
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     26
+    ],
+    [
+     "dense-png-c32-q90-s2-o2",
+     24
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1",
+     21
+    ],
+    [
+     "dense-png-c255-q77-s2-o5-d95-p2",
+     20
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t100",
+     8
+    ],
+    [
+     "png-quantette-256",
+     6
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1@t100",
+     1
+    ]
+   ]
+  },
+  "s2>=80": {
+   "n": 325,
+   "totalOrigBytes": 811801968,
+   "totalMegapixels": 934.89,
+   "sameFormat": {
+    "meanSaving": 0.5219,
+    "bwSaving": 0.4268,
+    "png": {
+     "mean": 0.541,
+     "bw": 0.4281
+    },
+    "jpeg": {
+     "mean": 0.2709,
+     "bw": 0.252
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.7881,
+    "bwSaving": 0.8617,
+    "medianBpp": 0.4686,
+    "wins": {
+     "avif": 255,
+     "png": 33,
+     "webp": 29,
+     "jpeg": 8
+    },
+    "pngInput": {
+     "mean": 0.8155,
+     "bw": 0.8652
+    },
+    "jpegInput": {
+     "mean": 0.4294,
+     "bw": 0.3985
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.7952,
+    "bwSaving": 0.8997,
+    "wins": {
+     "avif": 222,
+     "jxl": 42,
+     "png": 32,
+     "webp": 28,
+     "jpeg": 1
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 325,
+     "improved": 299,
+     "meanSaving": 0.5027,
+     "bwSaving": 0.4249,
+     "medianBpp": 1.8457
+    },
+    "jpeg": {
+     "eligible": 195,
+     "improved": 174,
+     "meanSaving": 0.6658,
+     "bwSaving": 0.798,
+     "medianBpp": 0.8251
+    },
+    "webp": {
+     "eligible": 325,
+     "improved": 243,
+     "meanSaving": 0.4771,
+     "bwSaving": 0.4618,
+     "medianBpp": 0.9045
+    },
+    "avif": {
+     "eligible": 325,
+     "improved": 302,
+     "meanSaving": 0.7507,
+     "bwSaving": 0.8417,
+     "medianBpp": 0.4792
+    },
+    "jxl": {
+     "eligible": 325,
+     "improved": 288,
+     "meanSaving": 0.6729,
+     "bwSaving": 0.8737,
+     "medianBpp": 0.5971
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     61
+    ],
+    [
+     "png-quantette-256",
+     44
+    ],
+    [
+     "dense-png-c256-q69-s2-o6-d4-p0",
+     34
+    ],
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     34
+    ],
+    [
+     "dense-png-c129-q95-s2-o5-d9-p0",
+     33
+    ],
+    [
+     "png-lossless",
+     31
+    ],
+    [
+     "dense-png-c229-q78-s6-o6-d13-p1",
+     26
+    ],
+    [
+     "png-posterize-32",
+     25
+    ],
+    [
+     "png-posterize-24",
+     4
+    ],
+    [
+     "kept-original",
+     3
+    ]
+   ]
+  },
+  "s2>=70": {
+   "n": 325,
+   "totalOrigBytes": 811801968,
+   "totalMegapixels": 934.89,
+   "sameFormat": {
+    "meanSaving": 0.6403,
+    "bwSaving": 0.64,
+    "png": {
+     "mean": 0.6523,
+     "bw": 0.6411
+    },
+    "jpeg": {
+     "mean": 0.4838,
+     "bw": 0.484
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8426,
+    "bwSaving": 0.9566,
+    "medianBpp": 0.2504,
+    "wins": {
+     "avif": 255,
+     "png": 33,
+     "webp": 23,
+     "jpeg": 14
+    },
+    "pngInput": {
+     "mean": 0.8573,
+     "bw": 0.959
+    },
+    "jpegInput": {
+     "mean": 0.6493,
+     "bw": 0.6318
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8433,
+    "bwSaving": 0.9574,
+    "wins": {
+     "avif": 232,
+     "png": 33,
+     "jxl": 29,
+     "webp": 22,
+     "jpeg": 9
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 325,
+     "improved": 300,
+     "meanSaving": 0.6061,
+     "bwSaving": 0.6364,
+     "medianBpp": 1.3758
+    },
+    "jpeg": {
+     "eligible": 195,
+     "improved": 183,
+     "meanSaving": 0.7734,
+     "bwSaving": 0.9327,
+     "medianBpp": 0.4854
+    },
+    "webp": {
+     "eligible": 325,
+     "improved": 246,
+     "meanSaving": 0.5406,
+     "bwSaving": 0.5315,
+     "medianBpp": 0.6092
+    },
+    "avif": {
+     "eligible": 325,
+     "improved": 304,
+     "meanSaving": 0.8106,
+     "bwSaving": 0.9558,
+     "medianBpp": 0.259
+    },
+    "jxl": {
+     "eligible": 325,
+     "improved": 294,
+     "meanSaving": 0.7266,
+     "bwSaving": 0.94,
+     "medianBpp": 0.3662
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     66
+    ],
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     66
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     58
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     44
+    ],
+    [
+     "png-quantette-128",
+     23
+    ],
+    [
+     "png-lossless",
+     14
+    ],
+    [
+     "png-quantette-256",
+     12
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t88",
+     4
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t83",
+     3
+    ],
+    [
+     "dense-png-c255-q77-s1-o5-d95-p2",
+     3
+    ]
+   ]
+  },
+  "s2>=50": {
+   "n": 325,
+   "totalOrigBytes": 811801968,
+   "totalMegapixels": 934.89,
+   "sameFormat": {
+    "meanSaving": 0.7172,
+    "bwSaving": 0.7728,
+    "png": {
+     "mean": 0.72,
+     "bw": 0.7734
+    },
+    "jpeg": {
+     "mean": 0.6809,
+     "bw": 0.6953
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8769,
+    "bwSaving": 0.9781,
+    "medianBpp": 0.137,
+    "wins": {
+     "avif": 272,
+     "webp": 23,
+     "png": 20,
+     "jpeg": 10
+    },
+    "pngInput": {
+     "mean": 0.8807,
+     "bw": 0.9793
+    },
+    "jpegInput": {
+     "mean": 0.8272,
+     "bw": 0.8235
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8772,
+    "bwSaving": 0.9784,
+    "wins": {
+     "avif": 254,
+     "jxl": 22,
+     "webp": 21,
+     "png": 20,
+     "jpeg": 8
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 325,
+     "improved": 300,
+     "meanSaving": 0.669,
+     "bwSaving": 0.7676,
+     "medianBpp": 1.1911
+    },
+    "jpeg": {
+     "eligible": 195,
+     "improved": 186,
+     "meanSaving": 0.8417,
+     "bwSaving": 0.9627,
+     "medianBpp": 0.2859
+    },
+    "webp": {
+     "eligible": 325,
+     "improved": 246,
+     "meanSaving": 0.5808,
+     "bwSaving": 0.5505,
+     "medianBpp": 0.381
+    },
+    "avif": {
+     "eligible": 325,
+     "improved": 306,
+     "meanSaving": 0.8496,
+     "bwSaving": 0.9777,
+     "medianBpp": 0.1376
+    },
+    "jxl": {
+     "eligible": 325,
+     "improved": 308,
+     "meanSaving": 0.7925,
+     "bwSaving": 0.9634,
+     "medianBpp": 0.2131
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     93
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     73
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     44
+    ],
+    [
+     "png-quantette-32",
+     38
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     32
+    ],
+    [
+     "png-quantette-64",
+     10
+    ],
+    [
+     "png-quantette-128",
+     5
+    ],
+    [
+     "png-posterize-24",
+     2
+    ],
+    [
+     "kept-original",
+     2
+    ],
+    [
+     "png-quantette-256",
+     2
+    ]
+   ]
+  }
+ },
+ "synthOnlyTiers": {
+  "s2=100": {
+   "n": 148,
+   "totalOrigBytes": 27080656,
+   "totalMegapixels": 79.23,
+   "sameFormat": {
+    "meanSaving": 0.4515,
+    "bwSaving": 0.5919,
+    "png": {
+     "mean": 0.4515,
+     "bw": 0.5919
+    },
+    "jpeg": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.6153,
+    "bwSaving": 0.6861,
+    "medianBpp": 0.4552,
+    "wins": {
+     "webp": 143,
+     "png": 5
+    },
+    "pngInput": {
+     "mean": 0.6153,
+     "bw": 0.6861
+    },
+    "jpegInput": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.6196,
+    "bwSaving": 0.6914,
+    "wins": {
+     "webp": 130,
+     "jxl": 14,
+     "png": 4
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.4515,
+     "bwSaving": 0.5919,
+     "medianBpp": 0.6593
+    },
+    "jpeg": {
+     "eligible": 39,
+     "improved": 0,
+     "meanSaving": 0.0,
+     "bwSaving": 0.0,
+     "medianBpp": 1.0325
+    },
+    "webp": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.6133,
+     "bwSaving": 0.6855,
+     "medianBpp": 0.4552
+    },
+    "avif": {
+     "eligible": 148,
+     "improved": 0,
+     "meanSaving": 0.0,
+     "bwSaving": 0.0,
+     "medianBpp": 1.2054
+    },
+    "jxl": {
+     "eligible": 148,
+     "improved": 142,
+     "meanSaving": 0.3697,
+     "bwSaving": 0.2121,
+     "medianBpp": 0.762
+    }
+   },
+   "topPngWinners": [
+    [
+     "ect-9",
+     132
+    ],
+    [
+     "oxipng-o4",
+     16
+    ]
+   ]
+  },
+  "s2>=90": {
+   "n": 148,
+   "totalOrigBytes": 27080656,
+   "totalMegapixels": 79.23,
+   "sameFormat": {
+    "meanSaving": 0.6642,
+    "bwSaving": 0.6579,
+    "png": {
+     "mean": 0.6642,
+     "bw": 0.6579
+    },
+    "jpeg": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.7586,
+    "bwSaving": 0.7555,
+    "medianBpp": 0.2555,
+    "wins": {
+     "png": 79,
+     "webp": 39,
+     "avif": 30
+    },
+    "pngInput": {
+     "mean": 0.7586,
+     "bw": 0.7555
+    },
+    "jpegInput": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.7719,
+    "bwSaving": 0.7698,
+    "wins": {
+     "png": 77,
+     "webp": 32,
+     "avif": 23,
+     "jxl": 16
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.6642,
+     "bwSaving": 0.6579,
+     "medianBpp": 0.4102
+    },
+    "jpeg": {
+     "eligible": 39,
+     "improved": 11,
+     "meanSaving": 0.15,
+     "bwSaving": 0.1458,
+     "medianBpp": 0.8138
+    },
+    "webp": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.5704,
+     "bwSaving": 0.3707,
+     "medianBpp": 0.557
+    },
+    "avif": {
+     "eligible": 148,
+     "improved": 114,
+     "meanSaving": 0.4119,
+     "bwSaving": 0.3065,
+     "medianBpp": 0.6337
+    },
+    "jxl": {
+     "eligible": 148,
+     "improved": 96,
+     "meanSaving": 0.3549,
+     "bwSaving": 0.4477,
+     "medianBpp": 0.5641
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     50
+    ],
+    [
+     "dense-png-c129-q95-s1-o5-d9-p0",
+     24
+    ],
+    [
+     "png-lossless",
+     19
+    ],
+    [
+     "dense-png-c255-q77-s2-o5-d95-p2",
+     17
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1",
+     16
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t100",
+     8
+    ],
+    [
+     "png-quantette-256",
+     5
+    ],
+    [
+     "dense-png-c229-q78-s1-o6-d13-p1@t100",
+     3
+    ],
+    [
+     "dense-png-c32-q90-s2-o2",
+     2
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t93",
+     2
+    ]
+   ]
+  },
+  "s2>=80": {
+   "n": 148,
+   "totalOrigBytes": 27080656,
+   "totalMegapixels": 79.23,
+   "sameFormat": {
+    "meanSaving": 0.7707,
+    "bwSaving": 0.8044,
+    "png": {
+     "mean": 0.7707,
+     "bw": 0.8044
+    },
+    "jpeg": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8706,
+    "bwSaving": 0.9468,
+    "medianBpp": 0.0858,
+    "wins": {
+     "avif": 71,
+     "png": 65,
+     "webp": 12
+    },
+    "pngInput": {
+     "mean": 0.8706,
+     "bw": 0.9468
+    },
+    "jpegInput": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8713,
+    "bwSaving": 0.9475,
+    "wins": {
+     "avif": 68,
+     "png": 62,
+     "webp": 12,
+     "jxl": 6
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.7707,
+     "bwSaving": 0.8044,
+     "medianBpp": 0.2163
+    },
+    "jpeg": {
+     "eligible": 39,
+     "improved": 33,
+     "meanSaving": 0.6249,
+     "bwSaving": 0.7984,
+     "medianBpp": 0.2612
+    },
+    "webp": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.705,
+     "bwSaving": 0.8144,
+     "medianBpp": 0.3071
+    },
+    "avif": {
+     "eligible": 148,
+     "improved": 144,
+     "meanSaving": 0.7453,
+     "bwSaving": 0.9083,
+     "medianBpp": 0.1255
+    },
+    "jxl": {
+     "eligible": 148,
+     "improved": 131,
+     "meanSaving": 0.6021,
+     "bwSaving": 0.8739,
+     "medianBpp": 0.2723
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     88
+    ],
+    [
+     "dense-png-c256-q69-s2-o6-d4-p0",
+     18
+    ],
+    [
+     "dense-png-c229-q78-s6-o6-d13-p1",
+     14
+    ],
+    [
+     "png-lossless",
+     8
+    ],
+    [
+     "dense-png-c229-q78-s6-o6-d13-p1@t100",
+     6
+    ],
+    [
+     "png-quantette-256",
+     5
+    ],
+    [
+     "png-posterize-24",
+     4
+    ],
+    [
+     "png-posterize-32",
+     2
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t88",
+     1
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0@t89",
+     1
+    ]
+   ]
+  },
+  "s2>=70": {
+   "n": 148,
+   "totalOrigBytes": 27080656,
+   "totalMegapixels": 79.23,
+   "sameFormat": {
+    "meanSaving": 0.7989,
+    "bwSaving": 0.878,
+    "png": {
+     "mean": 0.7989,
+     "bw": 0.878
+    },
+    "jpeg": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.8785,
+    "bwSaving": 0.9679,
+    "medianBpp": 0.0687,
+    "wins": {
+     "avif": 73,
+     "png": 61,
+     "webp": 13,
+     "jpeg": 1
+    },
+    "pngInput": {
+     "mean": 0.8785,
+     "bw": 0.9679
+    },
+    "jpegInput": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.8802,
+    "bwSaving": 0.9686,
+    "wins": {
+     "avif": 73,
+     "png": 58,
+     "webp": 12,
+     "jxl": 5
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.7989,
+     "bwSaving": 0.878,
+     "medianBpp": 0.1787
+    },
+    "jpeg": {
+     "eligible": 39,
+     "improved": 33,
+     "meanSaving": 0.7026,
+     "bwSaving": 0.8833,
+     "medianBpp": 0.2088
+    },
+    "webp": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.727,
+     "bwSaving": 0.8502,
+     "medianBpp": 0.2611
+    },
+    "avif": {
+     "eligible": 148,
+     "improved": 144,
+     "meanSaving": 0.7703,
+     "bwSaving": 0.9554,
+     "medianBpp": 0.1121
+    },
+    "jxl": {
+     "eligible": 148,
+     "improved": 135,
+     "meanSaving": 0.6195,
+     "bwSaving": 0.8945,
+     "medianBpp": 0.2691
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     84
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     46
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     12
+    ],
+    [
+     "png-quantette-256",
+     2
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1@t97",
+     2
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0@t100",
+     1
+    ],
+    [
+     "png-quantette-128",
+     1
+    ]
+   ]
+  },
+  "s2>=50": {
+   "n": 148,
+   "totalOrigBytes": 27080656,
+   "totalMegapixels": 79.23,
+   "sameFormat": {
+    "meanSaving": 0.8199,
+    "bwSaving": 0.8727,
+    "png": {
+     "mean": 0.8199,
+     "bw": 0.8727
+    },
+    "jpeg": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoWeb": {
+    "meanSaving": 0.9046,
+    "bwSaving": 0.9789,
+    "medianBpp": 0.0586,
+    "wins": {
+     "avif": 73,
+     "png": 63,
+     "webp": 11,
+     "jpeg": 1
+    },
+    "pngInput": {
+     "mean": 0.9046,
+     "bw": 0.9789
+    },
+    "jpegInput": {
+     "mean": null,
+     "bw": null
+    }
+   },
+   "autoAll": {
+    "meanSaving": 0.91,
+    "bwSaving": 0.9795,
+    "wins": {
+     "avif": 71,
+     "png": 57,
+     "webp": 10,
+     "jxl": 10
+    }
+   },
+   "formats": {
+    "png": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.8199,
+     "bwSaving": 0.8727,
+     "medianBpp": 0.1659
+    },
+    "jpeg": {
+     "eligible": 39,
+     "improved": 33,
+     "meanSaving": 0.7428,
+     "bwSaving": 0.9155,
+     "medianBpp": 0.166
+    },
+    "webp": {
+     "eligible": 148,
+     "improved": 148,
+     "meanSaving": 0.7517,
+     "bwSaving": 0.8819,
+     "medianBpp": 0.237
+    },
+    "avif": {
+     "eligible": 148,
+     "improved": 146,
+     "meanSaving": 0.8013,
+     "bwSaving": 0.9738,
+     "medianBpp": 0.0892
+    },
+    "jxl": {
+     "eligible": 148,
+     "improved": 138,
+     "meanSaving": 0.733,
+     "bwSaving": 0.9325,
+     "medianBpp": 0.1737
+    }
+   },
+   "topPngWinners": [
+    [
+     "dense-png-c255-q1-s1-o4-d33-p2",
+     88
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0",
+     25
+    ],
+    [
+     "dense-png-c222-q59-s1-o6-d92-p0",
+     17
+    ],
+    [
+     "dense-png-c191-q76-s1-o4-d11-p1",
+     8
+    ],
+    [
+     "png-quantette-256",
+     3
+    ],
+    [
+     "png-lossless",
+     2
+    ],
+    [
+     "png-quantette-64",
+     2
+    ],
+    [
+     "png-quantette-32",
+     1
+    ],
+    [
+     "png-quantette-128",
+     1
+    ],
+    [
+     "dense-png-c88-q61-s10-o6-d1-p0@t89",
+     1
+    ]
+   ]
+  }
+ },
+ "categories": {
+  "icon": {
+   "n": 106,
+   "png": 106,
+   "jpeg": 0,
+   "withAlpha": 103,
+   "avgOrigKb": 92.7,
+   "tiers": {
+    "s2=100": {
+     "n": 106,
+     "totalOrigBytes": 10057596,
+     "totalMegapixels": 76.53,
+     "sameFormat": {
+      "meanSaving": 0.3476,
+      "bwSaving": 0.5016,
+      "png": {
+       "mean": 0.3476,
+       "bw": 0.5016
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5003,
+      "bwSaving": 0.6592,
+      "medianBpp": 0.4403,
+      "wins": {
+       "webp": 105,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.5003,
+       "bw": 0.6592
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5054,
+      "bwSaving": 0.6644,
+      "wins": {
+       "webp": 92,
+       "jxl": 13,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 106,
+       "improved": 102,
+       "meanSaving": 0.3476,
+       "bwSaving": 0.5016,
+       "medianBpp": 0.6221
+      },
+      "jpeg": {
+       "eligible": 3,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.4802
+      },
+      "webp": {
+       "eligible": 106,
+       "improved": 106,
+       "meanSaving": 0.5003,
+       "bwSaving": 0.6592,
+       "medianBpp": 0.4403
+      },
+      "avif": {
+       "eligible": 106,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 1.0155
+      },
+      "jxl": {
+       "eligible": 106,
+       "improved": 95,
+       "meanSaving": 0.3342,
+       "bwSaving": 0.5712,
+       "medianBpp": 0.5868
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       95
+      ],
+      [
+       "oxipng-o4",
+       7
+      ],
+      [
+       "kept-original",
+       4
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 106,
+     "totalOrigBytes": 10057596,
+     "totalMegapixels": 76.53,
+     "sameFormat": {
+      "meanSaving": 0.5249,
+      "bwSaving": 0.1805,
+      "png": {
+       "mean": 0.5249,
+       "bw": 0.1805
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.631,
+      "bwSaving": 0.702,
+      "medianBpp": 0.2355,
+      "wins": {
+       "png": 54,
+       "webp": 39,
+       "avif": 13
+      },
+      "pngInput": {
+       "mean": 0.631,
+       "bw": 0.702
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.6323,
+      "bwSaving": 0.7043,
+      "wins": {
+       "png": 53,
+       "webp": 38,
+       "avif": 13,
+       "jxl": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 106,
+       "improved": 102,
+       "meanSaving": 0.5249,
+       "bwSaving": 0.1805,
+       "medianBpp": 0.2711
+      },
+      "jpeg": {
+       "eligible": 3,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.4802
+      },
+      "webp": {
+       "eligible": 106,
+       "improved": 105,
+       "meanSaving": 0.4997,
+       "bwSaving": 0.6526,
+       "medianBpp": 0.4425
+      },
+      "avif": {
+       "eligible": 106,
+       "improved": 89,
+       "meanSaving": 0.3551,
+       "bwSaving": 0.5244,
+       "medianBpp": 0.5214
+      },
+      "jxl": {
+       "eligible": 106,
+       "improved": 54,
+       "meanSaving": 0.2115,
+       "bwSaving": 0.1039,
+       "medianBpp": 0.7374
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       40
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       20
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       16
+      ],
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       13
+      ],
+      [
+       "png-lossless",
+       5
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       4
+      ],
+      [
+       "kept-original",
+       4
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t64",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t93",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 106,
+     "totalOrigBytes": 10057596,
+     "totalMegapixels": 76.53,
+     "sameFormat": {
+      "meanSaving": 0.6679,
+      "bwSaving": 0.8436,
+      "png": {
+       "mean": 0.6679,
+       "bw": 0.8436
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7309,
+      "bwSaving": 0.9436,
+      "medianBpp": 0.1647,
+      "wins": {
+       "png": 61,
+       "avif": 34,
+       "webp": 11
+      },
+      "pngInput": {
+       "mean": 0.7309,
+       "bw": 0.9436
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7316,
+      "bwSaving": 0.9436,
+      "wins": {
+       "png": 58,
+       "avif": 34,
+       "webp": 11,
+       "jxl": 3
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 106,
+       "improved": 103,
+       "meanSaving": 0.6679,
+       "bwSaving": 0.8436,
+       "medianBpp": 0.1744
+      },
+      "jpeg": {
+       "eligible": 3,
+       "improved": 2,
+       "meanSaving": 0.3527,
+       "bwSaving": 0.8074,
+       "medianBpp": 0.4802
+      },
+      "webp": {
+       "eligible": 106,
+       "improved": 105,
+       "meanSaving": 0.5457,
+       "bwSaving": 0.8289,
+       "medianBpp": 0.3516
+      },
+      "avif": {
+       "eligible": 106,
+       "improved": 98,
+       "meanSaving": 0.5996,
+       "bwSaving": 0.933,
+       "medianBpp": 0.2353
+      },
+      "jxl": {
+       "eligible": 106,
+       "improved": 90,
+       "meanSaving": 0.4146,
+       "bwSaving": 0.8563,
+       "medianBpp": 0.357
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       55
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       22
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       13
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       6
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       3
+      ],
+      [
+       "kept-original",
+       3
+      ],
+      [
+       "png-posterize-32",
+       1
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0@t92",
+       1
+      ],
+      [
+       "png-quantette-256",
+       1
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1@t100",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 106,
+     "totalOrigBytes": 10057596,
+     "totalMegapixels": 76.53,
+     "sameFormat": {
+      "meanSaving": 0.702,
+      "bwSaving": 0.9077,
+      "png": {
+       "mean": 0.702,
+       "bw": 0.9077
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7497,
+      "bwSaving": 0.9545,
+      "medianBpp": 0.1647,
+      "wins": {
+       "png": 59,
+       "avif": 36,
+       "webp": 11
+      },
+      "pngInput": {
+       "mean": 0.7497,
+       "bw": 0.9545
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7518,
+      "bwSaving": 0.9555,
+      "wins": {
+       "png": 56,
+       "avif": 36,
+       "webp": 10,
+       "jxl": 4
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 106,
+       "improved": 104,
+       "meanSaving": 0.702,
+       "bwSaving": 0.9077,
+       "medianBpp": 0.1723
+      },
+      "jpeg": {
+       "eligible": 3,
+       "improved": 3,
+       "meanSaving": 0.5017,
+       "bwSaving": 0.887,
+       "medianBpp": 0.2858
+      },
+      "webp": {
+       "eligible": 106,
+       "improved": 105,
+       "meanSaving": 0.5647,
+       "bwSaving": 0.8527,
+       "medianBpp": 0.3116
+      },
+      "avif": {
+       "eligible": 106,
+       "improved": 98,
+       "meanSaving": 0.6371,
+       "bwSaving": 0.9481,
+       "medianBpp": 0.178
+      },
+      "jxl": {
+       "eligible": 106,
+       "improved": 94,
+       "meanSaving": 0.4355,
+       "bwSaving": 0.8711,
+       "medianBpp": 0.3497
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       40
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       36
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       21
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       5
+      ],
+      [
+       "kept-original",
+       2
+      ],
+      [
+       "png-quantette-256",
+       1
+      ],
+      [
+       "png-quantette-128",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 106,
+     "totalOrigBytes": 10057596,
+     "totalMegapixels": 76.53,
+     "sameFormat": {
+      "meanSaving": 0.7419,
+      "bwSaving": 0.9139,
+      "png": {
+       "mean": 0.7419,
+       "bw": 0.9139
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7913,
+      "bwSaving": 0.9656,
+      "medianBpp": 0.1089,
+      "wins": {
+       "png": 51,
+       "avif": 49,
+       "webp": 6
+      },
+      "pngInput": {
+       "mean": 0.7913,
+       "bw": 0.9656
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7974,
+      "bwSaving": 0.9656,
+      "wins": {
+       "avif": 49,
+       "png": 46,
+       "jxl": 6,
+       "webp": 5
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 106,
+       "improved": 104,
+       "meanSaving": 0.7419,
+       "bwSaving": 0.9139,
+       "medianBpp": 0.1454
+      },
+      "jpeg": {
+       "eligible": 3,
+       "improved": 3,
+       "meanSaving": 0.6223,
+       "bwSaving": 0.9101,
+       "medianBpp": 0.2292
+      },
+      "webp": {
+       "eligible": 106,
+       "improved": 105,
+       "meanSaving": 0.5882,
+       "bwSaving": 0.8614,
+       "medianBpp": 0.2757
+      },
+      "avif": {
+       "eligible": 106,
+       "improved": 101,
+       "meanSaving": 0.6906,
+       "bwSaving": 0.9619,
+       "medianBpp": 0.1358
+      },
+      "jxl": {
+       "eligible": 106,
+       "improved": 100,
+       "meanSaving": 0.5918,
+       "bwSaving": 0.9128,
+       "medianBpp": 0.2174
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       84
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       12
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       3
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       2
+      ],
+      [
+       "kept-original",
+       2
+      ],
+      [
+       "png-quantette-64",
+       2
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0@t89",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "photo": {
+   "n": 71,
+   "png": 48,
+   "jpeg": 23,
+   "withAlpha": 2,
+   "avgOrigKb": 3841.7,
+   "tiers": {
+    "s2=100": {
+     "n": 71,
+     "totalOrigBytes": 279304784,
+     "totalMegapixels": 325.36,
+     "sameFormat": {
+      "meanSaving": 0.0801,
+      "bwSaving": 0.1545,
+      "png": {
+       "mean": 0.0993,
+       "bw": 0.157
+      },
+      "jpeg": {
+       "mean": 0.0401,
+       "bw": 0.0419
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.1912,
+      "bwSaving": 0.2708,
+      "medianBpp": 4.8631,
+      "wins": {
+       "webp": 45,
+       "jpeg": 23,
+       "png": 3
+      },
+      "pngInput": {
+       "mean": 0.2637,
+       "bw": 0.2758
+      },
+      "jpegInput": {
+       "mean": 0.0401,
+       "bw": 0.0419
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.2702,
+      "bwSaving": 0.3286,
+      "wins": {
+       "jxl": 65,
+       "webp": 3,
+       "jpeg": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 71,
+       "improved": 37,
+       "meanSaving": 0.0671,
+       "bwSaving": 0.1536,
+       "medianBpp": 6.1269
+      },
+      "jpeg": {
+       "eligible": 69,
+       "improved": 23,
+       "meanSaving": 0.0134,
+       "bwSaving": 0.001,
+       "medianBpp": 6.3165
+      },
+      "webp": {
+       "eligible": 71,
+       "improved": 46,
+       "meanSaving": 0.1727,
+       "bwSaving": 0.2489,
+       "medianBpp": 4.8631
+      },
+      "avif": {
+       "eligible": 71,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 6.3165
+      },
+      "jxl": {
+       "eligible": 71,
+       "improved": 70,
+       "meanSaving": 0.2546,
+       "bwSaving": 0.3262,
+       "medianBpp": 4.2111
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       37
+      ],
+      [
+       "kept-original",
+       11
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 71,
+     "totalOrigBytes": 279304784,
+     "totalMegapixels": 325.36,
+     "sameFormat": {
+      "meanSaving": 0.0732,
+      "bwSaving": 0.1424,
+      "png": {
+       "mean": 0.1083,
+       "bw": 0.1456
+      },
+      "jpeg": {
+       "mean": 0.0,
+       "bw": 0.0
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.389,
+      "bwSaving": 0.2802,
+      "medianBpp": 1.5659,
+      "wins": {
+       "avif": 36,
+       "jpeg": 16,
+       "webp": 14,
+       "png": 5
+      },
+      "pngInput": {
+       "mean": 0.5584,
+       "bw": 0.2858
+      },
+      "jpegInput": {
+       "mean": 0.0354,
+       "bw": 0.0262
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4482,
+      "bwSaving": 0.2843,
+      "wins": {
+       "jxl": 33,
+       "avif": 20,
+       "webp": 13,
+       "png": 5
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 71,
+       "improved": 27,
+       "meanSaving": 0.0732,
+       "bwSaving": 0.1424,
+       "medianBpp": 5.5673
+      },
+      "jpeg": {
+       "eligible": 69,
+       "improved": 25,
+       "meanSaving": 0.269,
+       "bwSaving": 0.0439,
+       "medianBpp": 2.0564
+      },
+      "webp": {
+       "eligible": 71,
+       "improved": 38,
+       "meanSaving": 0.1686,
+       "bwSaving": 0.197,
+       "medianBpp": 4.5909
+      },
+      "avif": {
+       "eligible": 71,
+       "improved": 46,
+       "meanSaving": 0.3036,
+       "bwSaving": 0.1139,
+       "medianBpp": 1.642
+      },
+      "jxl": {
+       "eligible": 71,
+       "improved": 49,
+       "meanSaving": 0.349,
+       "bwSaving": 0.0487,
+       "medianBpp": 1.52
+      }
+     },
+     "topPngWinners": [
+      [
+       "kept-original",
+       21
+      ],
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       17
+      ],
+      [
+       "png-lossless",
+       6
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       3
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 71,
+     "totalOrigBytes": 279304784,
+     "totalMegapixels": 325.36,
+     "sameFormat": {
+      "meanSaving": 0.4096,
+      "bwSaving": 0.257,
+      "png": {
+       "mean": 0.476,
+       "bw": 0.2571
+      },
+      "jpeg": {
+       "mean": 0.2709,
+       "bw": 0.252
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7139,
+      "bwSaving": 0.7529,
+      "medianBpp": 0.6482,
+      "wins": {
+       "avif": 64,
+       "jpeg": 3,
+       "png": 2,
+       "webp": 2
+      },
+      "pngInput": {
+       "mean": 0.8503,
+       "bw": 0.7607
+      },
+      "jpegInput": {
+       "mean": 0.4294,
+       "bw": 0.3985
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7422,
+      "bwSaving": 0.8576,
+      "wins": {
+       "avif": 51,
+       "jxl": 17,
+       "webp": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 71,
+       "improved": 48,
+       "meanSaving": 0.3218,
+       "bwSaving": 0.2516,
+       "medianBpp": 2.7595
+      },
+      "jpeg": {
+       "eligible": 69,
+       "improved": 64,
+       "meanSaving": 0.6167,
+       "bwSaving": 0.7118,
+       "medianBpp": 0.8487
+      },
+      "webp": {
+       "eligible": 71,
+       "improved": 58,
+       "meanSaving": 0.4883,
+       "bwSaving": 0.4417,
+       "medianBpp": 0.966
+      },
+      "avif": {
+       "eligible": 71,
+       "improved": 71,
+       "meanSaving": 0.693,
+       "bwSaving": 0.6954,
+       "medianBpp": 0.6482
+      },
+      "jxl": {
+       "eligible": 71,
+       "improved": 68,
+       "meanSaving": 0.6851,
+       "bwSaving": 0.8361,
+       "medianBpp": 0.7496
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-lossless",
+       13
+      ],
+      [
+       "png-quantette-256",
+       12
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       6
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       6
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       4
+      ],
+      [
+       "png-posterize-32",
+       3
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 71,
+     "totalOrigBytes": 279304784,
+     "totalMegapixels": 325.36,
+     "sameFormat": {
+      "meanSaving": 0.5903,
+      "bwSaving": 0.5414,
+      "png": {
+       "mean": 0.6413,
+       "bw": 0.5427
+      },
+      "jpeg": {
+       "mean": 0.4838,
+       "bw": 0.484
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.8517,
+      "bwSaving": 0.961,
+      "medianBpp": 0.3462,
+      "wins": {
+       "avif": 66,
+       "jpeg": 4,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9486,
+       "bw": 0.9683
+      },
+      "jpegInput": {
+       "mean": 0.6493,
+       "bw": 0.6318
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.8524,
+      "bwSaving": 0.9622,
+      "wins": {
+       "avif": 57,
+       "jxl": 11,
+       "jpeg": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 71,
+       "improved": 48,
+       "meanSaving": 0.4336,
+       "bwSaving": 0.531,
+       "medianBpp": 1.9927
+      },
+      "jpeg": {
+       "eligible": 69,
+       "improved": 67,
+       "meanSaving": 0.7619,
+       "bwSaving": 0.9444,
+       "medianBpp": 0.4975
+      },
+      "webp": {
+       "eligible": 71,
+       "improved": 61,
+       "meanSaving": 0.6547,
+       "bwSaving": 0.5813,
+       "medianBpp": 0.5245
+      },
+      "avif": {
+       "eligible": 71,
+       "improved": 71,
+       "meanSaving": 0.8458,
+       "bwSaving": 0.9602,
+       "medianBpp": 0.3462
+      },
+      "jxl": {
+       "eligible": 71,
+       "improved": 69,
+       "meanSaving": 0.8072,
+       "bwSaving": 0.958,
+       "medianBpp": 0.4055
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       9
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       9
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       8
+      ],
+      [
+       "png-quantette-128",
+       7
+      ],
+      [
+       "png-quantette-256",
+       5
+      ],
+      [
+       "png-lossless",
+       4
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t88",
+       2
+      ],
+      [
+       "dense-png-c255-q77-s1-o5-d95-p2",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t93",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t84",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 71,
+     "totalOrigBytes": 279304784,
+     "totalMegapixels": 325.36,
+     "sameFormat": {
+      "meanSaving": 0.7336,
+      "bwSaving": 0.7463,
+      "png": {
+       "mean": 0.7589,
+       "bw": 0.7474
+      },
+      "jpeg": {
+       "mean": 0.6809,
+       "bw": 0.6953
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9235,
+      "bwSaving": 0.9839,
+      "medianBpp": 0.161,
+      "wins": {
+       "avif": 68,
+       "jpeg": 2,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9696,
+       "bw": 0.9874
+      },
+      "jpegInput": {
+       "mean": 0.8272,
+       "bw": 0.8235
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9235,
+      "bwSaving": 0.9839,
+      "wins": {
+       "avif": 65,
+       "jxl": 3,
+       "jpeg": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 71,
+       "improved": 48,
+       "meanSaving": 0.5131,
+       "bwSaving": 0.7313,
+       "medianBpp": 1.6041
+      },
+      "jpeg": {
+       "eligible": 69,
+       "improved": 67,
+       "meanSaving": 0.8431,
+       "bwSaving": 0.9702,
+       "medianBpp": 0.2831
+      },
+      "webp": {
+       "eligible": 71,
+       "improved": 61,
+       "meanSaving": 0.7502,
+       "bwSaving": 0.6015,
+       "medianBpp": 0.281
+      },
+      "avif": {
+       "eligible": 71,
+       "improved": 71,
+       "meanSaving": 0.9196,
+       "bwSaving": 0.9838,
+       "medianBpp": 0.161
+      },
+      "jxl": {
+       "eligible": 71,
+       "improved": 71,
+       "meanSaving": 0.8932,
+       "bwSaving": 0.9798,
+       "medianBpp": 0.2086
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-quantette-32",
+       18
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       12
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       6
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       3
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       3
+      ],
+      [
+       "png-quantette-64",
+       2
+      ],
+      [
+       "png-quantette-128",
+       2
+      ],
+      [
+       "png-quantette-256",
+       2
+      ]
+     ]
+    }
+   }
+  },
+  "illustration": {
+   "n": 59,
+   "png": 59,
+   "jpeg": 0,
+   "withAlpha": 23,
+   "avgOrigKb": 1325.6,
+   "tiers": {
+    "s2=100": {
+     "n": 59,
+     "totalOrigBytes": 80086415,
+     "totalMegapixels": 139.1,
+     "sameFormat": {
+      "meanSaving": 0.2745,
+      "bwSaving": 0.2154,
+      "png": {
+       "mean": 0.2745,
+       "bw": 0.2154
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4635,
+      "bwSaving": 0.3895,
+      "medianBpp": 1.1933,
+      "wins": {
+       "webp": 57,
+       "png": 2
+      },
+      "pngInput": {
+       "mean": 0.4635,
+       "bw": 0.3895
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4756,
+      "bwSaving": 0.403,
+      "wins": {
+       "webp": 42,
+       "jxl": 17
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.2745,
+       "bwSaving": 0.2154,
+       "medianBpp": 1.5713
+      },
+      "jpeg": {
+       "eligible": 36,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 2.7901
+      },
+      "webp": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.4626,
+       "bwSaving": 0.3893,
+       "medianBpp": 1.1933
+      },
+      "avif": {
+       "eligible": 59,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 2.0352
+      },
+      "jxl": {
+       "eligible": 59,
+       "improved": 58,
+       "meanSaving": 0.3697,
+       "bwSaving": 0.3325,
+       "medianBpp": 1.3174
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       55
+      ],
+      [
+       "oxipng-o4",
+       4
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 59,
+     "totalOrigBytes": 80086415,
+     "totalMegapixels": 139.1,
+     "sameFormat": {
+      "meanSaving": 0.3668,
+      "bwSaving": 0.2214,
+      "png": {
+       "mean": 0.3668,
+       "bw": 0.2214
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5614,
+      "bwSaving": 0.4194,
+      "medianBpp": 0.7629,
+      "wins": {
+       "webp": 23,
+       "avif": 18,
+       "png": 17,
+       "jpeg": 1
+      },
+      "pngInput": {
+       "mean": 0.5614,
+       "bw": 0.4194
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5817,
+      "bwSaving": 0.4559,
+      "wins": {
+       "webp": 21,
+       "png": 17,
+       "avif": 16,
+       "jxl": 4,
+       "jpeg": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.3668,
+       "bwSaving": 0.2214,
+       "medianBpp": 0.9995
+      },
+      "jpeg": {
+       "eligible": 36,
+       "improved": 12,
+       "meanSaving": 0.1608,
+       "bwSaving": 0.1677,
+       "medianBpp": 1.9632
+      },
+      "webp": {
+       "eligible": 59,
+       "improved": 46,
+       "meanSaving": 0.3898,
+       "bwSaving": 0.2084,
+       "medianBpp": 1.3447
+      },
+      "avif": {
+       "eligible": 59,
+       "improved": 34,
+       "meanSaving": 0.2737,
+       "bwSaving": 0.2123,
+       "medianBpp": 1.0325
+      },
+      "jxl": {
+       "eligible": 59,
+       "improved": 23,
+       "meanSaving": 0.2019,
+       "bwSaving": 0.1483,
+       "medianBpp": 1.5052
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       18
+      ],
+      [
+       "png-lossless",
+       12
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       7
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       5
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       5
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       5
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       2
+      ],
+      [
+       "png-quantette-256",
+       2
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1@t100",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t88",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 59,
+     "totalOrigBytes": 80086415,
+     "totalMegapixels": 139.1,
+     "sameFormat": {
+      "meanSaving": 0.6485,
+      "bwSaving": 0.3799,
+      "png": {
+       "mean": 0.6485,
+       "bw": 0.3799
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.8787,
+      "bwSaving": 0.8933,
+      "medianBpp": 0.2647,
+      "wins": {
+       "avif": 52,
+       "png": 6,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.8787,
+       "bw": 0.8933
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.8792,
+      "bwSaving": 0.8934,
+      "wins": {
+       "avif": 50,
+       "png": 6,
+       "jxl": 2,
+       "webp": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.6485,
+       "bwSaving": 0.3799,
+       "medianBpp": 0.5241
+      },
+      "jpeg": {
+       "eligible": 36,
+       "improved": 32,
+       "meanSaving": 0.6116,
+       "bwSaving": 0.6504,
+       "medianBpp": 0.8096
+      },
+      "webp": {
+       "eligible": 59,
+       "improved": 46,
+       "meanSaving": 0.5742,
+       "bwSaving": 0.3811,
+       "medianBpp": 0.6593
+      },
+      "avif": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.8679,
+       "bwSaving": 0.8896,
+       "medianBpp": 0.2862
+      },
+      "jxl": {
+       "eligible": 59,
+       "improved": 58,
+       "meanSaving": 0.7621,
+       "bwSaving": 0.8372,
+       "medianBpp": 0.4178
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       20
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       9
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       6
+      ],
+      [
+       "png-quantette-256",
+       6
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       5
+      ],
+      [
+       "png-lossless",
+       4
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       3
+      ],
+      [
+       "png-posterize-32",
+       2
+      ],
+      [
+       "png-posterize-24",
+       2
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0@t92",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 59,
+     "totalOrigBytes": 80086415,
+     "totalMegapixels": 139.1,
+     "sameFormat": {
+      "meanSaving": 0.7401,
+      "bwSaving": 0.5451,
+      "png": {
+       "mean": 0.7401,
+       "bw": 0.5451
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.908,
+      "bwSaving": 0.9344,
+      "medianBpp": 0.1721,
+      "wins": {
+       "avif": 52,
+       "png": 4,
+       "webp": 3
+      },
+      "pngInput": {
+       "mean": 0.908,
+       "bw": 0.9344
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9086,
+      "bwSaving": 0.9346,
+      "wins": {
+       "avif": 50,
+       "png": 4,
+       "webp": 3,
+       "jxl": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.7401,
+       "bwSaving": 0.5451,
+       "medianBpp": 0.4525
+      },
+      "jpeg": {
+       "eligible": 36,
+       "improved": 33,
+       "meanSaving": 0.7522,
+       "bwSaving": 0.8749,
+       "medianBpp": 0.443
+      },
+      "webp": {
+       "eligible": 59,
+       "improved": 46,
+       "meanSaving": 0.6267,
+       "bwSaving": 0.4376,
+       "medianBpp": 0.4725
+      },
+      "avif": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.9017,
+       "bwSaving": 0.9337,
+       "medianBpp": 0.1916
+      },
+      "jxl": {
+       "eligible": 59,
+       "improved": 58,
+       "meanSaving": 0.8023,
+       "bwSaving": 0.8905,
+       "medianBpp": 0.2816
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       24
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       15
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       9
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       5
+      ],
+      [
+       "png-quantette-256",
+       3
+      ],
+      [
+       "png-lossless",
+       3
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 59,
+     "totalOrigBytes": 80086415,
+     "totalMegapixels": 139.1,
+     "sameFormat": {
+      "meanSaving": 0.7869,
+      "bwSaving": 0.7222,
+      "png": {
+       "mean": 0.7869,
+       "bw": 0.7222
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.932,
+      "bwSaving": 0.9628,
+      "medianBpp": 0.1126,
+      "wins": {
+       "avif": 51,
+       "png": 4,
+       "webp": 4
+      },
+      "pngInput": {
+       "mean": 0.932,
+       "bw": 0.9628
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9328,
+      "bwSaving": 0.963,
+      "wins": {
+       "avif": 50,
+       "png": 4,
+       "webp": 4,
+       "jxl": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.7869,
+       "bwSaving": 0.7222,
+       "medianBpp": 0.3922
+      },
+      "jpeg": {
+       "eligible": 36,
+       "improved": 33,
+       "meanSaving": 0.8075,
+       "bwSaving": 0.9249,
+       "medianBpp": 0.2589
+      },
+      "webp": {
+       "eligible": 59,
+       "improved": 46,
+       "meanSaving": 0.6574,
+       "bwSaving": 0.4567,
+       "medianBpp": 0.306
+      },
+      "avif": {
+       "eligible": 59,
+       "improved": 59,
+       "meanSaving": 0.9266,
+       "bwSaving": 0.9623,
+       "medianBpp": 0.1147
+      },
+      "jxl": {
+       "eligible": 59,
+       "improved": 58,
+       "meanSaving": 0.8456,
+       "bwSaving": 0.9229,
+       "medianBpp": 0.1922
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       29
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       18
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       5
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       3
+      ],
+      [
+       "png-quantette-32",
+       2
+      ],
+      [
+       "png-quantette-64",
+       1
+      ],
+      [
+       "png-posterize-24",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "texture": {
+   "n": 49,
+   "png": 49,
+   "jpeg": 0,
+   "withAlpha": 7,
+   "avgOrigKb": 3161.0,
+   "tiers": {
+    "s2=100": {
+     "n": 49,
+     "totalOrigBytes": 158606175,
+     "totalMegapixels": 89.57,
+     "sameFormat": {
+      "meanSaving": 0.284,
+      "bwSaving": 0.1583,
+      "png": {
+       "mean": 0.284,
+       "bw": 0.1583
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5638,
+      "bwSaving": 0.5391,
+      "medianBpp": 6.4891,
+      "wins": {
+       "webp": 46,
+       "png": 3
+      },
+      "pngInput": {
+       "mean": 0.5638,
+       "bw": 0.5391
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5841,
+      "bwSaving": 0.5597,
+      "wins": {
+       "webp": 28,
+       "jxl": 18,
+       "png": 3
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.284,
+       "bwSaving": 0.1583,
+       "medianBpp": 8.0402
+      },
+      "jpeg": {
+       "eligible": 42,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 12.6309
+      },
+      "webp": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.5623,
+       "bwSaving": 0.539,
+       "medianBpp": 6.4891
+      },
+      "avif": {
+       "eligible": 49,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 12.1126
+      },
+      "jxl": {
+       "eligible": 49,
+       "improved": 45,
+       "meanSaving": 0.3841,
+       "bwSaving": 0.345,
+       "medianBpp": 7.2178
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       42
+      ],
+      [
+       "oxipng-o4",
+       7
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 49,
+     "totalOrigBytes": 158606175,
+     "totalMegapixels": 89.57,
+     "sameFormat": {
+      "meanSaving": 0.4585,
+      "bwSaving": 0.4034,
+      "png": {
+       "mean": 0.4585,
+       "bw": 0.4034
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7299,
+      "bwSaving": 0.7041,
+      "medianBpp": 3.0093,
+      "wins": {
+       "avif": 27,
+       "webp": 13,
+       "png": 7,
+       "jpeg": 2
+      },
+      "pngInput": {
+       "mean": 0.7299,
+       "bw": 0.7041
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7408,
+      "bwSaving": 0.7117,
+      "wins": {
+       "avif": 19,
+       "jxl": 11,
+       "webp": 11,
+       "png": 7,
+       "jpeg": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 49,
+       "improved": 48,
+       "meanSaving": 0.4585,
+       "bwSaving": 0.4034,
+       "medianBpp": 5.4756
+      },
+      "jpeg": {
+       "eligible": 42,
+       "improved": 28,
+       "meanSaving": 0.4999,
+       "bwSaving": 0.61,
+       "medianBpp": 4.1377
+      },
+      "webp": {
+       "eligible": 49,
+       "improved": 31,
+       "meanSaving": 0.3922,
+       "bwSaving": 0.2613,
+       "medianBpp": 6.4631
+      },
+      "avif": {
+       "eligible": 49,
+       "improved": 48,
+       "meanSaving": 0.6193,
+       "bwSaving": 0.6297,
+       "medianBpp": 3.0623
+      },
+      "jxl": {
+       "eligible": 49,
+       "improved": 32,
+       "meanSaving": 0.5348,
+       "bwSaving": 0.5844,
+       "medianBpp": 3.0815
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       18
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       6
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       6
+      ],
+      [
+       "png-lossless",
+       6
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ],
+      [
+       "png-quantette-256",
+       4
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       3
+      ],
+      [
+       "kept-original",
+       1
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1@t100",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 49,
+     "totalOrigBytes": 158606175,
+     "totalMegapixels": 89.57,
+     "sameFormat": {
+      "meanSaving": 0.7248,
+      "bwSaving": 0.7472,
+      "png": {
+       "mean": 0.7248,
+       "bw": 0.7472
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9135,
+      "bwSaving": 0.9212,
+      "medianBpp": 0.8284,
+      "wins": {
+       "avif": 40,
+       "webp": 7,
+       "jpeg": 1,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9135,
+       "bw": 0.9212
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9148,
+      "bwSaving": 0.9229,
+      "wins": {
+       "avif": 29,
+       "jxl": 12,
+       "webp": 7,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.7248,
+       "bwSaving": 0.7472,
+       "medianBpp": 2.9923
+      },
+      "jpeg": {
+       "eligible": 42,
+       "improved": 34,
+       "meanSaving": 0.7179,
+       "bwSaving": 0.8921,
+       "medianBpp": 1.5598
+      },
+      "webp": {
+       "eligible": 49,
+       "improved": 31,
+       "meanSaving": 0.523,
+       "bwSaving": 0.4423,
+       "medianBpp": 2.6589
+      },
+      "avif": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.879,
+       "bwSaving": 0.9205,
+       "medianBpp": 0.8385
+      },
+      "jxl": {
+       "eligible": 49,
+       "improved": 44,
+       "meanSaving": 0.8157,
+       "bwSaving": 0.9162,
+       "medianBpp": 0.9466
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       10
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       9
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       9
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       7
+      ],
+      [
+       "png-posterize-32",
+       4
+      ],
+      [
+       "png-quantette-256",
+       4
+      ],
+      [
+       "png-posterize-24",
+       3
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       1
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       1
+      ],
+      [
+       "png-lossless",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 49,
+     "totalOrigBytes": 158606175,
+     "totalMegapixels": 89.57,
+     "sameFormat": {
+      "meanSaving": 0.787,
+      "bwSaving": 0.8293,
+      "png": {
+       "mean": 0.787,
+       "bw": 0.8293
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9377,
+      "bwSaving": 0.9481,
+      "medianBpp": 0.4532,
+      "wins": {
+       "avif": 33,
+       "jpeg": 8,
+       "png": 4,
+       "webp": 4
+      },
+      "pngInput": {
+       "mean": 0.9377,
+       "bw": 0.9481
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9391,
+      "bwSaving": 0.95,
+      "wins": {
+       "avif": 26,
+       "jxl": 10,
+       "jpeg": 5,
+       "png": 4,
+       "webp": 4
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.787,
+       "bwSaving": 0.8293,
+       "medianBpp": 2.2037
+      },
+      "jpeg": {
+       "eligible": 42,
+       "improved": 35,
+       "meanSaving": 0.7598,
+       "bwSaving": 0.926,
+       "medianBpp": 0.8292
+      },
+      "webp": {
+       "eligible": 49,
+       "improved": 31,
+       "meanSaving": 0.5499,
+       "bwSaving": 0.4652,
+       "medianBpp": 1.65
+      },
+      "avif": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.9031,
+       "bwSaving": 0.9465,
+       "medianBpp": 0.4532
+      },
+      "jxl": {
+       "eligible": 49,
+       "improved": 45,
+       "meanSaving": 0.8453,
+       "bwSaving": 0.9441,
+       "medianBpp": 0.5237
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       17
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       15
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       5
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       5
+      ],
+      [
+       "png-quantette-256",
+       2
+      ],
+      [
+       "png-quantette-128",
+       2
+      ],
+      [
+       "dense-png-c255-q77-s1-o5-d95-p2",
+       2
+      ],
+      [
+       "png-lossless",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 49,
+     "totalOrigBytes": 158606175,
+     "totalMegapixels": 89.57,
+     "sameFormat": {
+      "meanSaving": 0.8432,
+      "bwSaving": 0.8722,
+      "png": {
+       "mean": 0.8432,
+       "bw": 0.8722
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9585,
+      "bwSaving": 0.9694,
+      "medianBpp": 0.2105,
+      "wins": {
+       "avif": 33,
+       "jpeg": 9,
+       "webp": 6,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9585,
+       "bw": 0.9694
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9595,
+      "bwSaving": 0.9703,
+      "wins": {
+       "avif": 24,
+       "jxl": 12,
+       "webp": 6,
+       "jpeg": 6,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.8432,
+       "bwSaving": 0.8722,
+       "medianBpp": 1.6403
+      },
+      "jpeg": {
+       "eligible": 42,
+       "improved": 37,
+       "meanSaving": 0.8203,
+       "bwSaving": 0.9604,
+       "medianBpp": 0.4723
+      },
+      "webp": {
+       "eligible": 49,
+       "improved": 31,
+       "meanSaving": 0.583,
+       "bwSaving": 0.4906,
+       "medianBpp": 1.0195
+      },
+      "avif": {
+       "eligible": 49,
+       "improved": 49,
+       "meanSaving": 0.9246,
+       "bwSaving": 0.9674,
+       "medianBpp": 0.2105
+      },
+      "jxl": {
+       "eligible": 49,
+       "improved": 45,
+       "meanSaving": 0.8726,
+       "bwSaving": 0.9666,
+       "medianBpp": 0.3111
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       17
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       9
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       9
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       7
+      ],
+      [
+       "png-quantette-32",
+       5
+      ],
+      [
+       "png-quantette-128",
+       1
+      ],
+      [
+       "png-quantette-64",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "cutout": {
+   "n": 38,
+   "png": 38,
+   "jpeg": 0,
+   "withAlpha": 33,
+   "avgOrigKb": 2813.2,
+   "tiers": {
+    "s2=100": {
+     "n": 38,
+     "totalOrigBytes": 109465673,
+     "totalMegapixels": 126.28,
+     "sameFormat": {
+      "meanSaving": 0.2296,
+      "bwSaving": 0.2713,
+      "png": {
+       "mean": 0.2296,
+       "bw": 0.2713
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4331,
+      "bwSaving": 0.4721,
+      "medianBpp": 3.9921,
+      "wins": {
+       "webp": 37,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.4331,
+       "bw": 0.4721
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4667,
+      "bwSaving": 0.5009,
+      "wins": {
+       "jxl": 27,
+       "webp": 11
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.2296,
+       "bwSaving": 0.2713,
+       "medianBpp": 5.5202
+      },
+      "jpeg": {
+       "eligible": 5,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 7.7414
+      },
+      "webp": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.4285,
+       "bwSaving": 0.4696,
+       "medianBpp": 4.007
+      },
+      "avif": {
+       "eligible": 38,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 7.6363
+      },
+      "jxl": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.4333,
+       "bwSaving": 0.4486,
+       "medianBpp": 4.1837
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       34
+      ],
+      [
+       "oxipng-o4",
+       4
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 38,
+     "totalOrigBytes": 109465673,
+     "totalMegapixels": 126.28,
+     "sameFormat": {
+      "meanSaving": 0.2158,
+      "bwSaving": 0.2629,
+      "png": {
+       "mean": 0.2158,
+       "bw": 0.2629
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4906,
+      "bwSaving": 0.4125,
+      "medianBpp": 3.3492,
+      "wins": {
+       "avif": 18,
+       "webp": 12,
+       "png": 8
+      },
+      "pngInput": {
+       "mean": 0.4906,
+       "bw": 0.4125
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5433,
+      "bwSaving": 0.4556,
+      "wins": {
+       "avif": 14,
+       "webp": 10,
+       "png": 8,
+       "jxl": 6
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.2158,
+       "bwSaving": 0.2629,
+       "medianBpp": 5.7338
+      },
+      "jpeg": {
+       "eligible": 5,
+       "improved": 3,
+       "meanSaving": 0.3853,
+       "bwSaving": 0.2319,
+       "medianBpp": 6.4178
+      },
+      "webp": {
+       "eligible": 38,
+       "improved": 16,
+       "meanSaving": 0.1824,
+       "bwSaving": 0.1808,
+       "medianBpp": 5.4927
+      },
+      "avif": {
+       "eligible": 38,
+       "improved": 33,
+       "meanSaving": 0.3743,
+       "bwSaving": 0.2239,
+       "medianBpp": 4.4933
+      },
+      "jxl": {
+       "eligible": 38,
+       "improved": 14,
+       "meanSaving": 0.2723,
+       "bwSaving": 0.1178,
+       "medianBpp": 5.1053
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       29
+      ],
+      [
+       "png-lossless",
+       5
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       3
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 38,
+     "totalOrigBytes": 109465673,
+     "totalMegapixels": 126.28,
+     "sameFormat": {
+      "meanSaving": 0.491,
+      "bwSaving": 0.419,
+      "png": {
+       "mean": 0.491,
+       "bw": 0.419
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9245,
+      "bwSaving": 0.9298,
+      "medianBpp": 0.4795,
+      "wins": {
+       "avif": 37,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9245,
+       "bw": 0.9298
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9263,
+      "bwSaving": 0.9345,
+      "wins": {
+       "avif": 33,
+       "jxl": 4,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.491,
+       "bwSaving": 0.419,
+       "medianBpp": 3.4212
+      },
+      "jpeg": {
+       "eligible": 5,
+       "improved": 5,
+       "meanSaving": 0.8817,
+       "bwSaving": 0.9088,
+       "medianBpp": 0.856
+      },
+      "webp": {
+       "eligible": 38,
+       "improved": 16,
+       "meanSaving": 0.3611,
+       "bwSaving": 0.3544,
+       "medianBpp": 4.5162
+      },
+      "avif": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.9197,
+       "bwSaving": 0.9295,
+       "medianBpp": 0.4795
+      },
+      "jxl": {
+       "eligible": 38,
+       "improved": 37,
+       "meanSaving": 0.877,
+       "bwSaving": 0.8765,
+       "medianBpp": 0.6441
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-posterize-32",
+       10
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       8
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       6
+      ],
+      [
+       "png-lossless",
+       5
+      ],
+      [
+       "png-quantette-256",
+       3
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       3
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t94",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 38,
+     "totalOrigBytes": 109465673,
+     "totalMegapixels": 126.28,
+     "sameFormat": {
+      "meanSaving": 0.6259,
+      "bwSaving": 0.5965,
+      "png": {
+       "mean": 0.6259,
+       "bw": 0.5965
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9561,
+      "bwSaving": 0.9705,
+      "medianBpp": 0.2762,
+      "wins": {
+       "avif": 37,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9561,
+       "bw": 0.9705
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9564,
+      "bwSaving": 0.9706,
+      "wins": {
+       "avif": 35,
+       "jxl": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.6259,
+       "bwSaving": 0.5965,
+       "medianBpp": 1.9526
+      },
+      "jpeg": {
+       "eligible": 5,
+       "improved": 5,
+       "meanSaving": 0.9217,
+       "bwSaving": 0.9418,
+       "medianBpp": 0.5935
+      },
+      "webp": {
+       "eligible": 38,
+       "improved": 16,
+       "meanSaving": 0.3925,
+       "bwSaving": 0.3728,
+       "medianBpp": 3.681
+      },
+      "avif": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.9522,
+       "bwSaving": 0.9703,
+       "medianBpp": 0.2762
+      },
+      "jxl": {
+       "eligible": 38,
+       "improved": 37,
+       "meanSaving": 0.9085,
+       "bwSaving": 0.9096,
+       "medianBpp": 0.465
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       12
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       11
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       8
+      ],
+      [
+       "png-lossless",
+       5
+      ],
+      [
+       "png-quantette-128",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t89",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 38,
+     "totalOrigBytes": 109465673,
+     "totalMegapixels": 126.28,
+     "sameFormat": {
+      "meanSaving": 0.7324,
+      "bwSaving": 0.7142,
+      "png": {
+       "mean": 0.7324,
+       "bw": 0.7142
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9739,
+      "bwSaving": 0.9865,
+      "medianBpp": 0.1618,
+      "wins": {
+       "avif": 37,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9739,
+       "bw": 0.9865
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9741,
+      "bwSaving": 0.9865,
+      "wins": {
+       "avif": 35,
+       "jxl": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.7324,
+       "bwSaving": 0.7142,
+       "medianBpp": 1.6802
+      },
+      "jpeg": {
+       "eligible": 5,
+       "improved": 5,
+       "meanSaving": 0.9604,
+       "bwSaving": 0.9675,
+       "medianBpp": 0.3869
+      },
+      "webp": {
+       "eligible": 38,
+       "improved": 16,
+       "meanSaving": 0.4021,
+       "bwSaving": 0.379,
+       "medianBpp": 3.681
+      },
+      "avif": {
+       "eligible": 38,
+       "improved": 38,
+       "meanSaving": 0.9709,
+       "bwSaving": 0.9863,
+       "medianBpp": 0.1618
+      },
+      "jxl": {
+       "eligible": 38,
+       "improved": 37,
+       "meanSaving": 0.9326,
+       "bwSaving": 0.9306,
+       "medianBpp": 0.2726
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       13
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       9
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       9
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       3
+      ],
+      [
+       "png-quantette-64",
+       1
+      ],
+      [
+       "png-quantette-32",
+       1
+      ],
+      [
+       "png-posterize-24",
+       1
+      ],
+      [
+       "png-posterize-32",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "gradient": {
+   "n": 29,
+   "png": 29,
+   "jpeg": 0,
+   "withAlpha": 3,
+   "avgOrigKb": 3150.7,
+   "tiers": {
+    "s2=100": {
+     "n": 29,
+     "totalOrigBytes": 93561767,
+     "totalMegapixels": 95.02,
+     "sameFormat": {
+      "meanSaving": 0.3848,
+      "bwSaving": 0.26,
+      "png": {
+       "mean": 0.3848,
+       "bw": 0.26
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5133,
+      "bwSaving": 0.3888,
+      "medianBpp": 3.4758,
+      "wins": {
+       "webp": 27,
+       "png": 2
+      },
+      "pngInput": {
+       "mean": 0.5133,
+       "bw": 0.3888
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5357,
+      "bwSaving": 0.4256,
+      "wins": {
+       "jxl": 14,
+       "webp": 14,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.3848,
+       "bwSaving": 0.26,
+       "medianBpp": 4.7227
+      },
+      "jpeg": {
+       "eligible": 26,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 6.8679
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.5098,
+       "bwSaving": 0.3887,
+       "medianBpp": 3.4758
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 5.6798
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 26,
+       "meanSaving": 0.3688,
+       "bwSaving": 0.417,
+       "medianBpp": 3.1898
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       24
+      ],
+      [
+       "oxipng-o4",
+       5
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 29,
+     "totalOrigBytes": 93561767,
+     "totalMegapixels": 95.02,
+     "sameFormat": {
+      "meanSaving": 0.3915,
+      "bwSaving": 0.2525,
+      "png": {
+       "mean": 0.3915,
+       "bw": 0.2525
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.604,
+      "bwSaving": 0.362,
+      "medianBpp": 1.9144,
+      "wins": {
+       "webp": 17,
+       "avif": 7,
+       "jpeg": 3,
+       "png": 2
+      },
+      "pngInput": {
+       "mean": 0.604,
+       "bw": 0.362
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.6667,
+      "bwSaving": 0.3699,
+      "wins": {
+       "webp": 14,
+       "jxl": 11,
+       "avif": 2,
+       "png": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.3915,
+       "bwSaving": 0.2525,
+       "medianBpp": 4.8732
+      },
+      "jpeg": {
+       "eligible": 26,
+       "improved": 8,
+       "meanSaving": 0.2184,
+       "bwSaving": 0.055,
+       "medianBpp": 2.7392
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 24,
+       "meanSaving": 0.4841,
+       "bwSaving": 0.2848,
+       "medianBpp": 4.2393
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 20,
+       "meanSaving": 0.3269,
+       "bwSaving": 0.2001,
+       "medianBpp": 2.2008
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 16,
+       "meanSaving": 0.497,
+       "bwSaving": 0.0715,
+       "medianBpp": 1.6518
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       21
+      ],
+      [
+       "png-lossless",
+       4
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       3
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 29,
+     "totalOrigBytes": 93561767,
+     "totalMegapixels": 95.02,
+     "sameFormat": {
+      "meanSaving": 0.5302,
+      "bwSaving": 0.3751,
+      "png": {
+       "mean": 0.5302,
+       "bw": 0.3751
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.963,
+      "bwSaving": 0.9361,
+      "medianBpp": 0.086,
+      "wins": {
+       "avif": 27,
+       "jpeg": 2
+      },
+      "pngInput": {
+       "mean": 0.963,
+       "bw": 0.9361
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9649,
+      "bwSaving": 0.9429,
+      "wins": {
+       "avif": 24,
+       "jxl": 4,
+       "jpeg": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.5302,
+       "bwSaving": 0.3751,
+       "medianBpp": 2.2775
+      },
+      "jpeg": {
+       "eligible": 26,
+       "improved": 24,
+       "meanSaving": 0.8564,
+       "bwSaving": 0.9214,
+       "medianBpp": 0.3665
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 24,
+       "meanSaving": 0.7708,
+       "bwSaving": 0.6266,
+       "medianBpp": 0.2387
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9629,
+       "bwSaving": 0.9356,
+       "medianBpp": 0.086
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9403,
+       "bwSaving": 0.927,
+       "medianBpp": 0.1877
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-lossless",
+       13
+      ],
+      [
+       "png-quantette-256",
+       6
+      ],
+      [
+       "png-posterize-32",
+       4
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1@t100",
+       3
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       2
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 29,
+     "totalOrigBytes": 93561767,
+     "totalMegapixels": 95.02,
+     "sameFormat": {
+      "meanSaving": 0.6779,
+      "bwSaving": 0.6524,
+      "png": {
+       "mean": 0.6779,
+       "bw": 0.6524
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.979,
+      "bwSaving": 0.9721,
+      "medianBpp": 0.0417,
+      "wins": {
+       "avif": 27,
+       "jpeg": 2
+      },
+      "pngInput": {
+       "mean": 0.979,
+       "bw": 0.9721
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.979,
+      "bwSaving": 0.9724,
+      "wins": {
+       "avif": 27,
+       "jxl": 1,
+       "jpeg": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.6779,
+       "bwSaving": 0.6524,
+       "medianBpp": 1.5392
+      },
+      "jpeg": {
+       "eligible": 26,
+       "improved": 24,
+       "meanSaving": 0.883,
+       "bwSaving": 0.9628,
+       "medianBpp": 0.2105
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 24,
+       "meanSaving": 0.7929,
+       "bwSaving": 0.6609,
+       "medianBpp": 0.1117
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9789,
+       "bwSaving": 0.9716,
+       "medianBpp": 0.0417
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9559,
+       "bwSaving": 0.9653,
+       "medianBpp": 0.0959
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       10
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       8
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       2
+      ],
+      [
+       "png-quantette-128",
+       2
+      ],
+      [
+       "png-quantette-256",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t93",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t83",
+       1
+      ],
+      [
+       "png-lossless",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t88",
+       1
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1@t97",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 29,
+     "totalOrigBytes": 93561767,
+     "totalMegapixels": 95.02,
+     "sameFormat": {
+      "meanSaving": 0.7564,
+      "bwSaving": 0.7825,
+      "png": {
+       "mean": 0.7564,
+       "bw": 0.7825
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9871,
+      "bwSaving": 0.9883,
+      "medianBpp": 0.0215,
+      "wins": {
+       "avif": 29
+      },
+      "pngInput": {
+       "mean": 0.9871,
+       "bw": 0.9883
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9871,
+      "bwSaving": 0.9883,
+      "wins": {
+       "avif": 29
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.7564,
+       "bwSaving": 0.7825,
+       "medianBpp": 1.5327
+      },
+      "jpeg": {
+       "eligible": 26,
+       "improved": 24,
+       "meanSaving": 0.8975,
+       "bwSaving": 0.979,
+       "medianBpp": 0.1186
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 24,
+       "meanSaving": 0.8018,
+       "bwSaving": 0.6754,
+       "medianBpp": 0.0557
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9871,
+       "bwSaving": 0.9883,
+       "medianBpp": 0.0215
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9817,
+       "bwSaving": 0.984,
+       "medianBpp": 0.0458
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       10
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       9
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       4
+      ],
+      [
+       "png-quantette-64",
+       2
+      ],
+      [
+       "png-lossless",
+       2
+      ],
+      [
+       "png-quantette-32",
+       1
+      ],
+      [
+       "png-quantette-256",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "logo": {
+   "n": 29,
+   "png": 29,
+   "jpeg": 0,
+   "withAlpha": 23,
+   "avgOrigKb": 192.9,
+   "tiers": {
+    "s2=100": {
+     "n": 29,
+     "totalOrigBytes": 5729493,
+     "totalMegapixels": 15.6,
+     "sameFormat": {
+      "meanSaving": 0.3641,
+      "bwSaving": 0.8272,
+      "png": {
+       "mean": 0.3641,
+       "bw": 0.8272
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5937,
+      "bwSaving": 0.8887,
+      "medianBpp": 0.3388,
+      "wins": {
+       "webp": 29
+      },
+      "pngInput": {
+       "mean": 0.5937,
+       "bw": 0.8887
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5953,
+      "bwSaving": 0.8893,
+      "wins": {
+       "webp": 26,
+       "jxl": 3
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.3641,
+       "bwSaving": 0.8272,
+       "medianBpp": 0.5662
+      },
+      "jpeg": {
+       "eligible": 6,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.6068
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.5937,
+       "bwSaving": 0.8887,
+       "medianBpp": 0.3388
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.7825
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.3823,
+       "bwSaving": 0.1377,
+       "medianBpp": 0.4936
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       29
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 29,
+     "totalOrigBytes": 5729493,
+     "totalMegapixels": 15.6,
+     "sameFormat": {
+      "meanSaving": 0.7378,
+      "bwSaving": 0.917,
+      "png": {
+       "mean": 0.7378,
+       "bw": 0.917
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7899,
+      "bwSaving": 0.9355,
+      "medianBpp": 0.1766,
+      "wins": {
+       "png": 17,
+       "avif": 11,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.7899,
+       "bw": 0.9355
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7899,
+      "bwSaving": 0.9355,
+      "wins": {
+       "png": 17,
+       "avif": 11,
+       "webp": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.7378,
+       "bwSaving": 0.917,
+       "medianBpp": 0.1844
+      },
+      "jpeg": {
+       "eligible": 6,
+       "improved": 3,
+       "meanSaving": 0.1065,
+       "bwSaving": 0.0692,
+       "medianBpp": 0.5088
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.5083,
+       "bwSaving": 0.2916,
+       "medianBpp": 0.3531
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 28,
+       "meanSaving": 0.6508,
+       "bwSaving": 0.5344,
+       "medianBpp": 0.2395
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 25,
+       "meanSaving": 0.4635,
+       "bwSaving": 0.8428,
+       "medianBpp": 0.4286
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       8
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       8
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       4
+      ],
+      [
+       "png-quantette-256",
+       4
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t93",
+       1
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       1
+      ],
+      [
+       "png-lossless",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 29,
+     "totalOrigBytes": 5729493,
+     "totalMegapixels": 15.6,
+     "sameFormat": {
+      "meanSaving": 0.8604,
+      "bwSaving": 0.9607,
+      "png": {
+       "mean": 0.8604,
+       "bw": 0.9607
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9041,
+      "bwSaving": 0.9745,
+      "medianBpp": 0.0675,
+      "wins": {
+       "avif": 17,
+       "png": 12
+      },
+      "pngInput": {
+       "mean": 0.9041,
+       "bw": 0.9745
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9041,
+      "bwSaving": 0.9745,
+      "wins": {
+       "avif": 17,
+       "png": 12
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.8604,
+       "bwSaving": 0.9607,
+       "medianBpp": 0.1282
+      },
+      "jpeg": {
+       "eligible": 6,
+       "improved": 6,
+       "meanSaving": 0.5723,
+       "bwSaving": 0.5517,
+       "medianBpp": 0.2356
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.6646,
+       "bwSaving": 0.8048,
+       "medianBpp": 0.3015
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.8695,
+       "bwSaving": 0.8805,
+       "medianBpp": 0.1028
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.7074,
+       "bwSaving": 0.918,
+       "medianBpp": 0.2539
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       24
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       3
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t89",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t93",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 29,
+     "totalOrigBytes": 5729493,
+     "totalMegapixels": 15.6,
+     "sameFormat": {
+      "meanSaving": 0.8711,
+      "bwSaving": 0.9665,
+      "png": {
+       "mean": 0.8711,
+       "bw": 0.9665
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9144,
+      "bwSaving": 0.9772,
+      "medianBpp": 0.0659,
+      "wins": {
+       "avif": 19,
+       "png": 10
+      },
+      "pngInput": {
+       "mean": 0.9144,
+       "bw": 0.9772
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9144,
+      "bwSaving": 0.9772,
+      "wins": {
+       "avif": 19,
+       "png": 10
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.8711,
+       "bwSaving": 0.9665,
+       "medianBpp": 0.1282
+      },
+      "jpeg": {
+       "eligible": 6,
+       "improved": 6,
+       "meanSaving": 0.7138,
+       "bwSaving": 0.7134,
+       "medianBpp": 0.168
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.6923,
+       "bwSaving": 0.8118,
+       "medianBpp": 0.3015
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9002,
+       "bwSaving": 0.9541,
+       "medianBpp": 0.0857
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.7086,
+       "bwSaving": 0.9182,
+       "medianBpp": 0.2539
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       18
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       10
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 29,
+     "totalOrigBytes": 5729493,
+     "totalMegapixels": 15.6,
+     "sameFormat": {
+      "meanSaving": 0.8971,
+      "bwSaving": 0.9713,
+      "png": {
+       "mean": 0.8971,
+       "bw": 0.9713
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9351,
+      "bwSaving": 0.9823,
+      "medianBpp": 0.0531,
+      "wins": {
+       "avif": 18,
+       "png": 11
+      },
+      "pngInput": {
+       "mean": 0.9351,
+       "bw": 0.9823
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9351,
+      "bwSaving": 0.9823,
+      "wins": {
+       "avif": 18,
+       "png": 11
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.8971,
+       "bwSaving": 0.9713,
+       "medianBpp": 0.0836
+      },
+      "jpeg": {
+       "eligible": 6,
+       "improved": 6,
+       "meanSaving": 0.7697,
+       "bwSaving": 0.7692,
+       "medianBpp": 0.1359
+      },
+      "webp": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.7244,
+       "bwSaving": 0.8481,
+       "medianBpp": 0.262
+      },
+      "avif": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.9259,
+       "bwSaving": 0.9776,
+       "medianBpp": 0.0689
+      },
+      "jxl": {
+       "eligible": 29,
+       "improved": 29,
+       "meanSaving": 0.8127,
+       "bwSaving": 0.9475,
+       "medianBpp": 0.1589
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       20
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       6
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       3
+      ]
+     ]
+    }
+   }
+  },
+  "banner": {
+   "n": 26,
+   "png": 26,
+   "jpeg": 0,
+   "withAlpha": 2,
+   "avgOrigKb": 3325.7,
+   "tiers": {
+    "s2=100": {
+     "n": 26,
+     "totalOrigBytes": 88544576,
+     "totalMegapixels": 72.75,
+     "sameFormat": {
+      "meanSaving": 0.2747,
+      "bwSaving": 0.1466,
+      "png": {
+       "mean": 0.2747,
+       "bw": 0.1466
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4411,
+      "bwSaving": 0.3223,
+      "medianBpp": 6.7754,
+      "wins": {
+       "webp": 26
+      },
+      "pngInput": {
+       "mean": 0.4411,
+       "bw": 0.3223
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4795,
+      "bwSaving": 0.3675,
+      "wins": {
+       "jxl": 21,
+       "webp": 5
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.2747,
+       "bwSaving": 0.1466,
+       "medianBpp": 8.215
+      },
+      "jpeg": {
+       "eligible": 24,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 11.831
+      },
+      "webp": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.4411,
+       "bwSaving": 0.3223,
+       "medianBpp": 6.7754
+      },
+      "avif": {
+       "eligible": 26,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 11.4837
+      },
+      "jxl": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.4111,
+       "bwSaving": 0.3645,
+       "medianBpp": 6.2687
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       24
+      ],
+      [
+       "oxipng-o4",
+       2
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 26,
+     "totalOrigBytes": 88544576,
+     "totalMegapixels": 72.75,
+     "sameFormat": {
+      "meanSaving": 0.2994,
+      "bwSaving": 0.1391,
+      "png": {
+       "mean": 0.2994,
+       "bw": 0.1391
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.6338,
+      "bwSaving": 0.4211,
+      "medianBpp": 2.341,
+      "wins": {
+       "avif": 11,
+       "webp": 9,
+       "jpeg": 4,
+       "png": 2
+      },
+      "pngInput": {
+       "mean": 0.6338,
+       "bw": 0.4211
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.6437,
+      "bwSaving": 0.4246,
+      "wins": {
+       "jxl": 8,
+       "avif": 8,
+       "webp": 6,
+       "jpeg": 2,
+       "png": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.2994,
+       "bwSaving": 0.1391,
+       "medianBpp": 8.487
+      },
+      "jpeg": {
+       "eligible": 24,
+       "improved": 12,
+       "meanSaving": 0.3867,
+       "bwSaving": 0.2104,
+       "medianBpp": 3.0397
+      },
+      "webp": {
+       "eligible": 26,
+       "improved": 22,
+       "meanSaving": 0.4176,
+       "bwSaving": 0.2534,
+       "medianBpp": 6.6515
+      },
+      "avif": {
+       "eligible": 26,
+       "improved": 25,
+       "meanSaving": 0.4664,
+       "bwSaving": 0.3072,
+       "medianBpp": 2.486
+      },
+      "jxl": {
+       "eligible": 26,
+       "improved": 14,
+       "meanSaving": 0.4194,
+       "bwSaving": 0.1491,
+       "medianBpp": 2.7299
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       17
+      ],
+      [
+       "png-lossless",
+       4
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       1
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1@t100",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 26,
+     "totalOrigBytes": 88544576,
+     "totalMegapixels": 72.75,
+     "sameFormat": {
+      "meanSaving": 0.6335,
+      "bwSaving": 0.4921,
+      "png": {
+       "mean": 0.6335,
+       "bw": 0.4921
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9232,
+      "bwSaving": 0.9061,
+      "medianBpp": 0.8113,
+      "wins": {
+       "avif": 23,
+       "jpeg": 2,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.9232,
+       "bw": 0.9061
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9242,
+      "bwSaving": 0.9079,
+      "wins": {
+       "avif": 21,
+       "jxl": 4,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.6335,
+       "bwSaving": 0.4921,
+       "medianBpp": 3.497
+      },
+      "jpeg": {
+       "eligible": 24,
+       "improved": 24,
+       "meanSaving": 0.8588,
+       "bwSaving": 0.8755,
+       "medianBpp": 1.0647
+      },
+      "webp": {
+       "eligible": 26,
+       "improved": 22,
+       "meanSaving": 0.709,
+       "bwSaving": 0.6316,
+       "medianBpp": 1.2525
+      },
+      "avif": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.9229,
+       "bwSaving": 0.906,
+       "medianBpp": 0.8113
+      },
+      "jxl": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.8985,
+       "bwSaving": 0.8989,
+       "medianBpp": 0.8306
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-quantette-256",
+       8
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       6
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       3
+      ],
+      [
+       "png-posterize-32",
+       3
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1@t100",
+       2
+      ],
+      [
+       "png-posterize-24",
+       1
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       1
+      ],
+      [
+       "png-lossless",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 26,
+     "totalOrigBytes": 88544576,
+     "totalMegapixels": 72.75,
+     "sameFormat": {
+      "meanSaving": 0.7681,
+      "bwSaving": 0.732,
+      "png": {
+       "mean": 0.7681,
+       "bw": 0.732
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9531,
+      "bwSaving": 0.9466,
+      "medianBpp": 0.3886,
+      "wins": {
+       "avif": 25,
+       "jpeg": 1
+      },
+      "pngInput": {
+       "mean": 0.9531,
+       "bw": 0.9466
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9533,
+      "bwSaving": 0.9467,
+      "wins": {
+       "avif": 22,
+       "jxl": 3,
+       "jpeg": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.7681,
+       "bwSaving": 0.732,
+       "medianBpp": 2.5148
+      },
+      "jpeg": {
+       "eligible": 24,
+       "improved": 24,
+       "meanSaving": 0.9117,
+       "bwSaving": 0.9301,
+       "medianBpp": 0.5948
+      },
+      "webp": {
+       "eligible": 26,
+       "improved": 22,
+       "meanSaving": 0.7637,
+       "bwSaving": 0.6837,
+       "medianBpp": 0.7362
+      },
+      "avif": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.953,
+       "bwSaving": 0.9466,
+       "medianBpp": 0.3886
+      },
+      "jxl": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.9254,
+       "bwSaving": 0.9396,
+       "medianBpp": 0.4525
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-quantette-128",
+       7
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       5
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       5
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       3
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t83",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t94",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t88",
+       1
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2@t100",
+       1
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1@t97",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 26,
+     "totalOrigBytes": 88544576,
+     "totalMegapixels": 72.75,
+     "sameFormat": {
+      "meanSaving": 0.7295,
+      "bwSaving": 0.7748,
+      "png": {
+       "mean": 0.7295,
+       "bw": 0.7748
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9727,
+      "bwSaving": 0.9717,
+      "medianBpp": 0.1854,
+      "wins": {
+       "avif": 25,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.9727,
+       "bw": 0.9717
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9729,
+      "bwSaving": 0.9719,
+      "wins": {
+       "avif": 22,
+       "jxl": 4
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.7295,
+       "bwSaving": 0.7748,
+       "medianBpp": 1.9822
+      },
+      "jpeg": {
+       "eligible": 24,
+       "improved": 24,
+       "meanSaving": 0.9511,
+       "bwSaving": 0.9623,
+       "medianBpp": 0.3313
+      },
+      "webp": {
+       "eligible": 26,
+       "improved": 22,
+       "meanSaving": 0.805,
+       "bwSaving": 0.7112,
+       "medianBpp": 0.3729
+      },
+      "avif": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.9726,
+       "bwSaving": 0.9716,
+       "medianBpp": 0.1854
+      },
+      "jxl": {
+       "eligible": 26,
+       "improved": 26,
+       "meanSaving": 0.9574,
+       "bwSaving": 0.968,
+       "medianBpp": 0.243
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-quantette-32",
+       10
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ],
+      [
+       "png-quantette-64",
+       3
+      ],
+      [
+       "png-quantette-128",
+       3
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       2
+      ],
+      [
+       "png-quantette-256",
+       2
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       1
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "pixel-art": {
+   "n": 23,
+   "png": 23,
+   "jpeg": 0,
+   "withAlpha": 19,
+   "avgOrigKb": 32.4,
+   "tiers": {
+    "s2=100": {
+     "n": 23,
+     "totalOrigBytes": 762930,
+     "totalMegapixels": 3.14,
+     "sameFormat": {
+      "meanSaving": 0.4199,
+      "bwSaving": 0.6066,
+      "png": {
+       "mean": 0.4199,
+       "bw": 0.6066
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5144,
+      "bwSaving": 0.6494,
+      "medianBpp": 0.6501,
+      "wins": {
+       "webp": 21,
+       "png": 2
+      },
+      "pngInput": {
+       "mean": 0.5144,
+       "bw": 0.6494
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5497,
+      "bwSaving": 0.6774,
+      "wins": {
+       "webp": 16,
+       "jxl": 5,
+       "png": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 23,
+       "improved": 22,
+       "meanSaving": 0.4199,
+       "bwSaving": 0.6066,
+       "medianBpp": 0.7206
+      },
+      "jpeg": {
+       "eligible": 4,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 1.8819
+      },
+      "webp": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.512,
+       "bwSaving": 0.6494,
+       "medianBpp": 0.6501
+      },
+      "avif": {
+       "eligible": 23,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.9633
+      },
+      "jxl": {
+       "eligible": 23,
+       "improved": 19,
+       "meanSaving": 0.4161,
+       "bwSaving": 0.1154,
+       "medianBpp": 0.8111
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       12
+      ],
+      [
+       "oxipng-o4",
+       10
+      ],
+      [
+       "kept-original",
+       1
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 23,
+     "totalOrigBytes": 762930,
+     "totalMegapixels": 3.14,
+     "sameFormat": {
+      "meanSaving": 0.4072,
+      "bwSaving": 0.6096,
+      "png": {
+       "mean": 0.4072,
+       "bw": 0.6096
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5619,
+      "bwSaving": 0.8811,
+      "medianBpp": 0.6529,
+      "wins": {
+       "webp": 15,
+       "png": 6,
+       "jpeg": 1,
+       "avif": 1
+      },
+      "pngInput": {
+       "mean": 0.5619,
+       "bw": 0.8811
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5672,
+      "bwSaving": 0.9214,
+      "wins": {
+       "webp": 15,
+       "png": 6,
+       "jxl": 1,
+       "avif": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 23,
+       "improved": 22,
+       "meanSaving": 0.4072,
+       "bwSaving": 0.6096,
+       "medianBpp": 0.7317
+      },
+      "jpeg": {
+       "eligible": 4,
+       "improved": 1,
+       "meanSaving": 0.2007,
+       "bwSaving": 0.7494,
+       "medianBpp": 1.2939
+      },
+      "webp": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.4704,
+       "bwSaving": 0.1731,
+       "medianBpp": 0.6911
+      },
+      "avif": {
+       "eligible": 23,
+       "improved": 8,
+       "meanSaving": 0.1018,
+       "bwSaving": 0.4139,
+       "medianBpp": 0.9633
+      },
+      "jxl": {
+       "eligible": 23,
+       "improved": 4,
+       "meanSaving": 0.1177,
+       "bwSaving": 0.8336,
+       "medianBpp": 0.7673
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       16
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       3
+      ],
+      [
+       "kept-original",
+       1
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ],
+      [
+       "dense-png-c255-q77-s2-o5-d95-p2",
+       1
+      ],
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 23,
+     "totalOrigBytes": 762930,
+     "totalMegapixels": 3.14,
+     "sameFormat": {
+      "meanSaving": 0.4483,
+      "bwSaving": 0.8243,
+      "png": {
+       "mean": 0.4483,
+       "bw": 0.8243
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5821,
+      "bwSaving": 0.9426,
+      "medianBpp": 0.4444,
+      "wins": {
+       "webp": 14,
+       "png": 7,
+       "avif": 2
+      },
+      "pngInput": {
+       "mean": 0.5821,
+       "bw": 0.9426
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5849,
+      "bwSaving": 0.9427,
+      "wins": {
+       "webp": 13,
+       "png": 7,
+       "avif": 2,
+       "jxl": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.4483,
+       "bwSaving": 0.8243,
+       "medianBpp": 0.7321
+      },
+      "jpeg": {
+       "eligible": 4,
+       "improved": 1,
+       "meanSaving": 0.2345,
+       "bwSaving": 0.8759,
+       "medianBpp": 0.8826
+      },
+      "webp": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.5378,
+       "bwSaving": 0.8588,
+       "medianBpp": 0.6529
+      },
+      "avif": {
+       "eligible": 23,
+       "improved": 12,
+       "meanSaving": 0.1987,
+       "bwSaving": 0.892,
+       "medianBpp": 0.7673
+      },
+      "jxl": {
+       "eligible": 23,
+       "improved": 5,
+       "meanSaving": 0.1361,
+       "bwSaving": 0.8656,
+       "medianBpp": 0.6528
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       20
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       2
+      ],
+      [
+       "png-quantette-256",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 23,
+     "totalOrigBytes": 762930,
+     "totalMegapixels": 3.14,
+     "sameFormat": {
+      "meanSaving": 0.4521,
+      "bwSaving": 0.8546,
+      "png": {
+       "mean": 0.4521,
+       "bw": 0.8546
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5848,
+      "bwSaving": 0.9466,
+      "medianBpp": 0.4444,
+      "wins": {
+       "webp": 14,
+       "png": 7,
+       "avif": 2
+      },
+      "pngInput": {
+       "mean": 0.5848,
+       "bw": 0.9466
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5876,
+      "bwSaving": 0.9466,
+      "wins": {
+       "webp": 13,
+       "png": 7,
+       "avif": 2,
+       "jxl": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.4521,
+       "bwSaving": 0.8546,
+       "medianBpp": 0.7321
+      },
+      "jpeg": {
+       "eligible": 4,
+       "improved": 1,
+       "meanSaving": 0.2389,
+       "bwSaving": 0.8923,
+       "medianBpp": 0.8434
+      },
+      "webp": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.5425,
+       "bwSaving": 0.8671,
+       "medianBpp": 0.6529
+      },
+      "avif": {
+       "eligible": 23,
+       "improved": 12,
+       "meanSaving": 0.2095,
+       "bwSaving": 0.8995,
+       "medianBpp": 0.7673
+      },
+      "jxl": {
+       "eligible": 23,
+       "improved": 8,
+       "meanSaving": 0.1722,
+       "bwSaving": 0.8697,
+       "medianBpp": 0.6528
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       8
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       6
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       6
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       3
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 23,
+     "totalOrigBytes": 762930,
+     "totalMegapixels": 3.14,
+     "sameFormat": {
+      "meanSaving": 0.4637,
+      "bwSaving": 0.8801,
+      "png": {
+       "mean": 0.4637,
+       "bw": 0.8801
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.5899,
+      "bwSaving": 0.9507,
+      "medianBpp": 0.4444,
+      "wins": {
+       "webp": 14,
+       "png": 6,
+       "avif": 3
+      },
+      "pngInput": {
+       "mean": 0.5899,
+       "bw": 0.9507
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.5959,
+      "bwSaving": 0.9508,
+      "wins": {
+       "webp": 13,
+       "png": 5,
+       "avif": 3,
+       "jxl": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.4637,
+       "bwSaving": 0.8801,
+       "medianBpp": 0.7321
+      },
+      "jpeg": {
+       "eligible": 4,
+       "improved": 1,
+       "meanSaving": 0.2423,
+       "bwSaving": 0.9049,
+       "medianBpp": 0.8434
+      },
+      "webp": {
+       "eligible": 23,
+       "improved": 23,
+       "meanSaving": 0.548,
+       "bwSaving": 0.8918,
+       "medianBpp": 0.6529
+      },
+      "avif": {
+       "eligible": 23,
+       "improved": 13,
+       "meanSaving": 0.2391,
+       "bwSaving": 0.9168,
+       "medianBpp": 0.7673
+      },
+      "jxl": {
+       "eligible": 23,
+       "improved": 13,
+       "meanSaving": 0.2459,
+       "bwSaving": 0.8834,
+       "medianBpp": 0.5972
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       19
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       2
+      ],
+      [
+       "png-quantette-32",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "ui": {
+   "n": 18,
+   "png": 18,
+   "jpeg": 0,
+   "withAlpha": 0,
+   "avgOrigKb": 401.4,
+   "tiers": {
+    "s2=100": {
+     "n": 18,
+     "totalOrigBytes": 7398180,
+     "totalMegapixels": 63.04,
+     "sameFormat": {
+      "meanSaving": 0.1548,
+      "bwSaving": 0.2215,
+      "png": {
+       "mean": 0.1548,
+       "bw": 0.2215
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4611,
+      "bwSaving": 0.4555,
+      "medianBpp": 0.3196,
+      "wins": {
+       "webp": 18
+      },
+      "pngInput": {
+       "mean": 0.4611,
+       "bw": 0.4555
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.465,
+      "bwSaving": 0.4688,
+      "wins": {
+       "webp": 15,
+       "jxl": 3
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.1548,
+       "bwSaving": 0.2215,
+       "medianBpp": 0.4626
+      },
+      "jpeg": {
+       "eligible": 18,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.5326
+      },
+      "webp": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.4611,
+       "bwSaving": 0.4555,
+       "medianBpp": 0.3196
+      },
+      "avif": {
+       "eligible": 18,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 0.5326
+      },
+      "jxl": {
+       "eligible": 18,
+       "improved": 16,
+       "meanSaving": 0.2462,
+       "bwSaving": 0.3728,
+       "medianBpp": 0.4229
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       17
+      ],
+      [
+       "oxipng-o4",
+       1
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 18,
+     "totalOrigBytes": 7398180,
+     "totalMegapixels": 63.04,
+     "sameFormat": {
+      "meanSaving": 0.2215,
+      "bwSaving": 0.2225,
+      "png": {
+       "mean": 0.2215,
+       "bw": 0.2225
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4681,
+      "bwSaving": 0.3608,
+      "medianBpp": 0.2803,
+      "wins": {
+       "webp": 8,
+       "avif": 5,
+       "png": 5
+      },
+      "pngInput": {
+       "mean": 0.4681,
+       "bw": 0.3608
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4681,
+      "bwSaving": 0.3608,
+      "wins": {
+       "webp": 8,
+       "avif": 5,
+       "png": 5
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 18,
+       "improved": 12,
+       "meanSaving": 0.2215,
+       "bwSaving": 0.2225,
+       "medianBpp": 0.4805
+      },
+      "jpeg": {
+       "eligible": 18,
+       "improved": 1,
+       "meanSaving": 0.0177,
+       "bwSaving": 0.0245,
+       "medianBpp": 0.5326
+      },
+      "webp": {
+       "eligible": 18,
+       "improved": 13,
+       "meanSaving": 0.3519,
+       "bwSaving": 0.1628,
+       "medianBpp": 0.3229
+      },
+      "avif": {
+       "eligible": 18,
+       "improved": 10,
+       "meanSaving": 0.2402,
+       "bwSaving": 0.2361,
+       "medianBpp": 0.3866
+      },
+      "jxl": {
+       "eligible": 18,
+       "improved": 4,
+       "meanSaving": 0.0557,
+       "bwSaving": 0.0603,
+       "medianBpp": 0.5326
+      }
+     },
+     "topPngWinners": [
+      [
+       "kept-original",
+       6
+      ],
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       5
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       4
+      ],
+      [
+       "png-lossless",
+       2
+      ],
+      [
+       "png-quantette-256",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 18,
+     "totalOrigBytes": 7398180,
+     "totalMegapixels": 63.04,
+     "sameFormat": {
+      "meanSaving": 0.5736,
+      "bwSaving": 0.544,
+      "png": {
+       "mean": 0.5736,
+       "bw": 0.544
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.8209,
+      "bwSaving": 0.886,
+      "medianBpp": 0.0933,
+      "wins": {
+       "avif": 16,
+       "webp": 1,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.8209,
+       "bw": 0.886
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.8209,
+      "bwSaving": 0.886,
+      "wins": {
+       "avif": 16,
+       "webp": 1,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.5736,
+       "bwSaving": 0.544,
+       "medianBpp": 0.2064
+      },
+      "jpeg": {
+       "eligible": 18,
+       "improved": 14,
+       "meanSaving": 0.3326,
+       "bwSaving": 0.5921,
+       "medianBpp": 0.3236
+      },
+      "webp": {
+       "eligible": 18,
+       "improved": 13,
+       "meanSaving": 0.4033,
+       "bwSaving": 0.2117,
+       "medianBpp": 0.33
+      },
+      "avif": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.8169,
+       "bwSaving": 0.8839,
+       "medianBpp": 0.0933
+      },
+      "jxl": {
+       "eligible": 18,
+       "improved": 16,
+       "meanSaving": 0.5791,
+       "bwSaving": 0.7385,
+       "medianBpp": 0.2203
+      }
+     },
+     "topPngWinners": [
+      [
+       "png-quantette-256",
+       7
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       4
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       2
+      ],
+      [
+       "dense-png-c129-q95-s2-o5-d9-p0",
+       2
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0@t95",
+       1
+      ],
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t100",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 18,
+     "totalOrigBytes": 7398180,
+     "totalMegapixels": 63.04,
+     "sameFormat": {
+      "meanSaving": 0.6807,
+      "bwSaving": 0.7191,
+      "png": {
+       "mean": 0.6807,
+       "bw": 0.7191
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.8813,
+      "bwSaving": 0.9276,
+      "medianBpp": 0.0552,
+      "wins": {
+       "avif": 18
+      },
+      "pngInput": {
+       "mean": 0.8813,
+       "bw": 0.9276
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.8813,
+      "bwSaving": 0.9276,
+      "wins": {
+       "avif": 18
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.6807,
+       "bwSaving": 0.7191,
+       "medianBpp": 0.1699
+      },
+      "jpeg": {
+       "eligible": 18,
+       "improved": 17,
+       "meanSaving": 0.5343,
+       "bwSaving": 0.7359,
+       "medianBpp": 0.2265
+      },
+      "webp": {
+       "eligible": 18,
+       "improved": 13,
+       "meanSaving": 0.4835,
+       "bwSaving": 0.2491,
+       "medianBpp": 0.2086
+      },
+      "avif": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.8813,
+       "bwSaving": 0.9276,
+       "medianBpp": 0.0552
+      },
+      "jxl": {
+       "eligible": 18,
+       "improved": 17,
+       "meanSaving": 0.6927,
+       "bwSaving": 0.8177,
+       "medianBpp": 0.1481
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       8
+      ],
+      [
+       "png-quantette-128",
+       4
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       3
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       2
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 18,
+     "totalOrigBytes": 7398180,
+     "totalMegapixels": 63.04,
+     "sameFormat": {
+      "meanSaving": 0.7345,
+      "bwSaving": 0.7864,
+      "png": {
+       "mean": 0.7345,
+       "bw": 0.7864
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.913,
+      "bwSaving": 0.9513,
+      "medianBpp": 0.0401,
+      "wins": {
+       "avif": 18
+      },
+      "pngInput": {
+       "mean": 0.913,
+       "bw": 0.9513
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.913,
+      "bwSaving": 0.9513,
+      "wins": {
+       "avif": 18
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.7345,
+       "bwSaving": 0.7864,
+       "medianBpp": 0.1523
+      },
+      "jpeg": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.67,
+       "bwSaving": 0.8174,
+       "medianBpp": 0.1592
+      },
+      "webp": {
+       "eligible": 18,
+       "improved": 13,
+       "meanSaving": 0.5365,
+       "bwSaving": 0.276,
+       "medianBpp": 0.1463
+      },
+      "avif": {
+       "eligible": 18,
+       "improved": 18,
+       "meanSaving": 0.913,
+       "bwSaving": 0.9513,
+       "medianBpp": 0.0401
+      },
+      "jxl": {
+       "eligible": 18,
+       "improved": 17,
+       "meanSaving": 0.7441,
+       "bwSaving": 0.8515,
+       "medianBpp": 0.105
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       13
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       4
+      ],
+      [
+       "png-quantette-32",
+       1
+      ]
+     ]
+    }
+   }
+  },
+  "subtle-alpha": {
+   "n": 16,
+   "png": 16,
+   "jpeg": 0,
+   "withAlpha": 16,
+   "avgOrigKb": 325.5,
+   "tiers": {
+    "s2=100": {
+     "n": 16,
+     "totalOrigBytes": 5333319,
+     "totalMegapixels": 7.68,
+     "sameFormat": {
+      "meanSaving": 0.5342,
+      "bwSaving": 0.7988,
+      "png": {
+       "mean": 0.5342,
+       "bw": 0.7988
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.6732,
+      "bwSaving": 0.848,
+      "medianBpp": 0.409,
+      "wins": {
+       "webp": 15,
+       "png": 1
+      },
+      "pngInput": {
+       "mean": 0.6732,
+       "bw": 0.848
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.6782,
+      "bwSaving": 0.8548,
+      "wins": {
+       "webp": 13,
+       "jxl": 2,
+       "png": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.5342,
+       "bwSaving": 0.7988,
+       "medianBpp": 0.5648
+      },
+      "jpeg": {
+       "eligible": 0,
+       "improved": 0,
+       "meanSaving": null,
+       "bwSaving": 0.0,
+       "medianBpp": null
+      },
+      "webp": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.6619,
+       "bwSaving": 0.8465,
+       "medianBpp": 0.409
+      },
+      "avif": {
+       "eligible": 16,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 1.0688
+      },
+      "jxl": {
+       "eligible": 16,
+       "improved": 15,
+       "meanSaving": 0.323,
+       "bwSaving": 0.1561,
+       "medianBpp": 0.7277
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       12
+      ],
+      [
+       "oxipng-o4",
+       4
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 16,
+     "totalOrigBytes": 5333319,
+     "totalMegapixels": 7.68,
+     "sameFormat": {
+      "meanSaving": 0.5495,
+      "bwSaving": 0.7971,
+      "png": {
+       "mean": 0.5495,
+       "bw": 0.7971
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.7369,
+      "bwSaving": 0.8474,
+      "medianBpp": 0.3206,
+      "wins": {
+       "webp": 6,
+       "avif": 5,
+       "png": 5
+      },
+      "pngInput": {
+       "mean": 0.7369,
+       "bw": 0.8474
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.7606,
+      "bwSaving": 0.8702,
+      "wins": {
+       "webp": 5,
+       "jxl": 5,
+       "png": 4,
+       "avif": 2
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.5495,
+       "bwSaving": 0.7971,
+       "medianBpp": 0.568
+      },
+      "jpeg": {
+       "eligible": 0,
+       "improved": 0,
+       "meanSaving": null,
+       "bwSaving": 0.0,
+       "medianBpp": null
+      },
+      "webp": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.4569,
+       "bwSaving": 0.2056,
+       "medianBpp": 0.5759
+      },
+      "avif": {
+       "eligible": 16,
+       "improved": 13,
+       "meanSaving": 0.4416,
+       "bwSaving": 0.2066,
+       "medianBpp": 0.5481
+      },
+      "jxl": {
+       "eligible": 16,
+       "improved": 11,
+       "meanSaving": 0.4233,
+       "bwSaving": 0.5378,
+       "medianBpp": 0.2317
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c129-q95-s1-o5-d9-p0",
+       6
+      ],
+      [
+       "png-lossless",
+       5
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 16,
+     "totalOrigBytes": 5333319,
+     "totalMegapixels": 7.68,
+     "sameFormat": {
+      "meanSaving": 0.6958,
+      "bwSaving": 0.8197,
+      "png": {
+       "mean": 0.6958,
+       "bw": 0.8197
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9485,
+      "bwSaving": 0.9882,
+      "medianBpp": 0.0276,
+      "wins": {
+       "avif": 13,
+       "png": 2,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.9485,
+       "bw": 0.9882
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9491,
+      "bwSaving": 0.9906,
+      "wins": {
+       "avif": 12,
+       "png": 2,
+       "webp": 1,
+       "jxl": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.6958,
+       "bwSaving": 0.8197,
+       "medianBpp": 0.222
+      },
+      "jpeg": {
+       "eligible": 0,
+       "improved": 0,
+       "meanSaving": null,
+       "bwSaving": 0.0,
+       "medianBpp": null
+      },
+      "webp": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.7645,
+       "bwSaving": 0.8175,
+       "medianBpp": 0.2397
+      },
+      "avif": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.9394,
+       "bwSaving": 0.977,
+       "medianBpp": 0.0303
+      },
+      "jxl": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.7158,
+       "bwSaving": 0.9015,
+       "medianBpp": 0.2041
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c229-q78-s6-o6-d13-p1",
+       4
+      ],
+      [
+       "dense-png-c256-q69-s2-o6-d4-p0",
+       3
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       3
+      ],
+      [
+       "png-posterize-24",
+       2
+      ],
+      [
+       "png-lossless",
+       2
+      ],
+      [
+       "png-quantette-256",
+       1
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0@t88",
+       1
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 16,
+     "totalOrigBytes": 5333319,
+     "totalMegapixels": 7.68,
+     "sameFormat": {
+      "meanSaving": 0.8245,
+      "bwSaving": 0.9553,
+      "png": {
+       "mean": 0.8245,
+       "bw": 0.9553
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.951,
+      "bwSaving": 0.9919,
+      "medianBpp": 0.0261,
+      "wins": {
+       "avif": 12,
+       "png": 3,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.951,
+       "bw": 0.9919
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.951,
+      "bwSaving": 0.9919,
+      "wins": {
+       "avif": 12,
+       "png": 3,
+       "webp": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.8245,
+       "bwSaving": 0.9553,
+       "medianBpp": 0.1373
+      },
+      "jpeg": {
+       "eligible": 0,
+       "improved": 0,
+       "meanSaving": null,
+       "bwSaving": 0.0,
+       "medianBpp": null
+      },
+      "webp": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.7647,
+       "bwSaving": 0.8177,
+       "medianBpp": 0.2397
+      },
+      "avif": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.9425,
+       "bwSaving": 0.9838,
+       "medianBpp": 0.0276
+      },
+      "jxl": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.7158,
+       "bwSaving": 0.9015,
+       "medianBpp": 0.2041
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       11
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       3
+      ],
+      [
+       "png-quantette-256",
+       1
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0@t100",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 16,
+     "totalOrigBytes": 5333319,
+     "totalMegapixels": 7.68,
+     "sameFormat": {
+      "meanSaving": 0.8554,
+      "bwSaving": 0.955,
+      "png": {
+       "mean": 0.8554,
+       "bw": 0.955
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.9576,
+      "bwSaving": 0.9929,
+      "medianBpp": 0.0239,
+      "wins": {
+       "avif": 13,
+       "png": 2,
+       "webp": 1
+      },
+      "pngInput": {
+       "mean": 0.9576,
+       "bw": 0.9929
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.9578,
+      "bwSaving": 0.994,
+      "wins": {
+       "avif": 11,
+       "jxl": 2,
+       "png": 2,
+       "webp": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.8554,
+       "bwSaving": 0.955,
+       "medianBpp": 0.1373
+      },
+      "jpeg": {
+       "eligible": 0,
+       "improved": 0,
+       "meanSaving": null,
+       "bwSaving": 0.0,
+       "medianBpp": null
+      },
+      "webp": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.7732,
+       "bwSaving": 0.8446,
+       "medianBpp": 0.2358
+      },
+      "avif": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.9489,
+       "bwSaving": 0.9922,
+       "medianBpp": 0.0239
+      },
+      "jxl": {
+       "eligible": 16,
+       "improved": 16,
+       "meanSaving": 0.8864,
+       "bwSaving": 0.9735,
+       "medianBpp": 0.0991
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       7
+      ],
+      [
+       "dense-png-c88-q61-s10-o6-d1-p0",
+       4
+      ],
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       3
+      ],
+      [
+       "dense-png-c191-q76-s1-o4-d11-p1",
+       2
+      ]
+     ]
+    }
+   }
+  },
+  "tiny": {
+   "n": 9,
+   "png": 9,
+   "jpeg": 0,
+   "withAlpha": 8,
+   "avgOrigKb": 3.4,
+   "tiers": {
+    "s2=100": {
+     "n": 9,
+     "totalOrigBytes": 31716,
+     "totalMegapixels": 0.05,
+     "sameFormat": {
+      "meanSaving": 0.1054,
+      "bwSaving": 0.1355,
+      "png": {
+       "mean": 0.1054,
+       "bw": 0.1355
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.2207,
+      "bwSaving": 0.3251,
+      "medianBpp": 1.4722,
+      "wins": {
+       "webp": 9
+      },
+      "pngInput": {
+       "mean": 0.2207,
+       "bw": 0.3251
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.2279,
+      "bwSaving": 0.3762,
+      "wins": {
+       "webp": 8,
+       "jxl": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 9,
+       "improved": 6,
+       "meanSaving": 0.1054,
+       "bwSaving": 0.1355,
+       "medianBpp": 1.642
+      },
+      "jpeg": {
+       "eligible": 1,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 14.9839
+      },
+      "webp": {
+       "eligible": 9,
+       "improved": 9,
+       "meanSaving": 0.2207,
+       "bwSaving": 0.3251,
+       "medianBpp": 1.4722
+      },
+      "avif": {
+       "eligible": 9,
+       "improved": 0,
+       "meanSaving": 0.0,
+       "bwSaving": 0.0,
+       "medianBpp": 1.642
+      },
+      "jxl": {
+       "eligible": 9,
+       "improved": 4,
+       "meanSaving": 0.1526,
+       "bwSaving": 0.3584,
+       "medianBpp": 1.642
+      }
+     },
+     "topPngWinners": [
+      [
+       "ect-9",
+       3
+      ],
+      [
+       "oxipng-o4",
+       3
+      ],
+      [
+       "kept-original",
+       3
+      ]
+     ]
+    },
+    "s2>=90": {
+     "n": 9,
+     "totalOrigBytes": 31716,
+     "totalMegapixels": 0.05,
+     "sameFormat": {
+      "meanSaving": 0.1463,
+      "bwSaving": 0.4779,
+      "png": {
+       "mean": 0.1463,
+       "bw": 0.4779
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.279,
+      "bwSaving": 0.6398,
+      "medianBpp": 1.4815,
+      "wins": {
+       "webp": 8,
+       "avif": 1
+      },
+      "pngInput": {
+       "mean": 0.279,
+       "bw": 0.6398
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.279,
+      "bwSaving": 0.6398,
+      "wins": {
+       "webp": 8,
+       "avif": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 9,
+       "improved": 6,
+       "meanSaving": 0.1463,
+       "bwSaving": 0.4779,
+       "medianBpp": 1.642
+      },
+      "jpeg": {
+       "eligible": 1,
+       "improved": 1,
+       "meanSaving": 0.6477,
+       "bwSaving": 0.6477,
+       "medianBpp": 5.2794
+      },
+      "webp": {
+       "eligible": 9,
+       "improved": 8,
+       "meanSaving": 0.1945,
+       "bwSaving": 0.0356,
+       "medianBpp": 1.4815
+      },
+      "avif": {
+       "eligible": 9,
+       "improved": 1,
+       "meanSaving": 0.0845,
+       "bwSaving": 0.6042,
+       "medianBpp": 1.642
+      },
+      "jxl": {
+       "eligible": 9,
+       "improved": 1,
+       "meanSaving": 0.0764,
+       "bwSaving": 0.5464,
+       "medianBpp": 1.642
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ],
+      [
+       "kept-original",
+       3
+      ],
+      [
+       "dense-png-c32-q90-s2-o2",
+       1
+      ],
+      [
+       "dense-png-c229-q78-s1-o6-d13-p1",
+       1
+      ]
+     ]
+    },
+    "s2>=80": {
+     "n": 9,
+     "totalOrigBytes": 31716,
+     "totalMegapixels": 0.05,
+     "sameFormat": {
+      "meanSaving": 0.3119,
+      "bwSaving": 0.6052,
+      "png": {
+       "mean": 0.3119,
+       "bw": 0.6052
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4009,
+      "bwSaving": 0.7485,
+      "medianBpp": 1.1127,
+      "wins": {
+       "webp": 4,
+       "png": 4,
+       "avif": 1
+      },
+      "pngInput": {
+       "mean": 0.4009,
+       "bw": 0.7485
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4009,
+      "bwSaving": 0.7485,
+      "wins": {
+       "webp": 4,
+       "png": 4,
+       "avif": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 9,
+       "improved": 9,
+       "meanSaving": 0.3119,
+       "bwSaving": 0.6052,
+       "medianBpp": 1.1127
+      },
+      "jpeg": {
+       "eligible": 1,
+       "improved": 1,
+       "meanSaving": 0.7699,
+       "bwSaving": 0.7699,
+       "medianBpp": 3.4471
+      },
+      "webp": {
+       "eligible": 9,
+       "improved": 8,
+       "meanSaving": 0.1945,
+       "bwSaving": 0.0356,
+       "medianBpp": 1.4815
+      },
+      "avif": {
+       "eligible": 9,
+       "improved": 1,
+       "meanSaving": 0.095,
+       "bwSaving": 0.6795,
+       "medianBpp": 1.642
+      },
+      "jxl": {
+       "eligible": 9,
+       "improved": 1,
+       "meanSaving": 0.0896,
+       "bwSaving": 0.6409,
+       "medianBpp": 1.642
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       5
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       4
+      ]
+     ]
+    },
+    "s2>=70": {
+     "n": 9,
+     "totalOrigBytes": 31716,
+     "totalMegapixels": 0.05,
+     "sameFormat": {
+      "meanSaving": 0.3641,
+      "bwSaving": 0.724,
+      "png": {
+       "mean": 0.3641,
+       "bw": 0.724
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4295,
+      "bwSaving": 0.7893,
+      "medianBpp": 1.1127,
+      "wins": {
+       "png": 5,
+       "webp": 3,
+       "avif": 1
+      },
+      "pngInput": {
+       "mean": 0.4295,
+       "bw": 0.7893
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4295,
+      "bwSaving": 0.7893,
+      "wins": {
+       "png": 5,
+       "webp": 3,
+       "avif": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 9,
+       "improved": 9,
+       "meanSaving": 0.3641,
+       "bwSaving": 0.724,
+       "medianBpp": 1.1127
+      },
+      "jpeg": {
+       "eligible": 1,
+       "improved": 1,
+       "meanSaving": 0.8554,
+       "bwSaving": 0.8554,
+       "medianBpp": 2.1665
+      },
+      "webp": {
+       "eligible": 9,
+       "improved": 8,
+       "meanSaving": 0.1945,
+       "bwSaving": 0.0356,
+       "medianBpp": 1.4815
+      },
+      "avif": {
+       "eligible": 9,
+       "improved": 3,
+       "meanSaving": 0.1307,
+       "bwSaving": 0.7267,
+       "medianBpp": 1.4822
+      },
+      "jxl": {
+       "eligible": 9,
+       "improved": 1,
+       "meanSaving": 0.0965,
+       "bwSaving": 0.6901,
+       "medianBpp": 1.642
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       8
+      ],
+      [
+       "dense-png-c222-q59-s1-o6-d92-p0",
+       1
+      ]
+     ]
+    },
+    "s2>=50": {
+     "n": 9,
+     "totalOrigBytes": 31716,
+     "totalMegapixels": 0.05,
+     "sameFormat": {
+      "meanSaving": 0.4049,
+      "bwSaving": 0.7319,
+      "png": {
+       "mean": 0.4049,
+       "bw": 0.7319
+      },
+      "jpeg": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoWeb": {
+      "meanSaving": 0.4562,
+      "bwSaving": 0.8361,
+      "medianBpp": 1.0108,
+      "wins": {
+       "png": 6,
+       "webp": 2,
+       "avif": 1
+      },
+      "pngInput": {
+       "mean": 0.4562,
+       "bw": 0.8361
+      },
+      "jpegInput": {
+       "mean": null,
+       "bw": null
+      }
+     },
+     "autoAll": {
+      "meanSaving": 0.4562,
+      "bwSaving": 0.8361,
+      "wins": {
+       "png": 6,
+       "webp": 2,
+       "avif": 1
+      }
+     },
+     "formats": {
+      "png": {
+       "eligible": 9,
+       "improved": 9,
+       "meanSaving": 0.4049,
+       "bwSaving": 0.7319,
+       "medianBpp": 1.1127
+      },
+      "jpeg": {
+       "eligible": 1,
+       "improved": 1,
+       "meanSaving": 0.9264,
+       "bwSaving": 0.9264,
+       "medianBpp": 1.1023
+      },
+      "webp": {
+       "eligible": 9,
+       "improved": 8,
+       "meanSaving": 0.2177,
+       "bwSaving": 0.0434,
+       "medianBpp": 1.4815
+      },
+      "avif": {
+       "eligible": 9,
+       "improved": 3,
+       "meanSaving": 0.162,
+       "bwSaving": 0.7772,
+       "medianBpp": 1.2485
+      },
+      "jxl": {
+       "eligible": 9,
+       "improved": 5,
+       "meanSaving": 0.1841,
+       "bwSaving": 0.7689,
+       "medianBpp": 1.2253
+      }
+     },
+     "topPngWinners": [
+      [
+       "dense-png-c255-q1-s1-o4-d33-p2",
+       9
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "complex": {
+  "panelSize": 72,
+  "efforts": {
+   "high": {
+    "fast": {
+     "n": 72,
+     "autoMeanSaving": 0.8003,
+     "autoBwSaving": 0.9289,
+     "sameMeanSaving": 0.5447,
+     "sameBwSaving": 0.5085,
+     "secPerMpMedian": 21.6455,
+     "secPerMpP90": 303.419,
+     "kbSavedPerSecMedian": 5.9
+    },
+    "balanced": {
+     "n": 72,
+     "autoMeanSaving": 0.8095,
+     "autoBwSaving": 0.9378,
+     "sameMeanSaving": 0.5829,
+     "sameBwSaving": 0.6245,
+     "secPerMpMedian": 52.297,
+     "secPerMpP90": 466.656,
+     "kbSavedPerSecMedian": 2.4
+    },
+    "max": {
+     "n": 72,
+     "autoMeanSaving": 0.8144,
+     "autoBwSaving": 0.94,
+     "sameMeanSaving": 0.5857,
+     "sameBwSaving": 0.6485,
+     "secPerMpMedian": 93.4345,
+     "secPerMpP90": 790.404,
+     "kbSavedPerSecMedian": 1.6
+    }
+   },
+   "aggressive": {
+    "fast": {
+     "n": 72,
+     "autoMeanSaving": 0.8618,
+     "autoBwSaving": 0.9754,
+     "sameMeanSaving": 0.7146,
+     "sameBwSaving": 0.7989,
+     "secPerMpMedian": 21.9335,
+     "secPerMpP90": 277.223,
+     "kbSavedPerSecMedian": 6.8
+    },
+    "balanced": {
+     "n": 72,
+     "autoMeanSaving": 0.873,
+     "autoBwSaving": 0.9785,
+     "sameMeanSaving": 0.7188,
+     "sameBwSaving": 0.8043,
+     "secPerMpMedian": 45.585,
+     "secPerMpP90": 398.92,
+     "kbSavedPerSecMedian": 3.3
+    },
+    "max": {
+     "n": 72,
+     "autoMeanSaving": 0.8757,
+     "autoBwSaving": 0.9795,
+     "sameMeanSaving": 0.7322,
+     "sameBwSaving": 0.82,
+     "secPerMpMedian": 83.755,
+     "secPerMpP90": 565.735,
+     "kbSavedPerSecMedian": 2.0
+    }
+   }
+  },
+  "networks": [
+   {
+    "name": "cjpegli \u2192 ECT -9 (S2 \u2265 80)",
+    "description": "2-stage lossless progressive/Huffman repack after cjpegli",
+    "n": 32,
+    "wins": 21,
+    "ties": 11,
+    "losses": 0,
+    "medianLift": 0.008,
+    "meanLift": 0.0109,
+    "bwLift": 0.0103,
+    "medianExtraMs": 158.5
+   },
+   {
+    "name": "Denoise (t=12) \u2192 cjpegli (S2 \u2265 70)",
+    "description": "Edge-preserving pre-denoise before cjpegli, scored vs unfiltered original",
+    "n": 34,
+    "wins": 6,
+    "ties": 17,
+    "losses": 11,
+    "medianLift": -0.0001,
+    "meanLift": -0.0073,
+    "bwLift": -0.0159,
+    "medianExtraMs": -62.5
+   },
+   {
+    "name": "Denoise (t=18) \u2192 cjpegli (S2 \u2265 50, noisy)",
+    "description": "Stronger pre-denoise before cjpegli on noisy opaque images (\u03c3 \u2265 2.0)",
+    "n": 5,
+    "wins": 3,
+    "ties": 2,
+    "losses": 0,
+    "medianLift": 0.0067,
+    "meanLift": 0.0069,
+    "bwLift": 0.0061,
+    "medianExtraMs": -12
+   },
+   {
+    "name": "Denoise (t=14) \u2192 WebP (S2 \u2265 70)",
+    "description": "Pre-denoise before cwebp -m 6, scored vs unfiltered original",
+    "n": 63,
+    "wins": 10,
+    "ties": 30,
+    "losses": 23,
+    "medianLift": 0.0,
+    "meanLift": -0.01,
+    "bwLift": -0.0172,
+    "medianExtraMs": 64
+   },
+   {
+    "name": "Denoise (t=14) \u2192 WebP (S2 \u2265 50)",
+    "description": "Pre-denoise before cwebp -m 6 at Extreme target (S2 \u2265 50)",
+    "n": 64,
+    "wins": 15,
+    "ties": 35,
+    "losses": 14,
+    "medianLift": 0.0,
+    "meanLift": 0.0021,
+    "bwLift": -0.001,
+    "medianExtraMs": 16.0
+   },
+   {
+    "name": "Denoise (t=14) \u2192 AVIF (S2 \u2265 70)",
+    "description": "Pre-denoise before avifenc, scored vs unfiltered original",
+    "n": 72,
+    "wins": 24,
+    "ties": 35,
+    "losses": 13,
+    "medianLift": 0.0,
+    "meanLift": 0.0046,
+    "bwLift": 0.0092,
+    "medianExtraMs": -56.5
+   },
+   {
+    "name": "Denoise (t=14) \u2192 AVIF (S2 \u2265 50)",
+    "description": "Pre-denoise before avifenc at Extreme target (S2 \u2265 50)",
+    "n": 71,
+    "wins": 25,
+    "ties": 35,
+    "losses": 11,
+    "medianLift": 0.0,
+    "meanLift": 0.0054,
+    "bwLift": 0.0044,
+    "medianExtraMs": 0
+   },
+   {
+    "name": "Posterize(32) \u2192 pngquant(128) \u2192 OxiPNG \u2192 ECT-9 (S2 \u2265 70)",
+    "description": "4-stage hybrid PNG network vs pngquant(256) \u2192 OxiPNG \u2192 ECT-9 (passing S2 \u2265 70)",
+    "n": 22,
+    "wins": 0,
+    "ties": 0,
+    "losses": 22,
+    "medianLift": -1.0599,
+    "meanLift": -3.2711,
+    "bwLift": -0.491,
+    "medianExtraMs": 52.0
+   },
+   {
+    "name": "Posterize(32) \u2192 pngquant(128) \u2192 OxiPNG \u2192 ECT-9 (S2 \u2265 50)",
+    "description": "4-stage hybrid PNG network vs pngquant(256) \u2192 OxiPNG \u2192 ECT-9 at Extreme target (S2 \u2265 50)",
+    "n": 53,
+    "wins": 2,
+    "ties": 0,
+    "losses": 51,
+    "medianLift": -0.5038,
+    "meanLift": -2.2084,
+    "bwLift": -0.3595,
+    "medianExtraMs": -34
+   },
+   {
+    "name": "Denoise(14) \u2192 pngquant(256) \u2192 OxiPNG \u2192 ECT-9",
+    "description": "4-stage pre-cleaned palette PNG vs pngquant(256) \u2192 OxiPNG \u2192 ECT-9 (passing S2 \u2265 70)",
+    "n": 30,
+    "wins": 11,
+    "ties": 12,
+    "losses": 7,
+    "medianLift": 0.0,
+    "meanLift": 0.0184,
+    "bwLift": 0.0279,
+    "medianExtraMs": 49.5
+   },
+   {
+    "name": "PNG squeeze: ECT -9 vs Zopfli -15",
+    "description": "Head-to-head final lossless deflate stage after pngquant + OxiPNG -o4",
+    "n": 69,
+    "wins": 4,
+    "ties": 58,
+    "losses": 7,
+    "medianLift": 0.0008,
+    "meanLift": -0.0015,
+    "bwLift": -0.0009,
+    "medianExtraMs": -4143
+   }
+  ],
+  "budget50": {
+   "png": {
+    "eligible": 72,
+    "metBudget": 63,
+    "hitRate": 0.875,
+    "medianS2": 63.37,
+    "meanS2": 63.8733,
+    "pctAbove80": 0.2222,
+    "pctAbove70": 0.3056
+   },
+   "jpeg": {
+    "eligible": 36,
+    "metBudget": 35,
+    "hitRate": 0.9722,
+    "medianS2": 84.47,
+    "meanS2": 80.0397,
+    "pctAbove80": 0.6944,
+    "pctAbove70": 0.8056
+   },
+   "webp": {
+    "eligible": 72,
+    "metBudget": 58,
+    "hitRate": 0.8056,
+    "medianS2": 84.3,
+    "meanS2": 77.4448,
+    "pctAbove80": 0.6111,
+    "pctAbove70": 0.6944
+   },
+   "avif": {
+    "eligible": 72,
+    "metBudget": 62,
+    "hitRate": 0.8611,
+    "medianS2": 88.96,
+    "meanS2": 88.0805,
+    "pctAbove80": 0.8056,
+    "pctAbove70": 0.8472
+   }
+  },
+  "crossMetrics": [
+   {
+    "id": "corpus-synth/logo_0_800x300_alpha__rgb_bleed.png",
+    "category": "logo",
+    "tier": "s2>=80",
+    "format": "png",
+    "saving": 0.8765,
+    "butteraugliMax": 270.675,
+    "dssim": 5.8e-05
+   },
+   {
+    "id": "corpus-synth/logo_0_800x300_alpha__rgb_bleed.png",
+    "category": "logo",
+    "tier": "s2>=50",
+    "format": "png",
+    "saving": 0.9226,
+    "butteraugliMax": 270.675,
+    "dssim": 0.000154
+   }
+  ]
+ }
+}
