@@ -1,39 +1,39 @@
 {
   "steps": [
     {
-      "title": "Fixed, licensed test sets",
-      "text": "Every test image is public-licence (Pexels, GB82, libjpeg-turbo, F-Droid screenshots, Kenney pixel art and OpenMoji icons) with its origin and licence recorded in the repository manifest. The initial 100,000-trial sweep used 50 images (30 PNG, 20 JPEG); the SSIMULACRA2 validation pool expanded to 65 real PNGs and 23 JPEGs; and the head-to-head ImageOptim comparison uses 8 files (4 PNG, 4 JPEG)."
+      "title": "Full-scope licensed & synthetic corpora (~484 images, 12 categories)",
+      "text": "Benchmark v3 evaluates the entire image scope across three corpora: real-world core images (Pexels, GB82, libjpeg-turbo, F-Droid screenshots, Kenney pixel art, OpenMoji icons), expanded real-world assets (Unsplash DSLR photos up to 24 MP, cutouts, UI, textures, banners, gradients, illustrations, tiny micro-assets), and procedural synthetic stress images (smooth gradients, subtle feathered alpha, logos, halftones, pixel art). Every image is normalized into 12 categories."
     },
     {
-      "title": "Recipe sweep",
-      "text": "In the initial sweep, each of the 50 images ran through 2,000 recipes for its format. PNG recipes combined palette quantisation (pngquant), OxiPNG and Zopfli in different orders and settings; JPEG recipes varied MozJPEG quality, scan mode and lossless Huffman recompression. Every trial recorded size, time, pixel exactness, SSIM and PSNR and can be replayed from the saved plan."
+      "title": "Alpha-aware SSIMULACRA2 v2.1 as the primary metric",
+      "text": "Every lossy output is scored in-process using NEO's 38 KB Wasm-SIMD SSIMULACRA2 v2.1 implementation (matching ssimulacra2_rs 0.5.2 / libjxl v2.1 weights). Transparent images are composited over white, black, and mid-gray backgrounds and gated on the worst (minimum) of the three scores, preventing hidden fringe or matte-halo artifacts. Legacy 8×8 SSIM is no longer used as a pre-filter."
     },
     {
-      "title": "Two quality checks",
-      "text": "The goal is the smallest file that still looks right at three levels: Visually lossless (invisible even zoomed in), High quality (looks identical at normal viewing size) and Good for web (crisp for web pages). The 100k sweep used fast SSIM floors (0.995, 0.98, 0.95) to map out recipe chains. Because SSIM is forgiving near the top, finalists and the shipped Smart engine are gated on SSIMULACRA2 (floors 90, 80 and 70), with an alpha-aware check over black, white and grey backgrounds for transparent images."
+      "title": "Five quality targets + 50% size-budget target",
+      "text": "All 4 main universal web formats (PNG, JPEG, WebP, AVIF) plus JPEG XL (JXL) are measured across five targets: Strict Lossless (pixel-identical, S2 = 100), Visually Lossless (S2 ≥ 90), High Quality (S2 ≥ 80), Good for Web (S2 ≥ 70), and Extreme / Aggressive (S2 ≥ 50). On a stratified 12-category panel, we also invert the problem with a 50% Size-Budget target (maxBytes = 0.5 × original) to measure the highest SSIMULACRA2 score each format achieves at half the original file size."
     },
     {
-      "title": "Effort tiers",
-      "text": "Effort is encode time relative to the fastest recipes on the same image, so image size does not skew it. Fast allows up to 3× the fastest recipe, Balanced up to 15×, and Thorough has no cap. Real times are reported in seconds per megapixel (a 1000×1000 image; multiply by 8–12 for a typical phone photo)."
+      "title": "Complex pure-compression-optimization networks",
+      "text": "Beyond single-pass encoders, we benchmark multi-stage compression-only pipelines (no resize, crop, or artistic transforms): edge-preserving pre-denoise before cjpegli, WebP, and AVIF; 2-stage cjpegli → ECT -9 progressive repack; 4-stage posterize → quantette/pngquant → OxiPNG → ECT -9; and head-to-head ECT -9 vs Zopfli deflate squeezes. Every pre-conditioned network is scored strictly against the unfiltered original pixels."
     },
     {
-      "title": "Honest scoring",
-      "text": "Picking a recipe on an image and scoring it on the same image flatters it. Champion recipes are therefore scored leave-one-source-out: chosen on all other images, then applied to the held-out image. Splits are always by source image, never by trial."
+      "title": "Effort tiers & throughput (sec/MP)",
+      "text": "Fast, Balanced, and Thorough effort tiers are timed end-to-end on Apple Silicon and reported in wall-clock seconds per megapixel (1000×1000 px) and KB saved per second."
     },
     {
-      "title": "Redundancy and chain alerts",
-      "text": "Recipes that produce byte-identical output are counted as duplicates, and recipes within 1% size and 0.002 SSIM on ≥95% of images are collapsed to the fastest one. Comparing each chain against its shorter prefix (such as OxiPNG vs. OxiPNG + Zopfli) drives the Architect editor's warnings about steps that add time without saving bytes."
+      "title": "Cross-metric finalist audits",
+      "text": "Because no single perceptual metric is infallible on every distortion, balanced winners from every category are cross-checked with native Butteraugli (max and 3-norm) and DSSIM to expose where metrics agree or diverge."
     },
     {
-      "title": "Head-to-head comparison",
-      "text": "The real ImageOptim app (with its installed preferences recorded) is compared on the same 8 files against NEO's matching recipes, NEO Smart in the same format (cjpegli for JPEG, quantette-wasm + OxiPNG for PNG), and NEO Smart with automatic format choice (racing PNG, JPEG, WebP, JPEG XL and AVIF)."
+      "title": "Head-to-head comparison with ImageOptim",
+      "text": "The real ImageOptim Mac app (with recorded preferences) is compared on 8 files (4 PNG, 4 JPEG) against NEO's matching recipes, NEO Smart in the same format (cjpegli / quantette + OxiPNG), and NEO Smart Auto Web (PNG, JPEG, WebP, AVIF, JXL)."
     }
   ],
   "limits": [
-    "The 100,000-trial sweep on Overview, Rankings and Explore is complete (50 images: 30 PNG, 20 JPEG) and gated on SSIM. See the SSIMULACRA2 page for the stricter perceptual re-check.",
-    "50 sweep images (and 65 real PNGs / 23 JPEGs in the validation pool) is still modest; content types with only 1–3 images are marked as indicative.",
-    "Times were measured on one Apple Silicon Mac with two workers running at once and include start-up overhead; your hardware will differ.",
-    "The head-to-head ImageOptim comparison uses 8 files (4 PNG, 4 JPEG) and one installed ImageOptim preference set."
+    "Ten artificial 300-dpi print stress files (34–100 MP) exceed the 25 MP memory cap for full-resolution float32 SSIMULACRA2 planes, and one arithmetic-coded libjpeg test file is unsupported by standard decoders; all 473 remaining images across real + synthetic corpora are evaluated.",
+    "SSIMULACRA2 v2.1 operates in sRGB; wide-gamut Display P3 and HDR scoring remain future work.",
+    "Complex network, effort-tier, and 50% size-budget measurements run on a balanced 12-category stratified panel (up to 6 images per category) rather than all 473 images to keep full multi-pass encode times practical.",
+    "Wall-clock times (sec/MP) were measured on an Apple Silicon Mac under multi-worker load and will differ on other CPUs."
   ],
   "sources": [
     {

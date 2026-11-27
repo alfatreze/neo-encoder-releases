@@ -1,30 +1,26 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEO Compressor Results</title>
-<meta name="description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<title>NEO Compressor · SSIMULACRA2 v2.1 Research Results</title>
+<meta name="description" content="Full-scope alpha-aware SSIMULACRA2 v2.1 image compression research across ~473 real and synthetic images, 4 main web formats (PNG, JPEG, WebP, AVIF), 12 categories, Extreme S2>=50, and complex compression-only networks.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NEO Compressor Results">
-<meta property="og:title" content="NEO Compressor Results">
-<meta property="og:description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
+<meta property="og:title" content="NEO Compressor · SSIMULACRA2 v2.1 Research Results">
+<meta property="og:description" content="Measured compression across ~473 images on alpha-aware SSIMULACRA2 v2.1: PNG, JPEG, WebP, AVIF, Extreme (S2 ≥ 50), 50% size budgets, and complex compression networks.">
 <meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/index.html">
 <meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NEO Compressor Results">
-<meta name="twitter:description" content="Measured results for NEO Compressor: how much smaller images get at each quality level, and which encoder chains are worth the effort.">
-<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
 <meta name="theme-color" content="#3b5bdb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css?v=20261123b"></head>
 <body>
 <section class="hero"><div class="wrap">
 <div>
-<h1>How small can images get <em>without looking worse?</em></h1>
-<p class="lede">We test thousands of ways of compressing the same images, measure size and quality for each, and publish what actually works, including what does not.</p>
-<p style="margin-top:20px"><a class="btn" href="rankings.html">See the rankings</a> &nbsp; <a class="btn ghost" href="explore.html">Explore the data</a> &nbsp; <a class="btn ghost" href="methodology.html">How we measured</a></p>
+<h1>How small can images get <em>measured by human vision?</em></h1>
+<p class="lede">Full-scope <b>alpha-aware SSIMULACRA2 v2.1</b> research across real-world and synthetic corpora, comparing <b>PNG, JPEG, WebP, and AVIF</b> (plus JXL) across 5 quality targets — from strict lossless to <b>Extreme (S2 ≥ 50)</b> — and testing multi-stage compression-only networks.</p>
+<p style="margin-top:20px"><a class="btn" href="rankings.html">Formats &amp; Rankings</a> &nbsp; <a class="btn ghost" href="gated.html">Complex Networks</a> &nbsp; <a class="btn ghost" href="explore.html">Explore 470+ Images</a> &nbsp; <a class="btn ghost" href="methodology.html">Methodology</a></p>
 </div>
 <div class="heronum" id="hero"></div>
 </div></section>
@@ -32,8 +28,20 @@
 <main><div class="wrap">
 <div class="cards" id="cards"></div>
 
+<h2>Main Web Formats Head-to-Head (SSIMULACRA2 v2.1)</h2>
+<p class="sub">Byte-weighted savings across all evaluated images (real + synthetic) when every output must clear the exact alpha-aware SSIMULACRA2 v2.1 floor across white, black, and mid-gray backgrounds. Switch between the 5 quality targets — including <b>Strict Lossless</b> and <b>Extreme (S2 ≥ 50)</b>.</p>
+<div class="controls" style="align-items:end">
+<div><div class="note" style="margin-bottom:4px">QUALITY TARGET</div><div class="seg" id="seg-q"></div></div>
+<div><div class="note" style="margin-bottom:4px">CORPUS SCOPE</div><div class="seg" id="seg-scope"></div></div>
+</div>
+<div class="panel">
+<div id="fmt-bars"></div>
+<div id="fmt-table" class="scroll" style="margin-top:14px"></div>
+<p class="note" id="fmt-note" style="margin:10px 0 0"></p>
+</div>
+
 <h2>First, one real file</h2>
-<p class="sub">Before the averages: a real photo and a real PNG, compressed with the live SSIMULACRA2 Smart engine. Drag the handle to compare the original (left) with the compressed file (right), switch between keeping the same format and picking the best modern browser format (AVIF/WebP), and read the actual file sizes.</p>
+<p class="sub">Before the averages: a real photo and a real PNG, compressed with the live SSIMULACRA2 Smart engine. Drag the handle to compare original (left) vs compressed (right).</p>
 <div class="panel" id="ex">
 <div class="controls" style="align-items:end">
 <div><div class="note" style="margin-bottom:4px">FORMAT</div><div class="seg" id="ex-fmt"></div></div>
@@ -51,36 +59,28 @@
 <p class="note" id="ex-note" style="margin:8px 0 0"></p>
 <p class="note" id="ex-credit" style="margin:4px 0 0"></p>
 </div>
-<h2>Pick a quality level, see the gain</h2>
-<p class="sub">Average size reduction when every image gets its own best recipe that still meets the chosen quality. Effort is how long encoding is allowed to take.</p>
-<div class="controls" style="align-items:end">
-<div><div class="note" style="margin-bottom:4px">FORMAT</div><div class="seg" id="seg-fmt"></div></div>
-<div><div class="note" style="margin-bottom:4px">QUALITY</div><div class="seg" id="seg-q"></div></div>
+
+<h2>Gain across all 12 image categories</h2>
+<p class="sub">Savings vary dramatically by content type. Flat icons, UI screenshots, and logos shrink heavily even in PNG; natural photos and noisy textures depend on AVIF/WebP/cjpegli.</p>
+<div class="panel">
+<div id="bytype"></div>
+<p class="note" id="bytype-note" style="margin:10px 0 0"></p>
 </div>
-<div class="panel"><div id="effort"></div><p class="note" style="margin:10px 0 0" id="effort-note"></p>
-<p class="note" style="margin:6px 0 0"><b>About the times.</b> A megapixel is a 1000×1000 picture; most phone photos are 8–12 megapixels, so scale up accordingly. Times were measured on one Mac with two encodes running at once and will differ on your machine. <b>Fast</b> only allows the quickest recipes, up to about 3× the time of the very quickest. <b>Balanced</b> allows recipes up to about 15× that. <b>Thorough</b> has no limit, so it takes as long as the most patient recipes need.</p></div>
 
-<h2>What we have learned</h2>
-<p class="sub">Plain-language takeaways from the current results.</p>
+<h2>Complex Compression-Only Networks &amp; 50% Size-Budget Highlights</h2>
+<p class="sub">Do multi-stage compression pipelines (pre-denoise → encoder, posterize → quantette → OxiPNG → ECT-9, cjpegli → ECT-9 repack) beat single-pass encoders when scored strictly against the unfiltered original?</p>
 <div class="findings" id="findings"></div>
-
-<h2>Gain by type of image</h2>
-<p class="sub">Typical best-case saving at high quality. Flat graphics shrink a lot; photographs much less.</p>
-<div class="panel"><div id="bytype"></div><p class="note" style="margin:10px 0 0">Based on the images tested so far; types with few images are marked and should be read as indications, not rules.</p></div>
-
-<h2>Modern Benchmark v2 (Data v6 · 321 real images)</h2>
-<p class="sub">Alpha-aware SSIMULACRA2 across 321 real-world PNG &amp; JPEG images (photos, UI screenshots, cutouts, smooth gradients, wide banners, textures) × 4 quality tiers × 5 modern codecs (<code>quantette</code>, <code>pngquant</code>, <code>posterize</code>, <code>cjpegli</code>, MozJPEG, WebP, JXL, AVIF).</p>
-<div class="panel" id="bench-v2"><span class="muted">Loading Benchmark v2…</span></div>
+<p class="note" style="margin-top:8px">See full lift tables, effort-tier timing (`sec/MP`), 50% size-budget scores, and Butteraugli/DSSIM cross-metric audits on <a href="gated.html">Complex Networks</a>.</p>
 
 <h2>Compared with ImageOptim</h2>
-<p class="sub">ImageOptim is the well-known Mac reference. We run it and NEO on the same 8 files (4 PNG, 4 JPEG) and score every output on human-perceived quality (SSIMULACRA2).</p>
+<p class="sub">ImageOptim is the well-known Mac reference. We run it and NEO on the same 8 files (4 PNG, 4 JPEG) and score every output on SSIMULACRA2 v2.1.</p>
 <div class="findings" id="north"></div>
 
 <h2>How to read these numbers</h2>
 <dl class="gloss panel">
-<dt>File size saving</dt><dd>How much smaller the file gets. A <b>50% saving</b> cuts a 1 MB image to 500 KB (half the download); a <b>90% saving</b> cuts it to 100 KB.</dd>
-<dt>Quality levels</dt><dd><b>Visually lossless</b> (S2 ≥ 90): invisible even zoomed in. <b>High quality</b> (S2 ≥ 80): looks identical at normal viewing size. <b>Good for web</b> (S2 ≥ 70): crisp for web pages, with minor softening only on close inspection. <b>Aggressive</b> (S2 ≥ 50): strong compression for thumbnails, email, and bandwidth-constrained mobile galleries.</dd>
-<dt>Two datasets on this site</dt><dd>The 100,000-trial sweep below used fast SSIM to compare recipe chains; the stricter human-vision results (SSIMULACRA2) and newer encoders (<code>cjpegli</code>, <code>quantette</code>, AVIF) are on the <a href="gated.html">SSIMULACRA2</a> and <a href="explore.html#north">Explore</a> pages. Full method on <a href="methodology.html">Methodology</a>.</dd>
+<dt>Alpha-aware SSIMULACRA2 v2.1</dt><dd>Every transparent image is composited over white, black, and mid-gray backgrounds and scored with the worst (lowest) of the three. <b>100</b> = pixel-identical; <b>90+</b> = visually lossless even zoomed in; <b>80+</b> = high quality (identical at normal viewing size); <b>70+</b> = good for web; <b>50+</b> = <b>Extreme / Aggressive</b> (strong compression for thumbnails, mobile galleries, and heavy bandwidth savings).</dd>
+<dt>Byte-weighted vs. per-image mean</dt><dd><b>Byte-weighted saving</b> measures total transfer bytes saved across the corpus (what your CDN bill sees). <b>Mean saving</b> weights every image equally regardless of resolution.</dd>
+<dt>Main web formats</dt><dd><b>Auto Web</b> picks the smallest passing file among the 4 universally supported web formats: <b>PNG, JPEG, WebP, and AVIF</b>. <b>JXL</b> is also benchmarked alongside as a next-generation reference.</dd>
 </dl>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
@@ -88,84 +88,131 @@
 <script>
 chrome('index.html');
 (async()=>{
-const [meta,head,ns,chains,src,bv2]=await Promise.all([data('meta'),data('headline'),data('northstar'),data('chains'),data('sources'),data('bench-v2')]);
-if(!meta){$('#cards').innerHTML='<div class="card">No data found. Run build_site_data.py.</div>';return}
-const cx=meta.complete||{};const srcDone=Object.values(cx).reduce((a,b)=>a+b,0);
-const find=(f,q,e)=>head?.[f]?.find(r=>r.quality===q&&r.effort===e);
-const hi=find('PNG','ssim>=0.98','balanced');
-const dup=head?.PNG_redundancy?.identical_output_share;
-// hero
-if(hi){const s=hi.saving;$('#hero').innerHTML=`<div class="big">${pct(s,0)}</div><div class="cap"><b>smaller PNG files</b> on average when each image gets its best-suited recipe, at high quality and balanced effort (${cx.PNG??srcDone} test images). Scored on SSIM; the stricter SSIMULACRA2 gate saves less, see the <a href="gated.html">SSIMULACRA2 update</a>.</div><div class="sizebar"><div class="row"><span class="t">Before</span><span class="b" style="width:100%;background:var(--muted);opacity:.55"></span></div><div class="row"><span class="t">After</span><span class="b" style="width:${(1-s)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></span><span>${pct(1-s,0)} of original</span></div></div>`}
-else $('#hero').innerHTML='<div class="cap">Results will appear here when the first images finish.</div>';
+const [meta,v3,ns]=await Promise.all([data('meta'),data('v3-summary'),data('northstar')]);
+if(!v3){$('#cards').innerHTML='<div class="card">No v3 data found. Run build_site_data_v3.py.</div>';return}
+
+const c=v3.corpus;
+const hi=v3.tiers['s2>=80'];
+const ext=v3.tiers['s2>=50'];
+
+// Hero KPI: SSIMULACRA2 >= 80 Auto Web vs Same Format
+if(hi){
+ const s=hi.autoWeb.bwSaving;
+ const same=hi.sameFormat.bwSaving;
+ $('#hero').innerHTML=`<div class="big">${pct(s,1)}</div><div class="cap"><b>smaller files (Auto Web: PNG/JPEG/WebP/AVIF)</b> at <b>High quality (SSIMULACRA2 ≥ 80)</b> across ${num(c.evaluated)} images (${pct(same,1)} keeping the same format; <b>${pct(ext?.autoWeb?.bwSaving,1)}</b> at Extreme S2 ≥ 50).</div><div class="sizebar"><div class="row"><span class="t">Original</span><span class="b" style="width:100%;background:var(--muted);opacity:.55"></span></div><div class="row"><span class="t">Same fmt</span><span class="b" style="width:${(1-same)*100}%;background:var(--c3)"></span><span>${pct(1-same,0)}</span></div><div class="row"><span class="t">Auto Web</span><span class="b" style="width:${(1-s)*100}%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></span><span>${pct(1-s,0)}</span></div></div>`;
+}
+
 $('#cards').innerHTML=[
- [num(meta.rows),`test runs finished of ${num(meta.total)} planned`],
- [num(srcDone),`images fully tested so far (of ${meta.sources_planned})`],
- [dup!=null?pct(dup,0):'–','of PNG recipes give exactly the same file as another recipe'],
- [num(meta.recipes_per_format?.PNG),'different PNG recipes compared on every image']
+ [num(c.evaluated),`images evaluated on alpha-aware SSIMULACRA2 v2.1 (${num(c.real)} real + ${num(c.synthetic)} synthetic)`],
+ [String(Object.keys(v3.categories||{}).length),'distinct image categories (photos, cutouts, UI, icons, logos, gradients, pixel art, subtle alpha…)'],
+ [pct(ext?.autoWeb?.bwSaving,1),'byte-weighted saving at Extreme target (S2 ≥ 50) across PNG/JPEG/WebP/AVIF'],
+ [num(v3.complex?.panelSize||0),'stratified images tested on 8 complex compression-only networks, 3 effort tiers & 50% budget']
 ].map(([n,l])=>`<div class="card"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
-// effort chooser
-const fmts=['PNG','JPEG'].filter(f=>head?.[f]);let curF=fmts[0],curQ='ssim>=0.98';
-const seg=(host,items,get,set)=>{host.innerHTML=items.map(([k,t])=>`<button aria-pressed="${get()===k}" data-k="${esc(k)}">${esc(t)}</button>`).join('');$$('button',host).forEach(b=>b.onclick=()=>{set(b.dataset.k);drawE()})};
-function drawE(){
- if(!fmts.length){$('#effort').innerHTML='<span class="muted">No finished images yet.</span>';return}
- seg($('#seg-fmt'),fmts.map(f=>[f,f]),()=>curF,v=>curF=v);
- seg($('#seg-q'),Object.entries(QLABEL),()=>curQ,v=>curQ=v);
- const rows=head[curF].filter(r=>r.quality===curQ);
- bars($('#effort'),rows.map((r,i)=>({label:ELABEL[r.effort],sub:effortSub(r),v:r.saving,color:`linear-gradient(90deg,${col(0)},${col(3)})`})),{label:250,h:20});
- const mx=rows.find(r=>r.effort==='max'),fa=rows.find(r=>r.effort==='fast');
- $('#effort-note').innerHTML=`<b>${QUALITY[curQ].name}</b> means ${QUALITY[curQ].tech.replace('NEO SSIM','similarity score')}.`+(mx&&fa?` Going from Fast to Thorough adds ${num((mx.saving-fa.saving)*100,0)} percentage points of saving`+(mx.time&&fa.time&&fa.time.sec_per_mp_median?` but takes about ${num(mx.time.sec_per_mp_median/fa.time.sec_per_mp_median,0)}× longer.`:'.'):'');
+
+// Interactive Format Comparison by Quality Target & Scope
+let curQ='s2>=80', curScope='all';
+const scopes=[['all',`All (${c.evaluated})`],['real',`Real only (${c.real})`],['synth',`Synthetic (${c.synthetic})`]];
+const seg=(host,items,get,set)=>{
+ host.innerHTML=items.map(([k,t])=>`<button aria-pressed="${get()===k}" data-k="${esc(k)}">${esc(t)}</button>`).join('');
+ $$('button',host).forEach(b=>b.onclick=()=>{set(b.dataset.k);drawFmt();drawByType();});
+};
+
+function getTierObj(q){
+ if(curScope==='real')return v3.realOnlyTiers?.[q];
+ if(curScope==='synth')return v3.synthOnlyTiers?.[q];
+ return v3.tiers?.[q];
 }
-drawE();
-// findings
-const F=[],hiM=find('PNG','ssim>=0.98','max'),hiF=find('PNG','ssim>=0.98','fast');
-if(hi&&hiM&&hiF)F.push(['Effort','Most of the gain comes quickly',`At high quality, PNG files shrink ${pct(hiF.saving,0)} on Fast, ${pct(hi.saving,0)} on Balanced and ${pct(hiM.saving,0)} on Thorough. The last step buys little.`]);
-const al=(chains?.alerts?.PNG||[]).find(a=>a.added==='zopfli'&&a.from.includes('pngquant'));
-if(al)F.push(['Wasted effort','Zopfli rarely pays off',`Adding the Zopfli squeeze after palette reduction and OxiPNG gains a median ${pct(al.median_gain)}, helps noticeably on only ${pct(al.share_ge_1pct,0)} of images, and takes about ${num(al.time_ratio,1)}× as long. Keep it for Thorough mode.`]);
-if(dup!=null)F.push(['Pruning','Many recipes are duplicates',`About ${pct(dup,0)} of PNG recipes produce exactly the same file as another recipe on the same image, so they can be dropped from future tests.`]);
-const tr=head?.PNG_transfer;
-if(tr)F.push(['Smart mode','One fixed recipe is not enough',`A recipe set tuned on other images falls ${pct(tr.unseen_regret,0)} short of the best-per-image result, against ${pct(tr.in_sample_regret,0)} on the images it was tuned on. Choosing per image is where the remaining gain is.`]);
+
+function drawFmt(){
+ seg($('#seg-q'),Object.entries(QUALITY).map(([k,v])=>[k,v.short]),()=>curQ,v=>curQ=v);
+ seg($('#seg-scope'),scopes,()=>curScope,v=>curScope=v);
+ const t=getTierObj(curQ);
+ if(!t){$('#fmt-bars').innerHTML='<span class="muted">No data for this slice.</span>';return}
+ const rows=[
+  {label:'Auto Web (PNG/JPEG/WebP/AVIF)',sub:`median ${num(t.autoWeb.medianBpp,2)} bpp · mean ${pct(t.autoWeb.meanSaving,1)}`,v:t.autoWeb.bwSaving,color:'linear-gradient(90deg,var(--accent),var(--accent2))'},
+  {label:'AVIF (libaom)',sub:`${t.formats.avif.improved}/${t.formats.avif.eligible} smaller · median ${num(t.formats.avif.medianBpp,2)} bpp`,v:t.formats.avif.bwSaving,color:'var(--c1)'},
+  {label:'WebP (libwebp)',sub:`${t.formats.webp.improved}/${t.formats.webp.eligible} smaller · median ${num(t.formats.webp.medianBpp,2)} bpp`,v:t.formats.webp.bwSaving,color:'var(--c2)'},
+  {label:'JPEG (cjpegli/MozJPEG, opaque)',sub:`${t.formats.jpeg.improved}/${t.formats.jpeg.eligible} opaque images · median ${num(t.formats.jpeg.medianBpp,2)} bpp`,v:t.formats.jpeg.bwSaving,color:'var(--c3)'},
+  {label:'PNG (quantette/pngquant/posterize)',sub:`${t.formats.png.improved}/${t.formats.png.eligible} smaller · median ${num(t.formats.png.medianBpp,2)} bpp`,v:t.formats.png.bwSaving,color:'var(--c4)'},
+  {label:'JPEG XL (JXL reference)',sub:`${t.formats.jxl.improved}/${t.formats.jxl.eligible} smaller · median ${num(t.formats.jxl.medianBpp,2)} bpp`,v:t.formats.jxl.bwSaving,color:'var(--c5)'},
+ ];
+ bars($('#fmt-bars'),rows,{label:240,h:18});
+ const wins=Object.entries(t.autoWeb.wins||{}).map(([f,n])=>`${f.toUpperCase()} ${n}`).join(' · ');
+ $('#fmt-table').innerHTML=`<table><thead><tr><th>Format</th><th class="num">Eligible</th><th class="num">Smaller</th><th class="num">Byte-weighted</th><th class="num">Per-image mean</th><th class="num">Median BPP</th></tr></thead><tbody>${
+  ALL_FORMATS.map(f=>{const x=t.formats[f];return `<tr><td><b>${esc(FMT_LABEL[f])}</b></td><td class="num">${num(x.eligible)}</td><td class="num">${num(x.improved)}</td><td class="num"><b>${pct(x.bwSaving,1)}</b></td><td class="num">${pct(x.meanSaving,1)}</td><td class="num">${num(x.medianBpp,2)}</td></tr>`;}).join('')
+ }</tbody></table>`;
+ $('#fmt-note').innerHTML=`<b>${QUALITY[curQ].name}</b> (${QUALITY[curQ].tech}) · Auto Web format wins: <b>${esc(wins)}</b>. Same-format byte-weighted saving: <b>${pct(t.sameFormat.bwSaving,1)}</b> (PNG ${pct(t.sameFormat.png.bw,1)} / JPEG ${pct(t.sameFormat.jpeg.bw,1)}).`;
+}
+
+function drawByType(){
+ const cats=Object.entries(v3.categories||{}).map(([name,info])=>{
+  const t=info.tiers?.[curQ];
+  const topWin=Object.entries(t?.autoWeb?.wins||{}).sort((a,b)=>b[1]-a[1])[0];
+  return {
+   label:name,
+   sub:`${info.n} images (${info.withAlpha} alpha) · top: ${topWin?topWin[0].toUpperCase():'–'} · same-fmt ${pct(t?.sameFormat?.bwSaving,0)}`,
+   v:t?.autoWeb?.bwSaving??0
+  };
+ }).sort((a,b)=>b.v-a.v);
+ bars($('#bytype'),cats.map((r,i)=>({...r,color:`linear-gradient(90deg,${col(i)},${col(i+1)})`})),{label:230,h:18});
+ $('#bytype-note').textContent=`Showing Auto Web (PNG/JPEG/WebP/AVIF) byte-weighted saving per category at ${QUALITY[curQ].name} (${QUALITY[curQ].tech}).`;
+}
+drawFmt();
+drawByType();
+
+// Findings from Complex Networks, 50% Budget & Effort Tiers
+const F=[];
+if(v3.complex){
+ const b50=v3.complex.budget50;
+ if(b50?.avif&&b50?.webp){
+  F.push(['50% Size-Budget Target','AVIF & WebP hold High Quality at half size',`When forced under ≤ 50% of original bytes, <b>AVIF</b> hits budget on <b>${pct(b50.avif.hitRate,0)}</b> of images with median <b>S2 ${num(b50.avif.medianS2,1)}</b> (${pct(b50.avif.pctAbove80,0)} at High quality S2 ≥ 80), vs <b>WebP</b> median <b>S2 ${num(b50.webp.medianS2,1)}</b> and <b>PNG</b> median <b>S2 ${num(b50.png?.medianS2,1)}</b>.`]);
+ }
+ const ectNet=v3.complex.networks?.find(n=>n.name.includes('ECT -9 vs Zopfli'));
+ if(ectNet&&ectNet.n>0){
+  F.push(['Deflate Squeeze','ECT -9 vs Zopfli on quantized PNGs',`Across ${ectNet.n} PNGs, <b>ECT -9</b> delivers <b>${(ectNet.bwLift*100).toFixed(2)}%</b> byte-weighted difference vs Zopfli (${ectNet.wins} wins / ${ectNet.ties} ties / ${ectNet.losses} losses) while running <b>${ectNet.medianExtraMs<0?fmtSec(-ectNet.medianExtraMs/1000)+' faster':fmtSec(ectNet.medianExtraMs/1000)+' slower'}</b> per image.`]);
+ }
+ const dnNets=(v3.complex.networks||[]).filter(n=>n.name.startsWith('Denoise')&&n.n>0);
+ if(dnNets.length){
+  const bestDn=[...dnNets].sort((a,b)=>b.bwLift-a.bwLift)[0];
+  F.push(['Complex Pre-Denoise Networks','Pre-denoising vs unfiltered SSIMULACRA2',`Best pre-denoise chain: <b>${esc(bestDn.name)}</b> (<b>${(bestDn.bwLift*100).toFixed(2)}%</b> byte-weighted lift, ${bestDn.wins}/${bestDn.n} wins). Scoring strictly against the unfiltered original prevents cheating while showing exactly where noise-floor cleanup pays off.`]);
+ }
+ const efH=v3.complex.efforts?.high;
+ if(efH?.fast&&efH?.balanced&&efH?.max){
+  F.push(['Effort Efficiency','Fast vs Balanced vs Thorough (S2 ≥ 80)',`Auto Web saves <b>${pct(efH.fast.autoBwSaving,1)}</b> on Fast (${fmtSec(efH.fast.secPerMpMedian)}/MP), <b>${pct(efH.balanced.autoBwSaving,1)}</b> on Balanced (${fmtSec(efH.balanced.secPerMpMedian)}/MP), and <b>${pct(efH.max.autoBwSaving,1)}</b> on Thorough (${fmtSec(efH.max.secPerMpMedian)}/MP).`]);
+ }
+}
 $('#findings').innerHTML=F.map(([k,h,t])=>`<div class="finding"><div class="k">${esc(k)}</div><h3>${esc(h)}</h3><p>${t}</p></div>`).join('');
-// by type
-if(src){const g={};src.filter(s=>s.best_98!=null).forEach(s=>{(g[s.type]??=[]).push(s.best_98)});
- const rows=Object.entries(g).map(([t,a])=>({t,n:a.length,v:a.reduce((x,y)=>x+y,0)/a.length})).sort((a,b)=>b.v-a.v);
- bars($('#bytype'),rows.map((r,i)=>({label:r.t,sub:`${r.n} image${r.n>1?'s':''}${r.n<3?' · few, indicative only':''}`,v:r.v,color:`linear-gradient(90deg,${col(i)},${col(i+1)})`})),{label:200,h:18})}
-// bench-v2 (Data v6)
-if(bv2&&bv2.tiers){
- const T=[['s2>=90','Visually lossless (S2 ≥ 90)'],['s2>=80','High (S2 ≥ 80)'],['s2>=70','Good for web (S2 ≥ 70)'],['s2>=50','Aggressive (S2 ≥ 50)']];
- const rows=T.map(([k,lbl])=>{
-  const t=bv2.tiers[k];if(!t)return '';
-  const wins=Object.entries(t.formatWins||{}).sort((a,b)=>b[1]-a[1]).map(([f,n])=>`${f.toUpperCase()} ${n}`).join(' · ');
-  return `<tr><td><b>${esc(lbl)}</b></td><td><b>${t.allSameBwPct.toFixed(1)}%</b> <span class="muted">(${t.pngSameBwPct.toFixed(1)}% PNG / ${t.jpgSameBwPct.toFixed(1)}% JPEG)</span></td><td><b>${t.allAutoBwPct.toFixed(1)}%</b> <span class="muted">(${t.pngAutoBwPct.toFixed(1)}% PNG / ${t.jpgAutoBwPct.toFixed(1)}% JPEG)</span></td><td class="muted">${esc(wins)}</td></tr>`;
- }).join('');
- $('#bench-v2').innerHTML=`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.92rem"><thead><tr style="text-align:left;border-bottom:1px solid var(--border)"><th style="padding:8px 6px">Quality Tier</th><th style="padding:8px 6px">Same Format (bw)</th><th style="padding:8px 6px">Auto Cross-Format (bw)</th><th style="padding:8px 6px">Format Wins (n = ${num(bv2.corpus?.evaluated||321)})</th></tr></thead><tbody>${rows}</tbody></table></div><p class="note" style="margin:10px 0 0">Data v${bv2.dataVersion||6} · ${num(bv2.corpus?.evaluated||321)} images ≤ 16 MP (${bv2.corpus?.skippedOver16Mp||14} &gt;16 MP stress files skipped). Every output clears the alpha-aware SSIMULACRA2 floor across white, black, and mid-gray backgrounds.</p>`;
-}
-// north
+
+// Northstar
 if(ns){const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;const out=[];
  ['PNG','JPEG'].forEach(f=>{const s=ns.filter(r=>r.format===f&&r.app);if(!s.length)return;
   const a=mean(s.map(r=>r.app.saving));
   const same=s.every(r=>r['neo-smart-same'])?mean(s.map(r=>r['neo-smart-same'].saving)):null;
   const auto=s.every(r=>r['neo-smart-auto'])?mean(s.map(r=>r['neo-smart-auto'].saving)):null;
   const body=f==='PNG'
-   ?`ImageOptim saves <b>${pct(a)}</b>. NEO Smart in the same format saves <b>${pct(same)}</b> at high quality, and allowing modern formats (AVIF/PNG) reaches <b>${pct(auto)}</b>.`
+   ?`ImageOptim saves <b>${pct(a)}</b>. NEO Smart in the same format saves <b>${pct(same)}</b> at high quality, and allowing modern formats (AVIF/WebP/PNG) reaches <b>${pct(auto)}</b>.`
    :`ImageOptim saves <b>${pct(a)}</b> (lossless). NEO Smart in the same format (<code>cjpegli</code>) saves <b>${pct(same)}</b> at high quality (S2 ≥ 80), and modern formats (AVIF/JXL) reach <b>${pct(auto)}</b>.`;
   out.push(`<div class="finding"><div class="k">${f} · ${s.length} files</div><h3>${same!=null&&same>a+0.02?'NEO Smart ahead':'On par'}</h3><p>${body}</p></div>`)});
- $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">File by file</div><h3>Full comparison table</h3><p>Inspect every file's size, format badge and perceptual score on the <a href="explore.html#north">Explore page</a>.</p></div>`}
+ $('#north').innerHTML=out.join('')+`<div class="finding"><div class="k">File by file</div><h3>Full comparison table</h3><p>Inspect every file's size, format badge and SSIMULACRA2 score on the <a href="explore.html#north">Explore page</a>.</p></div>`}
 })();
 
-// Real worked example: actual files, actual sizes, drag to compare.
+// Worked examples slider
 (async()=>{
 const ex=await data('examples');if(!ex||!ex.examples.length){$('#ex').hidden=true;return}
-const M=[['same','Same format'],['auto','Best format (AVIF/WebP)']],Q=[['visually-lossless','Visually lossless'],['high','High quality'],['good','Good for web']],E=[['fast','Fast'],['balanced','Balanced'],['max','Thorough']];
+const M=[['same','Same format'],['auto','Best format (AVIF/WebP)']],Q=[['visually-lossless','Visually lossless'],['high','High quality'],['good','Good for web'],['aggressive','Extreme (S2 ≥ 50)']],E=[['fast','Fast'],['balanced','Balanced'],['max','Thorough']];
 const st={fmt:ex.examples[0].format,mode:'same',q:'high',e:'balanced',zoom:false,pos:50};
 const full=n=>Number(n).toLocaleString('en')+' bytes';
 const seg=(id,items,key)=>{$(id).innerHTML=items.map(([v,l])=>`<button aria-pressed="${st[key]===v}" data-v="${v}">${l}</button>`).join('');
   $$(id+' button').forEach(b=>b.onclick=()=>{st[key]=b.dataset.v;draw()})};
 function setPos(p){st.pos=Math.max(0,Math.min(100,p));$('#ex-bwrap').style.clipPath=`inset(0 0 0 ${st.pos}%)`;$('#ex-h').style.left=st.pos+'%'}
 function draw(){
-  seg('#ex-fmt',[...new Set(ex.examples.map(x=>x.format))].map(f=>[f,f]),'fmt');seg('#ex-m',M,'mode');seg('#ex-q',Q,'q');seg('#ex-e',E,'e');
+  const x=ex.examples.find(e=>e.format===st.fmt);
+  const availQ=Q.filter(([k])=>x.cells[st.mode+'|'+k+'|'+st.e]||x.cells[k+'|'+st.e]);
+  if(!availQ.some(([k])=>k===st.q))st.q=availQ[0]?.[0]||'high';
+  seg('#ex-fmt',[...new Set(ex.examples.map(e=>e.format))].map(f=>[f,f]),'fmt');seg('#ex-m',M,'mode');seg('#ex-q',availQ,'q');seg('#ex-e',E,'e');
   $('#ex-z').innerHTML=`<button aria-pressed="${!st.zoom}" data-z="0">Fit</button><button aria-pressed="${st.zoom}" data-z="1">Zoom 3×</button>`;
   $$('#ex-z button').forEach(b=>b.onclick=()=>{st.zoom=b.dataset.z==='1';$('#ex-in').style.transform=st.zoom?'scale(3)':'';draw()});
-  const x=ex.examples.find(e=>e.format===st.fmt),c=x.cells[st.mode+'|'+st.q+'|'+st.e]||x.cells[st.q+'|'+st.e];
+  const c=x.cells[st.mode+'|'+st.q+'|'+st.e]||x.cells[st.q+'|'+st.e];
   const outFmt=(c.format||x.format).toUpperCase();
   $('#ex-a').src='examples/'+x.original;$('#ex-b').src='examples/'+(c.kept?x.original:c.file);
   $('#ex-cmp').style.aspectRatio=x.width+'/'+x.height;
@@ -177,9 +224,9 @@ function draw(){
     ['Original',esc(kb(x.originalBytes)),esc(full(x.originalBytes)+` · ${x.width}×${x.height} px`)],
     ['Compressed',esc(kb(c.kept?x.originalBytes:c.bytes))+badge,esc(c.kept?'Safely kept original: no recipe met this quality bar.':full(c.bytes)+(c.chosen?' · '+c.chosen:''))],
     ['Saved',esc(c.kept?'0%':pct(saved,0)),esc(c.kept?'No quality trade-off taken':`${kb(x.originalBytes-c.bytes)} smaller`)],
-    ['Visual quality',esc(c.kept?'Identical':`S2 ${c.s2.toFixed(0)} · ${s2Label(c.s2)}`),esc(c.kept?'Exact original pixels':'SSIMULACRA2 scale: 90 lossless, 80 high, 70 web')]
+    ['Visual quality',esc(c.kept?'Identical':`S2 ${c.s2.toFixed(0)} · ${s2Label(c.s2)}`),esc(c.kept?'Exact original pixels':'SSIMULACRA2 v2.1: 90 lossless, 80 high, 70 web, 50 extreme')]
   ].map(r=>`<div class="st"><div class="l">${r[0]}</div><div class="v">${r[1]}</div><div class="l">${r[2]}</div></div>`).join('');
-  $('#ex-note').textContent=`This is one image (${x.title}), not an average. File sizes and SSIMULACRA2 scores are measured directly from the live Smart engine; Same format keeps JPEG/PNG, while Best format picks the smallest browser-ready format meeting the same perceptual floor.`;
+  $('#ex-note').textContent=`This is one image (${x.title}), not an average. File sizes and SSIMULACRA2 v2.1 scores are measured directly from the live Smart engine.`;
   $('#ex-credit').innerHTML=`Image: ${esc(x.credit||x.title)} · ${x.license_url?`<a href="${esc(x.license_url)}" rel="noopener">${esc(x.license)}</a>`:esc(x.license)}${x.source_url?` · <a href="${esc(x.source_url)}" rel="noopener">source</a>`:''}`;
 }
 const cmp=$('#ex-cmp');let drag=false;

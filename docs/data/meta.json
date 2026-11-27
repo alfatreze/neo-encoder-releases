@@ -1,24 +1,26 @@
 {
- "generated": "2026-11-23T22:41+00:00",
- "run": "sweep-100k.d7q5Sh",
- "rows": 100000,
- "total": 100000,
- "complete": {
-  "JPEG": 20,
-  "PNG": 30
- },
- "sources_planned": 50,
- "recipes_per_format": {
-  "JPEG": 1998,
-  "PNG": 2000
- },
- "metric": "Full-resolution decoded pixels. NEO 8-by-8 luma SSIM and RGB PSNR. Transparent sources use the lower score across black and white mattes.",
- "timing": "Headless recipe wall time, including codec startup if cold, excluding source read and quality scoring.",
- "rescored": 1320,
+ "generated": "2026-11-26T20:34+00:00",
+ "run": "bench-v3",
+ "dataVersion": 7,
  "status": "complete",
+ "rows": 11825,
+ "total": 11825,
+ "sources_planned": 484,
+ "evaluated": 473,
+ "realEvaluated": 325,
+ "synthEvaluated": 148,
+ "skipped": 10,
+ "errors": 1,
+ "categories": 12,
+ "complete": {
+  "PNG": 450,
+  "JPEG": 23
+ },
+ "metric": "Alpha-aware SSIMULACRA2 v2.1 (Wasm-SIMD, worst-case over white/black/mid-gray mattes) across all evaluated images.",
+ "timing": "Headless wall time in seconds per megapixel (1000\u00d71000 px), measured on Apple Silicon.",
  "effort_tiers": {
-  "fast": "\u2264 3\u00d7 fastest recipe",
-  "balanced": "\u2264 15\u00d7",
-  "max": "unbounded"
+  "fast": "Fast",
+  "balanced": "Balanced",
+  "max": "Thorough (with ECT/Zopfli squeeze)"
  }
 }

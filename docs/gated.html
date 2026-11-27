@@ -1,71 +1,77 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SSIMULACRA2 update · NEO Compressor Results</title>
-<meta name="description" content="Results re-checked on SSIMULACRA2: what changed from the first comparison and why.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NEO Compressor Results">
-<meta property="og:title" content="SSIMULACRA2 update · NEO Compressor Results">
-<meta property="og:description" content="Results re-checked on SSIMULACRA2: what changed from the first comparison and why.">
-<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/gated.html">
-<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SSIMULACRA2 update · NEO Compressor Results">
-<meta name="twitter:description" content="Results re-checked on SSIMULACRA2: what changed from the first comparison and why.">
-<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
-<meta name="theme-color" content="#3b5bdb">
+<title>Complex Networks &amp; Metrics · NEO Compressor SSIMULACRA2 Research</title>
+<meta name="description" content="Multi-stage pure-compression-optimization networks, 50% size-budget targets, effort-tier efficiency, and Butteraugli/DSSIM cross-metric audits under SSIMULACRA2 v2.1.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css?v=20261123b"></head>
 <body><main><div class="wrap">
-<h1 class="page">SSIMULACRA2 update</h1>
-<p class="sub" id="intro"></p>
-<div class="callout"><b>What the scores look like to human eyes (0–100):</b> <b>90+ (Visually lossless)</b> — invisible even zoomed in. <b>80+ (High quality)</b> — looks identical at normal viewing size. <b>70+ (Good for web)</b> — crisp for web pages, with minor softening only on close inspection.</div>
-<h2>1. How much the SSIM numbers overstated</h2>
-<p class="note" id="rs-note" style="margin:0 0 8px"></p>
-<div class="panel scroll" tabindex="0" role="region" aria-label="SSIM vs SSIMULACRA2 comparison" id="rs"></div>
-<h2>2. Searching directly on SSIMULACRA2</h2>
-<div class="panel scroll" tabindex="0" role="region" aria-label="PNG SSIMULACRA2 search results" id="gp"></div><p class="note" id="gp-n"></p>
-<div class="panel scroll" tabindex="0" role="region" aria-label="JPEG SSIMULACRA2 search results" id="gj"></div><p class="note" id="gj-n"></p>
-<h2>3. What the new studies found</h2>
-<div class="findings" id="fd"></div>
-<h2>4. The shipped engine against the research</h2>
-<p class="note" id="en-n" style="margin:0 0 8px"></p>
-<div class="panel scroll" tabindex="0" role="region" aria-label="Shipped engine vs research ceiling" id="en"></div>
-<h2>5. Data v4 rule table &amp; 178-image real holdout</h2>
-<p class="note" id="v4-n" style="margin:0 0 8px"></p>
-<p class="note" id="v4-hn" style="margin:0 0 8px"></p>
-<div class="panel scroll" tabindex="0" role="region" aria-label="178-image new real PNG holdout results" id="v4-hold"></div>
-<p class="note" id="v4-ln" style="margin:12px 0 8px"></p>
-<div class="panel scroll" tabindex="0" role="region" aria-label="Data v4 358-source leave-one-source-out results" id="v4-loso"></div>
-<h2>6. What we keep and what changes</h2>
-<div class="grid2"><div class="panel"><h3>Keep</h3><ul id="keep"></ul></div><div class="panel"><h3>Change</h3><ul id="chg"></ul></div></div>
-<h2>Known limits</h2>
-<div class="callout warn"><ul id="lim" style="margin:0;padding-left:18px"></ul></div>
+<h1 class="page">Complex Compression Networks &amp; Metric Audits</h1>
+<p class="sub">Evaluating multi-stage <b>pure-compression-optimization networks</b> (no resize, crop, or artistic transforms), <b>50% size-budget</b> targets, <b>3 effort tiers</b>, and <b>Butteraugli / DSSIM</b> cross-metric checks on a stratified panel across all 12 categories.</p>
+
+<div class="callout"><b>Strict anti-cheating rule:</b> Every pre-conditioned chain (<code>denoise → codec</code>, <code>posterize → quantette → oxipng → ect</code>) is scored with alpha-aware <b>SSIMULACRA2 v2.1</b> against the <b>unfiltered original pixels</b> — never against the pre-filtered intermediate.</div>
+
+<h2>1. Complex Pure-Compression-Optimization Networks vs. Single-Pass Baselines</h2>
+<p class="note" style="margin:0 0 8px">Positive lift = smaller file at the same or higher SSIMULACRA2 v2.1 floor. Negative lift = the extra stage hurt compression or forced a higher bitrate to recover original detail.</p>
+<div class="panel scroll" id="net-tbl"></div>
+
+<h2>2. Additional Target: 50% Size Budget (≤ 50% of Original Bytes)</h2>
+<p class="note" style="margin:0 0 8px">Instead of fixing quality and measuring size, we fix the budget at <b>50% of original bytes</b> and measure the highest <b>SSIMULACRA2 v2.1</b> quality each main web format achieves.</p>
+<div class="panel scroll" id="b50-tbl"></div>
+
+<h2>3. Effort-Tier Efficiency (Fast vs. Balanced vs. Thorough)</h2>
+<p class="note" style="margin:0 0 8px">Measured honestly in wall-clock <b>seconds per megapixel</b> and <b>KB saved per second</b> on the stratified panel.</p>
+<div class="panel scroll" id="eff-tbl"></div>
+
+<h2>4. Cross-Metric Finalist Audit (SSIMULACRA2 vs. Butteraugli &amp; DSSIM)</h2>
+<p class="note" style="margin:0 0 8px">No single perceptual metric is infallible. We cross-check balanced winners from every category with native <b>Butteraugli</b> (lower is better; &lt; 1.0 good, &gt; 2.0 noticeable) and <b>DSSIM</b> (lower is better).</p>
+<div class="panel scroll" id="cm-tbl"></div>
+
+<h2>5. Historical Note: Why We Replaced SSIM with SSIMULACRA2 v2.1</h2>
+<div class="panel scroll" id="hist-tbl"></div>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
 <script src="assets/common.js"></script>
 <script>
 chrome('gated.html');
-(async()=>{const g=await data('gated');if(!g)return;
-$('#intro').textContent=g.intro;$('#rs-note').textContent=g.rescore.note;
-const tb=(h,rows)=>`<table><thead><tr>${h.map(x=>`<th>${esc(x)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
-$('#rs').innerHTML=tb(['Format','Quality level','Winners failing SSIMULACRA2','Mean saving, SSIM-gated','Mean saving, SSIMULACRA2-gated'],g.rescore.rows.map(r=>[r[0],r[1],r[2],pct(r[3]),pct(r[4])]));
-$('#gp').innerHTML=tb(['PNG: SSIMULACRA2 floor','Sources','Mean saving','Kept the original'],g.gated.png);$('#gp-n').textContent=g.gated.pngnote;
-$('#gj').innerHTML=tb(['JPEG: SSIMULACRA2 floor','Mean saving (best MozJPEG setting)','Notes'],g.gated.jpeg);$('#gj-n').textContent=g.gated.jpegnote;
-$('#fd').innerHTML=g.findings.map((f,i)=>`<div class="finding"><div class="k">Finding ${i+1}</div><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></div>`).join('');
-$('#en-n').textContent=g.engine.note;
-$('#en').innerHTML=tb(['Quality level','Engine saving','Best possible (research)','Engine kept original','Best possible kept original'],g.engine.rows);
-if(g.v4){
- $('#v4-n').textContent=g.v4.note;
- $('#v4-hn').textContent=g.v4.holdoutNote;
- $('#v4-hold').innerHTML=tb(['Quality level (Balanced)','Data v3 (blind holdout)','Data v4 (rebuilt)','Best of 41 (oracle)','v3 kept original','Oracle kept original'],g.v4.holdout);
- $('#v4-ln').textContent=g.v4.losoNote;
- $('#v4-loso').innerHTML=tb(['Quality level','Effort','Candidates','LOSO race gap','Race saved (bw)','Oracle saved (bw)'],g.v4.loso);
+(async()=>{
+const [v3,g]=await Promise.all([data('v3-summary'),data('gated')]);
+const cx=v3?.complex;
+if(!cx){$('#net-tbl').innerHTML='<span class="muted">No complex network data yet.</span>';return}
+
+$('#net-tbl').innerHTML=`<table><thead><tr><th>Complex Network</th><th class="num">n</th><th>Wins / Ties / Losses</th><th class="num">Median Lift</th><th class="num">Byte-Weighted Lift</th><th class="num">Extra Time</th></tr></thead><tbody>${
+ (cx.networks||[]).map(n=>{
+  const lift=(v)=>v==null?'–':`<b style="color:${v>0.005?'var(--good,#15803d)':v<-0.005?'var(--bad,#b91c1c)':'inherit'}">${v>=0?'+':''}${(v*100).toFixed(2)}%</b>`;
+  return `<tr><td><b>${esc(n.name)}</b><div class="note">${esc(n.description)}</div></td><td class="num">${n.n}</td><td>${n.wins} / ${n.ties} / ${n.losses}</td><td class="num">${lift(n.medianLift)}</td><td class="num">${lift(n.bwLift)}</td><td class="num">${n.medianExtraMs!=null?(n.medianExtraMs>=0?'+':'')+num(n.medianExtraMs,0)+' ms':'–'}</td></tr>`;
+ }).join('')
+}</tbody></table>`;
+
+$('#b50-tbl').innerHTML=`<table><thead><tr><th>Web Format</th><th class="num">Eligible</th><th class="num">Met ≤50% Budget</th><th class="num">Median SSIMULACRA2</th><th class="num">Mean SSIMULACRA2</th><th class="num">Hit High (S2 ≥ 80)</th><th class="num">Hit Web (S2 ≥ 70)</th></tr></thead><tbody>${
+ WEB_FORMATS.map(f=>{
+  const b=cx.budget50?.[f];if(!b)return '';
+  return `<tr><td><b>${esc(FMT_LABEL[f])}</b></td><td class="num">${b.eligible}</td><td class="num">${pct(b.hitRate,1)} (${b.metBudget})</td><td class="num"><b>${b.medianS2!=null?num(b.medianS2,1):'–'}</b></td><td class="num">${b.meanS2!=null?num(b.meanS2,1):'–'}</td><td class="num">${pct(b.pctAbove80,1)}</td><td class="num">${pct(b.pctAbove70,1)}</td></tr>`;
+ }).join('')
+}</tbody></table>`;
+
+const effRows=[];
+for(const [qk,ql] of [['high','High quality (S2 ≥ 80)'],['aggressive','Extreme (S2 ≥ 50)']]){
+ for(const ek of ['fast','balanced','max']){
+  const e=cx.efforts?.[qk]?.[ek];if(!e)continue;
+  effRows.push(`<tr><td><b>${esc(ql)}</b></td><td>${esc(ELABEL[ek])}</td><td class="num"><b>${pct(e.autoBwSaving,1)}</b></td><td class="num">${pct(e.sameBwSaving,1)}</td><td class="num">${fmtSec(e.secPerMpMedian)}/MP</td><td class="num">${fmtSec(e.secPerMpP90)}/MP</td><td class="num">${num(e.kbSavedPerSecMedian,0)} KB/s</td></tr>`);
+ }
 }
-$('#keep').innerHTML=g.keep.map(x=>`<li>${esc(x)}</li>`).join('');$('#chg').innerHTML=g.change.map(x=>`<li>${esc(x)}</li>`).join('');
-$('#lim').innerHTML=g.limits.map(x=>`<li>${esc(x)}</li>`).join('');
+$('#eff-tbl').innerHTML=`<table><thead><tr><th>Quality Target</th><th>Effort</th><th class="num">Auto Web (bw)</th><th class="num">Same Fmt (bw)</th><th class="num">Median Time</th><th class="num">P90 Time</th><th class="num">Throughput</th></tr></thead><tbody>${effRows.join('')}</tbody></table>`;
+
+const cm=cx.crossMetrics||[];
+$('#cm-tbl').innerHTML=cm.length
+ ?`<table><thead><tr><th>Image</th><th>Category</th><th>Target</th><th>Winner</th><th class="num">Saved</th><th class="num">Butteraugli Max</th><th class="num">Butteraugli 3-norm</th><th class="num">DSSIM</th></tr></thead><tbody>${
+  cm.map(r=>`<tr><td><code>${esc(r.id.split('/').pop())}</code></td><td>${esc(r.category)}</td><td>${esc(r.tier)}</td><td><span class="fmt-badge">${esc(r.format.toUpperCase())}</span></td><td class="num">${pct(r.saving,1)}</td><td class="num">${r.butteraugliMax!=null?num(r.butteraugliMax,2):'–'}</td><td class="num">${r.butteraugli3Norm!=null?num(r.butteraugli3Norm,2):'–'}</td><td class="num">${r.dssim!=null?r.dssim.toFixed(5):'–'}</td></tr>`).join('')
+ }</tbody></table>`
+ :'<span class="muted">No cross-metric audit rows recorded yet.</span>';
+
+if(g?.rescore?.rows){
+ $('#hist-tbl').innerHTML=`<table><thead><tr><th>Format</th><th>Old SSIM Floor</th><th>Winners Failing SSIMULACRA2</th><th class="num">Old SSIM Saving</th><th class="num">True SSIMULACRA2 Saving</th></tr></thead><tbody>${
+  g.rescore.rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td><td class="num">${pct(r[3])}</td><td class="num"><b>${pct(r[4])}</b></td></tr>`).join('')
+ }</tbody></table><p class="note" style="margin:8px 0 0">${esc(g.rescore.note)}</p>`;
+}
 })();
 </script></body></html>

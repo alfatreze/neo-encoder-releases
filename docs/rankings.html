@@ -1,22 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chain rankings · NEO Compressor Results</title>
-<meta name="description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NEO Compressor Results">
-<meta property="og:title" content="Chain rankings · NEO Compressor Results">
-<meta property="og:description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
-<meta property="og:url" content="https://alfatreze.github.io/neo-encoder-releases/rankings.html">
-<meta property="og:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="NEO Compressor Results: image compression, measured honestly">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chain rankings · NEO Compressor Results">
-<meta name="twitter:description" content="Which encoding chains rank best at each effort tier, for all images or a specific kind of image.">
-<meta name="twitter:image" content="https://alfatreze.github.io/neo-encoder-releases/assets/og.png">
-<meta name="theme-color" content="#3b5bdb">
+<title>Formats &amp; Rankings · NEO Compressor SSIMULACRA2 Research</title>
+<meta name="description" content="SSIMULACRA2 v2.1 rankings of PNG, JPEG, WebP, AVIF, and JXL across all 12 image categories and 5 quality targets including Extreme (S2 >= 50) and Strict Lossless.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b5bdb'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css?v=20261123b">
 <style>
@@ -31,32 +16,31 @@
 .item .val{font-weight:780;font-size:18px;letter-spacing:-.02em}
 .item .meter{height:8px;border-radius:99px;background:color-mix(in srgb,var(--ink) 7%,transparent);margin:7px 0 4px 40px;overflow:hidden;position:relative}
 .item .meter i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.item .meter u{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:color-mix(in srgb,var(--accent) 25%,transparent)}
 .item .meta{margin-left:40px;font-size:13px;color:var(--muted)}
-details{margin:4px 0 0 40px}summary{cursor:pointer;font-size:13px;color:var(--accent)}
-details code{display:block;margin-top:6px;white-space:normal;word-break:break-word}
-.warn-n{margin:0 0 12px}
 </style></head>
 <body><main><div class="wrap">
-<h1 class="page">Chain rankings</h1>
-<p class="sub">Which chains of encoding steps work best at each effort level. Choose all images for a general answer, or a type of image for a specific one.</p>
+<h1 class="page">Formats &amp; Category Rankings (SSIMULACRA2 v2.1)</h1>
+<p class="sub">Which web format — <b>PNG, JPEG, WebP, AVIF</b> (plus <b>JXL</b>) — wins for every image category and quality target, including <b>Strict Lossless (S2 = 100)</b> and <b>Extreme (S2 ≥ 50)</b>.</p>
 
 <div class="panel">
 <div class="controls" style="margin:0">
-<label class="f">Format<select id="fmt"></select></label>
-<label class="f">Content<select id="type"></select></label>
-<label class="f">Quality<select id="q"></select></label>
-<label class="f">Rank by<select id="by"><option value="fixed">One recipe for all images</option><option value="potential">Best recipe per image</option></select></label>
+<label class="f">Category<select id="cat"></select></label>
+<label class="f">Quality target<select id="q"></select></label>
+<label class="f">Rank by<select id="by"><option value="bwSaving">Byte-weighted saving (CDN impact)</option><option value="meanSaving">Per-image mean saving</option></select></label>
 </div>
 <p class="note" id="sel" style="margin:10px 0 0"></p>
 </div>
 
-<div id="warn"></div>
-<div class="tiers" id="tiers"></div>
+<h2>Format Leaderboard</h2>
+<div class="tiers" id="boards"></div>
 
-<div class="callout">
-<b>How to read the bars.</b> The bold percentage is the average file-size saving. The solid bar shows what you get with <b>one fixed recipe</b>; the paler extension shows the ceiling if every image gets its own best settings. <b>Wins</b> is how often this chain produced the smallest file. Times are per megapixel (a 1000×1000 image). See <a href="methodology.html">Methodology</a> for quality floors and effort limits.
-</div>
+<h2>Top Winning PNG Recipes (Same-Format Race)</h2>
+<p class="sub">When you must stay in PNG, these are the exact quantization / posterization / lossless chains that won most often at the selected SSIMULACRA2 floor.</p>
+<div class="panel scroll" id="png-winners"></div>
+
+<h2>All 12 Categories at a Glance</h2>
+<p class="sub">Byte-weighted saving by format across every category at the selected quality target.</p>
+<div class="panel scroll" id="cat-matrix"></div>
 </div></main>
 <footer><div class="wrap" id="foot"></div></footer>
 <script src="assets/common.js"></script>
@@ -64,29 +48,53 @@ details code{display:block;margin-top:6px;white-space:normal;word-break:break-wo
 chrome('rankings.html');
 const opt=(sel,items,v)=>{sel.innerHTML=items.map(([k,t])=>`<option value="${esc(k)}">${esc(t)}</option>`).join('');if(v!=null)sel.value=v};
 (async()=>{
-const [R,H]=await Promise.all([data('rankings'),data('headline')]);
-if(!R||!Object.keys(R).length){$('#tiers').innerHTML='<div class="panel muted">No ranking data yet.</div>';return}
-opt($('#fmt'),Object.keys(R).map(f=>[f,f]));opt($('#q'),Object.entries(QLABEL),'ssim>=0.98');
-const params=new URLSearchParams(location.hash.slice(1));
-function fillTypes(){const t=R[$('#fmt').value];const names=Object.keys(t).filter(x=>x!=='All');
- opt($('#type'),[['All','All images (general)'],...names.map(n=>[n,`${n} (${t[n].n} image${t[n].n>1?'s':''})`])],$('#type').value||'All');
- if(![...$('#type').options].some(o=>o.value===$('#type').value))$('#type').value='All'}
+const v3=await data('v3-summary');
+if(!v3){$('#boards').innerHTML='<div class="panel muted">No v3 data yet.</div>';return}
+
+const catKeys=Object.keys(v3.categories||{}).sort((a,b)=>(v3.categories[b].n)-(v3.categories[a].n));
+opt($('#cat'),[['All',`All images (${v3.corpus.evaluated})`],...catKeys.map(k=>[k,`${k} (${v3.categories[k].n} images)`])],'All');
+opt($('#q'),Object.entries(QUALITY).map(([k,v])=>[k,`${v.name} (${v.tech})`]),'s2>=80');
+
 function draw(){
- const f=$('#fmt').value,ty=$('#type').value,q=$('#q').value,by=$('#by').value;const T=R[f][ty];
- const n=T.n;
- $('#sel').innerHTML=`Showing <b>${esc(f)}</b> · <b>${ty==='All'?'all images':esc(ty)}</b> (${n} image${n>1?'s':''}) · <b>${QUALITY[q].name}</b> <span class="muted">(${QUALITY[q].tech})</span>`;
- $('#warn').innerHTML=n<3?`<div class="callout warn warn-n"><b>Only ${n} image${n>1?'s':''} of this type so far.</b> Treat this ranking as an indication, not a rule. Choose "All images" for a more reliable general answer.</div>`:'';
- const other=by==='fixed'?'potential':'fixed';
- $('#tiers').innerHTML=Object.keys(ELABEL).map(e=>{
-  const rows=[...(T.cells[q+'|'+e]||[])].sort((a,b)=>b[by]-a[by]).slice(0,8);
-  const mx=Math.max(0.01,...rows.map(r=>Math.max(r.fixed,r.potential)));
-  const items=rows.map((r,i)=>`<div class="item"><div class="top"><span class="rank${i?'':' r1'}">${i+1}</span><span class="nm">${esc(chainName(r.chain))}</span><span class="val">${pct(r[by],0)}</span></div>
-   <div class="meter"><u style="width:${Math.max(r.potential,r.fixed)/mx*100}%"></u><i style="width:${r[by]/mx*100}%"></i></div>
-   <div class="meta">${by==='fixed'?`ceiling ${pct(r.potential,0)}`:`one recipe ${pct(r.fixed,0)}`} · wins ${pct(r.win,0)} · ${relSec(r.time,H?.[f+'_timing']?.fastest_sec_per_mp_median)} · ${r.recipes} recipes tried</div>
-   <details><summary>Best settings</summary><code>${esc(r.text)}</code></details></div>`).join('');
-  return `<div class="panel tier"><h3>${ELABEL[e]}</h3><p class="note hint">${esc(effortSub((H?.[f]||[]).find(r=>r.quality===q&&r.effort===e))||EHINT[e])}</p>${items||'<span class="muted">No chain qualifies at this effort.</span>'}</div>`}).join('');
+ const cat=$('#cat').value, q=$('#q').value, by=$('#by').value;
+ const tier=cat==='All'?v3.tiers[q]:v3.categories[cat]?.tiers?.[q];
+ if(!tier){$('#boards').innerHTML='<div class="panel muted">No data for this selection.</div>';return}
+ $('#sel').innerHTML=`Showing <b>${cat==='All'?'All images':esc(cat)}</b> (${num(tier.n)} images) · <b>${esc(QUALITY[q].name)}</b> <span class="muted">(${esc(QUALITY[q].tech)})</span> · Auto Web saving: <b>${pct(tier.autoWeb[by],1)}</b>`;
+
+ // Main 4 Web Formats + JXL cards
+ const fmtRows=ALL_FORMATS.map(f=>({fmt:f,label:FMT_LABEL[f],...tier.formats[f],wins:tier.autoAll.wins?.[f]||0,webWins:tier.autoWeb.wins?.[f]||0}))
+  .sort((a,b)=>(b[by]||0)-(a[by]||0));
+ const mx=Math.max(0.01,...fmtRows.map(r=>r[by]||0));
+
+ const renderList=(rows,title,hint)=>`<div class="panel tier"><h3>${esc(title)}</h3><p class="note hint">${esc(hint)}</p>${
+  rows.map((r,i)=>`<div class="item"><div class="top"><span class="rank${i?'':' r1'}">${i+1}</span><span class="nm">${esc(r.label)}</span><span class="val">${pct(r[by],1)}</span></div>
+   <div class="meter"><i style="width:${((r[by]||0)/mx)*100}%"></i></div>
+   <div class="meta">${r.improved}/${r.eligible} smaller · median ${num(r.medianBpp,2)} bpp · ${r.webWins} web wins · ${by==='bwSaving'?`mean ${pct(r.meanSaving,1)}`:`bw ${pct(r.bwSaving,1)}`}</div></div>`).join('')
+ }</div>`;
+
+ // Compare selected target vs Extreme (S2>=50) side-by-side
+ const extTier=cat==='All'?v3.tiers['s2>=50']:v3.categories[cat]?.tiers?.['s2>=50'];
+ const extRows=extTier?ALL_FORMATS.map(f=>({fmt:f,label:FMT_LABEL[f],...extTier.formats[f],wins:extTier.autoAll.wins?.[f]||0,webWins:extTier.autoWeb.wins?.[f]||0})).sort((a,b)=>(b[by]||0)-(a[by]||0)):[];
+
+ $('#boards').innerHTML=
+  renderList(fmtRows, QUALITY[q].name, `${QUALITY[q].tech} · ranked by ${by==='bwSaving'?'byte-weighted':'per-image mean'} saving`) +
+  (q!=='s2>=50'&&extRows.length?renderList(extRows, 'Extreme (S2 ≥ 50) comparison', 'Additional aggressive target for maximum web savings'):'');
+
+ // Top PNG winners
+ const pw=tier.topPngWinners||[];
+ $('#png-winners').innerHTML=pw.length
+  ?`<table><thead><tr><th class="num">#</th><th>PNG Recipe / Chain</th><th class="num">Wins</th></tr></thead><tbody>${pw.map(([name,cnt],i)=>`<tr><td class="num">${i+1}</td><td><code>${esc(name)}</code></td><td class="num"><b>${num(cnt)}</b></td></tr>`).join('')}</tbody></table>`
+  :'<span class="muted">No PNG winners recorded for this slice.</span>';
+
+ // Full 12-category matrix
+ $('#cat-matrix').innerHTML=`<table><thead><tr><th>Category</th><th class="num">n</th><th class="num">Alpha</th><th class="num">Auto Web</th><th class="num">PNG</th><th class="num">JPEG (opaque)</th><th class="num">WebP</th><th class="num">AVIF</th><th class="num">JXL</th></tr></thead><tbody>${
+  catKeys.map(k=>{
+   const info=v3.categories[k], ct=info.tiers[q];
+   return `<tr><td><b>${esc(k)}</b></td><td class="num">${info.n}</td><td class="num">${info.withAlpha}</td><td class="num"><b>${pct(ct.autoWeb.bwSaving,1)}</b></td><td class="num">${pct(ct.formats.png.bwSaving,1)}</td><td class="num">${ct.formats.jpeg.eligible?pct(ct.formats.jpeg.bwSaving,1):'–'}</td><td class="num">${pct(ct.formats.webp.bwSaving,1)}</td><td class="num">${pct(ct.formats.avif.bwSaving,1)}</td><td class="num">${pct(ct.formats.jxl.bwSaving,1)}</td></tr>`;
+  }).join('')
+ }</tbody></table>`;
 }
-$('#fmt').onchange=()=>{fillTypes();draw()};['#type','#q','#by'].forEach(s=>$(s).onchange=draw);
-fillTypes();draw();
+['#cat','#q','#by'].forEach(s=>$(s).onchange=draw);
+draw();
 })();
 </script></body></html>
